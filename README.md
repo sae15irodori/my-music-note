@@ -20,8 +20,7 @@
  
 
 ## 設計書
-https://app.diagrams.net/#G14gZp9T-GP1kOjRAfLuynBO1sypxLqnkx  
-https://app.diagrams.net/#G1dX-Ni57l7EPxijDBm_RLMqFA7K2SPNDO
+
 
 ## 開発環境
 - OS：Linux(CentOS)
