@@ -1,24 +1,27 @@
-# README
+# アプリケーション名
+ My Music Note
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+ 音楽が好きな人が集まるコミュニティサイト
 
-Things you may want to cover:
+### サイトテーマ
+ 音楽が好き！を共有する
 
-* Ruby version
+### テーマを選んだ理由
+ 音楽を趣味としており、音楽に特化したコミュニティサイトがあればいいなと思ったから
 
-* System dependencies
+### ターゲットユーザ
+ 音楽好きな方
 
-* Configuration
+### 主な利用シーン
+ 音楽情報の発信・収集。音楽を通して交流を広げる。
 
-* Database creation
+## 設計書
+<...>
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
