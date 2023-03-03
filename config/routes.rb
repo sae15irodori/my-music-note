@@ -11,37 +11,21 @@ Rails.application.routes.draw do
   devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     sessions: "admin/sessions"
   }
-  
+
   #ユーザー側
   scope module: :public do
     root to: "homes#top"
+
+    resources :notes
+    resources :users, only: [:index,:show, :edit, :update]
   end
-  
-  namespace :public do
-    get 'notes/new'
-    get 'notes/index'
-    get 'notes/show'
-    get 'notes/edit'
-  end
-  namespace :public do
-    get 'users/index'
-    get 'users/show'
-    get 'users/edit'
-    get 'users/update'
-  end
-  
+
   #管理者側
   namespace :admin do
-    get 'users/index'
-    get 'users/show'
-    get 'users/edit'
-  end
-  namespace :admin do
-    get 'notes/index'
-    get 'notes/show'
-  end
-  namespace :admin do
-    get 'homes/top'
+    root to: "homes#top"
+
+    resources :users, only: [:index, :show, :edit, :update]
+    resources :notes, only: [:index, :show]
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
