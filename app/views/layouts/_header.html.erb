@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+
+    <!--ログイン済ならば-->
+    <% if user_signed_in? %>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown"><!--ﾄﾞﾛｯﾌﾟﾀﾞｳﾝと上のｺﾗﾌﾟｽ繋がってる-->
+        <ul class="navbar-nav ml-auto"><!--navbarのﾅﾋﾞはmargin,leftがautoになっているつまり右寄せ-->
+          <li><!--投稿一覧へのﾘﾝｸ-->
+            <%= link_to "Notes", notes_path, class:"mr-3" %>
+          </li>
+          <li><!--新規投稿画面へのﾘﾝｸ-->
+            <%= link_to "Notes", new_note_path, class:"mr-3" %>
+          </li>
+          <li><!--自分の画面へのﾘﾝｸ-->
+            <%= link_to "My Note", user_path(current_user.id), class:"mr-3" %>
+          </li>
+          <li><!--ﾛｸﾞｱｳﾄのﾘﾝｸ-->
+            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+          </li>
+          </ul>  
+        </div>
+    <% else %>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown"><!--ﾄﾞﾛｯﾌﾟﾀﾞｳﾝと上のｺﾗﾌﾟｽ繋がってる-->
+        <ul class="navbar-nav ml-auto"><!--navbarのﾅﾋﾞはmargin,leftがautoになっているつまり右寄せ-->
+          <li>
+            <%= link_to "Sign_in", new_user_registration_path, class:"mr-4" %>
+          </li>
+          <li>
+            <%= link_to "Log in", new_user_session_path %>
+          </li>
+    <% end %>
+    </ul>
+  </div>
+</nav>

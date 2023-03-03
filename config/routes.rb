@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   #ユーザー側
   scope module: :public do
     root to: "homes#top"
-
+    
     resources :notes
     resources :users, only: [:index,:show, :edit, :update]
   end
