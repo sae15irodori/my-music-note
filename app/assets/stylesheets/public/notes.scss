@@ -1,3 +1,43 @@
 // Place all the styles related to the public/notes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.note_box2_6 {
+    position: relative;
+    padding: 1.5em 1.5em;
+    margin: 2em 0;
+    background-color: #FCFCCA;/*背景色*/
+    color: #000000;/*文字色*/
+    z-index: 1;
+}
+.note_box2_6::before,
+.note_box2_6::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+.note_box2_6::before {
+    background-color: #FCFCCA;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+.note_box2_6::after {
+    background-color: #D8D4D4;/*ズレている方の背景色*/
+    top: 10px;
+    left: 10px;
+    z-index: -2;
+}
+.note_box2_6 p {
+    margin: 0; 
+    padding: 0;
+}
