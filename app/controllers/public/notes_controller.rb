@@ -5,11 +5,16 @@ class Public::NotesController < ApplicationController
 
   def create
     @note = Note.new(note_params)
-    @note.save
-    redirect_to notes_path
+    if @note.save!
+      flash[:notice] = "Create Note!"
+      redirect_to notes_path
+    else
+      render :new
+    end
   end
 
   def index
+    @notes = Note.all
   end
 
   def show
