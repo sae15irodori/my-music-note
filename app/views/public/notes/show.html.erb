@@ -1,2 +1,17 @@
-<h1>Public::Notes#show</h1>
-<p>Find me in app/views/public/notes/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-12">
+      <%= flash[:notice] %>
+      <h1>Note</h1>
+
+      <div class="note_box2_6">
+        <h2><%= @note.title %></h2>
+        <p><%= @note.body %></p>
+      </div>
+      <%# if @note.user == current_user %><!--ログイン中ユーザーならeditとdestroyﾘﾝｸ-->
+        <%= link_to "編集", edit_note_path(@note.id) %>
+      <%# end %>
+
+    </div>
+  </div>
+</div>
