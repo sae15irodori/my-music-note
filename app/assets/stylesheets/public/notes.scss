@@ -14,7 +14,7 @@
     padding: 1.5em 1.5em;
     margin: 2em 0;
     height: 180%;
-    background-color: #FCFCCA;/*背景色*/
+    background-color: #FFE599;/*背景色*/
     color: #000000;/*文字色*/
     z-index: 1;
 }
@@ -27,7 +27,7 @@
     border-radius: 4px;
 }
 .note_box2_6::before {
-    background-color: #FCFCCA;
+    background-color: #FFE599;
     left: 0;
     top: 0;
     z-index: -1;
@@ -39,6 +39,6 @@
     z-index: -2;
 }
 .note_box2_6 p {
-    margin: 0; 
+    margin: 0;
     padding: 0;
 }

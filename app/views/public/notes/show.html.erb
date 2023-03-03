@@ -10,6 +10,7 @@
       </div>
       <%# if @note.user == current_user %><!--ログイン中ユーザーならeditとdestroyﾘﾝｸ-->
         <%= link_to "編集", edit_note_path(@note.id) %>
+        <%= link_to "削除", note_path(@note.id), method: :delete %>
       <%# end %>
 
     </div>
