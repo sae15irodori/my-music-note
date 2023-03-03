@@ -1,0 +1,11 @@
+<%= form_with model:note do |f| %>
+  <div class="note-form-group">
+    <%= f.label :Title %>
+    <%= f.text_field :title, placeholder: "ノートにタイトルをつけると検索で見つけやすくなります",class: 'form-control mb-4' %>
+  </div>
+  <div class="note-form-group">
+    <%= f.label :Note✍ %>
+    <%= f.text_area :body, placeholder: "ノート本文", class: 'form-control mb-4' %>
+  </div>
+  <%= f.submit "Create!" %>
+<% end %>
