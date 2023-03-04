@@ -3,6 +3,8 @@ class Public::UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @notes = @user.notes
   end
 
   def edit

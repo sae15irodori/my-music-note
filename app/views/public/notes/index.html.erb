@@ -4,15 +4,7 @@
       <%= flash[:notice] %>
       <h1>Notes</h1>
       <p>みんなのノート</p>
-
-
-      <% @notes.each do |note| %>
-      <div class="note_box2_6">
-        <h2><%= link_to note.title,note_path(note.id) %></h2>
-        <p><%= link_to note.body, note_path(note.id) %></p>
-      </div>
-      <% end %>
-
+      <%= render 'index', notes: @notes %>
     </div>
   </div>
 </div>
