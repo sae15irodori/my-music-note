@@ -3,6 +3,12 @@
     <%= f.label :Title %>
     <%= f.text_field :title, placeholder: "ノートにタイトルをつけると検索で見つけやすくなります",class: 'form-control mb-4 w-50' %>
   </div>
+  
+  <div class="note-form-group">
+    <%= f.label :Url %>
+    <P>動画の投稿はYoutubeよりお願いします<%= link_to "https://www.youtube.com/","https://www.youtube.com/",target: "_blank" %></P>
+    <%= f.text_field :url, placeholder: "Youtubeの埋め込みURLを貼ってください",class: 'form-control mb-4 w-50' %>
+  </div>
   <div class="note-form-group">
     <%= f.label :Note✍ , class: 'mr-3'%>
         <!--バリデーションエラー-->

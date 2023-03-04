@@ -9,7 +9,11 @@
 }
 
 /*新規と編集のノート*/
-
+.video{
+  display: block;
+  text-align: center;
+  line-height: 10;
+}
 
 
 
@@ -18,8 +22,7 @@
 .note_box2_6 {
     position: relative;
     padding: 1.5em 3em;
-    margin: 2em 0;
-    height: 100%;
+    margin: 1em 0;
     background-color: #FFE599;/*背景色*/
     color: #000000;/*文字色*/
     z-index: 1;

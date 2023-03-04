@@ -5,6 +5,7 @@ class Public::NotesController < ApplicationController
 
   def create
     @note = Note.new(note_params)
+    @note.user_id = current_user.id
     if @note.save!
       flash[:notice] = "Create Note!"
       redirect_to notes_path
@@ -49,6 +50,6 @@ class Public::NotesController < ApplicationController
   private
 
   def note_params
-    params.require(:note).permit(:title, :body, :image)
+    params.require(:note).permit(:title, :body, :url)
   end
 end

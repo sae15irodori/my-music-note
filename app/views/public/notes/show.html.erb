@@ -8,13 +8,17 @@
 
       <div class="note_box2_6">
         <h2 class="mt-4 mb-5"><%= @note.title %></h2>
+        <p class="video">
+          <% if @note.url.present? %>
+            <iframe width="560" height="315" src="<%= @note.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <% end %>
+        </p>
         <p><%= @note.body %></p>
       </div>
-      <%# if @note.user == current_user %><!--ログイン中ユーザーならeditとdestroyﾘﾝｸ-->
+      <% if @note.user.id == current_user.id %><!--ログイン中ユーザーならeditとdestroyﾘﾝｸ-->
         <%= link_to "編集", edit_note_path(@note.id) %>
         <%= link_to "削除", note_path(@note.id), method: :delete, data: {confirm: 'このノートを消しますか？'} %>
-      <%# end %>
-
+      <% end %>
     </div>
   </div>
 </div>
