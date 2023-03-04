@@ -1,2 +1,10 @@
-<h1>Public::Notes#edit</h1>
-<p>Find me in app/views/public/notes/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 p-5">
+    <h1>Editing Note</h1>
+    <p>ノートの編集</p>
+    
+      <%= render 'form', note: @note %>
+    </div>
+  </div>
+</div>

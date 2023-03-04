@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      note: ノート
+    attributes:
+      note:
+        body: ""

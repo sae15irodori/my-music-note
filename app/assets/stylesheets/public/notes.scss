@@ -8,12 +8,18 @@
   box-sizing: border-box;
 }
 
+/*新規と編集のノート*/
 
+
+
+
+
+/*一覧と詳細のノート*/
 .note_box2_6 {
     position: relative;
-    padding: 1.5em 1.5em;
+    padding: 1.5em 3em;
     margin: 2em 0;
-    height: 180%;
+    height: 100%;
     background-color: #FFE599;/*背景色*/
     color: #000000;/*文字色*/
     z-index: 1;

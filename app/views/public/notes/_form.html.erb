@@ -1,11 +1,18 @@
 <%= form_with model:note do |f| %>
   <div class="note-form-group">
     <%= f.label :Title %>
-    <%= f.text_field :title, placeholder: "ノートにタイトルをつけると検索で見つけやすくなります",class: 'form-control mb-4' %>
+    <%= f.text_field :title, placeholder: "ノートにタイトルをつけると検索で見つけやすくなります",class: 'form-control mb-4 w-50' %>
   </div>
   <div class="note-form-group">
-    <%= f.label :Note✍ %>
+    <%= f.label :Note✍ , class: 'mr-3'%>
+        <!--バリデーションエラー-->
+        <% if @note.errors.any? %>
+          <% @note.errors.full_messages.each do |message| %>
+            <%= message %>
+          <% end %>
+        <% end %>
+        <!--バリデーションエラー-->
     <%= f.text_area :body, placeholder: "ノート本文", class: 'form-control mb-4' %>
   </div>
-  <%= f.submit "Create!" %>
+  <%= f.submit "✍",class: 'btn btn-outline-secondary' %>
 <% end %>
