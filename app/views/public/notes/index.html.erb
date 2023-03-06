@@ -4,7 +4,7 @@
       <%= flash[:notice] %>
       <h1>Notes</h1>
       <p>みんなのノート</p>
-      <%= render 'index', notes: @notes %>
+      <%= render '/public/shared/note_index', notes: @notes %>
     </div>
   </div>
 </div>
