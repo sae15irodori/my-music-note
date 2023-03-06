@@ -3,6 +3,7 @@
   <div class="note_box2_6">
     <h2><%=  note.title %></h2>
     <p><%=  note.body %></p>
+    <p><%= render '/public/favorites/favorites_btn', note: note %></p><!--いいねボタン-->
   </div>
   <% end %>
 <% end %>

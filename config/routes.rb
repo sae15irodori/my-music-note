@@ -23,7 +23,11 @@ Rails.application.routes.draw do
     resources :notes do
       resource :favorites, only: [:create, :destroy]
     end
-    resources :users, only: [:index,:show, :edit, :update]
+    resources :users, only: [:index,:show, :edit, :update] do
+      member do
+        get :favorites
+      end
+    end
   end
 
   #管理者側

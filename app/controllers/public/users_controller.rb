@@ -22,6 +22,13 @@ class Public::UsersController < ApplicationController
     else
       render :edit
     end
+
+    def favorites
+      @user = User.find(params[:id])
+      favorites= Favorite.where(user_id: @user.id).pluck(:note_id)#ﾕｰｻﾞｰがいいねした投稿のidをfavoritesへ格納
+      @favorite_notes = Note.find(favorites)#いいねした投稿のidをNoteモデルから探す
+    end
+
   end
 
   private

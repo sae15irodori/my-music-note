@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>♡Notes</h1>
+      <p>いいねしたノート</p>
+      <% if @favorite_notes.present? %>
+        <% @favorite_notes.each do |note|%>
+        <%= note.title %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
