@@ -1,4 +1,6 @@
 class Public::NotesController < ApplicationController
+  before_action :is_matching_login_user, only: [:edit, :update, :destroy]
+  
   def new
     @note = Note.new
   end
@@ -51,5 +53,12 @@ class Public::NotesController < ApplicationController
 
   def note_params
     params.require(:note).permit(:title, :body, :url)
+  end
+  
+  def is_matching_login_user
+    user_id = params[:id].to_i
+    unless user_id == current_user.id
+      redirect_to notes_path
+    end
   end
 end

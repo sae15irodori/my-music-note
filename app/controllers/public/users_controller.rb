@@ -1,4 +1,6 @@
 class Public::UsersController < ApplicationController
+  before_action :is_matching_login_user, only: [:edit, :update]
+
   def index
   end
 
@@ -20,10 +22,17 @@ class Public::UsersController < ApplicationController
       render :edit
     end
   end
-  
+
   private
 
   def user_params
     params.require(:user).permit(:name, :image, :introduction)
+  end
+
+  def is_matching_login_user
+    user_id = params[:id].to_i
+    unless user_id == current_user.id
+      redirect_to notes_path
+    end
   end
 end
