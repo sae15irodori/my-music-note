@@ -1,24 +1,21 @@
 <%= form_with model:note do |f| %>
-  <div class="note-form-group">
-    <%= f.label :Title %>
-    <%= f.text_field :title, placeholder: "ノートにタイトルをつけると検索で見つけやすくなります",class: 'form-control mb-4 w-50' %>
-  </div>
-  
-  <div class="note-form-group">
-    <%= f.label :Url %>
-    <P>動画の投稿はYoutubeよりお願いします<%= link_to "https://www.youtube.com/","https://www.youtube.com/",target: "_blank" %></P>
-    <%= f.text_field :url, placeholder: "Youtubeの埋め込みURLを貼ってください",class: 'form-control mb-4 w-50' %>
-  </div>
-  <div class="note-form-group">
-    <%= f.label :Note✍ , class: 'mr-3'%>
-        <!--バリデーションエラー-->
-        <% if @note.errors.any? %>
-          <% @note.errors.full_messages.each do |message| %>
-            <%= message %>
-          <% end %>
-        <% end %>
-        <!--バリデーションエラー-->
-    <%= f.text_area :body, placeholder: "ノート本文", class: 'form-control mb-4' %>
-  </div>
+  <label for="inputTitle">タイトル</label>
+  <%= f.text_field :title, autofocus: true, id:"inputTitle",  placeholder: "ノートにタイトルをつけると検索で見つけやすくなります",class: 'form-control mb-4 w-50' %>
+
+
+  <label for="inputUrl">Url</label>
+  <P>動画の投稿はYoutubeよりお願いします<%= link_to "https://www.youtube.com/","https://www.youtube.com/",target: "_blank" %></P>
+  <%= f.text_field :url, autofocus: true, id:"inputUrl", placeholder: "Youtubeの埋め込みURLを貼ってください",class: 'form-control mb-4 w-50' %>
+
+  <label for="inputNote">ノート✍ </label>
+    <!--バリデーションエラー-->
+    <% if @note.errors.any? %>
+      <% @note.errors.full_messages.each do |message| %>
+        <%= message %>
+      <% end %>
+    <% end %>
+    <!--バリデーションエラー-->
+  <%= f.text_area :body, autofocus: true, id:"inputNote", placeholder: "ノート本文", class: 'form-control mb-4' %>
+
   <%= f.submit "✍",class: 'btn btn-outline-secondary' %>
 <% end %>

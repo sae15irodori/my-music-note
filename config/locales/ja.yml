@@ -2,6 +2,9 @@ ja:
   activerecord:
     models:
       note: ノート
+      user: ユーザー
     attributes:
       note:
         body: ""
+      user:
+        name: ""

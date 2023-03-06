@@ -1,2 +1,28 @@
-<h1>Public::Users#edit</h1>
-<p>Find me in app/views/public/users/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 p-5">
+    <h1>Editing User</h1>
+    <p>プロフィール編集</p>
+    <%= form_with model:@user do |f| %>
+      <label for="inputName">名前</label>
+      <!--バリデーションエラー-->
+          <% if @user.errors.any? %>
+            <% @user.errors.full_messages.each do |message| %>
+              <%= message %>
+            <% end %>
+          <% end %>
+          <!--バリデーションエラー-->
+      <%= f.text_field :name, autofocus: true, id:"inputName",  placeholder: "名前",class: 'form-control mb-4 w-50' %>
+
+      <label for="inputImage">アイコン</label>
+      <%= f.file_field :image, placeholder: "アイコン画像", accept: "image/*",class: 'form-control mb-4 w-50' %>
+
+
+      <label for="inputIntroduction">Introduction✍ </label>
+      <%= f.text_area :introduction, autofocus: true, id:"inputNote", placeholder: "あなたの演奏している楽器や趣味を書いてみましょう", class: 'form-control mb-4' %>
+
+      <%= f.submit "✍",class: 'btn btn-outline-secondary' %>
+    <% end %>
+    </div>
+  </div>
+</div>

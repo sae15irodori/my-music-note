@@ -10,15 +10,15 @@ class User < ApplicationRecord
 
  has_one_attached :image
 
-  #def get_image
-    #unless image.attached?
-      #file_path = Rails.root.join('app/assets/images/no-image.jpg')
-      #image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
-    #end
-    #image.variant(resize_to_limit: [100, 100]).processed
-  #end
+  def get_image
+    unless image.attached?
+      file_path = Rails.root.join('app/assets/images/no-image.jpg')
+      image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
+    end
+    image.variant(resize_to_limit: [100, 100]).processed
+  end
 
-
+  validates :name, presence: { message: 'あなたの名前を入力しましょう💭' }
 
   def self.guest#ゲストのレコードを作成するメソッド
     find_or_create_by!(email: 'aaa@aaa.com') do |user|#aaa@aaa.comがなければアドレスを自動生成？userへ格納
