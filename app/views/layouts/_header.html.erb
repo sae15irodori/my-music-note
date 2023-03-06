@@ -11,8 +11,11 @@
           <li><!--新規投稿画面へのﾘﾝｸ-->
             <%= link_to "New Notes", new_note_path, class:"mr-3" %>
           </li>
-          <li><!--自分の画面へのﾘﾝｸ-->
+          <li><!--マイページへのﾘﾝｸ-->
             <%= link_to "My Note", user_path(current_user.id), class:"mr-3" %>
+          </li>
+          <li><!--ﾕｰｻﾞｰ一覧へのﾘﾝｸ-->
+            <%= link_to "Users", users_path, class:"mr-3" %>
           </li>
           <li><!--ﾛｸﾞｱｳﾄのﾘﾝｸ-->
             <%= link_to "Log out", destroy_user_session_path, method: :delete %>
