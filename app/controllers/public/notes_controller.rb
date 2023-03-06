@@ -22,6 +22,8 @@ class Public::NotesController < ApplicationController
 
   def show
     @note = Note.find(params[:id])
+    @note_comment = NoteComment.new
+    @user = @note.user
   end
 
   def edit

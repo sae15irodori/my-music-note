@@ -3,8 +3,11 @@ ja:
     models:
       note: ノート
       user: ユーザー
+      note_comment: コメント
     attributes:
       note:
         body: ""
       user:
         name: ""
+      note_comment:
+        comment: ""

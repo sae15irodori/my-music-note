@@ -18,6 +18,28 @@
         <%= link_to "編集", edit_note_path(@note.id) %>
         <%= link_to "削除", note_path(@note.id), method: :delete, data: {confirm: 'このノートを消しますか？'} %>
       <% end %>
+      <!--コメント欄-->
+      <div class="comment">
+        <p>コメント件数：<%= @note.note_comments.count %></p>
+        <% @note.note_comments.each do |note_comment| %>
+        <div class="comments">
+          <%= link_to (user_path(@user.id)) do %>
+            <%= note_comment.user.name %>
+            <%= image_tag note_comment.user.get_image, class: "rounded-circle" %>
+          <% end %>
+
+          <p><%= note_comment.created_at.strftime('%Y/%m/%d') %></p>
+          <p><%= safe_join(note_comment.comment.split("\n"),tag(:br)) %></p>
+        <% end %>
+        </div>
+      </div>
+      <div class="comment col-12">
+        <%= form_with model: [@note, @note_comment] do |f| %>
+          <%= f.text_area :comment, rows: '4', placeholder: "質問に対する回答＆応援や励ましのコメントしてみましょう！", class: 'form-control mb-4' %>
+          <%= f.submit "✍",class: 'btn btn-outline-secondary'  %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
+
