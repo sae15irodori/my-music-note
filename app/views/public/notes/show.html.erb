@@ -4,8 +4,6 @@
       <h1>Note</h1>
       <%= flash[:notice] %>
 
-
-
       <div class="note_box2_6">
         <h2 class="mt-4 mb-5"><%= @note.title %></h2>
         <p class="video">
@@ -14,6 +12,7 @@
           <% end %>
         </p>
         <p><%= @note.body %></p>
+        <p><%= render '/public/favorites/favorites_btn', note: @note %></p><!--いいねボタン-->
       </div>
       <% if @note.user.id == current_user.id %><!--ログイン中ユーザーならeditとdestroyﾘﾝｸ-->
         <%= link_to "編集", edit_note_path(@note.id) %>
