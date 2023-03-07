@@ -59,7 +59,7 @@ class Public::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
-  before_action :ensure_normal_user, only: %i[update destroy]
+  before_action :ensure_user, only: %i[update destroy]
   
   def ensure_user
     if resource.email == 'guest@gesuto.com'
