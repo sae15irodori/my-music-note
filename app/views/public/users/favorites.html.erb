@@ -5,8 +5,10 @@
       <p>いいねしたノート</p>
       <% if @favorite_notes.present? %>
         <% @favorite_notes.each do |note|%>
-        <%= note.title %>
+        <%= render '/public/shared/note_index', note: note %>
         <% end %>
+      <% else %>
+        <p>いいねしたノートはありません</p>
       <% end %>
     </div>
   </div>

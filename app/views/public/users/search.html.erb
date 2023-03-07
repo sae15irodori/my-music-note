@@ -1,11 +1,21 @@
-<h1>ユーザー検索</h1>
-<%= search_form_for @q, url: search_users_path do |f| %>
-  <%= f.search_field :name_cont, placeholder: "ノート検索" %>
-  <%= f.submit '🔍', class: "btn-sm btn-outline-secondary" %>
-<% end %>
-
-<% @results.each do |user| %>
-  <%= image_tag user.get_image, class: "rounded-circle" %>
-  <%= user.name %>
-  <%= user.introduction%>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>ユーザー検索</h1>
+      <%= search_form_for @q, url: search_users_path do |f| %>
+        <%= f.search_field :name_cont, placeholder: "ノート検索" %>
+        <%= f.submit '🔍', class: "btn-sm btn-outline-secondary" %>
+      <% end %>
+      
+      <%# if @results.present? %>
+        <% @results.each do |user| %>
+          <%= image_tag user.get_image, class: "rounded-circle" %>
+          <%= user.name %>
+          <%= user.introduction%>
+        <% end %>
+      <% else %>
+        一致する結果はありません
+      <% end %>
+    </div>
+  </div>
+</div>

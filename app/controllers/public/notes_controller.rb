@@ -50,12 +50,11 @@ class Public::NotesController < ApplicationController
     else
       render :edit
     end
+  end
     
     def search
       @results = @q.result#set_qメソッドで取得した結果をオブジェクトに変換
     end
-    
-  end
 
 
   private

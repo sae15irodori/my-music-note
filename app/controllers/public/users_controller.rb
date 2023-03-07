@@ -24,6 +24,7 @@ class Public::UsersController < ApplicationController
     else
       render :edit
     end
+  end
 
     def favorites
       @user = User.find(params[:id])
@@ -35,7 +36,6 @@ class Public::UsersController < ApplicationController
       @results = @q.result#set_qメソッドで取得した結果をオブジェクトに変換
     end
 
-  end
 
   private
 
