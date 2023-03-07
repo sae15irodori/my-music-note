@@ -1,5 +1,6 @@
 class Public::UsersController < ApplicationController
-  before_action :is_matching_login_user, only: [:edit, :update]
+  before_action :is_matching_login_user, only: %i[edit update favorite]
+  before_action :guest_check, except: %i[show index]
 
   def index
     @users = User.all
@@ -41,6 +42,12 @@ class Public::UsersController < ApplicationController
     user_id = params[:id].to_i
     unless user_id == current_user.id
       redirect_to notes_path
+    end
+  end
+
+  def guest_check
+    if current_user.email == 'guest@gesuto.com'
+    redirect_to notes_path,notice: "この操作をするには...会員登録をしてみましょう♪"
     end
   end
 end

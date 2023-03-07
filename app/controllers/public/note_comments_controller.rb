@@ -1,4 +1,6 @@
 class Public::NoteCommentsController < ApplicationController
+  before_action :guest_check
+
   def create
     @note = Note.find(params[:note_id])
     comment = current_user.note_comments.new(note_comment_params)
@@ -16,7 +18,7 @@ class Public::NoteCommentsController < ApplicationController
   def destroy
     if NoteComment.find(params[:id]).destroy
       flash[:notice] = "削除しました"
-      redirect_to note_path(params[:note_id])
+      redirect_to request.referer
     end
   end
 
@@ -24,5 +26,11 @@ class Public::NoteCommentsController < ApplicationController
 
   def note_comment_params
     params.require(:note_comment).permit(:comment)
+  end
+
+  def guest_check
+    if current_user.email == 'guest@gesuto.com'
+    redirect_to request.referer,notice: "※コメントをするには...会員登録をしてみましょう♪"
+    end
   end
 end

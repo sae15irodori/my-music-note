@@ -1,6 +1,7 @@
 class Public::NotesController < ApplicationController
-  before_action :is_matching_login_user, only: [:edit, :update, :destroy]
-
+  before_action :is_matching_login_user, only: %i[edit update destroy]
+  before_action :guest_check, except: %i[show index]
+  
   def new
     @note = Note.new
   end
@@ -61,6 +62,12 @@ class Public::NotesController < ApplicationController
     user_id = params[:id].to_i
     unless user_id == current_user.id
       redirect_to notes_path
+    end
+  end
+  
+  def guest_check
+    if current_user.email == 'guest@gesuto.com'
+    redirect_to notes_path,notice: "※投稿をするには✍...会員登録をしてみましょう♪"
     end
   end
 end
