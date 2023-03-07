@@ -22,15 +22,6 @@
           </li>
           </ul>
         </div>
-    <% else %>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown"><!--ﾄﾞﾛｯﾌﾟﾀﾞｳﾝと上のｺﾗﾌﾟｽ繋がってる-->
-        <ul class="navbar-nav ml-auto"><!--navbarのﾅﾋﾞはmargin,leftがautoになっているつまり右寄せ-->
-          <li>
-            <%= link_to "Sign_in", new_user_registration_path, class:"mr-4" %>
-          </li>
-          <li>
-            <%= link_to "Log in", new_user_session_path %>
-          </li>
     <% end %>
     </ul>
   </div>
