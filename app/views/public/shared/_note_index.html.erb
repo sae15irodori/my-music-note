@@ -7,8 +7,8 @@
     <% end %>
     <!--投稿一覧-->
     <%= link_to (note_path(note.id)) do %>
-      <h2><%=  note.title %></h2>
-      <p><%=  note.body %></p>
+      <h2><%= note.title %></h2>
+      <p><%= safe_join(note.body.split("\n"),tag(:br)) %></p>
       <p><%= render '/public/favorites/favorites_btn', note: note %><!--いいねボタン-->
           <span>💬<%= note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
       </p>

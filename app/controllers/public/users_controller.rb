@@ -39,7 +39,7 @@ class Public::UsersController < ApplicationController
   end
 
   def is_matching_login_user
-    user_id = params[:id].to_i
+    user_id = params[:id]
     unless user_id == current_user.id
       redirect_to notes_path
     end

@@ -27,6 +27,6 @@ class User < ApplicationRecord
       user.name = 'ゲストユーザー'                          #nameもnull:falseなのでサンプルという名前を渡す
     end
   end
-  
+
 
 end
