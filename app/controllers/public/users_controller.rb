@@ -1,6 +1,7 @@
 class Public::UsersController < ApplicationController
   before_action :is_matching_login_user, only: %i[edit update favorite]
   before_action :guest_check, except: %i[show index]
+  before_action :set_q, only: [:search, :index]
 
   def index
     @users = User.all
@@ -30,9 +31,17 @@ class Public::UsersController < ApplicationController
       @favorite_notes = Note.find(favorites)#いいねした投稿のidをNoteモデルから探す
     end
 
+    def search
+      @results = @q.result#set_qメソッドで取得した結果をオブジェクトに変換
+    end
+
   end
 
   private
+
+  def set_q
+    @q = User.ransack(params[:q])#Userモデルより入力されたｷｰﾜｰﾄﾞ(q)を探す
+  end
 
   def user_params
     params.require(:user).permit(:name, :image, :introduction)

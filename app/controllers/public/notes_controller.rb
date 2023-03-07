@@ -1,6 +1,7 @@
 class Public::NotesController < ApplicationController
   before_action :is_matching_login_user, only: %i[edit update destroy]
   before_action :guest_check, except: %i[show index]
+  before_action :set_q, only: [:search, :index]
 
   def new
     @note = Note.new
@@ -49,10 +50,19 @@ class Public::NotesController < ApplicationController
     else
       render :edit
     end
+    
+    def search
+      @results = @q.result#set_qメソッドで取得した結果をオブジェクトに変換
+    end
+    
   end
 
 
   private
+  
+  def set_q
+    @q = Note.ransack(params[:q])#Noteモデルより入力されたｷｰﾜｰﾄﾞ(q)を探す
+  end
 
   def note_params
     params.require(:note).permit(:title, :body, :url)

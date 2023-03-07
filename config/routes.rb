@@ -24,10 +24,16 @@ Rails.application.routes.draw do
     resources :notes do
       resources :note_comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]
+      collection do
+        get 'search'
+      end
     end
     resources :users, only: [:index,:show, :edit, :update] do
       member do
         get :favorites
+      end
+      collection do
+        get "search"
       end
     end
   end
