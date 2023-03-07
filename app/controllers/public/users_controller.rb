@@ -1,5 +1,5 @@
 class Public::UsersController < ApplicationController
-  before_action :is_matching_login_user, only: %i[edit update favorite]
+  before_action :is_matching_login_user, only: %i[edit update]
   before_action :guest_check, except: %i[show index]
   before_action :set_q, only: [:search, :index]
 
@@ -27,7 +27,7 @@ class Public::UsersController < ApplicationController
 
     def favorites
       @user = User.find(params[:id])
-      favorites= Favorite.where(user_id: @user.id).pluck(:note_id)#ﾕｰｻﾞｰがいいねした投稿のidをfavoritesへ格納
+      favorites = Favorite.where(user_id: @user.id).pluck(:note_id)#ﾕｰｻﾞｰがいいねした投稿のidをfavoritesへ格納
       @favorite_notes = Note.find(favorites)#いいねした投稿のidをNoteモデルから探す
     end
 
