@@ -5,6 +5,9 @@
       <%= flash[:notice] %>
 
       <div class="note_box2_6">
+        <%= link_to user_path(@user.id) do %>
+          <%= render '/public/shared/user_info', user: @user %>
+        <% end %>
         <h2 class="mt-4 mb-5"><%= @note.title %></h2>
         <p class="video">
           <% if @note.url.present? %>
@@ -12,7 +15,9 @@
           <% end %>
         </p>
         <p><%= @note.body %></p>
-        <p><%= render '/public/favorites/favorites_btn', note: @note %></p><!--いいねボタン-->
+        <p><%= render '/public/favorites/favorites_btn', note: @note %><!--いいねボタン-->
+          <span>💬<%= @note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
+        </p>
       </div>
       <% if @note.user.id == current_user.id %><!--ログイン中ユーザーならeditとdestroyﾘﾝｸ-->
         <%= link_to "編集", edit_note_path(@note.id) %>
@@ -20,16 +25,19 @@
       <% end %>
       <!--コメント欄-->
       <div class="comment">
-        <p>コメント件数：<%= @note.note_comments.count %></p>
+        <p>コメント</p>
         <% @note.note_comments.each do |note_comment| %>
         <div class="comments">
           <%= link_to (user_path(@user.id)) do %>
-            <%= note_comment.user.name %>
             <%= image_tag note_comment.user.get_image, class: "rounded-circle" %>
+            <%= note_comment.user.name %>
           <% end %>
 
-          <p><%= note_comment.created_at.strftime('%Y/%m/%d') %></p>
+          <span><%= note_comment.created_at.strftime('%Y/%m/%d') %></span>
           <p><%= safe_join(note_comment.comment.split("\n"),tag(:br)) %></p>
+          <% if note_comment.user == current_user %>
+            <%= link_to "削除", note_note_comment_path(note_comment.note, note_comment.id), method: :delete %>
+          <% end %>
         <% end %>
         </div>
       </div>

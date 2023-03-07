@@ -1,10 +1,18 @@
 <% notes.each do |note| %>
-  <%= link_to (note_path(note.id)) do %>
   <div class="note_box2_6">
-    <h2><%=  note.title %></h2>
-    <p><%=  note.body %></p>
-    <p><%= render '/public/favorites/favorites_btn', note: note %></p><!--いいねボタン-->
+    <!--投稿ﾕｰｻﾞｰ情報-->
+    <%= link_to user_path(note.user.id) do %>
+      <%= image_tag note.user.get_image, class: "rounded-circle" %>
+      <%= note.user.name %>
+    <% end %>
+    <!--投稿一覧-->
+    <%= link_to (note_path(note.id)) do %>
+      <h2><%=  note.title %></h2>
+      <p><%=  note.body %></p>
+      <p><%= render '/public/favorites/favorites_btn', note: note %><!--いいねボタン-->
+          <span>💬<%= note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
+      </p>
+    <% end %>
   </div>
-  <% end %>
 <% end %>
 

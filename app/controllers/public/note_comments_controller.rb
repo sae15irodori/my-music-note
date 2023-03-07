@@ -14,6 +14,10 @@ class Public::NoteCommentsController < ApplicationController
   end
 
   def destroy
+    if NoteComment.find(params[:id]).destroy
+      flash[:notice] = "削除しました"
+      redirect_to note_path(params[:note_id])
+    end
   end
 
   private
