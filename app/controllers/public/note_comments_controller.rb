@@ -1,4 +1,5 @@
 class Public::NoteCommentsController < ApplicationController
+  before_action :is_matching_login_user, only: %i[destroy]
   before_action :guest_check
 
   def create
@@ -26,6 +27,13 @@ class Public::NoteCommentsController < ApplicationController
 
   def note_comment_params
     params.require(:note_comment).permit(:comment)
+  end
+
+  def is_matching_login_user
+    user_id = params[:id].to_i
+    unless user_id == current_user.id
+      redirect_to request.referer
+    end
   end
 
   def guest_check
