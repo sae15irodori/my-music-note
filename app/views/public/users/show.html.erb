@@ -25,7 +25,9 @@
       <% end %>
 
       <!--ユーザー投稿一覧-->
-       <%= render '/public/shared/note_index', notes: @notes %>
+      <% @notes.each do |note| %>
+        <%= render '/public/shared/note_index', note: note %>
+      <% end %>
     </div>
   </div>
 </div>

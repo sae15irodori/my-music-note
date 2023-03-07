@@ -22,6 +22,20 @@
           </li>
           </ul>
         </div>
+    <% elsif admin_signed_in? %>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <li><!--投稿一覧へのﾘﾝｸ-->
+            <%= link_to "Notes", admin_notes_path, class:"mr-3" %>
+          </li>
+          <li><!--ﾕｰｻﾞｰ一覧へのﾘﾝｸ-->
+            <%= link_to "Users", admin_users_path, class:"mr-3" %>
+          </li>
+          <li><!--ﾛｸﾞｱｳﾄのﾘﾝｸ-->
+            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+          </li>
+        </ul>
+      </div>
     <% end %>
     </ul>
   </div>
