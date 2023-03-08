@@ -6,12 +6,10 @@
       <%= flash[:notice] %>
 
         <!--ユーザー情報-->
-          <%= link_to edit_admin_user_path(@user.id) do %>
+          <%#= link_to edit_admin_user_path(@user.id) do %>
             <%= render '/public/shared/user_info', user: @user %>
             <%= @user.introduction %>
-          <% end %>
-
-
+          <%# end %>
 
       <!--ユーザー投稿一覧-->
       <% @notes.each do |note| %>
