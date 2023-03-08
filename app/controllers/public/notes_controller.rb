@@ -55,6 +55,9 @@ class Public::NotesController < ApplicationController
   def search
     @results = @q.result#set_qメソッドで取得した結果をオブジェクトに変換
   end
+  
+  def tos
+  end
 
 
   private

@@ -3,7 +3,10 @@
   <%= f.text_field :title, autofocus: true, id:"inputTitle",  placeholder: "ノートにタイトルをつけると検索で見つけやすくなります",class: 'form-control mb-4 w-50' %>
 
 
-  <label for="inputUrl">Url</label>
+  <label for="inputUrl">動画🎬</label>
+  <p>※投稿可能な動画について：↓以下の利用規約をよく読み、違反とならないよう十分に注意してください<br>
+    　　<%= link_to "利用規約：著作権等の侵害を防ぐ為に必ずご確認ください🖱", tos_notes_path %>
+  </p>
   <P>動画の投稿はYoutubeよりお願いします<%= link_to "https://www.youtube.com/","https://www.youtube.com/",target: "_blank" %></P>
   <%= f.text_field :url, autofocus: true, id:"inputUrl", placeholder: "Youtubeの埋め込みURLを貼ってください",class: 'form-control mb-4 w-50' %>
 
@@ -15,7 +18,7 @@
       <% end %>
     <% end %>
     <!--バリデーションエラー-->
-  <%= f.text_area :body, autofocus: true, id:"inputNote", placeholder: "ノート本文", class: 'form-control mb-4' %>
+  <%= f.text_area :body, rows: '5', autofocus: true, id:"inputNote", placeholder: "ノート本文", class: 'form-control mb-4' %>
 
   <%= f.submit "✍",class: 'btn btn-outline-secondary' %>
 <% end %>

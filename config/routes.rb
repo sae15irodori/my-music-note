@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     passwords: "public/passwords"
   }
   devise_scope :user do
-    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'#ゲストログイン用
+    post "users/guest_sign_in", to: "users/sessions#guest_sign_in"#ゲストログイン用
   end
 
   # 管理者用devise
@@ -25,7 +25,8 @@ Rails.application.routes.draw do
       resources :note_comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]
       collection do
-        get 'search'
+        get "search"
+        get "tos"
       end
     end
     resources :users, only: [:index,:show, :edit, :update] do
@@ -46,18 +47,18 @@ Rails.application.routes.draw do
 
     resources :users, only: [:index, :show] do
       collection do
-        get 'search'
+        get "search"
       end
     get "/users/:id/unsubscribe" => "users#unsubscribe", as: "unsubscribe"#退会確認画面
     patch "/users/:id/withdrawal" => "users#withdrawal", as: "withdrawal"#ｱｶｳﾝﾄの論理削除用
     end
     resources :notes, only: [:index, :show, :destroy] do
       collection do
-        get 'search'
+        get "search"
       end
       resources :note_comments, only: [:create, :destroy, :index] do
         collection do
-          get 'search'
+          get "search"
         end
       end
     end
