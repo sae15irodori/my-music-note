@@ -23,6 +23,8 @@
 
       <%= f.submit "✍",class: 'btn btn-outline-secondary' %>
     <% end %>
+    
+    <%= link_to "退会する", unsubscribe_path(@user.id),class: 'btn btn-outline-secondary'  %>
     </div>
   </div>
 </div>

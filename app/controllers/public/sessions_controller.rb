@@ -37,11 +37,11 @@ class Public::SessionsController < Devise::SessionsController
 
   protected
 
-  def user_state#ｱｶｳﾝﾄ削除しているか確認するﾒｿｯﾄﾞ
+  def user_state#退会しているか確認するﾒｿｯﾄﾞ
     @user = User.find_by(email: params[:user][:email])#入力されたｱﾄﾞﾚｽを基にｱｶｳﾝﾄを取得
     return if !@user#ｱｶｳﾝﾄ存在しない場合このﾒｿｯﾄﾞ終了
       if @user.valid_password?(params[:user][:password]) && @user.is_deleted
-        flash[:notice] = "⚠このアカウントは削除済です。"
+        flash[:notice] = "※こちらのアカウントは退会済となっております。ご利用いただくには。o○ トップ画面へ戻りユーザーの新規登録をお願いします"
         redirect_to new_user_session_path
       end
   end

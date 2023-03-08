@@ -36,6 +36,8 @@ Rails.application.routes.draw do
         get "search"
       end
     end
+    get "/users/:id/unsubscribe" => "users#unsubscribe", as: "unsubscribe"#退会確認画面
+    patch "/users/:id/withdrawal" => "users#withdrawal", as: "withdrawal"#ｱｶｳﾝﾄの論理削除用
   end
 
   #管理者側

@@ -1,7 +1,7 @@
 class Public::UsersController < ApplicationController
   before_action :is_matching_login_user, only: %i[edit update]
   before_action :guest_check, except: %i[show index]
-  before_action :set_q, only: [:search, :index]
+  before_action :set_q, only: %i[search index]
 
   def index
     @users = User.all
@@ -36,6 +36,15 @@ class Public::UsersController < ApplicationController
       @results = @q.result#set_qメソッドで取得した結果をオブジェクトに変換
     end
 
+    def withdrawal
+      @user = User.find(params[:id])
+      # is_deletedカラムをtrueに変更することにより削除フラグを立てる
+      @user.update(is_deleted: true)
+      reset_session
+      flash[:notice] = "退会処理が完了しました"
+      redirect_to root_path
+    end
+
 
   private
 
@@ -48,8 +57,8 @@ class Public::UsersController < ApplicationController
   end
 
   def is_matching_login_user
-    user_id = params[:id]
-    unless user_id == current_user.id
+    user = User.find(params[:id])
+    unless user.id == current_user.id
       redirect_to notes_path
     end
   end
