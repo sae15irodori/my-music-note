@@ -6,14 +6,14 @@
         <%= f.search_field :comment_cont, placeholder: "コメント検索" %>
         <%= f.submit '🔍', class: "btn-sm btn-outline-secondary" %>
       <% end %>
-      
-      <% @comments.each do |comment| %>
-        <%= link_to admin_user_path(comment.user.id) do %>
-          <%= render '/public/shared/user_info', user: comment.user %>
+
+        <% @comments.each do |comment| %>
+          <%= link_to admin_user_path(comment.user.id) do %>
+            <%= render '/public/shared/user_info', user: comment.user %>
+          <% end %>
+          <%= link_to comment.comment, admin_note_path(comment.note.id) %>
+          <%= link_to "削除", admin_note_note_comment_path(comment.note, comment.id), method: :delete, data: {confirm: 'このコメントを管理者として消しますか？'} %>
         <% end %>
-        <%= link_to comment.comment, admin_note_path(comment.note.id) %>
-        <%= link_to "削除", admin_note_note_comment_path(comment.note, comment.id), method: :delete, data: {confirm: 'このコメントを管理者として消しますか？'} %>
-      <% end %>
     </div>
   </div>
 </div>

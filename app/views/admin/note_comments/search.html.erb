@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h1>ノート検索</h1>
+      <h1>コメント検索</h1>
       <%= search_form_for @q, url: search_admin_notes_path do |f| %>
-        <%= f.search_field :comment_cont, placeholder: "ノート検索" %>
+        <%= f.search_field :comment_cont, placeholder: "コメント検索" %>
         <%= f.submit '🔍', class: "btn-sm btn-outline-secondary" %>
       <% end %>
 
