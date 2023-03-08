@@ -1,4 +1,6 @@
 class Admin::NoteCommentsController < ApplicationController
+  before_action :set_q, only: [:search, :index]
+
   def create
     @note = Note.find(params[:note_id])
     comment = current_user.note_comments.new(note_comment_params)
@@ -20,7 +22,20 @@ class Admin::NoteCommentsController < ApplicationController
     end
   end
 
+  def index
+    @comments = NoteComment.all
+  end
+
+  def search
+    @results = @q.result#set_qメソッドで取得した結果をオブジェクトに変換
+  end
+
   private
+
+  def set_q
+    @q = NoteComment.ransack(params[:q])#Noteモデルより入力されたｷｰﾜｰﾄﾞ(q)を探す
+  end
+
   def note_comment_params
     params.require(:note_comment).permit(:comment)
   end

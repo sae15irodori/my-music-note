@@ -28,6 +28,9 @@
           <li><!--投稿一覧へのﾘﾝｸ-->
             <%= link_to "Notes", admin_notes_path, class:"mr-3" %>
           </li>
+          <li><!--ｺﾒﾝﾄｰ一覧へのﾘﾝｸ-->
+            <%= link_to "Comments", admin_note_note_comments_path(:note_id), class:"mr-3" %>
+          </li>
           <li><!--ﾕｰｻﾞｰ一覧へのﾘﾝｸ-->
             <%= link_to "Users", admin_users_path, class:"mr-3" %>
           </li>

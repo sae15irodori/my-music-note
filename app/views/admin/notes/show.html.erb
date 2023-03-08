@@ -20,7 +20,6 @@
         </p>
       </div>
       <div>
-        <%= link_to "編集", edit_admin_note_path(@note.id) %>
         <%= link_to "削除", admin_note_path(@note.id), method: :delete, data: {confirm: 'このノートを管理者として消しますか？'} %>
       </div>
       <!--コメント欄-->
@@ -35,9 +34,9 @@
 
           <span><%= note_comment.created_at.strftime('%Y/%m/%d') %></span>
           <p><%= safe_join(note_comment.comment.split("\n"),tag(:br)) %></p>
-          
+
             <%= link_to "削除", admin_note_note_comment_path(note_comment.note, note_comment.id), method: :delete, data: {confirm: 'このコメントを管理者として消しますか？'} %>
-          
+
         <% end %>
         </div>
       </div>

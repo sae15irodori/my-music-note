@@ -11,10 +11,6 @@ class Admin::UsersController < ApplicationController
     @notes = @user.notes
   end
 
-  def edit
-    @user = User.find(params[:id])
-  end
-
   def search
     @results = @q.result#set_qメソッドで取得した結果をオブジェクトに変換
   end

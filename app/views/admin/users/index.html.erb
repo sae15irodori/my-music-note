@@ -1,16 +1,15 @@
-<%= search_form_for @q, url: search_admin_users_path do |f| %>
-  <%= f.search_field :name_cont, placeholder: "ユーザー検索" %>
-  <%= f.submit '🔍', class: "btn-sm btn-outline-secondary" %>
-<% end %>
-
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-12">
       <%= flash[:notice] %>
       <h1>Users</h1>
       <p>みんなのプロフィール</p>
-      <% @users.each do |user| %>
+      <%= search_form_for @q, url: search_admin_users_path do |f| %>
+        <%= f.search_field :name_cont, placeholder: "ユーザー検索" %>
+        <%= f.submit '🔍', class: "btn-sm btn-outline-secondary" %>
+      <% end %>
 
+      <% @users.each do |user| %>
           <%= link_to (admin_user_path(user.id)) do %>
           <div class="note_box2_6">
             <%= render '/public/shared/user_info', user: user %>

@@ -44,17 +44,21 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "homes#top"
 
-    resources :users, only: [:index, :show, :edit, :update] do
+    resources :users, only: [:index, :show] do
       collection do
         get 'search'
       end
     get "/users/:id/unsubscribe" => "users#unsubscribe", as: "unsubscribe"#退会確認画面
     patch "/users/:id/withdrawal" => "users#withdrawal", as: "withdrawal"#ｱｶｳﾝﾄの論理削除用
     end
-    resources :notes, only: [:index, :show, :edit, :destroy] do
-      resources :note_comments, only: [:create, :destroy]
+    resources :notes, only: [:index, :show, :destroy] do
       collection do
         get 'search'
+      end
+      resources :note_comments, only: [:create, :destroy, :index] do
+        collection do
+          get 'search'
+        end
       end
     end
   end

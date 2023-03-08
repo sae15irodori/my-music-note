@@ -9,11 +9,7 @@ class Admin::NotesController < ApplicationController
     @note_comment = NoteComment.new
     @user = @note.user
   end
-
-  def edit
-    @note = Note.find(params[:id])
-  end
-
+  
   def destroy
     @note = Note.find(params[:id])
     if @note.destroy
