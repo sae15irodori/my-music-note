@@ -9,20 +9,28 @@ class Admin::NotesController < ApplicationController
     @note_comment = NoteComment.new
     @user = @note.user
   end
-  
+
   def edit
     @note = Note.find(params[:id])
   end
-  
+
+  def destroy
+    @note = Note.find(params[:id])
+    if @note.destroy
+      flash[:notice] = "ノートを消しました"
+      redirect_to admin_notes_path
+    end
+  end
+
   def search
     @results = @q.result#set_qメソッドで取得した結果をオブジェクトに変換
   end
-  
+
   private
-  
+
   def set_q
     @q = Note.ransack(params[:q])#Noteモデルより入力されたｷｰﾜｰﾄﾞ(q)を探す
   end
-  
-  
+
+
 end
