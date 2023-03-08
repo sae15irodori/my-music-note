@@ -42,7 +42,11 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "homes#top"
 
-    resources :users, only: [:index, :show, :edit, :update]
+    resources :users, only: [:index, :show, :edit, :update] do
+      collection do
+        get 'search'
+      end
+    end
     resources :notes, only: [:index, :show, :edit, :destroy] do
       resources :note_comments, only: [:create, :destroy]
       collection do
