@@ -41,7 +41,7 @@ class Public::SessionsController < Devise::SessionsController
     @user = User.find_by(email: params[:user][:email])#入力されたｱﾄﾞﾚｽを基にｱｶｳﾝﾄを取得
     return if !@user#ｱｶｳﾝﾄ存在しない場合このﾒｿｯﾄﾞ終了
       if @user.valid_password?(params[:user][:password]) && @user.is_deleted
-        flash[:notice] = "※こちらのアカウントは退会済となっております。ご利用いただくには。o○ トップ画面へ戻りユーザーの新規登録をお願いします"
+        flash[:notice] = "※こちらのアカウントは退会済となっております。ご利用いただくには。o○ トップ画面へ戻りユーザーの新規登録をお願いします心当りがない場合、利用規約の違反によりアカウント停止となった可能性があります"
         redirect_to new_user_session_path
       end
   end
