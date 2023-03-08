@@ -43,7 +43,12 @@ Rails.application.routes.draw do
     root to: "homes#top"
 
     resources :users, only: [:index, :show, :edit, :update]
-    resources :notes, only: [:index, :show]
+    resources :notes, only: [:index, :show, :edit, :destroy] do
+      resources :note_comments, only: [:create, :destroy]
+      collection do
+        get 'search'
+      end
+    end
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

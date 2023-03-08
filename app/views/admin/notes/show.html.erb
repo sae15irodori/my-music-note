@@ -1,2 +1,52 @@
-<h1>Admin::Notes#show</h1>
-<p>Find me in app/views/admin/notes/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-12">
+      <h1>Note</h1>
+      <%= flash[:notice] %>
+
+      <div class="note_box2_6">
+        <%= link_to admin_user_path(@user.id) do %>
+          <%= render '/public/shared/user_info', user: @user %>
+        <% end %>
+        <h2 class="mt-4 mb-5"><%= @note.title %></h2>
+        <p class="video">
+          <% if @note.url.present? %>
+            <iframe width="560" height="315" src="<%= @note.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <% end %>
+        </p>
+        <p><%= @note.body %></p>
+        <p>♥<%= @note.favorites.count %><!--いいね数-->
+          <span>💬<%= @note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
+        </p>
+      </div>
+      <div>
+        <%= link_to "編集", edit_admin_note_path(@note.id) %>
+        <%= link_to "削除", admin_note_path(@note.id), method: :delete, data: {confirm: 'このノートを管理者として消しますか？'} %>
+      </div>
+      <!--コメント欄-->
+      <div class="comment">
+        <p>コメント</p>
+        <% @note.note_comments.each do |note_comment| %>
+        <div class="comments">
+          <%= link_to (admin_user_path(@user.id)) do %>
+            <%= image_tag note_comment.user.get_image, class: "rounded-circle" %>
+            <%= note_comment.user.name %>
+          <% end %>
+
+          <span><%= note_comment.created_at.strftime('%Y/%m/%d') %></span>
+          <p><%= safe_join(note_comment.comment.split("\n"),tag(:br)) %></p>
+          
+            <%= link_to "削除", admin_note_note_comment_path(note_comment.note, note_comment.id), method: :delete, data: {confirm: 'このコメントを管理者として消しますか？'} %>
+          
+        <% end %>
+        </div>
+      </div>
+      <div class="comment col-12">
+        <%= form_with model: [@note, @note_comment] do |f| %>
+          <%= f.text_area :comment, rows: '4', placeholder: "質問に対する回答＆応援や励ましのコメントしてみましょう！", class: 'form-control mb-4' %>
+          <%= f.submit "✍",class: 'btn btn-outline-secondary'  %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

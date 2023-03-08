@@ -19,7 +19,7 @@ class Public::NotesController < ApplicationController
   end
 
   def index
-    @notes = Note.all
+    @notes = Note.all.order(created_at: :desc)
   end
 
   def show
@@ -51,14 +51,14 @@ class Public::NotesController < ApplicationController
       render :edit
     end
   end
-    
-    def search
-      @results = @q.result#set_qメソッドで取得した結果をオブジェクトに変換
-    end
+
+  def search
+    @results = @q.result#set_qメソッドで取得した結果をオブジェクトに変換
+  end
 
 
   private
-  
+
   def set_q
     @q = Note.ransack(params[:q])#Noteモデルより入力されたｷｰﾜｰﾄﾞ(q)を探す
   end

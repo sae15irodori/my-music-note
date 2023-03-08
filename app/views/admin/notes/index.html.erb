@@ -1,2 +1,18 @@
-<h1>Admin::Notes#index</h1>
-<p>Find me in app/views/admin/notes/index.html.erb</p>
+<%= search_form_for @q, url: search_admin_notes_path do |f| %>
+  <%= f.search_field :title_or_body_cont, placeholder: "ノート検索" %>
+  <%= f.submit '🔍', class: "btn-sm btn-outline-secondary" %>
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-12">
+      <%= flash[:notice] %>
+      <h1>Notes</h1>
+      <p>みんなのノート</p>
+      <% @notes.each do |note| %>
+      <%= render '/admin/shared/note_index', note: note %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

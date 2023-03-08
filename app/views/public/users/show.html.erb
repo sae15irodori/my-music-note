@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="row">
     <div class="col-12">
@@ -9,7 +8,7 @@
       <%= flash[:notice] %>
 
         <!--ユーザー情報-->
-        <% if @user.id == current_user.id %><!--ﾛｸﾞｲﾝ中ﾕｰｻﾞｰならuser/editへのﾘﾝｸ-->
+        <% if @user.id == current_user.id %><!--ﾕｰｻﾞｰがﾛｸﾞｲﾝ中ﾕｰｻﾞｰならuser/editへのﾘﾝｸ-->
           <%= link_to edit_user_path(@user.id) do %>
             <%= render '/public/shared/user_info', user: @user %>
             <%= @user.introduction %>
@@ -19,7 +18,7 @@
           <%= @user.introduction %>
         <% end %>
 
-        <!--ﾛｸﾞｲﾝ中ならﾕｰｻﾞｰのいいねした投稿一覧へのﾘﾝｸ-->
+        <!--ﾕｰｻﾞｰがﾛｸﾞｲﾝ中ならﾕｰｻﾞｰのいいねした投稿一覧へのﾘﾝｸ-->
       <% if @user.id == current_user.id %>
         <%= link_to "♥一覧", favorites_user_path(@user.id) %>
       <% end %>
