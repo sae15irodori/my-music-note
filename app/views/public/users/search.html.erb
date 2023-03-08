@@ -9,9 +9,12 @@
 
       <% if @results.present? %>
         <% @results.each do |user| %>
-          <%= image_tag user.get_image, class: "rounded-circle" %>
-          <%= user.name %>
-          <%= user.introduction%>
+          <%= link_to (admin_user_path(user.id)) do %>
+            <div class="note_box2_6">
+              <%= render '/public/shared/user_info', user: user %>
+              <%= user.introduction %>
+            </div>
+          <% end %>
         <% end %>
       <% else %>
         一致する結果はありません
