@@ -48,6 +48,8 @@ Rails.application.routes.draw do
       collection do
         get 'search'
       end
+    get "/users/:id/unsubscribe" => "users#unsubscribe", as: "unsubscribe"#退会確認画面
+    patch "/users/:id/withdrawal" => "users#withdrawal", as: "withdrawal"#ｱｶｳﾝﾄの論理削除用
     end
     resources :notes, only: [:index, :show, :edit, :destroy] do
       resources :note_comments, only: [:create, :destroy]

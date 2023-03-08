@@ -28,7 +28,7 @@ class User < ApplicationRecord
     end
   end
 
-  def active_for_authentication?#退会している場合ﾛｸﾞｲﾝさせない
+  def active_for_authentication?#退会している場合ﾛｸﾞｲﾝさせないﾒｿｯﾄﾞ
     super && (is_deleted == false)
   end
 

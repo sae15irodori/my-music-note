@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-12">
+      <% if @user.is_deleted == true %>
+        <h1>※このユーザーは既に退会していますが<br />
+            　再度利用停止が必要ですか？</h1>
+      <% else %>
+        <h1>※このユーザーを利用停止しますか？</h1>
+      <% end %>
+      <h2>注意事項</h2>
+       <ul>
+          <li>停止手続き前に利用規約をよく読み、規約違反に該当するか再確認してください</li>
+          <li>ユーザーにて退会済or管理者にて利用停止済の場合でも、管理者にて再度利用停止可能となっています<br>
+              何らかの理由で、アカウントが意図せずに復活した場合、再度利用停止できるようにする為です
+          </li>
+          <li>特に停止する理由がない場合は、必ず「停止せずに戻る」ボタンをクリックしてください</li>
+       </ul>
+       <h3>利用停止しますか？</h3>
+        <%= link_to "停止する", admin_user_withdrawal_path, method: :patch, data: { confilm: "本当に退会しますか？" },class: 'btn btn-outline-secondary' %>
+        <%= link_to "停止せずに戻る", admin_user_path(@user.id),class: 'btn btn-outline-secondary' %>
+    </div>
+  </div>
+</div>
