@@ -1,6 +1,6 @@
 class Public::UsersController < ApplicationController
   before_action :is_matching_login_user, only: %i[edit update]
-  before_action :guest_check, except: %i[show index]
+  before_action :guest_check, except: %i[index]
   before_action :set_q, only: %i[search index]
 
   def index
