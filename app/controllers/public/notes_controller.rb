@@ -82,7 +82,7 @@ class Public::NotesController < ApplicationController
 
   def guest_check
     if current_user.email == 'guest@gesuto.com'
-    redirect_to notes_path,notice: "※投稿をするには✍...会員登録をしてみましょう♪"
+    redirect_to notes_path,notice: "※この操作をには✍...会員登録をしてみましょう♪"
     end
   end
 end
