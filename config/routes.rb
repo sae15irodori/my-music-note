@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       collection do
         get "search"
         get "tos"
+        get "manual"
       end
     end
     resources :users, only: [:index,:show, :edit, :update] do

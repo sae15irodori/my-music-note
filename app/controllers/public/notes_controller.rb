@@ -58,6 +58,9 @@ class Public::NotesController < ApplicationController
   
   def tos
   end
+  
+  def manual
+  end
 
 
   private

@@ -1,14 +1,13 @@
+<div class="col-7 form">
 <%= form_with model:note do |f| %>
   <label for="inputTitle">タイトル</label>
-  <%= f.text_field :title, autofocus: true, id:"inputTitle",  placeholder: "ノートにタイトルをつけると検索で見つけやすくなります",class: 'form-control mb-4 w-50' %>
+  <%= f.text_field :title, autofocus: true, id:"inputTitle",  placeholder: "ノートにタイトルをつけると検索で見つけやすくなります",class: 'form-control mb-4' %>
 
+  <label for="inputImage">画像</label>
+  <%= f.file_field :image, accept: "image/*",autofocus: true, id:"inputImage",class: 'form-control mb-4 w-50' %>
 
-  <label for="inputUrl">動画🎬</label>
-  <p>※投稿可能な動画について：↓以下の利用規約をよく読み、違反とならないよう十分に注意してください<br>
-    　　<%= link_to "利用規約：著作権等の侵害を防ぐ為に必ずご確認ください🖱", tos_notes_path %>
-  </p>
-  <P>動画の投稿はYoutubeよりお願いします<%= link_to "https://www.youtube.com/","https://www.youtube.com/",target: "_blank" %></P>
-  <%= f.text_field :url, autofocus: true, id:"inputUrl", placeholder: "Youtubeの埋め込みURLを貼ってください",class: 'form-control mb-4 w-50' %>
+  <label for="inputUrl">動画🎬　動画の投稿はYoutubeよりお願いします→<%= link_to "https://www.youtube.com/","https://www.youtube.com/",target: "_blank" %></label>
+  <%= f.text_field :url, autofocus: true, id:"inputUrl", placeholder: "Youtubeの埋め込みURLを貼ってください",class: 'form-control mb-4' %>
 
   <label for="inputNote">ノート✍ </label>
     <!--バリデーションエラー-->
@@ -22,3 +21,11 @@
 
   <%= f.submit "✍",class: 'btn btn-outline-secondary' %>
 <% end %>
+</div>
+<div class="col-5">
+  <p>※投稿可能な画像及び動画について<br>
+      ↓以下の利用規約をよく読み、違反とならないよう注意してください<br>
+      <%= link_to "利用規約:著作権等の侵害を防ぐ為に必ずご確認ください🖱", tos_notes_path %>
+  </p>
+  <%= link_to "動画投稿ガイド", manual_notes_path %>
+</div>
