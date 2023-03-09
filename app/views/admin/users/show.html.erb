@@ -7,11 +7,10 @@
             <% end %>
         </h1>
 
-
       <%= flash[:notice] %>
 
       <!--ユーザー情報-->
-      <%= render '/public/shared/user_info', user: @user %>
+      <%= render '/layouts/user_info', user: @user %>
       <%= @user.introduction %>
       <%= link_to "※利用停止", admin_user_unsubscribe_path(@user.id),class: 'btn btn-outline-secondary'  %>
 

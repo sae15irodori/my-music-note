@@ -10,11 +10,11 @@
         <!--ユーザー情報-->
         <% if @user.id == current_user.id %><!--ﾕｰｻﾞｰがﾛｸﾞｲﾝ中ﾕｰｻﾞｰならuser/editへのﾘﾝｸ-->
           <%= link_to edit_user_path(@user.id) do %>
-            <%= render '/public/shared/user_info', user: @user %>
+            <%= render '/layouts/user_info', user: @user %>
             <%= @user.introduction %>
           <% end %>
         <% else %>
-          <%= render '/public/shared/user_info', user: @user %>
+          <%= render '/layouts/user_info', user: @user %>
           <%= @user.introduction %>
         <% end %>
 

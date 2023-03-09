@@ -70,7 +70,7 @@ class Public::NotesController < ApplicationController
   end
 
   def note_params
-    params.require(:note).permit(:title, :body, :url, :tag_id)
+    params.require(:note).permit(:title, :body, :url, :image, :tag_id)
   end
 
   def is_matching_login_user

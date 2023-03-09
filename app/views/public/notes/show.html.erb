@@ -5,19 +5,19 @@
       <%= flash[:notice] %>
 
       <div class="note_box2_6">
+        <!--ユーザー情報-->
         <%= link_to user_path(@user.id) do %>
-          <%= render '/public/shared/user_info', user: @user %>
+          <%= render '/layouts/user_info', user: @user %>
         <% end %>
-        <h2 class="mt-4 mb-5"><%= @note.title %></h2>
-        <p class="video">
-          <% if @note.url.present? %>
-            <iframe width="560" height="315" src="<%= @note.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          <% end %>
-        </p>
-        <p><%= @note.body %></p>
-        <p><%= render '/public/favorites/favorites_btn', note: @note %><!--いいねボタン-->
+
+        <!--投稿内容-->
+        <%= render '/layouts/note_contents', note: @note %>
+
+        <!--いいねボタン-->
+        <p><%= render '/public/favorites/favorites_btn', note: @note %>
           <span>💬<%= @note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
         </p>
+
       </div>
       <% if @note.user.id == current_user.id %><!--ログイン中ユーザーならeditとdestroyﾘﾝｸ-->
         <%= link_to "編集", edit_note_path(@note.id) %>

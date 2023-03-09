@@ -4,6 +4,8 @@ class Note < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :note_comments, dependent: :destroy
 
+  has_one_attached :image
+
   validates :body, presence: { message: '何か書いてみましょう💭' }
 
   def favorited_by?(user)#favoritesﾃｰﾌﾞﾙにuser.idが存在するか判定するﾒｿｯﾄﾞ

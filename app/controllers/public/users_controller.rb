@@ -4,12 +4,12 @@ class Public::UsersController < ApplicationController
   before_action :set_q, only: %i[search index]
 
   def index
-    @users = User.all
+    @users = User.all.order(created_at: :desc)
   end
 
   def show
     @user = User.find(params[:id])
-    @notes = @user.notes
+    @notes = @user.notes.order(created_at: :desc)
   end
 
   def edit

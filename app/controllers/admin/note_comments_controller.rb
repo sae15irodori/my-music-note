@@ -23,7 +23,7 @@ class Admin::NoteCommentsController < ApplicationController
   end
 
   def index
-    @comments = NoteComment.all
+    @comments = NoteComment.all.order(created_at: :desc)
   end
 
   def search
