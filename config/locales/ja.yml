@@ -4,7 +4,6 @@ ja:
       note: ノート
       user: ユーザー
       note_comment: コメント
-      tag: タグ
     attributes:
       note:
         body: ""
@@ -12,5 +11,3 @@ ja:
         name: ""
       note_comment:
         comment: ""
-      tag:
-        name: ""

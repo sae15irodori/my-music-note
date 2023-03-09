@@ -1,26 +1,34 @@
 <div class="col-7 form">
-<%= form_with model:note do |f| %>
-  <label for="inputTitle">タイトル</label>
-  <%= f.text_field :title, autofocus: true, id:"inputTitle",  placeholder: "ノートにタイトルをつけると検索で見つけやすくなります",class: 'form-control mb-4' %>
+  <%= form_with model:note do |f| %>
+    <div class="form-group">
+      <label for="inputTitle">タイトル</label>
+      <%= f.text_field :title, autofocus: true, id:"inputTitle",  placeholder: "ノートにタイトルをつけると検索で見つけやすくなります",class: 'form-control mb-4' %>
+    </div>
 
-  <label for="inputImage">画像</label>
-  <%= f.file_field :image, accept: "image/*",autofocus: true, id:"inputImage",class: 'form-control mb-4 w-50' %>
 
-  <label for="inputUrl">動画🎬　動画の投稿はYoutubeよりお願いします→<%= link_to "https://www.youtube.com/","https://www.youtube.com/",target: "_blank" %></label>
-  <%= f.text_field :url, autofocus: true, id:"inputUrl", placeholder: "Youtubeの埋め込みURLを貼ってください",class: 'form-control mb-4' %>
+    <div class="form-group">
+      <label for="inputImage">画像</label>
+      <%= f.file_field :image, accept: "image/*",autofocus: true, id:"inputImage",class: 'form-control mb-4 w-50' %>
+    </div>
 
-  <label for="inputNote">ノート✍ </label>
-    <!--バリデーションエラー-->
-    <% if @note.errors.any? %>
-      <% @note.errors.full_messages.each do |message| %>
-        <%= message %>
-      <% end %>
-    <% end %>
-    <!--バリデーションエラー-->
-  <%= f.text_area :body, rows: '5', autofocus: true, id:"inputNote", placeholder: "ノート本文", class: 'form-control mb-4' %>
+    <div class="form-group">
+      <label for="inputUrl">動画🎬　動画の投稿はYoutubeよりお願いします→<%= link_to "https://www.youtube.com/","https://www.youtube.com/",target: "_blank" %></label>
+      <%= f.text_field :url, autofocus: true, id:"inputUrl", placeholder: "Youtubeの埋め込みURLを貼ってください",class: 'form-control mb-4' %>
+    </div>
 
-  <%= f.submit "✍",class: 'btn btn-outline-secondary' %>
-<% end %>
+    <div class="form-group">
+      <label for="inputNote">ノート✍ </label>
+          <!--バリデーションエラー-->
+          <%= render '/layouts/validates', validates: @note %>
+      <%= f.text_area :body, rows: '5', autofocus: true, id:"inputNote", placeholder: "ノート本文", class: 'form-control mb-4' %>
+    </div>
+
+    <div class="form-group">
+      <label for="inputTag">タグ</label>
+      <%= f.select :tag_id, options_from_collection_for_select( Tag.all, :id, :name), include_blank: true, class: 'form-control mb-4 w-50' %>
+    </div>
+      <%= f.submit "✍",class: 'btn btn-outline-secondary' %>
+  <% end %>
 </div>
 <div class="col-5">
   <p>※投稿可能な画像及び動画について<br>

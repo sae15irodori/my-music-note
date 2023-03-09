@@ -55,10 +55,10 @@ class Public::NotesController < ApplicationController
   def search
     @results = @q.result#set_qメソッドで取得した結果をオブジェクトに変換
   end
-  
+
   def tos
   end
-  
+
   def manual
   end
 
@@ -70,7 +70,7 @@ class Public::NotesController < ApplicationController
   end
 
   def note_params
-    params.require(:note).permit(:title, :body, :url)
+    params.require(:note).permit(:title, :body, :url, :tag_id)
   end
 
   def is_matching_login_user

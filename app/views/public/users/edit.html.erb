@@ -5,13 +5,8 @@
     <p>プロフィール編集</p>
     <%= form_with model:@user do |f| %>
       <label for="inputName">名前</label>
-      <!--バリデーションエラー-->
-          <% if @user.errors.any? %>
-            <% @user.errors.full_messages.each do |message| %>
-              <%= message %>
-            <% end %>
-          <% end %>
-          <!--バリデーションエラー-->
+        <!--バリデーションエラー-->
+          <%= render '/layouts/validates', validates: @user %>
       <%= f.text_field :name, autofocus: true, id:"inputName",  placeholder: "名前",class: 'form-control mb-4 w-50' %>
 
       <label for="inputImage">アイコン</label>
