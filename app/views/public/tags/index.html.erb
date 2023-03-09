@@ -1,0 +1,4 @@
+<h1>タグ一覧</h1>
+<% @tags.each do |tag| %>
+  <%= link_to tag.name, tag_path(tag.id) %>
+<% end %>

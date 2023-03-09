@@ -35,6 +35,9 @@ Rails.application.routes.draw do
         get "manual"
       end
     end
+    
+    resources :tags, only: [:index, :show ]
+    
     resources :users, only: [:index,:show, :edit, :update] do
       member do
         get :favorites
