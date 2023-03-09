@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <h1>タグ名変更</h1>
+   </div>
+  <div class="row">
+    <%= form_with model: @tag, url: admin_tag_path(@tag.id) ,method: :patch do |f| %>
+      <label for="inputName">タイトル</label>
+      <!--バリデーションエラー-->
+        <% if @tag.errors.any? %>
+          <% @tag.errors.full_messages.each do |message| %>
+            <%= message %>
+          <% end %>
+        <% end %>
+        <!--バリデーションエラー-->
+      <%= f.text_field :name, autofocus: true, id:"inputTname",  placeholder: "タグ名を入力",class: 'form-control mb-4' %>
+      <%= f.submit "✍",class: 'btn btn-outline-secondary' %>
+    <% end %>
+    <%= link_to "削除", admin_tag_path(@tag.id), method: :delete, data: {confirm: 'このコメントを消しますか？'} %>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 class Note < ApplicationRecord
   belongs_to :user
+  belongs_to :tag
   has_many :favorites, dependent: :destroy
   has_many :note_comments, dependent: :destroy
 

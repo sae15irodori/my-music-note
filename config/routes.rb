@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'tags/index'
+    get 'tags/create'
+    get 'tags/edit'
+  end
   # ユーザー用devise
   # URL /customers/sign_in~
   devise_for :users, controllers: {
@@ -53,16 +58,20 @@ Rails.application.routes.draw do
     get "/users/:id/unsubscribe" => "users#unsubscribe", as: "unsubscribe"#退会確認画面
     patch "/users/:id/withdrawal" => "users#withdrawal", as: "withdrawal"#ｱｶｳﾝﾄの論理削除用
     end
+
     resources :notes, only: [:index, :show, :destroy] do
       collection do
         get "search"
       end
-      resources :note_comments, only: [:create, :destroy, :index] do
+      resources :note_comments, only: [:create, :destroy, :index] do#notesにネスト
         collection do
           get "search"
         end
       end
-    end
+   end
+
+    resources :tags, only: [:index, :create, :edit, :update, :destroy]
+
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
