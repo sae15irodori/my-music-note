@@ -9,13 +9,13 @@
 
         <!--ユーザー情報-->
         <!--ﾛｸﾞｲﾝ中かつｹﾞｽﾄじゃなければuser/editへのﾘﾝｸ含める-->
-        <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>>
+        <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
           <%= link_to edit_user_path(@user.id) do %>
             <%= render '/layouts/user_info', user: @user %>
             <%= @user.introduction %>
           <% end %>
         <% elsif  @user.email == 'guest@gesuto.com' %><!--ｹﾞｽﾄﾕｰｻﾞｰの場合-->
-          ゲストユーザーです　ユーザー登録して機能を使ってみましょう！ マイページ見本の
+          ゲストユーザーです　ユーザー登録して機能を使ってみましょう！ マイページ見本の画像が入る
         <% else %>
           <%= render '/layouts/user_info', user: @user %>
           <%= @user.introduction %>

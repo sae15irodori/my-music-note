@@ -21,10 +21,10 @@ class User < ApplicationRecord
   validates :name, presence: { message: 'あなたの名前を入力しましょう💭' }
 
   def self.guest#ゲストのレコードを作成するメソッド
-    find_or_create_by!(email: 'guest@gesuto.com') do |user|#aaa@aaa.comがなければアドレスを自動生成？userへ格納
+    find_or_create_by!(email: 'guest@gesuto.com') do |user|#guset@gesto.comを探してなければuserへ格納
       user.password = SecureRandom.urlsafe_base64     #passwordはnull:falseなのでランダムにパスワードを生成
       user.password_confirmation = user.password      #確認用パスワードに↑で生成したパスワード渡す
-      user.name = 'ゲストユーザー'                          #nameもnull:falseなのでサンプルという名前を渡す
+      user.name = 'ゲストユーザー'                    #nameもnull:falseなのでサンプルという名前を渡す
     end
   end
 
