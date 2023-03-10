@@ -11,7 +11,7 @@
         <% @results.each do |user| %>
           <%= link_to (admin_user_path(user.id)) do %>
             <div class="note_box2_6">
-              <%= render '/public/shared/user_info', user: user %>
+              <%= render '/layouts/user_info', user: user %>
               <%= user.introduction %>
             </div>
           <% end %>

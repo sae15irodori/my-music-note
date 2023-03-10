@@ -10,10 +10,11 @@
       <% if @results.present? %>
         <% @results.each do |comment| %>
           <%= link_to admin_user_path(comment.user.id) do %>
-            <%= render '/public/shared/user_info', user: comment.user %>
+            <%= render '/layouts/user_info', user: comment.user %>
           <% end %>
             <%= link_to comment.comment, admin_note_path(comment.note.id) %>
-          <% end %>
+            <%= link_to "削除", admin_note_note_comment_path(comment.note.id, comment.id), method: :delete, data: {confirm: 'このコメントを管理者として消しますか？'} %>
+        <% end %>
       <% else %>
         一致する結果はありませんでした。o○
       <% end %>
