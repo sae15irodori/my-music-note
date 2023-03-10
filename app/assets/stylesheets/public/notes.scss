@@ -113,15 +113,15 @@ li{
 
 /*利用規約画面*/
 
-.box {
+.tos-box {
     position: relative;
-    padding: 3rem 5rem 1rem;
+    padding: 1.5rem 5rem 1rem;
     border-radius: 20px;
-    border: 1rem solid #FF8000;
+    border: 0.8rem solid #FF8000;
     background-color: white;
 }
 
-.box::before {
+.tos-box::before {
     position: absolute;
     top: 3.5rem;
     left: 1rem;
@@ -131,7 +131,7 @@ li{
     content: '';
 }
 
-.box::after {
+.tos-box::after {
     position: absolute;
     top: -2rem;
     left: 50%;
@@ -147,7 +147,7 @@ li{
     content: '';
 }
 
-.box p {
+.tos-box p {
     color: #333;
     line-height: 2.3;
 }
