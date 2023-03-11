@@ -1,6 +1,10 @@
  <h2 class="mt-4 mb-5"><%= note.title %></h2>
   <p><%= safe_join(note.body.split("\n"),tag(:br)) %></p>
-  <p>#<%= note.tag %></p>
+  <p>
+  <% if note.tag.present? %>
+    #<%= note.tag.name %>
+  <% end %>
+  </p>
   <p>
     <% if note.image.present? %>
       <%= image_tag note.image %>

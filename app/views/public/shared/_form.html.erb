@@ -2,32 +2,32 @@
   <%= form_with model:note do |f| %>
     <div class="form-group">
       <label for="inputTitle">タイトル</label>
-      <%= f.text_field :title, autofocus: true, id:"inputTitle",  placeholder: "ノートにタイトルをつけると検索で見つけやすくなります" %>
+      <%= f.text_field :title, autofocus: true, id:"inputTitle",  placeholder: "ノートにタイトルをつけると検索で見つけやすくなります",class: "note-form" %>
     </div>
 
 
     <div class="form-group">
       <label for="inputImage">画像</label>
-      <%= f.file_field :image, accept: "image/*",autofocus: true, id:"inputImage" %>
+      <%= f.file_field :image, accept: "image/*",autofocus: true, id:"inputImage",class: "noteimg-form" %>
     </div>
 
     <div class="form-group">
       <label for="inputUrl">動画🎬　動画の投稿はYoutubeよりお願いします→<%= link_to "https://www.youtube.com/","https://www.youtube.com/",target: "_blank" %></label>
-      <%= f.text_field :url, autofocus: true, id:"inputUrl", placeholder: "Youtubeの埋め込みURLを貼ってください　記号（” )不要" %>
+      <%= f.text_field :url, autofocus: true, id:"inputUrl", placeholder: "Youtubeの埋め込みURLを貼ってください　記号（” )不要",class: "note-form" %>
     </div>
 
     <div class="form-group">
       <label for="inputNote">ノート✍ </label>
           <!--バリデーションエラー-->
           <%= render '/layouts/validates', validates: @note %>
-      <%= f.text_area :body, rows: '4', autofocus: true, id:"inputNote", placeholder: "ノート本文" %>
+      <%= f.text_area :body, rows: '4', autofocus: true, id:"inputNote", placeholder: "ノート本文",class: "note-body" %>
     </div>
 
     <div class="form-group">
       <label for="inputTag">タグ</label>
       <%= f.select :tag_id, options_from_collection_for_select( Tag.all, :id, :name), include_blank: true %>
     </div>
-      <%= f.submit "✍",class: 'btn btn-outline-secondary w-25' %>
+      <%= f.submit "✍",class: 'btn btn-outline-secondary'%>
   <% end %>
 </div>
 <div class="col-5">

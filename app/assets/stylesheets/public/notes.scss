@@ -9,7 +9,7 @@
 }
 
 /*投稿フォーム*/
-input, textarea {
+.note-form,.note-body {
   display: block;
   width: 70%;
   height: calc(1.5em + 0.75rem + 2px);
@@ -23,7 +23,12 @@ input, textarea {
   border-radius: 0.25rem;
 }
 
-textarea {
+.noteimg-form {
+  display: block;
+  
+}
+
+.note-body {
   display: block;
   width: 80%;
   height: calc(3em + 3rem + 2px);
