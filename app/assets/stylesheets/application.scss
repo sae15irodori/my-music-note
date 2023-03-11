@@ -14,12 +14,12 @@
  *= require_self
  */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body{
+/*body{
   background-color: #FCFCCA;
+}*/
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
+
+body {
+  font-family: 'Zen Kurenaido', sans-serif !important;
 }
