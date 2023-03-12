@@ -18,8 +18,73 @@
 /*body{
   background-color: #FCFCCA;
 }*/
-@import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Yomogi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti&display=swap');
 
 body {
-  font-family: 'Zen Kurenaido', sans-serif !important;
+  font-family: 'Times New Roman','Yomogi', cursive !important;
+  color: black !important;
+  background: #F5F5E9 !important;
+}
+
+a {
+  color: #823014 !important;
+}
+
+h1, h2, h3, h4 {
+  color: #340e01;
+}
+
+
+/*トップ画面*/
+.top-notice {
+  margin-bottom: 1.5em;
+  font-size: 1.5em;
+  color: #823014;
+}
+
+
+.top-contents {   /*トップ画面全体*/
+  width: 80vw;
+  margin: 5em auto;
+  background: #fff;
+  padding: 3em 3em;
+  background: linear-gradient(#ccc 0.05em, transparent 0.05em) #FFF7F2;
+  background-size: auto 2.9em;
+  line-height: 0em;
+  border: 10px solid #dda705;
+  border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
+  overflow: hidden;
+}
+
+.top-heading1 {
+  line-height: 0.6;
+  font-size: 6em;
+}
+
+
+.top-link {
+  margin: 0 0 0.5em;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #823014;
+  font-family: 'Kaisei Opti', serif;
+}
+
+
+.top-content {
+  width: 80vw;
+  margin: 0 auto;
+  padding: 5em 0;
+}
+
+.top-heading2 {
+  font-size: 3rem;
+}
+
+.top-sentences {
+  font-size: 1.3rem;
+  color: #823014;
+  line-height: 3;
 }
