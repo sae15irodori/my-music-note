@@ -42,13 +42,16 @@
 
                 <% if note.image.present? or note.url.present? %><!--画像か動画がある場合-->
                   <h2 class="index-note-title"><%= note.title %></h2><!--タイトル-->
+                  <!--タグ-->
+                    <% if note.tag.present? %>
+                      #<%= note.tag.name %>
+                    <% end %>
                 <% else %>
-                  <h2 class="index-note-title"><%= note.title %></h2><!--タイトル-->
-                  <p><!--タグ-->
-                  <% if note.tag.present? %>
-                    #<%= note.tag.name %>
-                  <% end %>
-                  </p>
+                  <h2 class="index-note-title mt-4 mx-3"><%= note.title %></h2><!--タイトル-->
+                    <!--タグ-->
+                    <% if note.tag.present? %>
+                      #<%= note.tag.name %>
+                    <% end %>
                 <% end %><!--画像か動画があるときの処理-->
               <% end %><!--投稿詳細へのﾘﾝｸ-->
             </div>

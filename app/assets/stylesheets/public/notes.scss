@@ -18,7 +18,7 @@
 /*外枠*/
 .index-note-contents {
   margin: 2em;
-  padding: 0.5em 2em;/*文字周りの余白*/
+  padding: 1.5em 2em;/*文字周りの余白*/
   background: #fff;/*背景色*/
   border-left: solid 20px #FFC530;/*左線（実線 太さ 色）*/
   border-radius: 7px;
@@ -28,20 +28,18 @@
 
 .index-note-contets1 {
     width: 30%;
-    height: 50vh;
+    height: 55vh;
   }
 
 
 /*ノートタイトル*/
 .index-note-title {
-  margin-bottom: 1em;
   font-size: 1rem;
+  margin: 0 !important;
 }
 
 
-.index-note-sentence {
-  margin-right: 1em;
-}
+
 
 .index-note-sentence::after {
   content: "";
