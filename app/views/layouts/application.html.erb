@@ -15,5 +15,10 @@
       <%= render 'layouts/header' %>
     </header>
     <%= yield %>
+    <%# if current_page?(note_path(params[:id])) %>
+      <!--footer class="fixed-bottom"-->
+        <%#= render 'layouts/footer' %>
+      </footer>
+    <%# end %>
   </body>
 </html>

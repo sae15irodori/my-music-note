@@ -13,21 +13,32 @@
 
         <!--投稿内容-->
         <%= render '/layouts/note_contents', note: @note %>
+          <div class="note-btn">
+            <p class="edit-destory-btn">
+            <% if @note.user.id == current_user.id %><!--ログイン中ユーザーならeditとdestroyﾘﾝｸ-->
+              <span class="edit-btn">
+                <%= link_to edit_note_path(@note.id) do %>
+                  <i class="far fa-edit"></i>
+                <% end %>
+              </span>
+              <span class="destroy-btn">
+                <%= link_to note_path(@note.id), method: :delete, data: {confirm: 'このノートを消しますか？'} do %>
+                  <i class="far fa-trash-alt"></i>
+                <% end %>
+              </span>
+            <% end %>
+            </p>
 
-        <!--いいねボタン-->
-        <p><%= render '/public/favorites/favorites_btn', note: @note %>
-          <span><i class="far fa-comment"></i><%= @note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
-        </p>
+            <p class="favorites-btn">
+              <%= render '/public/favorites/favorites_btn', note: @note %> <!--いいねボタン-->
+              <span class="ml-5" style="font-size: 1.2rem;"><i class="far fa-comment"></i><%= @note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
+            </p>
+          </div>
       </div>
-      
-      <p>
-      <% if @note.user.id == current_user.id %><!--ログイン中ユーザーならeditとdestroyﾘﾝｸ-->
-        <%= link_to "編集", edit_note_path(@note.id) %>
-        <%= link_to "削除", note_path(@note.id), method: :delete, data: {confirm: 'このノートを消しますか？'} %>
-      <% end %>
-      </p>
+
+
       <!--コメント欄-->
-      <div class="comment">
+      <div class="comment-box">
         <p>コメント</p>
         <% @note.note_comments.each do |note_comment| %>
         <div class="comments">
@@ -44,12 +55,6 @@
         <% end %>
         </div>
       </div>
-      <div class="comment col-12">
-        <%= form_with model: [@note, @note_comment] do |f| %>
-          <%= f.text_area :comment, rows: '4', placeholder: "質問に対する回答＆応援や励ましのコメントしてみましょう！", class: 'form-control mb-4' %>
-          <%= f.submit "✍",class: 'btn btn-outline-secondary'  %>
-        <% end %>
-        </div>
       </div>
     </div>
   </div>

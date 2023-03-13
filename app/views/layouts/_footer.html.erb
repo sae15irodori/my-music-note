@@ -1,0 +1,6 @@
+<div class="comment">
+  <%= form_with model: [@note, @note_comment] do |f| %>
+    <%= f.text_area :comment, rows: '2', placeholder: "質問に対する回答＆応援や励ましのコメントしてみましょう！", class: 'form-control w-50' %>
+    <%= f.submit "✍",class: 'btn comment-btn'%>
+  <% end %>
+</div>
