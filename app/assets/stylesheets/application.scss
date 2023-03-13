@@ -142,8 +142,8 @@ a {
 }
 
 
-/***一覧と詳細のノート***/
-/*ページ全体*/
+/***詳細ﾍﾟｰｼﾞ***/
+/**ページ全体**/
 .main{
   margin: 5em 0;
 }
@@ -176,7 +176,7 @@ a {
   left: 0.5em; /*位置*/
 }
 
-/*画像*/
+/**画像**/
 .note-img {
   margin: 0 auto;
 }
@@ -189,17 +189,13 @@ a {
 }
 
 
-/*ノートタイトル*/
+/**ノートタイトル**/
 .note-title {
   margin: 0.5em 0;
   font-size: 1.8rem;
 }
 
-/*ノート本文*/
-.note-body {
-
-}
-
+/**ノート本文**/
 .index-note-sentence {
   margin-right: 1em;
 }
@@ -249,3 +245,13 @@ a {
   width: 40%;
 }
 
+
+/**ユーザー情報**/
+#user-info {
+  display: block;
+  width: 40%;
+  padding: 1em 2em;
+  border-radius: 40px;
+  font-size: 1.5rem;
+  background: #fdcc50e0;
+}
