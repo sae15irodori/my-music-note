@@ -11,7 +11,7 @@ class Public::NotesController < ApplicationController
     @note = Note.new(note_params)
     @note.user_id = current_user.id
     if @note.save
-      flash[:notice] = "新しいノートを作りました✍"
+      flash[:notice] = "新しいページを作りました✍"
       redirect_to notes_path
     else
       render :new

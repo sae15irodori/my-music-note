@@ -2,7 +2,9 @@
   <%= form_with model:note do |f| %>
     <div class="form-group">
       <label for="inputTitle">タイトル</label>
-      <%= f.text_field :title, autofocus: true, id:"inputTitle",  placeholder: "ノートにタイトルをつけると検索で見つけやすくなります",class: "note-form" %>
+      <!--バリデーションエラー-->
+          <%= render '/layouts/validates', validates: @note %>
+      <%= f.text_field :title, autofocus: true, id:"inputTitle",  placeholder: "このページにタイトルを付けましょう",class: "note-form" %>
     </div>
 
 
