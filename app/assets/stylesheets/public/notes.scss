@@ -9,7 +9,75 @@
 }
 
 /**ノート一覧**/
+/*ノートの配置設定*/
+#main-note {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+/*外枠*/
+.index-note-contents {
+  margin: 1em;
+  padding: 1em 3em; /*内側の余白*/
+  background: linear-gradient(#ccc 0.05em, transparent 0.05em) #fff;
+  background-size: auto 1.5em;
+  line-height: 1em;
+  border: 0.5px solid black;
+  border-radius: 15% 5% 2% 15% / 15% 300% 15% 15%;
+  position: relative;
+  overflow: hidden;
+  }
+
+.index-note-contets1 {
+    width: 30%;
+    height: 50vh;
+  }
+
+/*ドット*/
+.index-note-contents::before {
+  content: "";
+  position: absolute;
+  border-right: dotted 15px #b1a8a8; /*ドットの大きさ、高さ*/
+  height: 95%;
+  top: 0.5em; /*位置*/
+  left: 0.5em; /*位置*/
+}
+
+
+/*ノートタイトル*/
+.index-note-title {
+  margin-bottom: 1em;
+  font-size: 1rem;
+  color: #4a1402;
+}
+
+/*ノート本文*/
+.index-note-body {
+  height: calc(1.5em * 4); /* 制限したい行数が2の場合 */
+  line-height: 1.5em; /* heightと同じ値にする */
+  overflow: hidden;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.index-note-sentence {
+  margin-right: 1em;
+}
+
+.index-note-sentence::after {
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+
+/**動画の表示設定**/
+.video{
+  display: block;
+  text-align: center;
+  line-height: 10;
+}
 
 /*ノートタイトル*/
 .index-note-title {
@@ -42,7 +110,7 @@
 
 
 /*投稿フォーム*/
-.note-form,.note-body {
+.note-form,.note-form-body {
   display: block;
   width: 70%;
   height: calc(1.5em + 0.75rem + 2px);
@@ -61,7 +129,7 @@
 
 }
 
-.note-body {
+.note-form-body {
   display: block;
   width: 80%;
   height: calc(3em + 3rem + 2px);

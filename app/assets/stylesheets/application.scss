@@ -148,18 +148,11 @@ h1, h2, h3, h4 {
   margin: 5em 0;
 }
 
-/*ノートの配置設定*/
-#main-note {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-
 /**ノートのﾙｰｽﾞﾘｰﾌ風設定**/
 /*外枠*/
-.index-note-contents, .note-contents {
+.note-contents {
   margin: 1em;
-  padding: 1em 3em; /*内側の余白*/
+  padding: 1em 5em; /*内側の余白*/
   background: linear-gradient(#ccc 0.05em, transparent 0.05em) #fff;
   background-size: auto 1.5em;
   line-height: 1em;
@@ -169,40 +162,35 @@ h1, h2, h3, h4 {
   overflow: hidden;
   }
 
-  .index-note-contets1 {
-    width: 30%;
-    height: 50vh;
-  }
+.note-contents2 {
+  width: 80%;
+}
 
 /*ドット*/
-.index-note-contents::before {
+.note-contents::before {
   content: "";
   position: absolute;
   border-right: dotted 15px #b1a8a8; /*ドットの大きさ、高さ*/
-  height: 95%;
-  top: 0.5em; /*位置*/
+  height: 93%;
+  top: 1.5em; /*位置*/
   left: 0.5em; /*位置*/
 }
 
-
-
-
-
+/*画像*/
+.note-img {
+  margin: 0 auto;
+}
 
 /*ノートタイトル*/
-.index-note-title {
-  margin-bottom: 2em;
-  font-size: 1rem;
-  color: #4a1402;
+.note-title {
+  margin: 0.5em 0;
+  font-size: 1.8rem;
+  color: #340e01;
 }
 
 /*ノート本文*/
-.index-note-body {
-  height: calc(1.5em * 4); /* 制限したい行数が2の場合 */
-  line-height: 1.5em; /* heightと同じ値にする */
-  overflow: hidden;
-  position: relative;
-  word-wrap: break-word;
+.note-body {
+  color: #823014;
 }
 
 .index-note-sentence {
@@ -215,7 +203,6 @@ h1, h2, h3, h4 {
   position: absolute;
   width: 100%;
 }
-
 
 
 /**動画の表示設定**/
