@@ -10,28 +10,6 @@
 
 /**ノート一覧**/
 
-/*ノートの配置設定*/
-.main-note {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.main-note-box {
-  width: 30%;
-  height: 70vh;
-}
-
-.index-note-contents {
-  margin: 1em;
-  padding: 1em 3em !important; /*内側の余白*/
-}
-
-/*ノートタイトル*/
-.index-note-title {
-  margin-bottom: 2em;
-  font-size: 1rem;
-  color: #4a1402;
-}
 
 
 
