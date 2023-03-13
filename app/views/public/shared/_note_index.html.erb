@@ -1,15 +1,15 @@
-<div class="note-contents">
-  <div class="note-content">
+<div class="note-contents note-contents2">
     <!--投稿ﾕｰｻﾞｰ情報-->
-    <%= link_to user_path(note.user.id) do %>
-      <%= render '/layouts/user_info', user: note.user %>
-    <% end %>
+    <%#= link_to user_path(note.user.id) do %>
+      <%#= render '/layouts/user_info', user: note.user %>
+    <%# end %>
     <!--投稿一覧-->
     <%= link_to (note_path(note.id)) do %>
       <%= render '/layouts/note_contents', note: note %><!--投稿内容-->
-      <p><%= render '/public/favorites/favorites_btn', note: note %><!--いいねボタン-->
-        <span>💬<%= note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
+      <p class="favorites-btn">
+        <%= render '/public/favorites/favorites_btn', note: note %> <!--いいねボタン-->
+        <span class="ml-5" style="font-size: 1.2rem;"><i class="far fa-comment"></i><%= note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
       </p>
     <% end %>
-  </div>
+
 </div>

@@ -1,30 +1,30 @@
 <nav class="navbar navbar-expand-lg">
-  <div class="container">
+  <div class="container header">
     <!--ログイン済ならば-->
     <% if user_signed_in? %>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <span style="font-size: 1.2rem"><%= link_to "My Music Note🖌" , notes_path %></span>
+        <span style="font-size: 1.2rem"><%= link_to "My Music Note🖌" , notes_path,class:"header-nav" %></span>
         <ul class="navbar-nav ml-auto">
           <li><!--投稿一覧へのﾘﾝｸ-->
-            <%= link_to "Notes", notes_path, class:"mx-3" %>
+            <%= link_to "Notes", notes_path, class:"mx-3 header-nav" %>
           </li>
           <li><!--タグ一覧へのﾘﾝｸ-->
-            <%= link_to "Tags", tags_path, class:"mx-3" %>
+            <%= link_to "Tags", tags_path, class:"mx-3 header-nav" %>
           </li>
           <li><!--新規投稿画面へのﾘﾝｸ-->
-            <%= link_to "New Page", new_note_path, class:"mx-3" %>
+            <%= link_to "New Page", new_note_path, class:"mx-3 header-nav" %>
           </li>
           <li><!--マイページへのﾘﾝｸ-->
-            <%= link_to "My Note", user_path(current_user.id), class:"mx-3" %>
+            <%= link_to "My Note", user_path(current_user.id), class:"mx-3 header-nav" %>
           </li>
           <li><!--ﾕｰｻﾞｰ一覧へのﾘﾝｸ-->
-            <%= link_to "Users", users_path, class:"mx-3" %>
+            <%= link_to "Users", users_path, class:"mx-3 header-nav" %>
           </li>
           <li><!--ﾛｸﾞｱｳﾄのﾘﾝｸ-->
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"mx-3" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"mx-3 header-nav" %>
           </li>
           <li style="font-size: 1rem" class="tos-li"><!--利用規約へのﾘﾝｸ-->
-            <%= link_to "利用規約", tos_notes_path, class:"ml-3" %>
+            <%= link_to "利用規約", tos_notes_path, class:"ml-3 header-nav" %>
           </li>
           </ul>
         </div>
@@ -32,19 +32,19 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
           <li><!--投稿一覧へのﾘﾝｸ-->
-            <%= link_to "Notes", admin_notes_path, class:"mr-3" %>
+            <%= link_to "Notes", admin_notes_path, class:"mr-3 header-nav" %>
           </li>
           <li><!--ｺﾒﾝﾄｰ一覧へのﾘﾝｸ-->
-            <%= link_to "Comments", admin_note_note_comments_path(:note_id), class:"mr-3" %>
+            <%= link_to "Comments", admin_note_note_comments_path(:note_id), class:"mr-3 header-nav" %>
           </li>
           <li><!--ﾕｰｻﾞｰ一覧へのﾘﾝｸ-->
-            <%= link_to "Users", admin_users_path, class:"mr-3" %>
+            <%= link_to "Users", admin_users_path, class:"mr-3 header-nav" %>
           </li>
           <li><!--タグ一覧へのﾘﾝｸ-->
-            <%= link_to "Tags", admin_tags_path, class:"mr-3" %>
+            <%= link_to "Tags", admin_tags_path, class:"mr-3 header-nav" %>
           </li>
           <li><!--ﾛｸﾞｱｳﾄのﾘﾝｸ-->
-            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"header-nav" %>
           </li>
         </ul>
       </div>

@@ -12,7 +12,7 @@
   </p>
  
  
-  <p class="note-body"><%= safe_join(note.body.split("\n"),tag(:br)) %></p>
+  <p><%= safe_join(note.body.split("\n"),tag(:br)) %></p>
   
   <p>
   <% if note.tag.present? %>

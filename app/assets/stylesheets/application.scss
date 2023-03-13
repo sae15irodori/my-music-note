@@ -25,22 +25,18 @@
 
 body {
   font-family: 'Times New Roman','Yomogi', cursive !important;
-  color: black !important;
-  background: #F5F5E9 !important;
+  color: #522506 !important;
+  background: #F6E5D7 !important;
 }
 
 a {
-  color: #823014 !important;
+  color: #6c4d37 !important;
 }
 
-h1, h2, h3, h4 {
-  color: #340e01;
-}
 
 .notice {
   margin-top: 3em;
   font-size: 1.5em;
-  color: #823014;
 }
 
 
@@ -52,7 +48,11 @@ h1, h2, h3, h4 {
 /*ヘッダー*/
 .fixed-top {
   position: sticky;
-  background: #f5eef069;
+  background: #73d0c2eb;
+}
+
+.header-nav {
+    color: #f5f5f5 !important;
 }
 
 /*トップ画面*/
@@ -153,11 +153,11 @@ h1, h2, h3, h4 {
 .note-contents {
   margin: 1em;
   padding: 1em 5em; /*内側の余白*/
-  background: linear-gradient(#ccc 0.05em, transparent 0.05em) #fff;
-  background-size: auto 1.5em;
+  background: linear-gradient(#f1eaead6 0.05em, transparent 0.05em) #fff;
+  background-size: auto 2em;
   line-height: 1em;
-  border: 0.5px solid black;
-  border-radius: 15% 5% 2% 15% / 15% 300% 15% 15%;
+  border: 0.5px solid #0000008f;
+  border-radius: 7px;
   position: relative;
   overflow: hidden;
   }
@@ -193,12 +193,11 @@ h1, h2, h3, h4 {
 .note-title {
   margin: 0.5em 0;
   font-size: 1.8rem;
-  color: #340e01;
 }
 
 /*ノート本文*/
 .note-body {
-  color: #823014;
+
 }
 
 .index-note-sentence {
@@ -249,3 +248,4 @@ h1, h2, h3, h4 {
 .comment {
   width: 40%;
 }
+

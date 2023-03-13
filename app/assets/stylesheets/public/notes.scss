@@ -17,38 +17,25 @@
 
 /*外枠*/
 .index-note-contents {
-  margin: 1em;
-  padding: 1em 3em; /*内側の余白*/
-  background: linear-gradient(#ccc 0.05em, transparent 0.05em) #fff;
-  background-size: auto 1.5em;
-  line-height: 1em;
-  border: 0.5px solid black;
-  border-radius: 15% 5% 2% 15% / 15% 300% 15% 15%;
+  margin: 2em;
+  padding: 0.5em;/*文字周りの余白*/
+  background: #fff;/*背景色*/
+  border-left: solid 20px #ED8D49;/*左線（実線 太さ 色）*/
+  border-radius: 7px;
   position: relative;
-  overflow: hidden;
   }
+
 
 .index-note-contets1 {
     width: 30%;
     height: 50vh;
   }
 
-/*ドット*/
-.index-note-contents::before {
-  content: "";
-  position: absolute;
-  border-right: dotted 15px #b1a8a8; /*ドットの大きさ、高さ*/
-  height: 95%;
-  top: 0.5em; /*位置*/
-  left: 0.5em; /*位置*/
-}
-
 
 /*ノートタイトル*/
 .index-note-title {
   margin-bottom: 1em;
   font-size: 1rem;
-  color: #4a1402;
 }
 
 /*ノート本文*/
@@ -83,7 +70,6 @@
 .index-note-title {
   margin-bottom: 2em;
   font-size: 1rem;
-  color: #4a1402;
 }
 
 /*ノート本文*/
@@ -167,9 +153,6 @@ li{
   text-align: center;
   line-height: 10;
 }
-
-
-
 
 
 
