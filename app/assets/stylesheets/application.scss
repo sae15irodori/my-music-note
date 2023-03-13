@@ -148,12 +148,18 @@ h1, h2, h3, h4 {
   margin: 5em 0;
 }
 
+/*ノートの配置設定*/
+#main-note {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 
 /**ノートのﾙｰｽﾞﾘｰﾌ風設定**/
 /*外枠*/
-.note-contents {
-  padding: 3em; /*内側の余白*/
+.index-note-contents, .note-contents {
+  margin: 1em;
+  padding: 1em 3em; /*内側の余白*/
   background: linear-gradient(#ccc 0.05em, transparent 0.05em) #fff;
   background-size: auto 1.5em;
   line-height: 1em;
@@ -163,8 +169,13 @@ h1, h2, h3, h4 {
   overflow: hidden;
   }
 
+  .index-note-contets1 {
+    width: 30%;
+    height: 50vh;
+  }
+
 /*ドット*/
-.note-contents::before {
+.index-note-contents::before {
   content: "";
   position: absolute;
   border-right: dotted 15px #b1a8a8; /*ドットの大きさ、高さ*/
@@ -173,22 +184,10 @@ h1, h2, h3, h4 {
   left: 0.5em; /*位置*/
 }
 
-/*ノートの配置設定*/
-.main-note {
-  display: flex;
-  flex-wrap: wrap;
-  flex-flow: column;
-}
 
-/*.main-note-box {
-  width: 30%;
-  height: 50vh;
-}*/
 
-.index-note-contents {
-  margin: 1em;
-  padding: 1em 3em !important; /*内側の余白*/
-}
+
+
 
 /*ノートタイトル*/
 .index-note-title {

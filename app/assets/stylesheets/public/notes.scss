@@ -11,6 +11,34 @@
 /**ノート一覧**/
 
 
+/*ノートタイトル*/
+.index-note-title {
+  margin-bottom: 2em;
+  font-size: 1rem;
+  color: #4a1402;
+}
+
+/*ノート本文*/
+.index-note-body {
+  height: calc(1.5em * 4); /* 制限したい行数が2の場合 */
+  line-height: 1.5em; /* heightと同じ値にする */
+  overflow: hidden;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.index-note-sentence {
+  margin-right: 1em;
+}
+
+.index-note-sentence::after {
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+
 
 
 /*投稿フォーム*/

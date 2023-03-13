@@ -7,11 +7,11 @@
             <%= f.search_field :title_or_body_cont, placeholder: "ノート検索" %>
             <%= f.submit '🔍', class: "button1" %>
           <% end %>
-        
-        <div class=" main-note">
+
+        <div id="main-note">
         <% @notes.each do |note| %>
-          <div class="note-contents index-note-contents main-note-box">
-            <div class="note-content">
+          <div class="index-note-contents index-note-contets1"><!--ルーズリーフの設定-->
+            <div class="index-note-content">
               <!--投稿ﾕｰｻﾞｰ情報-->
               <%= link_to user_path(note.user.id) do %>
                 <%= render '/layouts/user_info', user: note.user %>
@@ -30,23 +30,28 @@
                   <% end %>
                 </p>
 
-               <h2 class="index-note-title"><%= note.title %></h2><!--タイトル-->
-                <p><%= safe_join(note.body.split("\n"),tag(:br)) %></p><!--本文-->
-                <p><!--タグ-->
-                <% if note.tag.present? %>
-                  #<%= note.tag.name %>
-                <% end %>
-                </p>
+                <% if note.image.present? or note.url.present? %><!--画像か動画がある場合-->
+                 <h2 class="index-note-title"><%= note.title %></h2><!--タイトル-->
+                <% else %>
+                  <h2 class="index-note-title"><%= note.title %></h2><!--タイトル-->
+                  <p><%= safe_join(note.body.split("\n"),tag(:br)) %></p><!--本文-->
+                  <p><!--タグ-->
+                  <% if note.tag.present? %>
+                    #<%= note.tag.name %>
+                  <% end %>
+                  </p>
+                <% end %><!--画像か動画があるときの処理-->
+              <% end %><!--投稿詳細へのﾘﾝｸ-->
+                    </div>
+                </div><!--ルーズリーフ-->
                 <!--投稿内容終了-->
+                
+                <!--いいねボタン＆コメント件数-->
                 <p><%= render '/public/favorites/favorites_btn', note: note %><!--いいねボタン-->
-                  <span>💬<%= note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
+                  <span><i class="far fa-comment"></i><%= note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
                 </p>
-              <% end %>
-            </div>
-          </div>
-          </ul>
-          </li>
-        <% end %>
+
+        <% end %><!--each-->
       </div>
     </div>
   </div>
