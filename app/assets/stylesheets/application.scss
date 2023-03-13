@@ -88,3 +88,32 @@ h1, h2, h3, h4 {
   color: #823014;
   line-height: 3;
 }
+
+/*ログイン画面*/
+.log-in {
+  margin: 0 auto;
+  background: #fff;
+  padding: 3em;
+  background: linear-gradient(#ccc 0.05em, transparent 0.05em) #fff;
+  background-size: auto 2.9em;
+  line-height: 2em;
+  border: 10px solid #EF866B;
+  border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
+  overflow: hidden;
+}
+
+.registrations-log-in {
+  padding: 1em;
+  background-size: auto 2.9em;
+  line-height: 1.2em;
+  border: 10px solid #e78b03db;
+}
+
+.log-in-field, .log-in-actions {
+  width: 50%;
+  margin: 1em auto;
+}
+
+.registrations {
+  font-family: 'Kaisei Opti', serif; 
+}
