@@ -48,7 +48,9 @@ class Public::NotesController < ApplicationController
       flash[:notice] = "ノートを消しました"
       redirect_to notes_path
     else
-      render :edit
+      @note_comment = NoteComment.new
+      @user = @note.user
+      render :show
     end
   end
 

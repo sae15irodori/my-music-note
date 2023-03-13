@@ -20,7 +20,8 @@
 }*/
 
 @import url('https://fonts.googleapis.com/css2?family=Yomogi&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@700&display=swap');
+
 
 body {
   font-family: 'Times New Roman','Yomogi', cursive !important;
@@ -36,6 +37,17 @@ h1, h2, h3, h4 {
   color: #340e01;
 }
 
+
+.registrations, .admin-log-in-heading, .tos-li {
+  font-family: 'Kaisei Opti', serif;
+}
+
+
+/*ヘッダー*/
+.fixed-top {
+  position: sticky;
+  background: #f5eef069;
+}
 
 /*トップ画面*/
 .top-notice {
@@ -118,12 +130,17 @@ h1, h2, h3, h4 {
   margin: 1em auto;
 }
 
-.registrations, .admin-log-in-heading {
-  font-family: 'Kaisei Opti', serif;
+.log-logo {
+  display: block;
+  margin-top: 1em;
 }
 
 
 /*一覧と詳細のノート*/
+.main{
+  margin: 8% 0;
+}
+
 .note_box2_6 {
     position: relative;
     padding: 1.5em 3em;
