@@ -2,20 +2,22 @@
   <div class="row">
     <div class="col-12 main">
       <span class="notice"><%= flash[:notice] %></span>
-        <h1>Notes<span>みんなのノート</span></h1>
+        <h1>Notes<span class="ml-1" style="font-size: 1.5rem">みんなのノート</span></h1>
+         <!--検索フォーム-->
           <%= search_form_for @q, url: search_notes_path do |f| %>
             <div class="row">
               <div class="col-3">
-            <%= f.search_field :title_or_body_cont, placeholder: "ノート検索",class: "form-control rounded-pill" %>
+                <%= f.search_field :title_or_body_cont, placeholder: "ノート検索",class: "form-control rounded-pill" %>
               </div>
               <div class="9">
-            <%= button_tag type: "submit", class: "btn btn-default　rounded-pill" do %>
-              <i class="fas fa-search"></i>
-            <% end %>
-            </div>
+                <%= button_tag type: "submit", class: "btn btn-default　rounded-pill" do %>
+                <i class="fas fa-search"></i>
+                <% end %>
+              </div>
             </div>
           <% end %>
 
+        <!--投稿一覧-->
         <div id="main-note">
         <% @notes.each do |note| %>
           <div class="index-note-contents index-note-contets1"><!--ルーズリーフの設定-->
@@ -24,10 +26,10 @@
               <%= link_to user_path(note.user.id) do %>
                 <%= render '/layouts/user_info', user: note.user %>
               <% end %>
-              <!--投稿一覧-->
+
+              <!--投稿内容-->
               <%= link_to (note_path(note.id)) do %>
-                <!--投稿内容-->
-                 <p><!--画像-->
+                <p><!--画像-->
                   <% if note.image.present? %>
                     <%= image_tag note.image,:size => '250x200' %>
                   <% end %>
@@ -39,7 +41,7 @@
                 </p>
 
                 <% if note.image.present? or note.url.present? %><!--画像か動画がある場合-->
-                 <h2 class="index-note-title"><%= note.title %></h2><!--タイトル-->
+                  <h2 class="index-note-title"><%= note.title %></h2><!--タイトル-->
                 <% else %>
                   <h2 class="index-note-title"><%= note.title %></h2><!--タイトル-->
                   <p><!--タグ-->
@@ -49,16 +51,16 @@
                   </p>
                 <% end %><!--画像か動画があるときの処理-->
               <% end %><!--投稿詳細へのﾘﾝｸ-->
-                    </div>
-                </div><!--ルーズリーフ-->
-                <!--投稿内容終了-->
+            </div>
+          </div><!--ルーズリーフ-->
+          <!--投稿内容終了-->
 
-                <!--いいねボタン＆コメント件数-->
-                <p><%= render '/public/favorites/favorites_btn', note: note %><!--いいねボタン-->
-                  <span><i class="far fa-comment"></i><%= note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
-                </p>
+            <!--いいねボタン＆コメント件数-->
+            <p><%= render '/public/favorites/favorites_btn', note: note %><!--いいねボタン-->
+              <span><i class="far fa-comment"></i><%= note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
+            </p>
 
-        <% end %><!--each-->
+        <% end %><!--notes.each-->
       </div>
     </div>
   </div>

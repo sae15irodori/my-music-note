@@ -1,9 +1,4 @@
 <div class="note-contents note-contents2">
-    <!--投稿ﾕｰｻﾞｰ情報-->
-    <%#= link_to user_path(note.user.id) do %>
-      <%#= render '/layouts/user_info', user: note.user %>
-    <%# end %>
-    <!--投稿一覧-->
     <%= link_to (note_path(note.id)) do %>
       <%= render '/layouts/note_contents', note: note %><!--投稿内容-->
       <p class="favorites-btn">

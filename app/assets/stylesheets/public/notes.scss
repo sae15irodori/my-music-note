@@ -18,9 +18,9 @@
 /*外枠*/
 .index-note-contents {
   margin: 2em;
-  padding: 0.5em;/*文字周りの余白*/
+  padding: 0.5em 2em;/*文字周りの余白*/
   background: #fff;/*背景色*/
-  border-left: solid 20px #ED8D49;/*左線（実線 太さ 色）*/
+  border-left: solid 20px #FFC530;/*左線（実線 太さ 色）*/
   border-radius: 7px;
   position: relative;
   }
@@ -38,14 +38,6 @@
   font-size: 1rem;
 }
 
-/*ノート本文*/
-.index-note-body {
-  height: calc(1.5em * 4); /* 制限したい行数が2の場合 */
-  line-height: 1.5em; /* heightと同じ値にする */
-  overflow: hidden;
-  position: relative;
-  word-wrap: break-word;
-}
 
 .index-note-sentence {
   margin-right: 1em;
