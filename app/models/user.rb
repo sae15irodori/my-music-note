@@ -15,7 +15,7 @@ class User < ApplicationRecord
       file_path = Rails.root.join('app/assets/images/no-image.jpg')
       image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
     end
-    image.variant(resize_to_limit: [100, 100]).processed
+    image.variant(resize_to_limit: [50, 50]).processed
   end
 
   validates :name, presence: { message: 'あなたの名前を入力しましょう💭' }

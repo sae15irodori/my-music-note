@@ -1,18 +1,53 @@
 <div class="container">
   <div class="row">
     <div class="col-12 main">
-      <%= flash[:notice] %>
-      <h1>Notes</h1>
-      <p>みんなのノート</p>
-      <%= search_form_for @q, url: search_notes_path do |f| %>
-        <%= f.search_field :title_or_body_cont, placeholder: "ノート検索",class:"isearch1" %>
-        <%= f.submit '🔍', class: "button1" %>
-      <% end %>
+      <span class="notice"><%= flash[:notice] %></span>
+        <h1>Notes<span>みんなのノート</span></h1>
+          <%= search_form_for @q, url: search_notes_path do |f| %>
+            <%= f.search_field :title_or_body_cont, placeholder: "ノート検索" %>
+            <%= f.submit '🔍', class: "button1" %>
+          <% end %>
+        
+        <div class=" main-note">
+        <% @notes.each do |note| %>
+          <div class="note-contents index-note-contents main-note-box">
+            <div class="note-content">
+              <!--投稿ﾕｰｻﾞｰ情報-->
+              <%= link_to user_path(note.user.id) do %>
+                <%= render '/layouts/user_info', user: note.user %>
+              <% end %>
+              <!--投稿一覧-->
+              <%= link_to (note_path(note.id)) do %>
+                <!--投稿内容-->
+                 <p><!--画像-->
+                  <% if note.image.present? %>
+                    <%= image_tag note.image,:size => '250x200' %>
+                  <% end %>
+                </p><!--動画-->
+                <p class="video">
+                  <% if note.url.present? %>
+                    <iframe width="250" height="200" src="<%= note.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <% end %>
+                </p>
 
-      <% @notes.each do |note| %>
-        <%= render '/public/shared/note_index', note: note %>
-      <% end %>
-
+               <h2 class="index-note-title"><%= note.title %></h2><!--タイトル-->
+                <p><%= safe_join(note.body.split("\n"),tag(:br)) %></p><!--本文-->
+                <p><!--タグ-->
+                <% if note.tag.present? %>
+                  #<%= note.tag.name %>
+                <% end %>
+                </p>
+                <!--投稿内容終了-->
+                <p><%= render '/public/favorites/favorites_btn', note: note %><!--いいねボタン-->
+                  <span>💬<%= note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
+                </p>
+              <% end %>
+            </div>
+          </div>
+          </ul>
+          </li>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

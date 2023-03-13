@@ -1,6 +1,4 @@
- <h2 class="mt-4 mb-5"><%= note.title %></h2>
-  <p><%= safe_join(note.body.split("\n"),tag(:br)) %></p>
-  <p>
+ <p>
   <% if note.tag.present? %>
     #<%= note.tag.name %>
   <% end %>
@@ -15,3 +13,7 @@
       <iframe width="560" height="315" src="<%= note.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <% end %>
   </p>
+ 
+ <h2 class="mt-4 mb-5"><%= note.title %></h2>
+  <p><%= safe_join(note.body.split("\n"),tag(:br)) %></p>
+  
