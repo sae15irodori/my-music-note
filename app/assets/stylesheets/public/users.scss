@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 
-/*一覧と詳細のノート*/
+/*一覧と詳細*/
 .users-box {
   width: 60%;
   position: relative;
@@ -22,7 +22,7 @@
 .users-box::before {
   position: absolute;
   bottom: 2px;
-  right: -20px;
+  right: 10px;
   z-index: -1;
   transform: rotate(5deg);
   width: 100%;
