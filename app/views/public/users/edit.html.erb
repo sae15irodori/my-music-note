@@ -3,29 +3,32 @@
     <div class="col-12 main">
       <div class="user-edit">
         <h1 class="text-center mb-4">Editing User<span class="ml-2" style="font-size: 18px;">プロフィール編集</span></h1>
-        
+
         <%= form_with model:@user do |f| %>
           <div class="user-edit-field">
             <%= f.label :name %>名前<br>
                 <%= render '/layouts/validates', validates: @user %><!--バリデーションエラー-->
             <%= f.text_field :name,  placeholder: "名前",class: 'form-control mb-4' %>
           </div>
-          
+
           <div class="user-edit-field">
-            <%= f.label :image %>アイコン<br>
+            <label>アイコン</label><br>
             <%= f.file_field :image, placeholder: "アイコン画像", accept: "image/*", class: "mb-4" %>
           </div>
-          
+
           <div class="user-edit-field">
             <label for="inputIntroduction">自己紹介✍ </br>
             <%= f.text_area :introduction, placeholder: "あなたの演奏している楽器や趣味を書いてみましょう", class: 'form-control mb-4', size: "100%", rows: '4' %>
-          
-          <div class="user-edit-actions w-50">
-            <%= f.submit "✍",class: 'btn btn-outline-secondary' %>
+
+          <div class="user-edit-actions">
+            <%= f.submit "✍",class: 'btn btn-secondary w-25 user-edit-btn'  %>
           </div>
         <% end %>
-    
-        <%= link_to "退会する", unsubscribe_path(@user.id),class: 'btn btn-outline-secondary'  %>
+
+        <div class="to-withdrawal">
+          <%= link_to "退会する", unsubscribe_path(@user.id),class: 'btn w-50 withdrawal-btn withdrawal-btn-color'  %>
+        </div>
+
       </div>
     </div>
   </div>

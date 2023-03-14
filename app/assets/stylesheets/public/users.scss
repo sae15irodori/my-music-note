@@ -32,6 +32,8 @@
   filter: blur(4px);
 }
 
+
+/**ユーザー編集ページ**/
 .user-edit {
   width: 80%;
   margin: 0 auto;
@@ -40,4 +42,32 @@
 .user-introduction {
   width: 20em;
   height: 10em;
+}
+
+.user-edit-actions {
+  width: 100%;
+  text-align: right;
+}
+
+.user-edit-btn {
+  background: #978D86 !important;
+  font-size: 1.3rem !important;
+  border: none !important;
+}
+
+.withdrawal-btn {
+  color: #fff !important;
+}
+
+.to-withdrawal {
+  margin-top: 4em;
+  text-align: center;
+}
+
+.withdrawal-btn-color {
+  background: #E85A70 !important;
+}
+
+.unsubscribe {
+ text-align: center;
 }
