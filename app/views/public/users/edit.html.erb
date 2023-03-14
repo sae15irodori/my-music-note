@@ -6,27 +6,28 @@
 
         <%= form_with model:@user do |f| %>
           <div class="user-edit-field">
-            <%= f.label :name %>名前<br>
-                <%= render '/layouts/validates', validates: @user %><!--バリデーションエラー-->
-            <%= f.text_field :name,  placeholder: "名前",class: 'form-control mb-4' %>
+            <label>アイコン</label><br>
+            <%= f.file_field :image, placeholder: "アイコン画像", accept: "image/*" %>
           </div>
 
           <div class="user-edit-field">
-            <label>アイコン</label><br>
-            <%= f.file_field :image, placeholder: "アイコン画像", accept: "image/*", class: "mb-4" %>
+            <%= f.label :name %>お名前<br>
+                <%= render '/layouts/validates', validates: @user %><!--バリデーションエラー-->
+            <%= f.text_field :name,  placeholder: "名前",class: 'form-control' %>
           </div>
 
           <div class="user-edit-field">
             <label for="inputIntroduction">自己紹介✍ </br>
-            <%= f.text_area :introduction, placeholder: "あなたの演奏している楽器や趣味を書いてみましょう", class: 'form-control mb-4', size: "100%", rows: '4' %>
+            <%= f.text_area :introduction, placeholder: "あなたの演奏している楽器や趣味を書いてみましょう", class: 'form-control introduction', size: "100%", rows: '4' %>
+          </div>
 
           <div class="user-edit-actions">
-            <%= f.submit "✍",class: 'btn btn-secondary w-50 user-edit-btn'  %>
+            <%= f.submit "更新✍",class: 'btn btn-secondary user-edit-btn '    %>
           </div>
         <% end %>
 
         <div class="to-withdrawal">
-          <%= link_to "退会する", unsubscribe_path(@user.id),class: 'btn w-25 withdrawal-btn withdrawal-btn-color'  %>
+          <%= link_to "退会する", unsubscribe_path(@user.id),class: 'btn withdrawal-btn withdrawal-btn-color'  %>
         </div>
 
       </div>

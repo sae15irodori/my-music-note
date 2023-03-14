@@ -39,33 +39,38 @@
   margin: 0 auto;
 }
 
-.user-introduction {
-  width: 20em;
-  height: 10em;
+.user-edit-field {
+  margin-bottom: 2em;
 }
 
-.user-edit-actions {
+.introduction {
+  height: 8em !important;
+}
+
+.user-edit-actions, .form-actions {
   text-align: center;
-  margin: 4em;
+  margin: 1em 0 1.5em 0;
 }
 
 .user-edit-btn {
-  background: #978D86 !important;
-  font-size: 1.3rem !important;
-  border: none !important;
+  background: #40250a !important;
+  /*font-size: 1.3rem !important;*/
+  width: 40%;
+  border: 0.1px solid #40250a　!important;
 }
 
 .withdrawal-btn {
   color: #fff !important;
+  width: 40%;
 }
 
 .to-withdrawal {
-  margin-top: 1em;
+  margin-top: 0.2em;
   text-align: center;
 }
 
 .withdrawal-btn-color {
-  background: #E85A70 !important;
+  background: #db0627 !important;
 }
 
 .unsubscribe {

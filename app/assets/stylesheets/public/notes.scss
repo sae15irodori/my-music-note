@@ -76,33 +76,27 @@
 
 
 /**投稿フォーム**/
-.made-form {
+.made-form {/*見出し含む全体の設定*/
   margin-top: 5em;
 }
-.note-form,.note-form-body {
-  display: block;
-  width: 70%;
-  height: calc(1.5em + 0.75rem + 2px);
-  padding: 1rem 0.8rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #00332C;
-  border-radius: 0.25rem;
+
+.select-box {
+  /* 初期化 */
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
 }
 
-.noteimg-form {
-  display: block;
 
-}
 
-.note-form-body {
-  display: block;
-  width: 80%;
-  height: calc(3em + 3rem + 2px);
-}
+
 
 .link {
   color: #007bff !important;

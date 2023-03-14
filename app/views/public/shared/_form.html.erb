@@ -4,33 +4,38 @@
       <label for="inputTitle">タイトル</label>
       <!--バリデーションエラー-->
           <%= render '/layouts/validates', validates: @note %>
-      <%= f.text_field :title, autofocus: true, id:"inputTitle",  placeholder: "このページにタイトルを付けましょう",class: "note-form" %>
+      <%= f.text_field :title, autofocus: true, id:"inputTitle",  placeholder: "このページにタイトルを付けましょう",class: "form-control" %>
     </div>
 
     <div class="form-group">
-      <label for="inputImage">画像</label>
-      <%= f.file_field :image, accept: "image/*",autofocus: true, id:"inputImage",class: "noteimg-form" %>
+      <label for="inputImage">画像</label><br>
+      <%= f.file_field :image, accept: "image/*",autofocus: true, id:"inputImage" %>
     </div>
 
     <div class="form-group">
       <label for="inputUrl">動画🎬　動画の投稿はYoutubeよりお願いします→<%= link_to "https://www.youtube.com/","https://www.youtube.com/",target: "_blank", class: 'link' %></label>
-      <%= f.text_field :url, autofocus: true, id:"inputUrl", placeholder: "Youtubeの埋め込みURLを貼ってください　記号（” )不要",class: "note-form" %>
+      <%= f.text_field :url, autofocus: true, id:"inputUrl", placeholder: "Youtubeの埋め込みURLを貼ってください　記号（” )不要",class: "form-control" %>
     </div>
 
     <div class="form-group">
       <label for="inputNote">ノート✍ </label>
           <!--バリデーションエラー-->
           <%= render '/layouts/validates', validates: @note %>
-      <%= f.text_area :body, rows: '5', autofocus: true, id:"inputNote", placeholder: "ノート本文",class: "note-body" %>
+      <%= f.text_area :body, rows: '5', autofocus: true, id:"inputNote", placeholder: "ノート本文",class: "form-control" %>
     </div>
 
     <div class="form-group">
       <label for="inputTag">タグ</label>
-      <%= f.select :tag_id, options_from_collection_for_select( Tag.all, :id, :name), include_blank: true %>
+      <%= f.select :tag_id, options_from_collection_for_select( Tag.all, :id, :name), include_blank: true %> <!--, {}, {class: 'form-control'}-->
     </div>
+    
+    <div class="form-actions">
       <%= f.submit "✍",class: 'btn btn-outline-secondary'%>
+    </div>
   <% end %>
 </div>
+
+<!--サイド-->
 <div class="col-4">
   <p class="to-tos" style="font-size:1.2rem;">
     ※投稿可能な画像及び動画について<br>
@@ -43,7 +48,7 @@
         <li>Youtubeで動画を投稿する<br>
           （公開・非公開の選択OK）
         </li>
-  
+
         <li>投稿した動画の<u>｢埋め込みURL｣</u>をコピペして完了！<br>
             <span style="font-size:1rem">(共有 > 埋め込む > src=""の中をコピー)</span>
         </li>
