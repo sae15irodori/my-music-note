@@ -8,43 +8,44 @@
       <%= flash[:notice] %>
       <div class="row">
         <div class="col-8">
-
-          <h2 id="user-info"><!--ユーザー情報-->
-            <!--ﾛｸﾞｲﾝ中かつｹﾞｽﾄじゃなければuser/editへのﾘﾝｸ含める-->
-            <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
-              <%= link_to edit_user_path(@user.id) do %>
-                  <%= render '/layouts/user_info', user: @user %>
-
-                    <%= link_to edit_user_path(@user.id), class: "ml-2" do %><!--編集ボタン-->
-                      <i class="far fa-edit"></i>
-                    <% end %>
-
-                  <p class="ml-5"><%= @user.introduction %></p><!--自己紹介-->
+          <% unless @user.is_deleted == true %><!--ﾕｰｻﾞｰが退会済じゃなければ-->
+            <h2 id="user-info"><!--ユーザー情報-->
+              <!--ﾛｸﾞｲﾝ中かつｹﾞｽﾄじゃなければuser/editへのﾘﾝｸ含める-->
+              <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
+                <%= link_to edit_user_path(@user.id) do %>
+                    <%= render '/layouts/user_info', user: @user %>
+  
+                      <%= link_to edit_user_path(@user.id), class: "ml-2" do %><!--編集ボタン-->
+                        <i class="far fa-edit"></i>
+                      <% end %>
+  
+                    <p class="ml-5"><%= @user.introduction %></p><!--自己紹介-->
+                <% end %>
+              <% elsif  @user.email == 'guest@gesuto.com' %><!--ｹﾞｽﾄﾕｰｻﾞｰの場合-->
+                ゲストユーザーです　ユーザー登録して機能を使ってみましょう！ マイページ見本の画像が入る
+              <% else %><!--ｹﾞｽﾄでもﾛｸﾞｲﾝ中でもない場合-->
+                <%= render '/layouts/user_info', user: @user %>
+                <p><%#= safe_join(@user.introduction.split("\n"),tag(:br)) %></p>
               <% end %>
-            <% elsif  @user.email == 'guest@gesuto.com' %><!--ｹﾞｽﾄﾕｰｻﾞｰの場合-->
-              ゲストユーザーです　ユーザー登録して機能を使ってみましょう！ マイページ見本の画像が入る
-            <% else %><!--ｹﾞｽﾄでもﾛｸﾞｲﾝ中でもない場合-->
-              <%= render '/layouts/user_info', user: @user %>
-              <p><%#= safe_join(@user.introduction.split("\n"),tag(:br)) %></p>
+  
+  
+            </h2><!--ユーザー情報-->
+          </div>
+  
+          <div class="col-4">
+            <!--ﾛｸﾞｲﾝ中ならﾕｰｻﾞｰのいいねした投稿一覧へのﾘﾝｸ-->
+            <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
+              <%= link_to favorites_user_path(@user.id), class: "user-favorites" do %>
+                <%= image_tag 'user-favorites', :size => '120x80' %>
+              <% end %>
             <% end %>
-
-
-          </h2><!--ユーザー情報-->
+          </div>
         </div>
-
-        <div class="col-4">
-          <!--ﾛｸﾞｲﾝ中ならﾕｰｻﾞｰのいいねした投稿一覧へのﾘﾝｸ-->
-          <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
-            <%= link_to favorites_user_path(@user.id), class: "user-favorites" do %>
-              <%= image_tag 'user-favorites', :size => '120x80' %>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-
-      <!--ユーザー投稿一覧-->
-      <% @notes.each do |note| %>
-        <%= render '/public/shared/note_index', note: note %>
+  
+        <!--ユーザー投稿一覧-->
+        <% @notes.each do |note| %>
+          <%= render '/public/shared/note_index', note: note %>
+        <% end %>
       <% end %>
     </div>
   </div>
