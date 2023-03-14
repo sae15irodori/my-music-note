@@ -7,7 +7,6 @@
       <%= f.text_field :title, autofocus: true, id:"inputTitle",  placeholder: "このページにタイトルを付けましょう",class: "note-form" %>
     </div>
 
-
     <div class="form-group">
       <label for="inputImage">画像</label>
       <%= f.file_field :image, accept: "image/*",autofocus: true, id:"inputImage",class: "noteimg-form" %>
@@ -22,7 +21,7 @@
       <label for="inputNote">ノート✍ </label>
           <!--バリデーションエラー-->
           <%= render '/layouts/validates', validates: @note %>
-      <%= f.text_area :body, rows: '4', autofocus: true, id:"inputNote", placeholder: "ノート本文",class: "note-body" %>
+      <%= f.text_area :body, rows: '5', autofocus: true, id:"inputNote", placeholder: "ノート本文",class: "note-body" %>
     </div>
 
     <div class="form-group">

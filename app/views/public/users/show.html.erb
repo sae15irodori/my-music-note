@@ -25,7 +25,7 @@
                 ゲストユーザーです　ユーザー登録して機能を使ってみましょう！ マイページ見本の画像が入る
               <% else %><!--ｹﾞｽﾄでもﾛｸﾞｲﾝ中でもない場合-->
                 <%= render '/layouts/user_info', user: @user %>
-                <p><%#= safe_join(@user.introduction.split("\n"),tag(:br)) %></p>
+                <p><%= @user.introduction %></p>
               <% end %>
   
   

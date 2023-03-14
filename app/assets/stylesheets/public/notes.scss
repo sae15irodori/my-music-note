@@ -13,11 +13,12 @@
 #main-note {
   display: flex;
   flex-wrap: wrap;
+  align-self: flex-start;
 }
 
 /*外枠*/
 .index-note-contents {
-  margin: 2em;
+  margin: 2em 1em;
   padding: 1.5em 2em;/*文字周りの余白*/
   background: #fff;/*背景色*/
   border-left: solid 20px #FFC530;/*左線（実線 太さ 色）*/
@@ -28,7 +29,7 @@
 
 .index-note-contets1 {
     width: 30%;
-    height: 55vh;
+    height: 29em;
   }
 
 
@@ -36,16 +37,25 @@
 .index-note-title {
   font-size: 1rem;
   margin: 0 !important;
+  font-size: 1rem;
 }
 
-
-
-
-.index-note-sentence::after {
-  content: "";
-  height: 100%;
-  position: absolute;
+/*ノート本文*/
+/*動画・画像がある場合*/
+.index-note-body {
   width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*動画・画像ない場合*/
+.index-notes-body {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  margin-bottom: 0 !important;
 }
 
 
@@ -55,37 +65,17 @@
   text-align: center;
   line-height: 10;
 }
-
-/*ノートタイトル*/
-.index-note-title {
-  margin-bottom: 2em;
-  font-size: 1rem;
-}
-
-/*ノート本文*/
-.index-note-body {
-  height: calc(1.5em * 4); /* 制限したい行数が2の場合 */
-  line-height: 1.5em; /* heightと同じ値にする */
-  overflow: hidden;
-  position: relative;
-  word-wrap: break-word;
-}
-
-.index-note-sentence {
-  margin-right: 1em;
-}
-
-.index-note-sentence::after {
-  content: "";
-  height: 100%;
-  position: absolute;
-  width: 100%;
+.index-favorites-btn {
+  width: 90%;
+  padding: 0 2em;
+  text-align: center;
+  background: #f5eeafbf;
 }
 
 
 
 
-/*投稿フォーム*/
+/**投稿フォーム**/
 .made-form {
   margin-top: 5em;
 }
