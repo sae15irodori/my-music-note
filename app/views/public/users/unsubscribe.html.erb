@@ -1,9 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-12 main">
-            <div class="unsubscribe">
-                <h1>※退会してよろしいですか？</h1>
-
+      <div class="unsubscribe">
+        <h1>※退会してよろしいですか？</h1>
         <h2 class="mt-5">退会に伴う注意事項</h2>
          <p>
            退会処理を行うと、全てのサービスがご利用いただけなくなります。<br>
@@ -12,8 +11,8 @@
          <p>本当に退会してもよろしいですか？？</p>
           <%= link_to "退会する", withdrawal_path, method: :patch, data: { confilm: "本当に退会しますか？" },class: 'btn withdrawal-btn withdrawal-btn-color' %>
           <%= link_to "退会しない", edit_user_path(current_user.id),class: 'btn btn-info withdrawal-btn' %>
-      </div>  
-          
+      </div>
+
     </div>
   </div>
 </div>
