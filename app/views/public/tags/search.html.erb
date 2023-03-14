@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12 main">
-      <h1>Tags<span class="ml-1" style="font-size: 1.5rem"> <i class="fas fa-tags"></i> 一覧</span></h1>
+      <h1>Tags<span class="ml-1" style="font-size: 1.5rem">タグ一覧</span></h1>
       <!--検索フォーム-->
       <%= search_form_for @q, url: search_tags_path do |f| %>
         <div class="row">
@@ -15,8 +15,13 @@
           </div>
         </div>
       <% end %>
-      <% @tags.each do |tag| %>
+
+      <% if @results.present? %>
+        <% @results.each do |tag| %>
           <%= link_to tag.name, tag_path(tag.id), class: "tag" %>
+        <% end %>
+      <% else %>
+        一致する結果はありませんでした。o○
       <% end %>
     </div>
   </div>

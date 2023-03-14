@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 
-/*一覧と詳細のノート*/
+/**タグ**/
 .tag {
   width: 20%;
   position: relative;
@@ -17,6 +17,7 @@
   margin: 3em;
   height: 30%;
   padding: 1em 1em;
+  line-height: 3em;
   background-color: #a9ceec;
   color: #333333;
 }

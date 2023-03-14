@@ -1,5 +1,5 @@
-<h2 class="note-title"><%= note.title %></h2>  
-  
+<h2 class="note-title"><%= note.title %></h2>
+
    <p class="note-img">
     <% if note.image.present? %>
       <%= image_tag note.image,:size => '400x300' %>
@@ -10,12 +10,12 @@
       <iframe width="560" height="315" src="<%= note.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <% end %>
   </p>
- 
- 
+
+
   <p><%= safe_join(note.body.split("\n"),tag(:br)) %></p>
-  
+
   <p>
   <% if note.tag.present? %>
-    #<%= note.tag.name %>
+    <i class="fas fa-tag"></i><%= note.tag.name %>
   <% end %>
   </p>

@@ -86,6 +86,9 @@
 
 
 /*投稿フォーム*/
+.made-form {
+  margin-top: 5em;
+}
 .note-form,.note-form-body {
   display: block;
   width: 70%;
@@ -109,6 +112,10 @@
   display: block;
   width: 80%;
   height: calc(3em + 3rem + 2px);
+}
+
+.link {
+  color: #007bff !important;
 }
 
 
@@ -146,7 +153,29 @@ li{
 
 
 
-/*利用規約画面*/
+/**利用規約画面**/
+
+/**投稿フォーム内のﾘﾝｸ**/
+.to-tos, .to-manual, .manual-tape {
+  width: 100%;
+  padding: 0.5em;
+  background: #ffffff69;
+  border-left: 3px dotted rgba(0,0,0,.1);
+  border-right: 3px dotted rgba(0,0,0,.1);
+  box-shadow: 0 0 7px rgba(0,0,0,0.3);
+}
+
+.to-manual {
+  margin-bottom: 3em;
+  padding: 1em;
+}
+
+.manual-tape {
+  background: #bfe6f51f;
+  box-shadow: 0 0 1px rgba(0,0,0,0.3);
+}
+
+
 
 .tos-box {
     position: relative;

@@ -35,13 +35,13 @@
                     <h2 class="index-note-title"><%= note.title %></h2><!--タイトル-->
                     <!--タグ-->
                       <% if note.tag.present? %>
-                        #<%= note.tag.name %>
+                        <i class="fas fa-tag"></i><%= note.tag.name %>
                       <% end %>
                   <% else %><!--画像も動画もない場合-->
                     <h2 class="index-note-title mt-4 mx-3"><%= note.title %></h2><!--タイトル-->
                       <!--タグ-->
                       <% if note.tag.present? %>
-                        #<%= note.tag.name %>
+                        <i class="fas fa-tag"></i><%= note.tag.name %>
                       <% end %>
                   <% end %><!--画像か動画があるときの処理-->
 

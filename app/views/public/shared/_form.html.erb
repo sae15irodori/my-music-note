@@ -1,4 +1,4 @@
-<div class="col-7 form">
+<div class="col-8 form">
   <%= form_with model:note do |f| %>
     <div class="form-group">
       <label for="inputTitle">タイトル</label>
@@ -14,7 +14,7 @@
     </div>
 
     <div class="form-group">
-      <label for="inputUrl">動画🎬　動画の投稿はYoutubeよりお願いします→<%= link_to "https://www.youtube.com/","https://www.youtube.com/",target: "_blank" %></label>
+      <label for="inputUrl">動画🎬　動画の投稿はYoutubeよりお願いします→<%= link_to "https://www.youtube.com/","https://www.youtube.com/",target: "_blank", class: 'link' %></label>
       <%= f.text_field :url, autofocus: true, id:"inputUrl", placeholder: "Youtubeの埋め込みURLを貼ってください　記号（” )不要",class: "note-form" %>
     </div>
 
@@ -32,25 +32,23 @@
       <%= f.submit "✍",class: 'btn btn-outline-secondary'%>
   <% end %>
 </div>
-<div class="col-5">
-  <p>
+<div class="col-4">
+  <p class="to-tos" style="font-size:1.2rem;">
     ※投稿可能な画像及び動画について<br>
-    利用規約☟をよく読み違反とならないよう注意してください<br>
-    　<%= link_to "利用規約：必ずご確認ください", tos_notes_path %>
+    　<%= link_to "利用規約", tos_notes_path, class: 'link' %>にて必ずご確認下さい
   </p>
 
-  <h2 style="font-size: 1.4rem;">
-    動画投稿ガイド
-  </h2>
-  <h3 class="ml-2" style="font-size: 1.1rem;">主にやる事は２つ!<span style="font-size: 25px">✌</span></h3>
-    <ol>
-      <li>Youtubeで動画を投稿する<br>
-        （公開・非公開の選択OK）
-      </li>
-
-      <li>投稿した動画の｢埋め込みURL｣をコピペして完了！<br>
-　        共有 > 埋め込む > src=""の中をコピー<br>
-           ※ショート動画は「埋め込みURL」の取得が出来ない為投稿できません
-      </li>
-    </ol>
-    <%= link_to "詳しい手順はこちら☜", manual_notes_path %>
+  <div class="to-manual">
+    <h2 style="font-size: 1.4rem;">動画投稿ガイド</h2>
+      <ol>
+        <li>Youtubeで動画を投稿する<br>
+          （公開・非公開の選択OK）
+        </li>
+  
+        <li>投稿した動画の<u>｢埋め込みURL｣</u>をコピペして完了！<br>
+            <span style="font-size:1rem">(共有 > 埋め込む > src=""の中をコピー)</span>
+        </li>
+      </ol>
+      <p class="manual-tape"> ※ショート動画は「埋め込みURL」の取得が出来ない為投稿できません</p>
+      <p class="manual-tape" style="font-size:1.2rem">　<%= link_to "詳しい手順はこちら☜", manual_notes_path %></p>
+    </div>
