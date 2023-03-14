@@ -1,4 +1,10 @@
-<h1>タグ一覧</h1>
-<% @tags.each do |tag| %>
-  <%= link_to tag.name, tag_path(tag.id) %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-12 main">
+      <h1>Tags<span class="ml-1" style="font-size: 1.5rem">タグ一覧</span></h1>
+      <% @tags.each do |tag| %>
+          <%= link_to tag.name, tag_path(tag.id), class: "tag" %>
+      <% end %>
+    </div>
+  </div>
+</div>
