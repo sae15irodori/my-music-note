@@ -6,27 +6,37 @@
       <% end %>
 
       <%= flash[:notice] %>
+      <div class="row">
+        <div class="col-8">
 
-        <!--ユーザー情報-->
-        <!--ﾛｸﾞｲﾝ中かつｹﾞｽﾄじゃなければuser/editへのﾘﾝｸ含める-->
-        <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
-          <%= link_to edit_user_path(@user.id) do %>
-            <h1 id="user-info">
+          <h2 id="user-info"><!--ユーザー情報-->
+            <!--ﾛｸﾞｲﾝ中かつｹﾞｽﾄじゃなければuser/editへのﾘﾝｸ含める-->
+            <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
+              <%= link_to edit_user_path(@user.id) do %>
+                  <%= render '/layouts/user_info', user: @user %>
+                  <p class="ml-5"><%= @user.introduction %></p>
+              <% end %>
+    
+            <% elsif  @user.email == 'guest@gesuto.com' %><!--ｹﾞｽﾄﾕｰｻﾞｰの場合-->
+              ゲストユーザーです　ユーザー登録して機能を使ってみましょう！ マイページ見本の画像が入る
+            <% else %>
+    
               <%= render '/layouts/user_info', user: @user %>
-              <%= @user.introduction %>
+              <p><%= safe_join(@user.introduction.split("\n"),tag(:br)) %></p>
+            <% end %>
+          </h2><!--ユーザー情報-->
+        </div>
+        
+        <div class="col-4">
+          <!--ﾛｸﾞｲﾝ中ならﾕｰｻﾞｰのいいねした投稿一覧へのﾘﾝｸ-->
+          <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
+            <%= link_to favorites_user_path(@user.id), class: "user-favorites" do %>
+              <i class="far fa-book-heart"></i>
+            <% end %>
           <% end %>
-        <% elsif  @user.email == 'guest@gesuto.com' %><!--ｹﾞｽﾄﾕｰｻﾞｰの場合-->
-          ゲストユーザーです　ユーザー登録して機能を使ってみましょう！ マイページ見本の画像が入る
-        <% else %>
-          <%= render '/layouts/user_info', user: @user %>
-          <%= @user.introduction %>
-        <% end %>
+        </div>
+      </div>
 
-        <!--ﾛｸﾞｲﾝ中ならﾕｰｻﾞｰのいいねした投稿一覧へのﾘﾝｸ-->
-      <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
-        <%= link_to "♥一覧", favorites_user_path(@user.id) %>
-      <% end %>
-      </h1><!--ユーザー情報-->
       <!--ユーザー投稿一覧-->
       <% @notes.each do |note| %>
         <%= render '/public/shared/note_index', note: note %>
