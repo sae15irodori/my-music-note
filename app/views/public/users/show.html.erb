@@ -14,26 +14,26 @@
             <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
               <%= link_to edit_user_path(@user.id) do %>
                   <%= render '/layouts/user_info', user: @user %>
-                  
+
                     <%= link_to edit_user_path(@user.id), class: "ml-2" do %><!--編集ボタン-->
                       <i class="far fa-edit"></i>
                     <% end %>
-             
+
                   <p class="ml-5"><%= @user.introduction %></p><!--自己紹介-->
               <% end %>
-    
+
             <% elsif  @user.email == 'guest@gesuto.com' %><!--ｹﾞｽﾄﾕｰｻﾞｰの場合-->
               ゲストユーザーです　ユーザー登録して機能を使ってみましょう！ マイページ見本の画像が入る
             <% else %>
-    
+
               <%= render '/layouts/user_info', user: @user %>
               <p><%= safe_join(@user.introduction.split("\n"),tag(:br)) %></p>
             <% end %>
-            
-            
+
+
           </h2><!--ユーザー情報-->
         </div>
-        
+
         <div class="col-4">
           <!--ﾛｸﾞｲﾝ中ならﾕｰｻﾞｰのいいねした投稿一覧へのﾘﾝｸ-->
           <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
