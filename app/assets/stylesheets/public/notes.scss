@@ -80,6 +80,28 @@
   margin-top: 5em;
 }
 
+.new-form {
+  margin: 0.8em auto 3em auto !important;
+  padding: 1em 0.5em !important; /*内側の余白*/
+  background: linear-gradient(#f1eaead6 0.05em, transparent 0.05em) #fff;
+  background-size: auto 2em;
+  line-height: 1em;
+}
+
+.note-contents {
+  width: 80%;
+}
+
+.new-heading {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form-group {
+  width: 80%;
+  margin: 1.5em auto;
+}
+
 .select-box {
   /* 初期化 */
   appearance: none;
@@ -94,9 +116,20 @@
   padding: 0 10px;
 }
 
+.new-form-actions {
+  width: 90%;
+  text-align: right;
+}
 
-
-
+.new-form-btn {
+  width: 18%;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0.01px solid #1c1b1b1f !important;
+  border-radius: 0 !important;
+  font-size: 1.3rem !important;
+  background: #efd30b4a !important;
+}
 
 .link {
   color: #007bff !important;
@@ -137,13 +170,13 @@ li{
 
 
 
-/**利用規約画面**/
 
 /**投稿フォーム内のﾘﾝｸ**/
 .to-tos, .to-manual, .manual-tape {
   width: 100%;
+  margin-top: 3.4em;
   padding: 0.5em;
-  background: #ffffff69;
+  background: #ffffff85;
   border-left: 3px dotted rgba(0,0,0,.1);
   border-right: 3px dotted rgba(0,0,0,.1);
   box-shadow: 0 0 7px rgba(0,0,0,0.3);
@@ -152,11 +185,13 @@ li{
 .to-manual {
   margin-bottom: 3em;
   padding: 1em;
+  margin-top: 1.5em;
 }
 
 .manual-tape {
   background: #bfe6f51f;
   box-shadow: 0 0 1px rgba(0,0,0,0.3);
+  margin-top: 0;
 }
 
 

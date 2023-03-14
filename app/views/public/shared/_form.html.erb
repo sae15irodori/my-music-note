@@ -1,5 +1,7 @@
-<div class="col-8 form">
+<div class="col-8">
+  <h1 class="new-heading">New Page<span class="ml-2" style="font-size: 18px;">新しいページを作成</span></h1>
   <%= form_with model:note do |f| %>
+  <div class="new-form note-contents note-contents3">
     <div class="form-group">
       <label for="inputTitle">タイトル</label>
       <!--バリデーションエラー-->
@@ -9,11 +11,12 @@
 
     <div class="form-group">
       <label for="inputImage">画像</label><br>
-      <%= f.file_field :image, accept: "image/*",autofocus: true, id:"inputImage" %>
+      <%= f.file_field :image, accept: "image/*",autofocus: true, id:"inputImage", class: "mb-2" %>
     </div>
 
     <div class="form-group">
-      <label for="inputUrl">動画🎬　動画の投稿はYoutubeよりお願いします→<%= link_to "https://www.youtube.com/","https://www.youtube.com/",target: "_blank", class: 'link' %></label>
+      <label for="inputUrl" class="mb-2">動画🎬　動画の投稿はYoutubeよりお願いします</label><br>
+      → <%= link_to "https://www.youtube.com/","https://www.youtube.com/",target: "_blank", class: 'link' %>
       <%= f.text_field :url, autofocus: true, id:"inputUrl", placeholder: "Youtubeの埋め込みURLを貼ってください　記号（” )不要",class: "form-control" %>
     </div>
 
@@ -21,18 +24,19 @@
       <label for="inputNote">ノート✍ </label>
           <!--バリデーションエラー-->
           <%= render '/layouts/validates', validates: @note %>
-      <%= f.text_area :body, rows: '5', autofocus: true, id:"inputNote", placeholder: "ノート本文",class: "form-control" %>
+      <%= f.text_area :body, rows: '3', autofocus: true, id:"inputNote", placeholder: "ノート本文",class: "form-control" %>
     </div>
 
     <div class="form-group">
       <label for="inputTag">タグ</label>
-      <%= f.select :tag_id, options_from_collection_for_select( Tag.all, :id, :name), include_blank: true %> <!--, {}, {class: 'form-control'}-->
+      <%= f.select :tag_id, options_from_collection_for_select( Tag.all, :id, :name), include_blank: true, class: "new-btn" %> <!--, {}, {class: 'form-control'}-->
     </div>
-    
-    <div class="form-actions">
-      <%= f.submit "✍",class: 'btn btn-outline-secondary'%>
+
+    <div class="new-form-actions">
+      <%= f.submit "✍",class: 'btn new-form-btn' %>
     </div>
   <% end %>
+  </div>
 </div>
 
 <!--サイド-->
