@@ -1,5 +1,4 @@
 <div class="col-8">
-  <h1 class="new-heading">New Page<span class="ml-2" style="font-size: 18px;">新しいページを作成</span></h1>
   <%= form_with model:note do |f| %>
   <div class="new-form note-contents note-contents3">
     <div class="form-group">
@@ -24,7 +23,7 @@
       <label for="inputNote">ノート✍ </label>
           <!--バリデーションエラー-->
           <%= render '/layouts/validates', validates: @note %>
-      <%= f.text_area :body, rows: '3', autofocus: true, id:"inputNote", placeholder: "ノート本文",class: "form-control" %>
+      <%= f.text_area :body, rows: '5', autofocus: true, id:"inputNote", placeholder: "ノート本文",class: "form-control" %>
     </div>
 
     <div class="form-group">
