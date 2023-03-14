@@ -21,7 +21,7 @@
       <% @users.each do |user| %>
         <% if user.is_deleted == false && user.email != 'guest@gesuto.com' %>
           <%= link_to (user_path(user.id)) do %>
-          <div class="note_box2_6">
+          <div class="users-box">
             <%= render '/layouts/user_info', user: user %>
             <%= user.introduction %>
           </div>

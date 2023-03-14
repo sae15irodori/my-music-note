@@ -24,11 +24,11 @@
             <div class="index-note-contents index-note-contets1"><!--ルーズリーフの設定-->
               <div class="index-note-content">
                 <!--投稿ﾕｰｻﾞｰ情報-->
-              
+
                 <%= link_to user_path(note.user.id) do %>
                   <%= render '/layouts/user_info', user: note.user %>
                 <% end %>
-  
+
                 <!--投稿内容-->
                 <%= link_to (note_path(note.id)) do %>
                   <% if note.image.present? or note.url.present? %><!--画像か動画がある場合-->
@@ -44,7 +44,7 @@
                         #<%= note.tag.name %>
                       <% end %>
                   <% end %><!--画像か動画があるときの処理-->
-                  
+
                   <p><!--画像-->
                     <% if note.image.present? %>
                       <%= image_tag note.image,:size => '250x200' %>
@@ -59,7 +59,7 @@
               </div>
             </div><!--ルーズリーフ-->
             <!--投稿内容終了-->
-  
+
               <!--いいねボタン＆コメント件数-->
               <p><%= render '/public/favorites/favorites_btn', note: note %><!--いいねボタン-->
                 <span><i class="far fa-comment"></i><%= note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
