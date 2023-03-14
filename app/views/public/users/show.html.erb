@@ -14,7 +14,12 @@
             <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
               <%= link_to edit_user_path(@user.id) do %>
                   <%= render '/layouts/user_info', user: @user %>
-                  <p class="ml-5"><%= @user.introduction %></p>
+                  
+                    <%= link_to edit_user_path(@user.id), class: "ml-2" do %><!--編集ボタン-->
+                      <i class="far fa-edit"></i>
+                    <% end %>
+             
+                  <p class="ml-5"><%= @user.introduction %></p><!--自己紹介-->
               <% end %>
     
             <% elsif  @user.email == 'guest@gesuto.com' %><!--ｹﾞｽﾄﾕｰｻﾞｰの場合-->
@@ -24,6 +29,8 @@
               <%= render '/layouts/user_info', user: @user %>
               <p><%= safe_join(@user.introduction.split("\n"),tag(:br)) %></p>
             <% end %>
+            
+            
           </h2><!--ユーザー情報-->
         </div>
         
@@ -31,7 +38,7 @@
           <!--ﾛｸﾞｲﾝ中ならﾕｰｻﾞｰのいいねした投稿一覧へのﾘﾝｸ-->
           <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
             <%= link_to favorites_user_path(@user.id), class: "user-favorites" do %>
-              <i class="far fa-book-heart"></i>
+              <%= image_tag 'user-favorites', :size => '120x80' %>
             <% end %>
           <% end %>
         </div>

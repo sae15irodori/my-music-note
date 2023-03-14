@@ -151,8 +151,8 @@ a {
 /**ノートのﾙｰｽﾞﾘｰﾌ風設定**/
 /*外枠*/
 .note-contents {
-  margin: 1em;
-  padding: 1em 5em; /*内側の余白*/
+  margin: 2em 1em 3em 2em;
+  padding: 2em 5em; /*内側の余白*/
   background: linear-gradient(#f1eaead6 0.05em, transparent 0.05em) #fff;
   background-size: auto 2em;
   line-height: 1em;
@@ -251,15 +251,16 @@ a {
   display: block;
   width: 100%;
   padding: 1em 1em;
-  border-radius: 40px;
-  font-size: 1.2rem;
+  border-radius: 10px;
+  font-size: 1rem;
   background: #fdcc50e0;
 }
+
 
 .user-favorites {
   display: block;
   width: 50%;
   padding: 1em 2em;
-  margin: 2em 5em 0 0;
-  background: #cccccc;
+  margin: 0 5em 0 0;
+  font-size: 1rem;
 }
