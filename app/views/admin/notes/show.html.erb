@@ -1,49 +1,64 @@
 <div class="container">
   <div class="row">
-    <div class="col-12 col-md-12">
-      <h1>Note</h1>
+    <div class="col-12 main">
+      <h1>Note
+        <% if @user.is_deleted == true %><!--ﾕｰｻﾞｰが退会済ならば-->
+          この投稿のユーザーは退会済です
+        <% end %><!--ﾕｰｻﾞｰ退会済ならば-->
+      </h1>
       <%= flash[:notice] %>
 
-      <div class="note_box2_6">
-        <%= link_to admin_user_path(@user.id) do %>
-          <%= render '/layouts/user_info', user: @user %>
-        <% end %>
-        
-         <!--投稿内容-->
-        <%= render '/layouts/note_contents', note: @note %>
-        
-        <p>♥<%= @note.favorites.count %><!--いいね数-->
-          <span>💬<%= @note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
-        </p>
-      </div>
-      
-      <div>
-        <%= link_to "削除", admin_note_path(@note.id), method: :delete, data: {confirm: 'このノートを管理者として消しますか？'} %>
-      </div>
-      
-      <!--コメント欄-->
-      <div class="comment">
-        <p>コメント</p>
-        <% @note.note_comments.each do |note_comment| %>
-        <div class="comments">
-          <!--ｺﾒﾝﾄﾕｰｻﾞｰ情報-->
-          <%= link_to (admin_user_path(@user.id)) do %>
-            <%= image_tag note_comment.user.get_image, class: "rounded-circle" %>
-            <%= note_comment.user.name %>
-          <% end %>
-          <!--ｺﾒﾝﾄ内容-->
-          <span><%= note_comment.created_at.strftime('%Y/%m/%d') %></span>
-          <p><%= safe_join(note_comment.comment.split("\n"),tag(:br)) %></p>
-            <%= link_to "削除", admin_note_note_comment_path(note_comment.note, note_comment.id), method: :delete, data: {confirm: 'このコメントを管理者として消しますか？'} %>
-        <% end %>
+
+        <div class="note-contents note-contents2"><!--ルーズリーフの設定-->
+          <!--ユーザー情報-->
+            <%= link_to admin_user_path(@user.id) do %>
+              <%= render '/layouts/user_info', user: @user %>
+            <% end %>
+
+           <!--投稿内容-->
+          <%= render '/layouts/note_contents', note: @note %>
+
+          <div class="note-btn">
+            <!--いいねとコメント数-->
+            <p class="favorites-btn">
+              ♥<%= @note.favorites.count %><!--いいね数-->
+              <span class="ml-5" style="font-size: 1.2rem;"><i class="far fa-comment"></i><%= @note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
+            </p>
+            <!--削除ボタン-->
+            <p class="edit-destory-btn">
+              <span class="destroy-btn">
+                <%= link_to admin_note_path(@note.id), method: :delete, data: {confirm: 'このノートを管理者として消しますか？'} do %>
+                  <i class="far fa-trash-alt"></i>
+                <% end %>
+              </span>
+            </p>
+          </div>
         </div>
-      </div>
-      <!--ｺﾒﾝﾄ投稿ﾌｫｰﾑ-->
-      <div class="comment col-12">
-        <%= form_with model: [@note, @note_comment] do |f| %>
-          <%= f.text_area :comment, rows: '4', placeholder: "質問に対する回答＆応援や励ましのコメントしてみましょう！", class: 'form-control mb-4' %>
-          <%= f.submit "✍",class: 'btn btn-outline-secondary'  %>
-        <% end %>
+
+        <!--コメント欄-->
+        <div class="comment-box">
+          <p>コメント</p>
+          <% @note.note_comments.each do |note_comment| %>
+            <div class="comments">
+              <!--ｺﾒﾝﾄﾕｰｻﾞｰ情報-->
+              <%= link_to (admin_user_path(@user.id)) do %>
+                <%= image_tag note_comment.user.get_image, class: "rounded-circle" %>
+                <%= note_comment.user.name %>
+              <% end %>
+              <!--ｺﾒﾝﾄ内容-->
+              <span><%= note_comment.created_at.strftime('%Y/%m/%d') %></span>
+              <p><%= safe_join(note_comment.comment.split("\n"),tag(:br)) %></p>
+              <%= link_to "削除", admin_note_note_comment_path(note_comment.note, note_comment.id), method: :delete, data: {confirm: 'このコメントを管理者として消しますか？'} %>
+            </div>
+            <% end %><!--comments.each-->
+        </div>
+
+        <!--ｺﾒﾝﾄ投稿ﾌｫｰﾑ-->
+        <div class="comment col-12">
+          <%= form_with model: [@note, @note_comment] do |f| %>
+            <%= f.text_area :comment, rows: '4', placeholder: "質問に対する回答＆応援や励ましのコメントしてみましょう！", class: 'form-control mb-4' %>
+            <%= f.submit "✍",class: 'btn btn-outline-secondary'  %>
+          <% end %>
       </div>
     </div>
   </div>
