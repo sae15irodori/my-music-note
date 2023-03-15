@@ -21,11 +21,13 @@
       <!--投稿一覧-->
         <div id="main-note">
         <% @notes.each do |note| %>
-          <% unless note.user.is_deleted == true %><!--ﾕｰｻﾞｰが退会済じゃなければ-->
             <div class="index-note-contents index-note-contets1"><!--ルーズリーフの設定-->
               <div class="index-note-content">
                 <!--投稿ﾕｰｻﾞｰ情報-->
-
+                <% if note.user.is_deleted == true %><!--ﾕｰｻﾞｰが退会済ならば-->
+                  この投稿のユーザーは退会済です
+                <% end %><!--ﾕｰｻﾞｰが退会済ならば-->
+                
                 <%= link_to admin_user_path(note.user.id) do %>
                   <%= render '/layouts/user_info', user: note.user %>
                 <% end %>
@@ -57,7 +59,6 @@
                     <% if note.url.present? %>
                       <p class="index-note-body"><%= note.body %></p>
                       <iframe width="250" height="200" src="<%= note.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
                     <% end %>
                   </p>
                 <% end %><!--投稿詳細へのﾘﾝｸ-->
@@ -69,8 +70,6 @@
               </p>
             </div><!--ルーズリーフ-->
             <!--投稿内容終了-->
-
-          <% end %>
         <% end %><!--notes.each-->
 
     </div>
