@@ -14,10 +14,8 @@
             <%= render '/layouts/user_info', user: @user %>
             <p class="ml-5"><%= @user.introduction %></p><!--自己紹介-->
           </h2>
-        </div>
-
-        <div class="col-4">
-          <%= link_to "※利用停止", admin_user_unsubscribe_path(@user.id),class: 'btn withdrawal-btn to-withdrawal'%>
+      
+          <%= link_to "※利用停止", admin_user_unsubscribe_path(@user.id),class: 'btn withdrawal-btn to-withdrawal withdrawal-btn-color' %>
         </div>
       </div>
 
