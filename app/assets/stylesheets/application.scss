@@ -265,29 +265,3 @@ a {
 }
 
 
-/**タグ**/
-.tag {
-  width: 20%;
-  position: relative;
-  display: inline-block;
-  flex-wrap: wrap;
-  margin: 3em;
-  height: 30%;
-  padding: 1em 1em;
-  line-height: 3em;
-  background-color: #a9ceec;
-  color: #333333;
-}
-
-.tag::before {
-  position: absolute;
-  bottom: -5px;
-  right: 7px;
-  z-index: -1;
-  transform: rotate(5deg);
-  width: 70%;
-  height: 50%;
-  background-color: #d0d0d0;
-  content: "";
-  filter: blur(4px);
-}

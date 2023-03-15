@@ -77,7 +77,7 @@ Rails.application.routes.draw do
       end
    end
 
-    resources :tags, only: [:index, :create, :edit, :update, :destroy]
+    resources :tags, only: [:index, :show, :create, :edit, :update, :destroy]
 
   end
 

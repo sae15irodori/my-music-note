@@ -14,7 +14,7 @@
   position: relative;
   display: inline-block;
   flex-wrap: wrap;
-  margin: 3em;
+  margin: 1em;
   height: 30%;
   padding: 1em 1em;
   line-height: 3em;
@@ -30,19 +30,17 @@
   transform: rotate(5deg);
   width: 70%;
   height: 50%;
-  background-color: #d0d0d0;
+  background-color: #ada8a8b3;
   content: "";
   filter: blur(4px);
 }
 
 
 /***管理者側タグ新規作成**/
-/**notes.cssにも設定あり**/
 .tag-form-btn {
-  margin: 0 !important;
-  padding: 0 0.75em !important;
-  border: 0.01px solid #1c1b1b1f !important;
-  border-radius: 0 !important;
-  font-size: 1.2rem !important;
-  background: #d7d6cf94 !important;
+  margin: 0 0.5em 0 0!important;
+  border: none !important;
+  color: #6c4d37 !important;
+  font-size: 3rem !important;
+  background: none !important;
 }
