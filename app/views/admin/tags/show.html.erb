@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 main">
+      <h1 style="font-size: 2.2rem;"><%= @tag.name %> <i class="fas fa-tag"></i><span style="font-size:1.8rem"> 検索結果</span><span class="ml-3" style="font-size: 1.5rem">(全<%= @tag.notes.count %>件)</span></h1>
+      <% @tag_notes.each do |tag_note| %>
+        <%= render '/admin/shared/note_index', note: tag_note %>
+      <% end %>
+    </div>
+  </div>
+</div>

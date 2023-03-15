@@ -1,10 +1,4 @@
 <div class="note-contents note-contents2">
-  <!--投稿ﾕｰｻﾞｰ情報-->
-  <%#= link_to admin_user_path(note.user.id) do %>
-    <%#= image_tag note.user.get_image, class: "rounded-circle" %>
-    <%#= note.user.name %>
-  <%# end %>
-  <!--投稿一覧-->
   <%= link_to (admin_note_path(note.id)) do %>
     <%= render '/layouts/note_contents', note: note %><!--投稿内容-->
 

@@ -14,7 +14,7 @@
       <div class="row">
         <% @tags.each do |tag| %>
           <div class="tag">
-          <%= link_to tag.name, tag_path(tag.id) %>
+          <%= link_to tag.name, admin_tag_path(tag.id) %>
 
           <%= link_to edit_admin_tag_path(tag.id) do %>
             <i class="far fa-edit  ml-3 mx-2"></i>

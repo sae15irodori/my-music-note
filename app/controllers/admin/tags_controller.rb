@@ -25,6 +25,11 @@ class Admin::TagsController < ApplicationController
     tag.destroy
     redirect_to admin_tags_path
   end
+  
+  def show
+    @tag = Tag.find(params[:id])
+    @tag_notes = @tag.notes.all.order("created_at DESC")
+  end
 
   private
 
