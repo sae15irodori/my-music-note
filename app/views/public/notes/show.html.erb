@@ -65,9 +65,7 @@
             <div class="comments-form">
                 <%= form_with model: [@note, @note_comment], class: "form-inline" do |f| %>
                   <%= f.text_area :comment, rows: '4', placeholder: "質問に対する回答＆応援や励ましのコメントしてみましょう！", class: 'form-control comment-form' %>
-                  <%= button_tag type: "submit", class: "btn btn-default　" do %>
-                    <i class="fas fa-reply-all"></i>
-                  <% end %>
+                  <%= f.submit "✍",class: 'btn comment-form-btn' %>
                 <% end %>
             </div>
           </div><!--コメント欄と一覧-->

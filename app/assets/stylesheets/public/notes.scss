@@ -77,7 +77,7 @@
 /***コメントの設定***/
 /**コメント欄全体**/
 .comment-box {
-  width: 70%;
+  width: 100%;
   margin-left: 8em;
 }
 
@@ -98,7 +98,7 @@
   left: -30px;
   margin-top: -3%;
   border: 15px solid transparent;
-  border-right: 15px solid #ffffffd1;
+  border-right: 35px solid #ffffffd1;
   z-index: 0;
 }
 
@@ -109,10 +109,21 @@
 
 /**コメント入力フォーム**/
 .comment-form {/*単数形*/
-  width: 90% !important;
+  width: 70% !important;
   border-radius: 10px !important;
 }
 
+.form-inline {
+  align-items: flex-end !important;
+}
+
+.comment-form-btn {
+  margin: 0 0.5em 0 0!important;
+  border: none !important;
+  color: #6c4d37 !important;
+  font-size: 4rem !important;
+  background: none !important;
+}
 
 
 /*.fixed-bottom {
