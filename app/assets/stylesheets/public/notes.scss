@@ -197,11 +197,12 @@ li{
 
 
 .tos-box {
-    position: relative;
-    padding: 1.5rem 5rem 1rem;
-    border-radius: 20px;
-    border: 0.8rem solid #FF8000;
-    background-color: white;
+  width: 80%;
+  position: relative;
+  margin: 0 auto;
+  padding: 3em 5em;
+  border-radius: 20px;
+  background-color: #fdf2a5f2;
 }
 
 .tos-box::before {
@@ -216,17 +217,14 @@ li{
 
 .tos-box::after {
     position: absolute;
-    top: -2rem;
+    top: -1.5rem;
     left: 50%;
-    width: 300px;
-    height: 30px;
-    background-image: repeating-linear-gradient(-45deg, rgba(124, 249, 249, 0.8) 0 5px, transparent 5px 10px);
+    width: 30%;
+    height: 2.8em;
     border-left: 2px dashed rgba(0, 0, 0, .1);
     border-right: 2px dashed rgba(0, 0, 0, .1);
     box-shadow: 0 0 5px rgba(0, 0, 0, .2);
-    padding: 0.25em 2em;
-    color: #65513f;
-    transform: translateX(-50%) rotate(-5deg);
+    transform: translateX(-40%) rotate(-2deg);
     content: '';
 }
 
