@@ -1,18 +1,26 @@
 <div class="container">
   <div class="row">
-    <div class="col-12">
-        <h1><%= @user.name %>さん
+    <div class="col-12 main">
+        <h1>
             <% if @user.is_deleted == true %>
               (退会済ユーザー)
             <% end %>
         </h1>
 
       <%= flash[:notice] %>
-
-      <!--ユーザー情報-->
-      <%= render '/layouts/user_info', user: @user %>
-      <%= @user.introduction %>
-      <%= link_to "※利用停止", admin_user_unsubscribe_path(@user.id),class: 'btn btn-outline-secondary'  %>
+      <div class="row">
+        <div class="col-8">
+          <h2 id="user-info"><!--ユーザー情報-->
+            <%= render '/layouts/user_info', user: @user %>
+            <p class="ml-5"><%= @user.introduction %></p><!--自己紹介-->
+          </h2>
+        </div>
+      
+        <div class="col-4">
+          <%= link_to "※利用停止", admin_user_unsubscribe_path(@user.id),class: 'btn btn-outline-secondary'  %>
+        </div>
+      </div>
+        
 
       <!--ユーザー投稿一覧-->
       <% @notes.each do |note| %>

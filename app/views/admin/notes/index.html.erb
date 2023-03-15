@@ -27,7 +27,7 @@
                 <% if note.user.is_deleted == true %><!--ﾕｰｻﾞｰが退会済ならば-->
                   この投稿のユーザーは退会済です
                 <% end %><!--ﾕｰｻﾞｰが退会済ならば-->
-                
+
                 <%= link_to admin_user_path(note.user.id) do %>
                   <%= render '/layouts/user_info', user: note.user %>
                 <% end %>
