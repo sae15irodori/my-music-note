@@ -1,18 +1,77 @@
 <div class="container">
   <div class="row">
-    <div class="col-12 col-md-12">
-      <%= flash[:notice] %>
-      <h1>Notes</h1>
-      <p>みんなのノート</p>
+    <div class="col-12 main">
+      <span class="notice"><%= flash[:notice] %></span>
+      <h1>Notes<span class="ml-1" style="font-size: 1.5rem">みんなのノート</span></h1>
       <!--検索フォーム-->
       <%= search_form_for @q, url: search_admin_notes_path do |f| %>
-        <%= f.search_field :title_or_body_cont, placeholder: "ノート検索" %>
-        <%= f.submit '🔍', class: "btn-sm btn-outline-secondary" %>
+        <div class="row">
+          <div class="col-3">
+            <%= f.search_field :title_or_body_cont, placeholder: "ノート検索" %>
+          </div>
+          <div class="9">
+            <%= button_tag type: "submit", class: "btn btn-default　rounded-pill" do %>
+              <i class="fas fa-search"></i>
+            <% end %>
+          </div>
+        </div>
       <% end %>
+
       <!--投稿内容-->
-      <% @notes.each do |note| %>
-        <%= render '/admin/shared/note_index', note: note %>
-      <% end %>
+      <!--投稿一覧-->
+        <div id="main-note">
+        <% @notes.each do |note| %>
+          <% unless note.user.is_deleted == true %><!--ﾕｰｻﾞｰが退会済じゃなければ-->
+            <div class="index-note-contents index-note-contets1"><!--ルーズリーフの設定-->
+              <div class="index-note-content">
+                <!--投稿ﾕｰｻﾞｰ情報-->
+
+                <%= link_to admin_user_path(note.user.id) do %>
+                  <%= render '/layouts/user_info', user: note.user %>
+                <% end %>
+
+                <!--投稿内容-->
+                <%= link_to (admin_note_path(note.id)) do %>
+                  <% if note.image.present? or note.url.present? %><!--画像か動画がある場合-->
+                    <h2 class="index-note-title"><%= note.title %></h2><!--タイトル--><br>
+                    <!--タグ-->
+                      <% if note.tag.present? %>
+                        <i class="fas fa-tag"></i><%= note.tag.name %>
+                      <% end %>
+                  <% else %><!--画像も動画もない場合-->
+                    <h2 class="index-note-title mt-4 mx-3"><%= note.title %></h2><br><!--タイトル-->
+                    <p class="index-notes-body"><%= note.body %></p><br><!--本文-->
+                      <!--タグ-->
+                      <% if note.tag.present? %>
+                        <i class="fas fa-tag"></i><%= note.tag.name %>
+                      <% end %>
+                  <% end %><!--画像か動画があるときの処理-->
+
+                  <p><!--画像-->
+                    <% if note.image.present? %>
+                      <p class="index-note-body"><%= note.body %></p>
+                      <%= image_tag note.image,:size => '250x200' %>
+                    <% end %>
+                  </p><!--動画-->
+                  <p class="video">
+                    <% if note.url.present? %>
+                      <p class="index-note-body"><%= note.body %></p>
+                      <iframe width="250" height="200" src="<%= note.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                    <% end %>
+                  </p>
+                <% end %><!--投稿詳細へのﾘﾝｸ-->
+              </div>
+              <!--いいねボタン＆コメント件数-->
+              <p class="index-favorites-btn">
+                ♥<%= note.favorites.count %><!--いいねボタン-->
+                <i class="far fa-comment ml-2 mr-1"></i><%= note.note_comments.count %><!--ｺﾒﾝﾄ件数-->
+              </p>
+            </div><!--ルーズリーフ-->
+            <!--投稿内容終了-->
+
+          <% end %>
+        <% end %><!--notes.each-->
 
     </div>
   </div>

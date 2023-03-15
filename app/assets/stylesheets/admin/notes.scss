@@ -1,3 +1,68 @@
 // Place all the styles related to the admin/notes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+/**ノート一覧**/
+/*ノートの配置設定*/
+#main-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: flex-start;
+}
+
+/*外枠*/
+.index-note-contents {
+  margin: 2em 1em;
+  padding: 1.5em 2em;/*文字周りの余白*/
+  background: #fff;/*背景色*/
+  border-left: solid 20px #FFC530;/*左線（実線 太さ 色）*/
+  border-radius: 7px;
+  position: relative;
+  }
+
+
+.index-note-contets1 {
+    width: 30%;
+    height: 29em;
+  }
+
+
+/*ノートタイトル*/
+.index-note-title {
+  font-size: 1rem;
+  margin: 0 !important;
+  font-size: 1rem;
+}
+
+/*ノート本文*/
+/*動画・画像がある場合*/
+.index-note-body {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*動画・画像ない場合*/
+.index-notes-body {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  margin-bottom: 0 !important;
+}
+
+
+/**動画の表示設定**/
+.video{
+  display: block;
+  text-align: center;
+  line-height: 10;
+}
+.index-favorites-btn {
+  width: 90%;
+  padding: 0 2em;
+  text-align: center;
+  background: #f5eeafbf;
+}
+
