@@ -102,6 +102,16 @@
   z-index: 0;
 }
 
+/**コメント入力欄全体**/
+.comments-form {/*複数形*/
+  width: 85%;
+}
+
+/**コメント入力フォーム**/
+.comment-form {/*単数形*/
+  width: 90% !important;
+  border-radius: 10px !important;
+}
 
 
 

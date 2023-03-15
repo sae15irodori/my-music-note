@@ -60,18 +60,20 @@
                 <% end %>
               </div><!--コメント一覧-->
             <% end %><!--comments.each-->
-            
+
             <!--コメント入力欄-->
-            <div class="comment-form">
-                <%= form_with model: [@note, @note_comment] do |f| %>
-                  <%= f.text_area :comment, rows: '2', placeholder: "質問に対する回答＆応援や励ましのコメントしてみましょう！", class: 'form-control w-50' %>
-                  <%= f.submit "✍",class: 'btn comment-btn'%>
+            <div class="comments-form">
+                <%= form_with model: [@note, @note_comment], class: "form-inline" do |f| %>
+                  <%= f.text_area :comment, rows: '4', placeholder: "質問に対する回答＆応援や励ましのコメントしてみましょう！", class: 'form-control comment-form' %>
+                  <%= button_tag type: "submit", class: "btn btn-default　" do %>
+                    <i class="fas fa-reply-all"></i>
+                  <% end %>
                 <% end %>
             </div>
           </div><!--コメント欄と一覧-->
       <% end %><!--ﾕｰｻﾞｰ退会済じゃなければ-->
 
-      
+
       </div>
     </div>
   </div>
