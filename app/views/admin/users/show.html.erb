@@ -15,12 +15,12 @@
             <p class="ml-5"><%= @user.introduction %></p><!--自己紹介-->
           </h2>
         </div>
-      
+
         <div class="col-4">
-          <%= link_to "※利用停止", admin_user_unsubscribe_path(@user.id),class: 'btn btn-outline-secondary'  %>
+          <%= link_to "※利用停止", admin_user_unsubscribe_path(@user.id),class: 'btn withdrawal-btn to-withdrawal'%>
         </div>
       </div>
-        
+
 
       <!--ユーザー投稿一覧-->
       <% @notes.each do |note| %>
