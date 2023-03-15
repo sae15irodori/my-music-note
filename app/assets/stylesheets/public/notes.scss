@@ -74,6 +74,49 @@
 
 
 
+/***コメントの設定***/
+.comment-box {
+  margin: 0 3em;
+}
+
+.comments {
+  margin: 0 0 5em 0;
+  border-top: 1px solid #E6E6E6 ;
+}
+
+.fixed-bottom {
+  position: sticky;
+  background: #fff;
+  height: 20vh;
+}
+
+.comment {
+  width: 40%;
+}
+
+/**管理者側コメント一覧**/
+.comment-contents {
+  position: relative;
+  width: 70%;
+  margin: 3em auto;
+  padding: 1.5em 3em;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.comment-contents:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 20px solid #fff;
+}
+
+
+
+
 
 /**投稿フォーム**/
 .made-form {/*見出し含む全体の設定*/

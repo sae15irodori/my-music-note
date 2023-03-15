@@ -1,18 +1,38 @@
 <div class="container">
   <div class="row">
-    <div class="col-12 col-md-12">
+    <div class="col-12 main">
       <h1>コメント一覧</h1>
-      <%= search_form_for @q, url: search_admin_note_note_comments_path do |f| %>
-        <%= f.search_field :comment_cont, placeholder: "コメント検索" %>
-        <%= f.submit '🔍', class: "btn-sm btn-outline-secondary" %>
+      <!--検索フォーム-->
+      <div class="row">
+          <div class="col-3">
+            <%= search_form_for @q, url: search_admin_note_note_comments_path do |f| %>
+              <%= f.search_field :comment_cont, placeholder: "コメント検索" %>
+          </div>
+          <div class="9">
+            <%= button_tag type: "submit", class: "btn btn-default　rounded-pill" do %>
+              <i class="fas fa-search"></i>
+            <% end %>
+          </div>
+        </div>
       <% end %>
 
         <% @comments.each do |comment| %>
+          <div class="comment-contents">
           <%= link_to admin_user_path(comment.user.id) do %>
-            <%= render '/layouts/user_info', user: comment.user %>
+            <%= render '/layouts/user_info', user: comment.user %><br>
           <% end %>
-          <%= link_to comment.comment, admin_note_path(comment.note.id) %>
-          <%= link_to "削除", admin_note_note_comment_path(comment.note.id, comment.id), method: :delete, data: {confirm: 'このコメントを管理者として消しますか？'} %>
+          <!--コメント-->
+          <span class="mx-4"><%= link_to comment.comment, admin_note_path(comment.note.id) %></span>
+
+          <!--削除ボタン-->
+          <span class="edit-destory-btn">
+            <span class="destroy-btn">
+              <%= link_to admin_note_note_comment_path(comment.note.id, comment.id), method: :delete, data: {confirm: 'このコメントを管理者として消しますか？'} do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </span>
+          </span>
+          </div>
         <% end %>
     </div>
   </div>
