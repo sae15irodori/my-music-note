@@ -195,40 +195,45 @@ li{
 }
 
 
-
+/***利用規約画面**/
 .tos-box {
   width: 80%;
   position: relative;
-  margin: 0 auto;
-  padding: 3em 5em;
-  border-radius: 20px;
+  margin: 2em auto;
+  padding: 3.5em 5em;
+  border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
   background-color: #fdf2a5f2;
 }
 
 .tos-box::before {
-    position: absolute;
-    top: 3.5rem;
-    left: 1rem;
-    width: calc(100% - 5rem);
-    height: calc(100% - 2rem);
-    background-image: repeating-linear-gradient( transparent 1px 37px);
-    content: '';
+  position: absolute;
+  top: 3.5rem;
+  left: 1rem;
+  width: calc(100% - 5rem);
+  height: calc(100% - 2rem);
+  content: '';
 }
 
 .tos-box::after {
-    position: absolute;
-    top: -1.5rem;
-    left: 50%;
-    width: 30%;
-    height: 2.8em;
-    border-left: 2px dashed rgba(0, 0, 0, .1);
-    border-right: 2px dashed rgba(0, 0, 0, .1);
-    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
-    transform: translateX(-40%) rotate(-2deg);
-    content: '';
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  width: 30%;
+  height: 2.8em;
+  background: #ffffff73;
+  border-left: 2px dashed rgba(0, 0, 0, .1);
+  border-right: 2px dashed rgba(0, 0, 0, .1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+  transform: translateX(-40%) rotate(-2deg);
+  content: '';
 }
 
 .tos-box p {
-    color: #333;
-    line-height: 2.3;
+  color: #333;
+  line-height: 2.3;
+}
+
+.tos-sentence {
+  width: 80%;
+  margin: 0 auto;
 }
