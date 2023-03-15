@@ -41,7 +41,7 @@
           <div class="comment-box">
             <p>コメント</p>
             <% @note.note_comments.each do |note_comment| %>
-            <div class="comments">
+            <div class="comment-contents comment">
               <%= link_to (user_path(@user.id)) do %>
                 <%= image_tag note_comment.user.get_image, class: "rounded-circle" %>
                 <%= note_comment.user.name %>
@@ -49,13 +49,29 @@
 
               <span><%= note_comment.created_at.strftime('%Y/%m/%d') %></span>
               <p><%= safe_join(note_comment.comment.split("\n"),tag(:br)) %></p>
-              <% if note_comment.user == current_user %>
-                <%= link_to "削除", note_note_comment_path(note_comment.note, note_comment.id), method: :delete, data: {confirm: 'このコメントを消しますか？'} %>
-              <% end %>
+
+
+                <% if note_comment.user == current_user %><!--ログイン中なら削除ボタン-->
+                  <span class="destroy-btn">
+                    <%= link_to note_note_comment_path(note_comment.note, note_comment.id), method: :delete, data: {confirm: 'このコメントを消しますか？'} do %>
+                      <i class="far fa-trash-alt"></i>
+                    <% end %>
+                  </span>
+                <% end %>
+              </div><!--コメント一覧-->
             <% end %><!--comments.each-->
-          <% end %>
-        </div>
-      </div>
+            
+            <!--コメント入力欄-->
+            <div class="comment-form">
+                <%= form_with model: [@note, @note_comment] do |f| %>
+                  <%= f.text_area :comment, rows: '2', placeholder: "質問に対する回答＆応援や励ましのコメントしてみましょう！", class: 'form-control w-50' %>
+                  <%= f.submit "✍",class: 'btn comment-btn'%>
+                <% end %>
+            </div>
+          </div><!--コメント欄と一覧-->
+      <% end %><!--ﾕｰｻﾞｰ退会済じゃなければ-->
+
+      
       </div>
     </div>
   </div>

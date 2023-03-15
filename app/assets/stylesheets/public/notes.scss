@@ -75,46 +75,41 @@
 
 
 /***コメントの設定***/
+/**コメント欄全体**/
 .comment-box {
-  margin: 0 3em;
+  width: 70%;
+  margin-left: 8em;
 }
 
-.comments {
-  margin: 0 0 5em 0;
-  border-top: 1px solid #E6E6E6 ;
-}
-
-.fixed-bottom {
-  position: sticky;
-  background: #fff;
-  height: 20vh;
-}
-
-.comment {
-  width: 40%;
-}
-
-/**管理者側コメント一覧**/
+/**コメント一覧**/
 .comment-contents {
   position: relative;
   width: 70%;
-  margin: 3em auto;
+  margin: 2em 0;
   padding: 1.5em 3em;
-  background: #fff;
+  background: #ffffffd1;
   border-radius: 10px;
 }
 
 .comment-contents:before {
   content: "";
   position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -15px;
+  top: 50%;
+  left: -30px;
+  margin-top: -3%;
   border: 15px solid transparent;
-  border-top: 20px solid #fff;
+  border-right: 15px solid #ffffffd1;
+  z-index: 0;
 }
 
 
+
+
+/*.fixed-bottom {
+  position: sticky;
+  background: #fff;
+  height: 20vh;
+}*/
 
 
 
