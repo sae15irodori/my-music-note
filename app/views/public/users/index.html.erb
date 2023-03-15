@@ -22,7 +22,7 @@
         <% if user.is_deleted == false && user.email != 'guest@gesuto.com' %>
           <%= link_to (user_path(user.id)) do %>
           <div class="users-box">
-            <%= render '/layouts/user_info', user: user %>
+            <%= render '/layouts/user_info', user: user %><br>
             <%= user.introduction %>
           </div>
           <% end %>

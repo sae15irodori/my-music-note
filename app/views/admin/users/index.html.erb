@@ -19,10 +19,10 @@
       <% @users.each do |user| %>
           <%= link_to (admin_user_path(user.id)) do %>
           <div class="users-box">
-            <%= render '/layouts/user_info', user: user %>
+            <%= render '/layouts/user_info', user: user %><br>
             <%= user.introduction %>
             <% if user.is_deleted == true %>
-              退会済ユーザー
+              <span class="ml-3">退会済ユーザー</span>
             <% end %>
           </div>
           <% end %>
