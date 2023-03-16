@@ -1,0 +1,49 @@
+<!--管理者側一覧画面にて使用-->
+<div class="index-note-contents index-note-contets1"><!--ルーズリーフの設定-->
+  <div class="index-note-content">
+    <!--投稿ﾕｰｻﾞｰ情報-->
+    <% if note.user.is_deleted == true %><!--ﾕｰｻﾞｰが退会済ならば-->
+      この投稿のユーザーは退会済です
+    <% end %><!--ﾕｰｻﾞｰが退会済ならば-->
+
+    <%= link_to admin_user_path(note.user.id) do %>
+      <%= render '/layouts/user_info', user: note.user %>
+    <% end %>
+
+    <!--投稿内容-->
+    <%= link_to (admin_note_path(note.id)) do %>
+      <% if note.image.present? or note.url.present? %><!--画像か動画がある場合-->
+        <h2 class="index-note-title"><%= note.title %></h2><!--タイトル--><br>
+        <!--タグ-->
+          <% if note.tag.present? %>
+            <i class="fas fa-tag"></i><%= note.tag.name %>
+          <% end %>
+      <% else %><!--画像も動画もない場合-->
+        <h2 class="index-note-title mt-4 mx-3"><%= note.title %></h2><br><!--タイトル-->
+        <p class="index-notes-body"><%= note.body %></p><br><!--本文-->
+          <!--タグ-->
+          <% if note.tag.present? %>
+            <i class="fas fa-tag"></i><%= note.tag.name %>
+          <% end %>
+      <% end %><!--画像か動画があるときの処理-->
+
+      <p><!--画像-->
+        <% if note.image.present? %>
+          <p class="index-note-body"><%= note.body %></p>
+          <%= image_tag note.image,:size => '250x200' %>
+        <% end %>
+      </p><!--動画-->
+      <p class="video">
+        <% if note.url.present? %>
+          <p class="index-note-body"><%= note.body %></p>
+          <iframe width="250" height="200" src="<%= note.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <% end %>
+      </p>
+    <% end %><!--投稿詳細へのﾘﾝｸ-->
+  </div>
+  <!--いいねボタン＆コメント件数-->
+  <p class="index-favorites-btn">
+    ♥<%= note.favorites.count %><!--いいねボタン-->
+    <i class="far fa-comment ml-5 mr-1"></i><%= note.note_comments.count %><!--ｺﾒﾝﾄ件数-->
+  </p>
+</div><!--ルーズリーフ-->

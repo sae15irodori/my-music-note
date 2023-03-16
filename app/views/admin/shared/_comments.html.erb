@@ -1,0 +1,16 @@
+<div class="comment-contents">
+  <%= link_to admin_user_path(comment.user.id) do %>
+    <%= render '/layouts/user_info', user: comment.user %><br>
+  <% end %>
+  <!--コメント-->
+  <span class="mx-4"><%= link_to comment.comment, admin_note_path(comment.note.id) %></span>
+
+  <!--削除ボタン-->
+  <span class="edit-destory-btn">
+    <span class="destroy-btn">
+      <%= link_to admin_note_note_comment_path(comment.note.id, comment.id), method: :delete, data: {confirm: 'このコメントを管理者として消しますか？'} do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
+    </span>
+  </span>
+</div>

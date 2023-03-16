@@ -1,17 +1,26 @@
 <div class="container">
   <div class="row">
-    <div class="col-12">
-      <h1>ユーザー検索</h1>
+    <div class="col-12 main">
+      <h1>ユーザー検索<span class="ml-3" style="font-size: 1.5rem">(全<%= @results.count %>件)</span></h1>
+      <!--検索フォーム-->
       <%= search_form_for @q, url: search_users_path do |f| %>
-        <%= f.search_field :name_cont, placeholder: "ノート検索" %>
-        <%= f.submit '🔍', class: "btn-sm btn-outline-secondary" %>
+        <div class="row">
+          <div class="col-3">
+            <%= f.search_field :name_cont, placeholder: "ノート検索",class: "form-control rounded-pill" %>
+         </div>
+          <div class="9">
+            <%= button_tag type: "submit", class: "btn btn-default　rounded-pill" do %>
+              <i class="fas fa-search"></i>
+            <% end %>
+          </div>
+        </div>
       <% end %>
 
       <% if @results.present? %>
         <% @results.each do |user| %>
           <%= link_to (admin_user_path(user.id)) do %>
-            <div class="note_box2_6">
-              <%= render '/layouts/user_info', user: user %>
+            <div class="users-box">
+              <%= render '/layouts/user_info', user: user %><br>
               <%= user.introduction %>
             </div>
           <% end %>

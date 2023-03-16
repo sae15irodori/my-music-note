@@ -3,12 +3,22 @@
       <div class="col-12 main">
         <div class="row">
           <h1>タグ作成</h1>
+          <!--検索フォーム-->
+            <%= search_form_for @q, url: search_admin_tags_path, class: "form-inline" do |f| %>
+              <%= f.search_field :name_cont, placeholder: "タグ検索",class: "form-control rounded-pill ml-4 mt-2" %>
+              <%= button_tag type: "submit", class: "btn btn-default　rounded-pill mt-2" do %>
+                <i class="fas fa-search"></i>
+              <% end %>
+            <% end %>
         </div>
+
         <div class="row">
-          <%= form_with model: @tag, url: admin_tags_path ,method: :post , class: "form-inline" do |f| %>
-            <%= f.text_field :name,  placeholder: "タグ名を入力",class: 'form-control mt-3 mb-4' %>
-            <%= f.submit "✍",class: 'btn tag-form-btn' %>
-          <% end %>
+          <div class="col-8">
+            <%= form_with model: @tag, url: admin_tags_path ,method: :post , class: "form-inline" do |f| %>
+              <%= f.text_field :name,  placeholder: "タグ名を入力",class: 'form-control w-50 mt-5 mb-3' %>
+              <%= f.submit "✍",class: 'btn tag-form-btn' %>
+            <% end %>
+          </div>
         </div>
 
       <div class="row">

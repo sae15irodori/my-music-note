@@ -16,7 +16,7 @@
           </div>
         </div>
       <% end %>
-      
+
       <!--ユーザー情報-->
       <% @users.each do |user| %>
         <% if user.is_deleted == false && user.email != 'guest@gesuto.com' %>
