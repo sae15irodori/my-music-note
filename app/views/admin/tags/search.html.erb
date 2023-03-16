@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12 main">
+      <span class="notice"><%= flash[:notice] %></span>
       <h1>Tags<span class="ml-1" style="font-size: 1.5rem">タグ検索結果</span><span class="ml-3" style="font-size: 1.5rem">(全<%= @results.count %>件)</span></h1>
       <!--検索フォーム-->
       <%= search_form_for @q, url: search_admin_tags_path, class: "form-inline" do |f| %>
