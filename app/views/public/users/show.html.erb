@@ -28,7 +28,10 @@
                     <p class="ml-5"><%= @user.introduction %></p>
                 <% end %>
               <% elsif  @user.email == 'guest@gesuto.com' %><!--ｹﾞｽﾄﾕｰｻﾞｰの場合-->
-                ゲストユーザーです　ユーザー登録して機能を使ってみましょう！ マイページ見本の画像が入る
+                ゲストユーザーです<br>
+                ユーザー登録をしてあなたも自分のノートを作ってみましょう！
+                <br><br>
+                <%= image_tag 'piano4' %>
               <% else %><!--ｹﾞｽﾄでもﾛｸﾞｲﾝ中でもない場合-->
                 <%= render '/layouts/user_info', user: @user %>
                 <p><%= @user.introduction %></p>
