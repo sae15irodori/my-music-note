@@ -18,8 +18,7 @@
   height: 30%;
   padding: 1em 1em;
   line-height: 3em;
-  background-color: #a9ceec;
-  color: #333333;
+  background-color: #9ce3e3;
 }
 
 .tag::before {
@@ -30,7 +29,7 @@
   transform: rotate(5deg);
   width: 70%;
   height: 50%;
-  background-color: #ada8a8b3;
+  background: #ada8a8b3;
   content: "";
   filter: blur(4px);
 }
@@ -53,4 +52,7 @@
 .tag-edit-form {
   width: 55% !important;
   align-items: center !important;
+  background-color: #dbf9f9 !important;
+  border: none !important;
+  color: #6C4E37 !important;
 }
