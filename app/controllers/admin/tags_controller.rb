@@ -1,4 +1,5 @@
 class Admin::TagsController < ApplicationController
+  before_action :authenticate_admin!, if: :admin_url
   before_action :set_q, only: [:search, :index]
 
   def index
@@ -51,5 +52,9 @@ class Admin::TagsController < ApplicationController
 
   def tag_params
     params.require(:tag).permit(:name)
+  end
+  
+  def admin_url
+    request.fullpath.include?("/admin")
   end
 end

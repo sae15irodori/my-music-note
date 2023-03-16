@@ -1,4 +1,5 @@
 class Admin::UsersController < ApplicationController
+  before_action :authenticate_admin!, if: :admin_url
   before_action :set_q, only: %i[search index]
   before_action :guest_check, only: %i[withdrawal unsubscribe]
 
@@ -38,5 +39,9 @@ class Admin::UsersController < ApplicationController
     if user.email == 'guest@gesuto.com'
     redirect_to admin_users_path,notice: "※ゲストアカウントは利用停止できません"
     end
+  end
+  
+  def admin_url
+    request.fullpath.include?("/admin")
   end
 end

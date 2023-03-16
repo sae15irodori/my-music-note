@@ -27,4 +27,9 @@ class Admin::UnlocksController < Devise::UnlocksController
   # def after_unlock_path_for(resource)
   #   super(resource)
   # end
+  before_action :authenticate_admin!, if: :admin_url
+  private
+    def admin_url
+    request.fullpath.include?("/admin")
+    end
 end

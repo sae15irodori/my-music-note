@@ -1,4 +1,5 @@
 class Admin::NoteCommentsController < ApplicationController
+  before_action :authenticate_admin!, if: :admin_url
   before_action :set_q, only: [:search, :index]
 
   def destroy
@@ -25,5 +26,10 @@ class Admin::NoteCommentsController < ApplicationController
   def note_comment_params
     params.require(:note_comment).permit(:comment)
   end
+  
+  def admin_url
+    request.fullpath.include?("/admin")
+  end
+
 
 end

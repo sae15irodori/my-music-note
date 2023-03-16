@@ -31,4 +31,9 @@ class Admin::PasswordsController < Devise::PasswordsController
   # def after_sending_reset_password_instructions_path_for(resource_name)
   #   super(resource_name)
   # end
+   before_action :authenticate_admin!, if: :admin_url
+   private
+    def admin_url
+    request.fullpath.include?("/admin")
+    end
 end

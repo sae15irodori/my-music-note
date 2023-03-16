@@ -1,4 +1,5 @@
 class Admin::NotesController < ApplicationController
+  before_action :authenticate_admin!, if: :admin_url
   before_action :set_q, only: [:search, :index]
   def index
     @notes = Note.all.order(created_at: :desc)
@@ -26,6 +27,10 @@ class Admin::NotesController < ApplicationController
 
   def set_q
     @q = Note.ransack(params[:q])#Noteモデルより入力されたｷｰﾜｰﾄﾞ(q)を探す
+  end
+  
+  def admin_url
+    request.fullpath.include?("/admin")
   end
 
 
