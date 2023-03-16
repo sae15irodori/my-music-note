@@ -16,6 +16,6 @@
 
   <p>
   <% if note.tag.present? %>
-    <i class="fas fa-tag"></i><%= note.tag.name %>
+    <i class="fas fa-tag"></i><%= link_to note.tag.name, admin_tag_path(note.tag.id) %>
   <% end %>
   </p>
