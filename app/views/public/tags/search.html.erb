@@ -12,7 +12,9 @@
 
       <% if @results.present? %>
         <% @results.each do |tag| %>
-          <%= link_to tag.name, tag_path(tag.id), class: "tag" %>
+        <div class="tag">
+          <i class="fas fa-tag"></i><%= link_to tag.name, tag_path(tag.id) %>
+        </div>
         <% end %>
       <% else %>
         一致する結果はありませんでした。o○
