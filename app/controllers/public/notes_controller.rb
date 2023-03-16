@@ -1,7 +1,7 @@
 class Public::NotesController < ApplicationController
   before_action :is_matching_login_user, only: %i[edit update destroy]
-  before_action :guest_check, except: %i[show index]
-  before_action :set_q, only: [:search, :index]
+  before_action :guest_check, except: %i[show index search]
+  before_action :set_q, only: %i[search index]
 
   def new
     @note = Note.new
@@ -84,7 +84,7 @@ class Public::NotesController < ApplicationController
 
   def guest_check
     if current_user.email == 'guest@gesuto.com'
-    redirect_to notes_path,notice: "※この操作をには✍...会員登録をしてみましょう♪"
+    redirect_to notes_path,notice: "※この操作をするには✍...会員登録をしてみましょう♪"
     end
   end
 end
