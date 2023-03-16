@@ -70,7 +70,7 @@ Rails.application.routes.draw do
       collection do
         get "search"
       end
-      resources :note_comments, only: [:create, :destroy, :index] do#notesにネスト
+      resources :note_comments, only: [:destroy, :index] do#notesにネスト
         collection do
           get "search"
         end

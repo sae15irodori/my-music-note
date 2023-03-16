@@ -40,6 +40,14 @@
           <!--コメント欄-->
           <div class="comment-box">
             <p>コメント</p>
+            <!--コメント入力欄-->
+            <div class="comments-form">
+                <%= form_with model: [@note, @note_comment], class: "form-inline" do |f| %>
+                  <%= f.text_area :comment, rows: '3', placeholder: "質問に対する回答・応援や励ましのコメントしてみましょう！", class: 'form-control comment-form' %>
+                  <%= f.submit "✍",class: 'btn comment-form-btn' %>
+                <% end %>
+            </div>
+            <!--コメント一覧-->
             <% @note.note_comments.each do |note_comment| %>
             <div class="comment-contents comment">
               <%= link_to (user_path(@user.id)) do %>
@@ -61,13 +69,7 @@
               </div><!--コメント一覧-->
             <% end %><!--comments.each-->
 
-            <!--コメント入力欄-->
-            <div class="comments-form">
-                <%= form_with model: [@note, @note_comment], class: "form-inline" do |f| %>
-                  <%= f.text_area :comment, rows: '4', placeholder: "質問に対する回答＆応援や励ましのコメントしてみましょう！", class: 'form-control comment-form' %>
-                  <%= f.submit "✍",class: 'btn comment-form-btn' %>
-                <% end %>
-            </div>
+            
           </div><!--コメント欄と一覧-->
       <% end %><!--ﾕｰｻﾞｰ退会済じゃなければ-->
 

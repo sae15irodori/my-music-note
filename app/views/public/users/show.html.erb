@@ -14,11 +14,11 @@
               <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
                 <%= link_to edit_user_path(@user.id) do %>
                     <%= render '/layouts/user_info', user: @user %>
-  
+
                       <%= link_to edit_user_path(@user.id), class: "ml-2" do %><!--編集ボタン-->
                         <i class="far fa-edit"></i>
                       <% end %>
-  
+
                     <p class="ml-5"><%= @user.introduction %></p><!--自己紹介-->
                 <% end %>
               <% elsif  @user.email == 'guest@gesuto.com' %><!--ｹﾞｽﾄﾕｰｻﾞｰの場合-->
@@ -27,21 +27,21 @@
                 <%= render '/layouts/user_info', user: @user %>
                 <p><%= @user.introduction %></p>
               <% end %>
-  
-  
+
+
             </h2><!--ユーザー情報-->
           </div>
-  
+
           <div class="col-4">
             <!--ﾛｸﾞｲﾝ中ならﾕｰｻﾞｰのいいねした投稿一覧へのﾘﾝｸ-->
             <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
               <%= link_to favorites_user_path(@user.id), class: "user-favorites" do %>
-                <%= image_tag 'user-favorites', :size => '120x80' %>
+                <%= image_tag 'favorites', :size => '100x110' %>
               <% end %>
             <% end %>
           </div>
         </div>
-  
+
         <!--ユーザー投稿一覧-->
         <% @notes.each do |note| %>
           <%= render '/public/shared/note_index', note: note %>

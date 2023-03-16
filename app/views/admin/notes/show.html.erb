@@ -39,7 +39,7 @@
         <div class="comment-box">
           <p>コメント</p>
           <% @note.note_comments.each do |note_comment| %>
-            <div class="comments">
+            <div class="comment-contents comment">
               <!--ｺﾒﾝﾄﾕｰｻﾞｰ情報-->
               <%= link_to (admin_user_path(@user.id)) do %>
                 <%= image_tag note_comment.user.get_image, class: "rounded-circle" %>
@@ -48,18 +48,15 @@
               <!--ｺﾒﾝﾄ内容-->
               <span><%= note_comment.created_at.strftime('%Y/%m/%d') %></span>
               <p><%= safe_join(note_comment.comment.split("\n"),tag(:br)) %></p>
-              <%= link_to "削除", admin_note_note_comment_path(note_comment.note, note_comment.id), method: :delete, data: {confirm: 'このコメントを管理者として消しますか？'} %>
+              <span class="destroy-btn"><!--削除ボタン-->
+                <%= link_to admin_note_note_comment_path(note_comment.note, note_comment.id), method: :delete, data: {confirm: 'このコメントを管理者として消しますか？'} do %>
+                <i class="far fa-trash-alt"></i>
+                <% end %>
+              </span>
             </div>
             <% end %><!--comments.each-->
         </div>
 
-        <!--ｺﾒﾝﾄ投稿ﾌｫｰﾑ-->
-        <div class="comment col-12">
-          <%= form_with model: [@note, @note_comment] do |f| %>
-            <%= f.text_area :comment, rows: '4', placeholder: "質問に対する回答＆応援や励ましのコメントしてみましょう！", class: 'form-control mb-4' %>
-            <%= f.submit "✍",class: 'btn btn-outline-secondary'  %>
-          <% end %>
-      </div>
     </div>
   </div>
 </div>
