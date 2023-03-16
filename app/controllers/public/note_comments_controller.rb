@@ -17,7 +17,7 @@ class Public::NoteCommentsController < ApplicationController
   end
 
   def destroy
-    if NoteComment.find(params[:id]).destroy
+    if NoteComment.find(params[:id]).destroy!
       flash[:notice] = "削除しました"
       redirect_to request.referer
     end
@@ -30,8 +30,8 @@ class Public::NoteCommentsController < ApplicationController
   end
 
   def is_matching_login_user
-    user_id = params[:id].to_i
-    unless user_id == current_user.id
+    comment = NoteComment.find(params[:id])
+    unless comment.user_id == current_user.id
       redirect_to request.referer
     end
   end

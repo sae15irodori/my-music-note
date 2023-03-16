@@ -59,9 +59,9 @@
               <p><%= safe_join(note_comment.comment.split("\n"),tag(:br)) %></p>
 
 
-                <% if note_comment.user == current_user %><!--ログイン中なら削除ボタン-->
+                <% if note_comment.user == current_user %><!--ﾛｸﾞｲﾝﾕｰｻﾞｰのｺﾒﾝﾄならば削除ボタン-->
                   <span class="destroy-btn">
-                    <%= link_to note_note_comment_path(note_comment.note, note_comment.id), method: :delete, data: {confirm: 'このコメントを消しますか？'} do %>
+                    <%= link_to note_note_comment_path(note_comment.note.id, note_comment.id), method: :delete, data: {confirm: 'このコメントを消しますか？'} do %>
                       <i class="far fa-trash-alt"></i>
                     <% end %>
                   </span>
