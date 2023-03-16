@@ -18,7 +18,7 @@ class Public::NoteCommentsController < ApplicationController
 
   def destroy
     if NoteComment.find(params[:id]).destroy!
-      flash[:notice] = "削除しました"
+      flash[:notice] = "コメントを削除しました"
       redirect_to request.referer
     end
   end
