@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12 main">
-      <h1>ユーザー検索<span class="ml-3" style="font-size: 1.5rem">(全<%= @results.count %>件)</span></h1>
+      <h1>ユーザー検索結果</h1>
       <!--検索フォーム-->
       <%= search_form_for @q, url: search_users_path, class: "form-inline" do |f| %>
         <%= f.search_field :name_cont, placeholder: "ノート検索",class: "form-control rounded-pill" %>
@@ -12,13 +12,15 @@
 
       <% if @results.present? %>
         <% @results.each do |user| %>
-          <%= link_to (admin_user_path(user.id)) do %>
-            <div class="users-box">
-              <%= render '/layouts/user_info', user: user %><br>
-              <%= user.introduction %>
-            </div>
-          <% end %>
-        <% end %>
+          <% if user.is_deleted == false && user.email != 'guest@gesuto.com' %><!--有効ﾕｰｻﾞｰか確認-->
+            <%= link_to (user_path(user.id)) do %>
+              <div class="users-box">
+                <%= render '/layouts/user_info', user: user %><br>
+                <%= user.introduction %>
+              </div>
+            <% end %>
+          <% end %><!--ﾕｰｻﾞｰ確認-->
+        <% end %><!--each-->
       <% else %>
         一致する結果はありませんでした。o○
       <% end %>
