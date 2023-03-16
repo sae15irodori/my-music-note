@@ -1,0 +1,10 @@
+<div class="tag">
+  <%= link_to tag.name, admin_tag_path(tag.id) %>
+
+  <%= link_to edit_admin_tag_path(tag.id) do %>
+    <i class="far fa-edit  ml-3 mx-2"></i>
+  <% end %>
+  <%= link_to admin_tag_path(tag.id), method: :delete, data: {confirm: 'このタグを消しますか？'} do %>
+    <i class="far fa-trash-alt"></i>
+  <% end %>
+</div>

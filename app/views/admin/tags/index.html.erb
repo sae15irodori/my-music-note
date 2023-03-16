@@ -13,9 +13,9 @@
         </div>
 
         <div class="row">
-          <div class="col-8">
+          <div class="col-8 mt-3">
             <%= form_with model: @tag, url: admin_tags_path ,method: :post , class: "form-inline" do |f| %>
-              <%= f.text_field :name,  placeholder: "タグ名を入力",class: 'form-control w-50 mt-5 mb-3' %>
+              <%= f.text_field :name,  placeholder: "タグ名を入力",class: 'form-control w-50 my-3' %>
               <%= f.submit "✍",class: 'btn tag-form-btn' %>
             <% end %>
           </div>
@@ -23,16 +23,7 @@
 
       <div class="row">
         <% @tags.each do |tag| %>
-          <div class="tag">
-          <%= link_to tag.name, admin_tag_path(tag.id) %>
-
-          <%= link_to edit_admin_tag_path(tag.id) do %>
-            <i class="far fa-edit  ml-3 mx-2"></i>
-          <% end %>
-          <%= link_to admin_tag_path(tag.id), method: :delete, data: {confirm: 'このタグを消しますか？'} do %>
-            <i class="far fa-trash-alt"></i>
-          <% end %>
-          </div>
+          <%= render '/admin/shared/tags', tag: tag %>
         <% end %>
       </div>
     </div>

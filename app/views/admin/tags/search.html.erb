@@ -12,7 +12,7 @@
 
       <% if @results.present? %>
         <% @results.each do |tag| %>
-          <%= link_to tag.name, admin_tag_path(tag.id), class: "tag" %>
+          <%= render '/admin/shared/tags', tag: tag %>
         <% end %>
       <% else %>
         一致する結果はありませんでした。o○
