@@ -39,7 +39,7 @@
           <iframe width="250" height="200" src="<%= note.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <% end %>
       </p>
-    <% end %><!--投稿詳細へのﾘﾝｸ-->
+    
   </div>
   <!--いいねボタン＆コメント件数-->
   <p class="index-favorites-btn">
@@ -47,3 +47,4 @@
     <i class="far fa-comment ml-5 mr-1"></i><%= note.note_comments.count %><!--ｺﾒﾝﾄ件数-->
   </p>
 </div><!--ルーズリーフ-->
+<% end %><!--投稿詳細へのﾘﾝｸ-->
