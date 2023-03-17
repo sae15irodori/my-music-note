@@ -37,7 +37,6 @@
 .index-note-title {
   font-size: 1rem;
   margin: 0 !important;
-  font-size: 1rem;
 }
 
 /*ノート本文*/
@@ -55,15 +54,14 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 7;
-  margin-bottom: 0 !important;
+  margin-bottom: 2em !important;
 }
 
 
 /**動画の表示設定**/
-.video{
+.notes-video{
   display: block;
   text-align: center;
-  line-height: 10;
 }
 .index-favorites-btn {
   width: 90%;
@@ -206,13 +204,6 @@ li{
   line-height: 1.7;
 }
 
-
-
-.video{
-  display: block;
-  text-align: center;
-  line-height: 10;
-}
 
 
 
