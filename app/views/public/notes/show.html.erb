@@ -30,10 +30,10 @@
                 </p>
                 
                 <span id="note_<%= @note.id %>">
-                <p class="favorites-btn">
-                  <span class="favoritebtn"><%= render '/public/favorites/favorites_btn', note: @note %> <!--いいねボタン--></span>
-                  <span class="ml-5" style="font-size: 1.2rem;"><i class="far fa-comment"></i><%= @note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
-                </p>
+                  <p class="favorites-btn">
+                    <span class="favoritebtn"><%= render '/public/favorites/favorites_btn', note: @note %> <!--いいねボタン--></span>
+                    <span class="ml-5" style="font-size: 1.2rem;"><i class="far fa-comment"></i><%= @note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
+                  </p>
                 </span>
               </div>
           </div>
