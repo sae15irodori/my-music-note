@@ -10,9 +10,11 @@
       <% end %>
 
       <% if @results.present? %>
-        <% @results.each do |note| %>
-          <%= render '/public/shared/note_index', note: note %>
-        <% end %>
+        <div id="main-note">
+          <% @results.each do |note| %>
+              <%= render '/public/shared/notes_index', note: note %>
+          <% end %>
+        </div>
       <% else %>
         一致する結果はありませんでした。o○
       <% end %>

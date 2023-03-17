@@ -1,0 +1,56 @@
+<% unless note.user.is_deleted == true %><!--ﾕｰｻﾞｰが退会済じゃなければ-->
+  <div class="index-note-contents index-note-contets1"><!--ルーズリーフの設定-->
+    <div class="index-note-content">
+      <!--投稿ﾕｰｻﾞｰ情報-->
+
+      <%= link_to user_path(note.user.id) do %>
+        <%= render '/layouts/user_info', user: note.user %>
+      <% end %>
+
+      <!--投稿内容-->
+      <%= link_to (note_path(note.id)) do %>
+        <% if note.image.present? %><!--画像がある場合-->
+          <h2 class="index-note-title"><%= note.title %></h2><!--タイトル--><br>
+          <p class="index-note-body"><%= note.body %></p>
+          <p><!--画像-->
+            <%= image_tag note.image,:size => '250x200' %>
+          </p>
+          <!--タグ-->
+          <% if note.tag.present? %>
+            <i class="fas fa-tag"></i><%= link_to note.tag.name, tag_path(note.tag.id) %>
+          <% end %>
+        <% elsif note.url.present? %>
+          <h2 class="index-note-title"><%= note.title %></h2><!--タイトル--><br>
+          <p class="index-note-body"><%= note.body %></p>
+          <!--動画-->
+          <p class="notes-video">
+            <iframe width="250" height="200" src="<%= note.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </p>
+          <!--タグ-->
+          <% if note.tag.present? %>
+            <i class="fas fa-tag"></i><%= link_to note.tag.name, tag_path(note.tag.id) %>
+          <% end %>
+        <% else %><!--画像も動画もない場合-->
+          <h2 class="index-note-title"><%= note.title %></h2><br><!--タイトル-->
+          <p class="index-notes-body"><%= note.body %></p><!--本文-->
+          <!--タグ-->
+          <% if note.tag.present? %>
+            <i class="fas fa-tag"></i><%= link_to note.tag.name, tag_path(note.tag.id) %>
+          <% end %>
+        <% end %><!--画像か動画があるときの処理-->
+      <% end %><!--投稿詳細へのﾘﾝｸ-->
+    </div>
+
+    <!--いいねボタン＆コメント件数-->
+    <span id="note_<%= note.id %>">
+      <p class="index-favorites-btn">
+        <span class="favoritebtn"><%= render '/public/favorites/favorites_btn', note: note %><!--いいねボタン--></span>
+        <%= link_to (note_path(note.id)) do %>
+          <i class="far fa-comment ml-4 mr-1"></i><%= note.note_comments.count %><!--ｺﾒﾝﾄ件数-->
+        <% end %>
+      </p>
+    </span>
+  </div><!--ルーズリーフ-->
+  <!--投稿内容終了-->
+
+<% end %><!--ﾕｰｻﾞｰ退会済じゃなければ-->
