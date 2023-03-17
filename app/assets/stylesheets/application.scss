@@ -65,13 +65,13 @@ a {
 
 .top-contents {   /*トップ画面全体*/
   width: 80vw;
-  margin: 5em auto;
+  margin: 7em auto
   background: #fff;
   padding: 3em 3em;
-  background: linear-gradient(#ccc 0.05em, transparent 0.05em) #FFF7F2;
+  background: linear-gradient(#ccc 0.05em, transparent 0.05em) #FFF;
   background-size: auto 2.9em;
   line-height: 0em;
-  border: 10px solid #dda705;
+  border: 10px solid #813400cc;
   border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
   overflow: hidden;
 }
@@ -91,10 +91,11 @@ a {
 }
 
 
+
 .top-content {
-  width: 80vw;
+  width: 60%;
   margin: 0 auto;
-  padding: 5em 0;
+  padding: 3em 0;
 }
 
 .top-heading2 {
@@ -104,7 +105,7 @@ a {
 .top-sentences {
   font-size: 1.3rem;
   color: #823014;
-  line-height: 3;
+  line-height: 2;
 }
 
 /*ログイン・新規登録画面*/
@@ -145,7 +146,7 @@ a {
 /***詳細ﾍﾟｰｼﾞ***/
 /**ページ全体**/
 .main{
-  margin: 5em 0;
+  margin: 6em 0;
 }
 
 /**ノートのﾙｰｽﾞﾘｰﾌ風設定**/
