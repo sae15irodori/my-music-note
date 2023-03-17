@@ -56,10 +56,12 @@
                 <% end %><!--投稿詳細へのﾘﾝｸ-->
               </div>
               <!--いいねボタン＆コメント件数-->
+              <span id="note_<%= note.id %>">
               <p class="index-favorites-btn">
-                <%= render '/public/favorites/favorites_btn', note: note %><!--いいねボタン-->
+                <span class="favoritebtn"><%= render '/public/favorites/favorites_btn', note: note %><!--いいねボタン--></span>
                 <i class="far fa-comment ml-2 mr-1"></i><%= note.note_comments.count %><!--ｺﾒﾝﾄ件数-->
               </p>
+              </span>
             </div><!--ルーズリーフ-->
             <!--投稿内容終了-->
 

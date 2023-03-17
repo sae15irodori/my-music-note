@@ -1,10 +1,10 @@
  <span style="font-size: 1.2rem">
  <% if note.favorited_by?(current_user) %>
-  <%= link_to note_favorites_path(note.id), method: :delete do %>
+  <%= link_to note_favorites_path(note.id), method: :delete, remote: true do %>
     ♥<%= note.favorites.count %>
   <% end %>
 <% else %>
-  <%= link_to note_favorites_path(note.id), method: :post do %>
+  <%= link_to note_favorites_path(note.id), method: :post, remote: true do %>
     ♡<%= note.favorites.count %> 
   <% end %>
 <% end %>
