@@ -10,7 +10,6 @@
           <i class="fas fa-search"></i>
         <% end %>
       <% end %>
-
       <% if @results.present? %>
         <% @results.each do |tag| %>
           <%= render '/admin/shared/tags', tag: tag %>

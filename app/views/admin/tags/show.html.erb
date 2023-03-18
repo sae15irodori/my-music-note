@@ -5,7 +5,9 @@
       
         <% @tag_notes.each do |tag_note| %>
           <div class="note-contents note-contents2">
-            <%= render '/layouts/user_info', user: note.user %><!--投稿ﾕｰｻﾞｰ情報-->
+            <%= link_to admin_user_path(tag_note.user.id) do %>
+              <%= render '/layouts/user_info', user: tag_note.user %><!--投稿ﾕｰｻﾞｰ情報-->
+            <% end %>
             <%= render '/admin/shared/note_index', note: tag_note %><!--投稿一覧-->
           </div>
         <% end %>

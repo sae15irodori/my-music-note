@@ -22,7 +22,9 @@
 
       <!--ユーザー投稿一覧-->
       <% @notes.each do |note| %>
-        <%= render '/admin/shared/note_index', note: note %>
+        <div class="note-contents note-contents2">
+          <%= render '/admin/shared/note_index', note: note %>
+        </div>
       <% end %>
     </div>
   </div>

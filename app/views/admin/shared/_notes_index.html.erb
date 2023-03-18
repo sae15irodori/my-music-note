@@ -20,7 +20,7 @@
         </p>
         <!--タグ-->
         <% if note.tag.present? %>
-          <i class="fas fa-tag"></i><%= link_to note.tag.name, tag_path(note.tag.id) %>
+          <i class="fas fa-tag"></i><%= link_to note.tag.name, admin_tag_path(note.tag.id) %>
         <% end %>
       <% elsif note.url.present? %>
         <h2 class="index-note-title"><%= note.title %></h2><!--タイトル--><br>
@@ -31,14 +31,14 @@
         </p>
         <!--タグ-->
         <% if note.tag.present? %>
-          <i class="fas fa-tag"></i><%= link_to note.tag.name, tag_path(note.tag.id) %>
+          <i class="fas fa-tag"></i><%= link_to note.tag.name, admin_tag_path(note.tag.id) %>
         <% end %>
       <% else %><!--画像も動画もない場合-->
         <h2 class="index-note-title"><%= note.title %></h2><br><!--タイトル-->
         <p class="index-notes-body"><%= note.body %></p><br><!--本文-->
         <!--タグ-->
         <% if note.tag.present? %>
-          <i class="fas fa-tag"></i><%= link_to note.tag.name, tag_path(note.tag.id) %>
+          <i class="fas fa-tag"></i><%= link_to note.tag.name, admin_tag_path(note.tag.id) %>
         <% end %>
       <% end %><!--画像か動画があるときの処理-->
 
