@@ -5,7 +5,7 @@
       <%= link_to user_path(note.user.id) do %>
         <%= render '/layouts/user_info', user: note.user %>
       <% end %>
-
+      <%= note.created_at.strftime('%Y/%m/%d') %>
       <!--投稿内容-->
       <%= link_to (note_path(note.id)) do %>
         <% if note.image.present? %><!--画像がある場合-->

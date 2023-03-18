@@ -12,7 +12,7 @@
             <% end %>
 
             <!--投稿内容-->
-            <%= render '/layouts/note_contents', note: @note %>
+            <%= render '/public/shared/note_contents', note: @note %>
               <div class="note-btn">
                 <p class="edit-destory-btn">
                 <% if @note.user.id == current_user.id %><!--ログイン中ユーザーならeditとdestroyﾘﾝｸ-->
