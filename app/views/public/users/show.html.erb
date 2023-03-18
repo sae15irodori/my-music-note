@@ -38,10 +38,13 @@
               <% end %>
             </h2><!--ユーザー情報-->
 
-        <!--ユーザー投稿一覧-->
-        <% @notes.each do |note| %>
-          <%= render '/public/shared/note_index', note: note %>
-        <% end %>
+          <!--ユーザー投稿一覧-->
+          <% @notes.each do |note| %>
+            <div class="note-contents note-contents2">
+                <%= render '/public/shared/note_index', note: note %>
+            </div>
+          <% end %>
+
       <% end %>
     </div>
   </div>

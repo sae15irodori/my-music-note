@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12 main">
       <h1>ノート検索結果<span class="ml-3" style="font-size: 1.5rem">(全<%= @results.count %>件)</span></h1>
-      
+
       <!--検索フォーム-->
       <%= search_form_for @q, url: search_admin_notes_path, class: "form-inline" do |f| %>
         <%= f.search_field :title_or_body_cont, placeholder: "ノート検索",class: "form-control rounded-pill" %>
@@ -14,7 +14,12 @@
       <% if @results.present? %>
         <div id="main-note">
           <% @results.each do |note| %>
-            <%= render '/admin/shared/notes_index', note: note %>
+            <div class="note-contents note-contents2">
+                <%= link_to user_path(note.user.id) do %>
+                  <%= render '/layouts/user_info', user: note.user %><!--投稿ﾕｰｻﾞｰ情報-->
+                <% end %>
+              <%= render '/admin/shared/notes_index', note: note %><!--投稿一覧-->
+            </div>
           <% end %><!--each-->
         </div>
       <% else %>

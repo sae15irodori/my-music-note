@@ -1,12 +1,19 @@
 <div class="container">
   <div class="row">
     <div class="col-12 main">
-      <h1>♡Notes<span class="ml-1" style="font-size: 1.5rem">♥スタンプを押したノート</span></h1>
+      <h1>♡Notes<span class="ml-1" style="font-size: 1.5rem">♥をしたノート</span></h1>
 
       <% if @favorite_notes.present? %>
-        <% @favorite_notes.each do |note|%>
-        <%= render '/public/shared/note_index', note: note %>
-        <% end %>
+
+          <% @favorite_notes.each do |note|%>
+            <div class="note-contents note-contents2">
+              <%= link_to user_path(note.user.id) do %>
+                <%= render '/layouts/user_info', user: note.user %><!--投稿ﾕｰｻﾞｰ情報-->
+              <% end %>
+              <%= render '/public/shared/note_index', note: note %><!--投稿一覧-->
+            </div>
+          <% end %>
+
       <% else %>
         <p>いいねしたノートはありません</p>
       <% end %>

@@ -2,7 +2,6 @@
   <div class="index-note-contents index-note-contets1"><!--ルーズリーフの設定-->
     <div class="index-note-content">
       <!--投稿ﾕｰｻﾞｰ情報-->
-
       <%= link_to user_path(note.user.id) do %>
         <%= render '/layouts/user_info', user: note.user %>
       <% end %>

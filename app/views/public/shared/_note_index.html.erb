@@ -1,16 +1,12 @@
-<div class="note-contents note-contents2">
-    <%= link_to (note_path(note.id)) do %>
-      <%= render '/layouts/note_contents', note: note %><!--投稿内容-->
-    <% end %>
-    
-      <span id="note_<%= note.id %>">
-        <p class="favorites-btn">
-          <span class="favoritebtn"><%= render '/public/favorites/favorites_btn', note: note %> <!--いいねボタン--></span>
-          <%= link_to (note_path(note.id)) do %>
-            <span class="ml-5" style="font-size: 1.2rem;"><i class="far fa-comment"></i><%= note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
-          <% end %>
-        </p>
-      </span>
-   
+<%= link_to (note_path(note.id)) do %>
+  <%= render '/public/shared/note_contents', note: note %><!--投稿内容-->
+<% end %>
 
-</div>
+  <span id="note_<%= note.id %>">
+    <p class="favorites-btn">
+      <span class="favoritebtn"><%= render '/public/favorites/favorites_btn', note: note %> <!--いいねボタン--></span>
+      <%= link_to (note_path(note.id)) do %>
+        <span class="ml-5" style="font-size: 1.2rem;"><i class="far fa-comment"></i><%= note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
+      <% end %>
+    </p>
+  </span>
