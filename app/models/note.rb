@@ -16,4 +16,12 @@ class Note < ApplicationRecord
   def self.search(keyword)#titleかbodyで検索キーワードが部分一致する投稿を取得する
   where(["title like? OR body like?", "%#{keyword}%", "%#{keyword}%"])
   end
+  
+  def self.ransackable_attributes(auth_object = nil)
+    ["body", "created_at", "id", "movie", "tag_id", "title", "updated_at", "url", "user_id"]
+  end
+  
+  def self.ransackable_associations(auth_object = nil)
+    ["favorites", "image_attachment", "image_blob", "note_comments", "tag", "user"]
+  end
 end

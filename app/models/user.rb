@@ -31,5 +31,9 @@ class User < ApplicationRecord
   def active_for_authentication?#退会している場合ﾛｸﾞｲﾝさせないﾒｿｯﾄﾞ
     super && (is_deleted == false)
   end
+  
+  def self.ransackable_attributes(auth_object = nil)
+    ["name"]
+  end
 
 end
