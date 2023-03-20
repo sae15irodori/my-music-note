@@ -22,9 +22,13 @@
 
       <!--ユーザー投稿一覧-->
       <% @notes.each do |note| %>
-        <div class="note-contents note-contents2">
-          <%= render '/admin/shared/note_index', note: note %>
-        </div>
+        <% if note.present? %>
+          <div class="note-contents note-contents2">
+            <%= render '/admin/shared/note_index', note: note %>
+          </div>
+        <% else %>
+          まだノートを作っていません
+        <% end %>
       <% end %>
     </div>
   </div>
