@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12 main">
       <h1>Note</h1>
-      <%= flash[:notice] %>
+      <span class="notice"><%= flash[:notice] %></span>
 
       <% unless @user.is_deleted == true %><!--ﾕｰｻﾞｰが退会済じゃなければ-->
         <div class="note-contents note-contents2"><!--ルーズリーフの設定-->
