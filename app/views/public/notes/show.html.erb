@@ -51,27 +51,31 @@
             </div>
             <!--コメント一覧-->
             <% @note.note_comments.each do |note_comment| %>
-            <div class="comment-contents comment">
-              <%= link_to (user_path(@user.id)) do %>
-                <%= image_tag note_comment.user.get_image, class: "rounded-circle" %>
-                <%= note_comment.user.name %>
-              <% end %>
-
-              <span><%= note_comment.created_at.strftime('%Y/%m/%d') %></span>
-              <p><%= safe_join(note_comment.comment.split("\n"),tag(:br)) %></p>
-
-
-                <% if note_comment.user == current_user %><!--ﾛｸﾞｲﾝﾕｰｻﾞｰのｺﾒﾝﾄならば削除ボタン-->
-                  <span class="destroy-btn">
-                    <%= link_to note_note_comment_path(note_comment.note.id, note_comment.id), method: :delete, data: {confirm: 'このコメントを消しますか？'} do %>
-                      <i class="far fa-trash-alt"></i>
-                    <% end %>
-                  </span>
-                <% end %>
-              </div><!--コメント一覧-->
+              <% if note_comment.user.is_deleted == true %><!--ｺﾒﾝﾄしたﾕｰｻﾞｰが退会済ならば-->
+                  <div class="comment-contents comment">
+                   このコメントをしたユーザーは退会済です
+                  </div>
+              <% else %>
+                <div class="comment-contents comment">
+                  <%= link_to (user_path(@user.id)) do %>
+                    <%= image_tag note_comment.user.get_image, class: "rounded-circle" %>
+                    <%= note_comment.user.name %>
+                  <% end %>
+    
+                  <span><%= note_comment.created_at.strftime('%Y/%m/%d') %></span>
+                  <p><%= safe_join(note_comment.comment.split("\n"),tag(:br)) %></p>
+  
+  
+                  <% if note_comment.user == current_user %><!--ﾛｸﾞｲﾝﾕｰｻﾞｰのｺﾒﾝﾄならば削除ボタン-->
+                    <span class="destroy-btn">
+                      <%= link_to note_note_comment_path(note_comment.note.id, note_comment.id), method: :delete, data: {confirm: 'このコメントを消しますか？'} do %>
+                        <i class="far fa-trash-alt"></i>
+                      <% end %>
+                    </span>
+                  <% end %>
+                </div><!--コメント一覧-->
+              <% end %><!--ｺﾒﾝﾄしたﾕｰｻﾞｰが退会済じゃなければ-->
             <% end %><!--comments.each-->
-
-            
           </div><!--コメント欄と一覧-->
       <% end %><!--ﾕｰｻﾞｰ退会済じゃなければ-->
 

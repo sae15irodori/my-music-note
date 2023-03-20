@@ -41,9 +41,17 @@
           <% @note.note_comments.each do |note_comment| %>
             <div class="comment-contents comment">
               <!--ｺﾒﾝﾄﾕｰｻﾞｰ情報-->
-              <%= link_to (admin_user_path(@user.id)) do %>
-                <%= image_tag note_comment.user.get_image, class: "rounded-circle" %>
-                <%= note_comment.user.name %>
+              <% if note_comment.user.is_deleted == true %>
+                <p>このユーザーは退会済です</p>
+                <%= link_to (admin_user_path(@user.id)) do %>
+                  <%= image_tag note_comment.user.get_image, class: "rounded-circle" %>
+                  <%= note_comment.user.name %>
+                <% end %>
+              <% else %>
+                <%= link_to (admin_user_path(@user.id)) do %>
+                  <%= image_tag note_comment.user.get_image, class: "rounded-circle" %>
+                  <%= note_comment.user.name %>
+                <% end %>
               <% end %>
               <!--ｺﾒﾝﾄ内容-->
               <span><%= note_comment.created_at.strftime('%Y/%m/%d') %></span>

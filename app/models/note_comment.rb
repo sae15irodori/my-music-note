@@ -1,6 +1,6 @@
 class NoteComment < ApplicationRecord
-  belongs_to :user
-  belongs_to :note
+  belongs_to :user, optional: true
+  belongs_to :note, optional: true
 
   validates :comment, presence: { message: '' }
   
