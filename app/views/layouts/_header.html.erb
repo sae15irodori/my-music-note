@@ -34,6 +34,7 @@
     <% elsif admin_signed_in? %>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <span style="font-size: 1.2rem"><%= link_to "My Music Note🖌" , admin_notes_path,class:"header-nav" %></span>
+        <span class="header-nav ml-3">管理者ログイン中</span>
         <ul class="navbar-nav ml-auto">
           <li><!--投稿一覧へのﾘﾝｸ-->
             <%= link_to "Notes", admin_notes_path, class:"mr-3 header-nav" %>
