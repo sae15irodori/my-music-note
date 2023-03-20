@@ -14,13 +14,11 @@
  *= require_self
  */
 
-
-/*body{
-  background-color: #FCFCCA;
-}*/
-
-@import url('https://fonts.googleapis.com/css2?family=Yomogi&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 
 body {
@@ -41,7 +39,7 @@ a {
 
 
 .registrations, .admin-log-in-heading, .tos-li {
-  font-family: 'Kaisei Opti', serif;
+  font-family: 'Times New Roman', serif;
 }
 
 
@@ -87,7 +85,7 @@ a {
   text-align: center;
   font-size: 2.5rem;
   color: #823014;
-  font-family: 'Kaisei Opti', serif;
+  font-family: 'Times New Roman', serif;
 }
 
 
