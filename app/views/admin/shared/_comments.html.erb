@@ -1,6 +1,13 @@
 <div class="comment-contents">
-  <%= link_to admin_user_path(comment.user.id) do %>
-    <%= render '/layouts/user_info', user: comment.user %><br>
+  <% if comment.user.is_deleted == true %>
+    <p>このユーザーは退会済です</p>
+    <%= link_to admin_user_path(comment.user.id) do %>
+      <%= render '/layouts/user_info', user: comment.user %><br>
+    <% end %>
+  <% else %>
+    <%= link_to admin_user_path(comment.user.id) do %>
+      <%= render '/layouts/user_info', user: comment.user %><br>
+    <% end %>
   <% end %>
   <!--コメント-->
   <span class="mx-4"><%= link_to comment.comment, admin_note_path(comment.note.id) %></span>
