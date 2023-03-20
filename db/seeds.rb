@@ -5,7 +5,31 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Admin.create!(
+Admin.create(
   email: 'admin@iro',
   password: 'asdf4567'
 )
+
+Tag.create!(
+  [
+    {name: '質問'},
+    {name: '練習記録'},
+    {name: '弾き語り'},
+    {name: 'ピアノ'},
+    {name: 'ギター'},
+    {name: 'アコギ'},
+    {name: 'ベース'},
+    {name: 'ドラム'},
+    {name: 'バイオリン'},
+    {name: 'トランペット'},
+    {name: 'フルート'},
+    {name: 'クラリネット'},
+    {name: 'クラシック'},
+    {name: 'ジャズ'},
+    {name: 'バンド'},
+    {name: 'ロック'},
+    {name: '洋楽'},
+    {name: '邦楽'},
+    {name: 'K-POP'},
+  ]
+  )
