@@ -33,6 +33,7 @@ Rails.application.routes.draw do
         get "search"
         get "tos"
         get "manual"
+        get "privacy_policy"
       end
     end
 
