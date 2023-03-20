@@ -1,6 +1,6 @@
 class Public::NotesController < ApplicationController
   before_action :is_matching_login_user, only: %i[edit update destroy]
-  before_action :guest_check, except: %i[show index search]
+  before_action :guest_check, except: %i[show index search tos]
   before_action :set_q, only: %i[search index]
 
   def new
