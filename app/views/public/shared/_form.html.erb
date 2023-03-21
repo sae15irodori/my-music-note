@@ -28,7 +28,7 @@
 
     <div class="form-group">
       <label for="inputTag">タグ</label>
-      <%= f.select :tag_id, options_from_collection_for_select( Tag.all, :id, :name), include_blank: true, class: "new-btn" %> <!--, {}, {class: 'form-control'}-->
+      <%= f.select :tag_id, options_from_collection_for_select( Tag.all, :id, :name), include_blank: true, class: "new-btn" %>
     </div>
 
     <div class="new-form-actions">
