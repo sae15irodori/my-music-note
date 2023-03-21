@@ -4,13 +4,15 @@ class Admin::TagsController < ApplicationController
 
   def index
      @tag = Tag.new
-     @tags =Tag.all
+     @tags =Tag.all.page(params[:page]).per(20)
   end
 
   def create
     @tag = Tag.new(tag_params)
     if @tag.save
       flash[:notice] = "タグを追加しました"
+      redirect_to admin_tags_path
+    else
       redirect_to admin_tags_path
     end
   end
@@ -53,7 +55,7 @@ class Admin::TagsController < ApplicationController
   def tag_params
     params.require(:tag).permit(:name)
   end
-  
+
   def admin_url
     request.fullpath.include?("/admin")
   end

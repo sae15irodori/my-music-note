@@ -10,7 +10,7 @@ class Admin::NoteCommentsController < ApplicationController
   end
 
   def index
-    @comments = NoteComment.all.order(created_at: :desc)
+    @comments = NoteComment.all.order(created_at: :desc).page(params[:page])
   end
 
   def search

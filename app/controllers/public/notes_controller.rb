@@ -19,7 +19,7 @@ class Public::NotesController < ApplicationController
   end
 
   def index
-    @notes = Note.all.order(created_at: :desc)
+    @notes = Note.all.order(created_at: :desc).page(params[:page]).per(12)
   end
 
   def show

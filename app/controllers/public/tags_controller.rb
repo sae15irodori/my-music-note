@@ -2,7 +2,7 @@ class Public::TagsController < ApplicationController
   before_action :set_q, only: [:search, :index]
 
   def index
-    @tags = Tag.all
+    @tags = Tag.all.page(params[:page]).per(20)
   end
 
   def show

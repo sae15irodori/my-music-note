@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
       <div class="col-12 main">
-        
+
         <div class="row">
           <h1>タグ作成</h1>
           <!--検索フォーム-->
@@ -15,6 +15,10 @@
 
         <div class="row">
           <div class="col-8 mt-3">
+            <!--バリデーションエラー-->
+            <%= render '/layouts/validates', validates: @tag %>
+
+            <!--タグ名入力フォーム-->
             <%= form_with model: @tag, url: admin_tags_path ,method: :post , class: "form-inline" do |f| %>
               <%= f.text_field :name,  placeholder: "タグ名を入力",class: 'form-control w-50 my-3' %>
               <%= f.submit "✍",class: 'btn tag-form-btn' %>
@@ -26,6 +30,7 @@
         <% @tags.each do |tag| %>
           <%= render '/admin/shared/tags', tag: tag %>
         <% end %>
+        <%= paginate @tags, theme: 'twitter-bootstrap-4' %>
       </div>
     </div>
   </div>

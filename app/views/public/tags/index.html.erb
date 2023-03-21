@@ -15,6 +15,7 @@
         <i class="fas fa-tag"></i><%= link_to tag.name, tag_path(tag.id) %>
       </div>
       <% end %>
+      <%= paginate @tags, theme: 'twitter-bootstrap-4' %>
     </div>
   </div>
 </div>
