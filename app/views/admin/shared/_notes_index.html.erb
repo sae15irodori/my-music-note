@@ -46,9 +46,11 @@
 
   </div>
   <!--いいねボタン＆コメント件数-->
-  <p class="index-favorites-btn">
-    ♥<%= note.favorites.count %><!--いいねボタン-->
-    <i class="far fa-comment ml-5 mr-1"></i><%= note.note_comments.count %><!--ｺﾒﾝﾄ件数-->
-  </p>
+  <%= link_to (admin_note_path(note.id)) do %>
+    <p class="index-favorites-btn">
+      ♥<%= note.favorites.count %><!--いいねボタン-->
+      <i class="far fa-comment ml-5 mr-1"></i><%= note.note_comments.count %><!--ｺﾒﾝﾄ件数-->
+    </p>
+  <% end %>
 </div><!--ルーズリーフ-->
 <% end %><!--投稿詳細へのﾘﾝｸ-->
