@@ -3,7 +3,7 @@ class Admin::NotesController < ApplicationController
   before_action :set_q, only: %i[search index]
 
   def index
-    @notes = Note.all.order(created_at: :desc).page(params[:page]).per(30)
+    @notes = Note.all.order(created_at: :desc).page(params[:page]).per(21)
   end
 
   def show
