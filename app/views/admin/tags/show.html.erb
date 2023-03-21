@@ -11,7 +11,7 @@
             <%= render '/admin/shared/note_index', note: tag_note %><!--投稿一覧-->
           </div>
         <% end %>
-      
+      <%= paginate @tag_notes, theme: 'twitter-bootstrap-4' %>
     </div>
   </div>
 </div>

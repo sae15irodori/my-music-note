@@ -10,6 +10,7 @@
           <%= render '/public/shared/note_index', note: tag_note %>
         </div>
       <% end %>
+      <%= paginate @tag_notes, theme: 'twitter-bootstrap-4' %>
     </div>
   </div>
 </div>

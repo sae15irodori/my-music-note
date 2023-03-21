@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12 main">
-      <h1>ノート検索結果<span class="ml-3" style="font-size: 1.5rem">(全<%= @results.count %>件)</span></h1>
+      <h1>ノート検索結果<span class="ml-3" style="font-size: 1.5rem">(<%= @results.count %>件)</span></h1>
 
       <!--検索フォーム-->
       <%= search_form_for @q, url: search_admin_notes_path, class: "form-inline" do |f| %>

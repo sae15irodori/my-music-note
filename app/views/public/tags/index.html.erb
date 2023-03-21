@@ -12,7 +12,7 @@
 
       <% @tags.each do |tag| %>
       <div class="tag">
-        <i class="fas fa-tag"></i><%= link_to tag.name, tag_path(tag.id) %>
+        <i class="fas fa-tag"></i><%= link_to tag_path(tag.id) do %><%= tag.name %>　(<%= tag.notes.count %>)<% end %>
       </div>
       <% end %>
       <%= paginate @tags, theme: 'twitter-bootstrap-4' %>

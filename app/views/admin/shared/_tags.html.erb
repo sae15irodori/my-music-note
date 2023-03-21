@@ -1,6 +1,6 @@
 <div class="tag">
   <i class="fas fa-tag"></i><%= link_to tag.name, admin_tag_path(tag.id) %>
-
+  (<%= tag.notes.count %>)
   <%= link_to edit_admin_tag_path(tag.id) do %>
     <i class="far fa-edit  ml-3 mx-2"></i>
   <% end %>
