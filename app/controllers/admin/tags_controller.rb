@@ -4,7 +4,7 @@ class Admin::TagsController < ApplicationController
 
   def index
      @tag = Tag.new
-     @tags =Tag.all.page(params[:page]).per(20)
+     @tags =Tag.all.page(params[:page]).per(12)
   end
 
   def create
@@ -43,7 +43,7 @@ class Admin::TagsController < ApplicationController
   end
 
   def search
-    @results = @q.result#set_qメソッドで取得した結果をオブジェクトに変換
+    @results = @q.result.page(params[:page]).per(12)#set_qメソッドで取得した結果をオブジェクトに変換
   end
 
   private
