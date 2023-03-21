@@ -21,7 +21,7 @@ class Admin::NotesController < ApplicationController
   end
 
   def search
-    @results = @q.result.page(params[:page]).per(15)#set_qメソッドで取得した結果をオブジェクトに変換
+    @results = @q.result.page(params[:page]).per(2)#set_qメソッドで取得した結果をオブジェクトに変換
   end
 
   private
