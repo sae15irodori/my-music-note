@@ -1,8 +1,9 @@
 class Admin::NotesController < ApplicationController
   before_action :authenticate_admin!, if: :admin_url
-  before_action :set_q, only: [:search, :index]
+  before_action :set_q, only: %i[search index]
+
   def index
-    @notes = Note.all.order(created_at: :desc)
+    @notes = Note.all.order(created_at: :desc).page(params[:page]).per(30)
   end
 
   def show
@@ -10,7 +11,7 @@ class Admin::NotesController < ApplicationController
     @note_comment = NoteComment.new
     @user = @note.user
   end
-  
+
   def destroy
     @note = Note.find(params[:id])
     if @note.destroy
@@ -20,7 +21,7 @@ class Admin::NotesController < ApplicationController
   end
 
   def search
-    @results = @q.result#set_qメソッドで取得した結果をオブジェクトに変換
+    @results = @q.result.page(params[:page]).per(15)#set_qメソッドで取得した結果をオブジェクトに変換
   end
 
   private
@@ -28,7 +29,7 @@ class Admin::NotesController < ApplicationController
   def set_q
     @q = Note.ransack(params[:q])#Noteモデルより入力されたｷｰﾜｰﾄﾞ(q)を探す
   end
-  
+
   def admin_url
     request.fullpath.include?("/admin")
   end

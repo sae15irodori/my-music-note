@@ -19,7 +19,7 @@ class Public::NotesController < ApplicationController
   end
 
   def index
-    @notes = Note.all.order(created_at: :desc).page(params[:page]).per(12)
+    @notes = Note.all.order(created_at: :desc).page(params[:page]).per(30)
   end
 
   def show
@@ -55,7 +55,7 @@ class Public::NotesController < ApplicationController
   end
 
   def search
-    @results = @q.result#set_qメソッドで取得した結果をオブジェクトに変換
+    @results = @q.result.page(params[:page]).per(15)#set_qメソッドで取得した結果をオブジェクトに変換
   end
 
   def tos

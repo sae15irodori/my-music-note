@@ -16,8 +16,8 @@
         <% @notes.each do |note| %>
           <%= render '/public/shared/notes_index', note: note %>
         <% end %><!--notes.each-->
-        <%= paginate @notes %>
       </div>
+      <%= paginate @notes, theme: 'twitter-bootstrap-4' %>
     </div>
   </div>
 </div>

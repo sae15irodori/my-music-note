@@ -16,10 +16,10 @@
           <% @results.each do |note| %>
               <%= render '/admin/shared/notes_index', note: note %><!--投稿一覧-->
           <% end %><!--each-->
-
+        </div>
+        <%= paginate @results, theme: 'twitter-bootstrap-4' %>
       <% else %>
         一致する結果はありませんでした。o○
       <% end %>
-    </div>
   </div>
 </div>
