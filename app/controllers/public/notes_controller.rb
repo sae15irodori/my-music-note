@@ -55,7 +55,7 @@ class Public::NotesController < ApplicationController
   end
 
   def search
-    @results = @q.result.page(params[:page]).per(15)#set_qメソッドで取得した結果をオブジェクトに変換
+    @results = @q.result.joins(:user).merge(User.where(is_deleted: false)).page(params[:page]).per(15)
   end
 
   def tos
