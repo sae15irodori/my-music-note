@@ -41,9 +41,9 @@ class Admin::UsersController < ApplicationController
   private
   
   def users_calculation
-    @users = User.all.order(created_at: :desc).merge(User.where(is_deleted: false)).page(params[:page]).per(3)
-    @deleted_users = User.all.order(created_at: :desc).merge(User.where(is_deleted: true)).page(params[:page]).per(2)
-    @total_users = User.all.page(params[:page]).per(2)
+    @users = User.all.order(created_at: :desc).merge(User.where(is_deleted: false)).page(params[:page])
+    @deleted_users = User.all.order(created_at: :desc).merge(User.where(is_deleted: true)).page(params[:page])
+    @total_users = User.all.page(params[:page])
   end
   
 
