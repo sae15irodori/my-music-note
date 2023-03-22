@@ -12,10 +12,6 @@
                 <% end %>
                 <%= render '/public/shared/note_index', note: note %><!--投稿一覧-->
               </div>
-            <% else %>
-              <div class="note-contents note-contents2">
-                この投稿のユーザーは退会済です
-              </div>
             <% end %>
           <% end %><!--each-->
           <%= paginate @favorite_notes, theme: 'twitter-bootstrap-4' %>
