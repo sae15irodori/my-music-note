@@ -3,7 +3,7 @@
     <div class="col-12 main">
       <%= flash[:notice] %>
       <h1>Users
-      <span class="ml-1" style="font-size: 1.5rem">全ユーザー<%= @users.total_count %>名</span>
+      <span class="ml-1" style="font-size: 1.5rem">全ユーザー<%= @total_users.total_count %>名</span>
 
       <span class="users-num ml-4">
         <%= link_to admin_users_path do %>
