@@ -26,10 +26,9 @@
           <div class="note-contents note-contents2">
             <%= render '/admin/shared/note_index', note: note %>
           </div>
-        <% else %>
-          まだノートがありません
         <% end %>
       <% end %>
+      <%= paginate @notes, theme: 'twitter-bootstrap-4' %>
     </div>
   </div>
 </div>

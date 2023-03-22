@@ -19,7 +19,7 @@ class Public::NotesController < ApplicationController
   end
 
   def index
-    @notes = Note.all.order(created_at: :desc).page(params[:page]).per(30)
+    @notes = Note.all.order(created_at: :desc).joins(:user).merge(User.where(is_deleted: false)).page(params[:page]).per(30)
   end
 
   def show
@@ -55,7 +55,7 @@ class Public::NotesController < ApplicationController
   end
 
   def search
-    @results = @q.result.joins(:user).merge(User.where(is_deleted: false)).page(params[:page]).per(15)
+    @results = @q.result.joins(:user).merge(User.where(is_deleted: false)).page(params[:page]).per(18)
   end
 
   def tos

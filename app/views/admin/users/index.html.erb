@@ -13,6 +13,7 @@
       <% @users.each do |user| %>
           <%= render '/admin/shared/user_index', user: user %>
       <% end %>
+      <%= paginate @users, theme: 'twitter-bootstrap-4' %>
     </div>
   </div>
 </div>

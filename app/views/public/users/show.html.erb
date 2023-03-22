@@ -14,7 +14,7 @@
                     <%= render '/layouts/user_info', user: @user %>
 
                       <!--編集ボタン-->
-                      <%= link_to edit_user_path(@user.id), class: "ml-2" do %>
+                      <%= link_to edit_user_path(@user.id), class: "ml-5 mr-2" do %>
                         <i class="far fa-edit"></i>編集
                       <% end %>
 
@@ -48,7 +48,7 @@
               まだノートがありません
             <% end %>
           <% end %>
-
+          <%= paginate @notes, theme: 'twitter-bootstrap-4' %>
       <% end %>
     </div>
   </div>

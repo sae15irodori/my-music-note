@@ -4,12 +4,12 @@ class Public::UsersController < ApplicationController
   before_action :set_q, only: %i[search index]
 
   def index
-    @users = User.all.order(created_at: :desc).page(params[:page])
+    @users = User.all.order(created_at: :desc).merge(User.where(is_deleted: false)).page(params[:page])
   end
 
   def show
     @user = User.find(params[:id])
-    @notes = @user.notes.order(created_at: :desc)
+    @notes = @user.notes.order(created_at: :desc).page(params[:page])
   end
 
   def edit
@@ -29,11 +29,12 @@ class Public::UsersController < ApplicationController
     def favorites
       @user = User.find(params[:id])
       favorites = Favorite.where(user_id: @user.id).pluck(:note_id)#ﾕｰｻﾞｰがいいねした投稿のidをfavoritesへ格納
-      @favorite_notes = Note.find(favorites)#いいねした投稿のidをNoteモデルから探す
+      @favorite_notes = Note.find(favorites)
+      @favorite_notes = Kaminari.paginate_array(@favorite_notes).page(params[:page])
     end
 
     def search
-      @results = @q.result#set_qメソッドで取得した結果をオブジェクトに変換
+      @results = @q.result.merge(User.where(is_deleted: false)).page(params[:page])
     end
 
     def withdrawal

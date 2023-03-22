@@ -4,16 +4,16 @@ class Admin::UsersController < ApplicationController
   before_action :guest_check, only: %i[withdrawal unsubscribe]
 
   def index
-    @users = User.all.order(created_at: :desc)
+    @users = User.all.order(created_at: :desc).page(params[:page])
   end
 
   def show
     @user = User.find(params[:id])
-    @notes = @user.notes.order(created_at: :desc)
+    @notes = @user.notes.order(created_at: :desc).page(params[:page])
   end
 
   def search
-    @results = @q.result#set_qメソッドで取得した結果をオブジェクトに変換
+    @results = @q.result.page(params[:page])
   end
 
   def withdrawal
@@ -40,7 +40,7 @@ class Admin::UsersController < ApplicationController
     redirect_to admin_users_path,notice: "※ゲストアカウントは利用停止できません"
     end
   end
-  
+
   def admin_url
     request.fullpath.include?("/admin")
   end

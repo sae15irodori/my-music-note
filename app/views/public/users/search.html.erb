@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12 main">
-      <h1>ユーザー検索結果</h1>
+      <h1>ユーザー検索結果(全<%= @results.total_count %>件)</h1>
       <!--検索フォーム-->
       <%= search_form_for @q, url: search_users_path, class: "form-inline" do |f| %>
         <%= f.search_field :name_cont, placeholder: "ノート検索",class: "form-control rounded-pill" %>
@@ -21,6 +21,7 @@
             <% end %>
           <% end %><!--ﾕｰｻﾞｰ確認-->
         <% end %><!--each-->
+        <%= paginate @results, theme: 'twitter-bootstrap-4' %>
       <% else %>
         一致する結果はありませんでした。o○
       <% end %>

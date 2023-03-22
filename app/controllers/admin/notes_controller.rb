@@ -3,7 +3,7 @@ class Admin::NotesController < ApplicationController
   before_action :set_q, only: %i[search index]
 
   def index
-    @notes = Note.all.order(created_at: :desc).page(params[:page]).per(21)
+    @notes = Note.all.order(created_at: :desc).page(params[:page]).per(30)
   end
 
   def show
@@ -21,7 +21,7 @@ class Admin::NotesController < ApplicationController
   end
 
   def search
-    @results = @q.result.page(params[:page]).per(2)#set_qメソッドで取得した結果をオブジェクトに変換
+    @results = @q.result.page(params[:page]).per(18)#set_qメソッドで取得した結果をオブジェクトに変換
   end
 
   private
