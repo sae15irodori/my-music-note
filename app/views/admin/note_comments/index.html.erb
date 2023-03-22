@@ -20,6 +20,7 @@
         <% @comments.each do |comment| %>
            <%= render '/admin/shared/comments', comment: comment %>
         <% end %>
+        <%= paginate @comments, theme: 'twitter-bootstrap-4' %>
     </div>
   </div>
 </div>

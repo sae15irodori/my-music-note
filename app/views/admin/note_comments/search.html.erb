@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12 main">
       <span class="notice"><%= flash[:notice] %></span>
-      <h1>コメント検索結果<span class="ml-3" style="font-size: 1.5rem">(全<%= @results.count %>件)</span></h1>
+      <h1>コメント検索結果<span class="ml-3" style="font-size: 1.5rem">(全<%= @results.total_count %>件)</span></h1>
       <!--検索フォーム-->
       <%= search_form_for @q, url: search_admin_note_note_comments_path do |f| %>
         <div class="row">
@@ -21,6 +21,7 @@
         <% @results.each do |comment| %>
           <%= render '/admin/shared/comments', comment: comment %>
         <% end %>
+        <%= paginate @results, theme: 'twitter-bootstrap-4' %>
       <% else %>
         一致する結果はありませんでした。o○
       <% end %>

@@ -14,7 +14,7 @@ class Admin::NoteCommentsController < ApplicationController
   end
 
   def search
-    @results = @q.result#set_qメソッドで取得した結果をオブジェクトに変換
+    @results = @q.result.page(params[:page])
   end
 
   private
@@ -26,7 +26,7 @@ class Admin::NoteCommentsController < ApplicationController
   def note_comment_params
     params.require(:note_comment).permit(:comment)
   end
-  
+
   def admin_url
     request.fullpath.include?("/admin")
   end

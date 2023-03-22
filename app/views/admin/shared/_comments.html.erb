@@ -1,6 +1,6 @@
 <div class="comment-contents">
   <% if comment.user.is_deleted == true %>
-    <p>このユーザーは退会済です</p>
+    <p style="font-size:1.5rem;">このユーザーは退会済です</p>
     <%= link_to admin_user_path(comment.user.id) do %>
       <%= render '/layouts/user_info', user: comment.user %><br>
     <% end %>
