@@ -62,6 +62,8 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show] do
       collection do
         get "search"
+        get "deleted"
+        get "total"
       end
     get "/users/:id/unsubscribe" => "users#unsubscribe", as: "unsubscribe"#退会確認画面
     patch "/users/:id/withdrawal" => "users#withdrawal", as: "withdrawal"#ｱｶｳﾝﾄの論理削除用
