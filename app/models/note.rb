@@ -24,4 +24,8 @@ class Note < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     ["favorites", "image_attachment", "image_blob", "note_comments", "tag", "user"]
   end
+  
+  def self.active_user_notes(tag)
+    tag.notes.joins(:user).merge(User.where(is_deleted: false))
+  end
 end

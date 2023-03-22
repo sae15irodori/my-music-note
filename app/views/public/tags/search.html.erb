@@ -13,7 +13,7 @@
       <% if @results.present? %>
         <% @results.each do |tag| %>
         <div class="tag">
-          <i class="fas fa-tag"></i><%= link_to tag_path(tag.id) do %><%= tag.name %>　(<%= tag.notes.count %>)<% end %>
+          <i class="fas fa-tag"></i><%= link_to tag_path(tag.id) do %><%= tag.name %>　(<%= Note.active_user_notes(tag).count %>)<% end %>
         </div>
         <% end %>
       <% else %>
