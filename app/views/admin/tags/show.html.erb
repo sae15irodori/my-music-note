@@ -2,16 +2,20 @@
   <div class="row">
     <div class="col-12 main">
       <h1 style="font-size: 2.2rem;"><%= @tag.name %> <i class="fas fa-tag"></i><span style="font-size:1.8rem"> のノート</span><span class="ml-3" style="font-size: 1.5rem">(全<%= @tag.notes.count %>件)</span></h1>
-      
+
         <% @tag_notes.each do |tag_note| %>
           <div class="note-contents note-contents2">
+            <% if tag_note.user.is_deleted == true %>
+              <p style="font-size:1.5rem;">※この投稿のユーザーは退会済です</p>
+            <% end %>
             <%= link_to admin_user_path(tag_note.user.id) do %>
               <%= render '/layouts/user_info', user: tag_note.user %><!--投稿ﾕｰｻﾞｰ情報-->
+              <%= tag_note.created_at.strftime('%Y/%m/%d') %>
             <% end %>
             <%= render '/admin/shared/note_index', note: tag_note %><!--投稿一覧-->
           </div>
-        <% end %>
-      <%= paginate @tag_notes, theme: 'twitter-bootstrap-4' %>
+        <% end %><!--each-->
+        <%= paginate @tag_notes, theme: 'twitter-bootstrap-4' %>
     </div>
   </div>
 </div>

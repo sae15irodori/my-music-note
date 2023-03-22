@@ -7,7 +7,7 @@ class Public::TagsController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
-    @tag_notes = @tag.notes.all.order("created_at DESC").page(params[:page])
+    @tag_notes = @tag.notes.all.order("created_at DESC").joins(:user).merge(User.where(is_deleted: false)).page(params[:page]).per(3)
   end
 
   def search
