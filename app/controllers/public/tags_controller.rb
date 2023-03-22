@@ -7,8 +7,7 @@ class Public::TagsController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
-    @tag_notes = @tag.notes.all.order("created_at DESC").joins(:user).merge(User.where(is_deleted: false)).page(params[:page]).per(3)
-    #@tag_counts = @tag.notes.joins(:user).merge(User.where(is_deleted: false))
+    @tag_notes = @tag.notes.all.order("created_at DESC").joins(:user).merge(User.where(is_deleted: false)).page(params[:page])
     @tag_counts = Note.active_user_notes(@tag)
   end
 
