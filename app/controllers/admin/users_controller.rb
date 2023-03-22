@@ -48,7 +48,7 @@ class Admin::UsersController < ApplicationController
   
 
   def set_q
-    @q = User.ransack(params[:q])#Userモデルより入力されたｷｰﾜｰﾄﾞ(q)を探す
+    @q = User.ransack(params[:q])
   end
 
   def guest_check
