@@ -7,7 +7,6 @@
           <div class="note-contents note-contents2">
             <%= link_to user_path(tag_note.user.id) do %>
               <%= render '/layouts/user_info', user: tag_note.user %><!--投稿ﾕｰｻﾞｰ情報-->
-              <%= tag_note.created_at.strftime('%Y/%m/%d') %>
             <% end %>
             <%= render '/public/shared/note_index', note: tag_note %>
           </div>
