@@ -22,18 +22,18 @@
   </p>
 
   <div class="note-btn">
-          <!--いいねとコメント数-->
-          <p class="favorites-btn">
-            ♥<%= note.favorites.count %><!--いいね数-->
-            <span class="ml-5" style="font-size: 1.2rem;"><i class="far fa-comment"></i><%= note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
-          </p>
-          <!--削除ボタン-->
-          <p class="edit-destory-btn">
-            <span class="destroy-btn">
-              <%= link_to admin_note_path(note.id), method: :delete, data: {confirm: 'このノートを管理者として消しますか？'} do %>
-                <i class="far fa-trash-alt"></i>
-              <% end %>
-            </span>
-          </p>
-        </div>
+    <!--いいねとコメント数-->
+    <p class="favorites-btn">
+      ♥<%= note.favorites.count %><!--いいね数-->
+      <span class="ml-5" style="font-size: 1.2rem;">
+        <i class="far fa-comment"></i><%= note.note_comments.count %>
+      </span><!--ｺﾒﾝﾄ件数-->
+    </p>
+    <!--削除ボタン-->
+    <div class="edit-destory-btn destroy-btn">
+      <%= link_to admin_note_path(note.id), method: :delete, data: {confirm: 'このノートを管理者として消しますか？'} do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
+    </div>
+  </div>
 <% end %>
