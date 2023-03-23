@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col-12 main">
         <h1>
-            <% if @user.is_deleted == true %>
-              (退会済ユーザー)
-            <% end %>
+          <% if @user.is_deleted == true %>
+            (退会済ユーザー)
+          <% end %>
         </h1>
 
       <%= flash[:notice] %>

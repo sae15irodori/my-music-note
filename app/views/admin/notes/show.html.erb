@@ -38,7 +38,7 @@
         <!--コメント欄-->
         <div class="comment-box">
           <p>コメント</p>
-          <% @note.note_comments.each do |note_comment| %>
+          <% @note.note_comments.order(created_at: :desc).each do |note_comment| %>
             <div class="comment-contents comment">
               <!--ｺﾒﾝﾄﾕｰｻﾞｰ情報-->
               <% if note_comment.user.is_deleted == true %>

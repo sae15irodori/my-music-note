@@ -50,7 +50,7 @@
                 <% end %>
             </div>
             <!--コメント一覧-->
-            <% @note.note_comments.each do |note_comment| %>
+            <% @note.note_comments.order(created_at: :desc).each do |note_comment| %>
               <% if note_comment.user.is_deleted == true %><!--ｺﾒﾝﾄしたﾕｰｻﾞｰが退会済ならば-->
                   <div class="comment-contents comment">
                    このコメントをしたユーザーは退会済です

@@ -10,12 +10,10 @@ class Admin::UsersController < ApplicationController
   def deleted
     users_calculation
   end
-  
+
   def total
     users_calculation
   end
-  
-  def 
 
   def show
     @user = User.find(params[:id])
@@ -39,13 +37,13 @@ class Admin::UsersController < ApplicationController
   end
 
   private
-  
+
   def users_calculation
     @users = User.all.order(created_at: :desc).merge(User.where(is_deleted: false)).page(params[:page])
     @deleted_users = User.all.order(created_at: :desc).merge(User.where(is_deleted: true)).page(params[:page])
     @total_users = User.all.page(params[:page])
   end
-  
+
 
   def set_q
     @q = User.ransack(params[:q])
