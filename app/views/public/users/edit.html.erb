@@ -11,7 +11,7 @@
           </div>
 
           <div class="user-edit-field">
-            <%= f.label :name %>お名前<br>
+            <%= f.label :name %>ニックネーム<br>
                 <%= render '/layouts/validates', validates: @user %><!--バリデーションエラー-->
             <%= f.text_field :name,  placeholder: "名前",class: 'form-control' %>
           </div>
