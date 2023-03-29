@@ -20,7 +20,7 @@
 
             <!--タグ名入力フォーム-->
             <%= form_with model: @tag, url: admin_tags_path ,method: :post , class: "form-inline" do |f| %>
-              <%= f.text_field :name,  placeholder: "タグ名を入力",class: 'form-control w-50 my-3' %>
+              <%= f.text_field :name,  placeholder: "タグ名を入力して新規作成",class: 'form-control w-50 my-3' %>
               <%= f.submit "✍",class: 'btn tag-form-btn' %>
             <% end %>
           </div>
