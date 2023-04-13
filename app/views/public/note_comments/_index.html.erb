@@ -1,0 +1,28 @@
+<div class="comment_notice"><%= flash[:notice] %></div>
+
+<% note.note_comments.order(created_at: :desc).each do |note_comment| %>
+  <% if note_comment.user.is_deleted == true %><!--ｺﾒﾝﾄしたﾕｰｻﾞｰが退会済ならば-->
+      <div class="comment-contents comment">
+       このコメントをしたユーザーは退会済です
+      </div>
+  <% else %>
+    <div class="comment-contents comment">
+      <%= link_to (user_path(note_comment.user.id)) do %>
+        <%= image_tag note_comment.user.get_image, class: "rounded-circle" %>
+        <%= note_comment.user.name %>
+      <% end %>
+
+      <span><%= note_comment.created_at.strftime('%Y/%m/%d') %></span>
+      <p><%= safe_join(note_comment.comment.split("\n"),tag(:br)) %></p>
+
+
+      <% if note_comment.user == current_user %><!--ﾛｸﾞｲﾝﾕｰｻﾞｰのｺﾒﾝﾄならば削除ボタン-->
+        <span class="destroy-btn">
+          <%= link_to note_note_comment_path(note_comment.note.id, note_comment.id), method: :delete, remote: true, data: {"turbolinks" => false}, data: {confirm: 'このコメントを消しますか？'} do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        </span>
+      <% end %>
+    </div>
+  <% end %><!--ｺﾒﾝﾄしたﾕｰｻﾞｰが退会済じゃなければ-->
+<% end %><!--comments.each-->

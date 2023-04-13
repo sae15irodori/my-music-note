@@ -58,12 +58,6 @@ class Public::NotesController < ApplicationController
     @results = @q.result.joins(:user).merge(User.where(is_deleted: false)).page(params[:page]).per(18)
   end
 
-  def tos
-  end
-
-  def manual
-  end
-
 
   private
 

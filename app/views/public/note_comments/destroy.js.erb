@@ -1,0 +1,1 @@
+$("#comments_area_<%= @note.id %>").html("<%= j(render '/public/note_comments/index', {note: @note, note_comment: @note_comment}) %>");

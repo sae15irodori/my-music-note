@@ -1,0 +1,6 @@
+<%= form_with model: [note, note_comment], class: "form-inline", local: false, data: {"turbolinks" => false} do |f| %>
+  <%= f.text_area :comment, rows: '3', placeholder: "質問に対する回答・応援や励ましのコメントしてみましょう！", class: 'form-control comment-form' %>
+  <%= button_tag type: "submit", class: 'btn comment-form-btn' do %>
+    <i class="fas fa-pen-fancy"></i>
+  <% end %>
+<% end %>

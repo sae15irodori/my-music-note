@@ -1,8 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12 main">
-      <h1>Note</h1>
-      <span class="notice"><%= flash[:notice] %></span>
+      <h1>Note detail</h1>
 
       <% unless @user.is_deleted == true %><!--ﾕｰｻﾞｰが退会済じゃなければ-->
         <div class="note-contents note-contents2"><!--ルーズリーフの設定-->
@@ -28,54 +27,28 @@
                   </span>
                 <% end %>
                 </p>
-                
-                <span id="note_<%= @note.id %>">
+
+                <p id="note_<%= @note.id %>">
                   <p class="favorites-btn">
                     <span class="favoritebtn"><%= render '/public/favorites/favorites_btn', note: @note %> <!--いいねボタン--></span>
                     <span class="ml-5" style="font-size: 1.2rem;"><i class="far fa-comment"></i><%= @note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
                   </p>
-                </span>
+                </p>
               </div>
           </div>
 
 
           <!--コメント欄-->
           <div class="comment-box">
-            <p>コメント</p>
+            コメント
             <!--コメント入力欄-->
             <div class="comments-form">
-                <%= form_with model: [@note, @note_comment], class: "form-inline" do |f| %>
-                  <%= f.text_area :comment, rows: '3', placeholder: "質問に対する回答・応援や励ましのコメントしてみましょう！", class: 'form-control comment-form' %>
-                  <%= f.submit "✍",class: 'btn comment-form-btn' %>
-                <% end %>
+              <%= render '/public/note_comments/comments_form', {note: @note, note_comment: @note_comment} %>
             </div>
             <!--コメント一覧-->
-            <% @note.note_comments.order(created_at: :desc).each do |note_comment| %>
-              <% if note_comment.user.is_deleted == true %><!--ｺﾒﾝﾄしたﾕｰｻﾞｰが退会済ならば-->
-                  <div class="comment-contents comment">
-                   このコメントをしたユーザーは退会済です
-                  </div>
-              <% else %>
-                <div class="comment-contents comment">
-                  <%= link_to (user_path(@user.id)) do %>
-                    <%= image_tag note_comment.user.get_image, class: "rounded-circle" %>
-                    <%= note_comment.user.name %>
-                  <% end %>
-    
-                  <span><%= note_comment.created_at.strftime('%Y/%m/%d') %></span>
-                  <p><%= safe_join(note_comment.comment.split("\n"),tag(:br)) %></p>
-  
-  
-                  <% if note_comment.user == current_user %><!--ﾛｸﾞｲﾝﾕｰｻﾞｰのｺﾒﾝﾄならば削除ボタン-->
-                    <span class="destroy-btn">
-                      <%= link_to note_note_comment_path(note_comment.note.id, note_comment.id), method: :delete, data: {confirm: 'このコメントを消しますか？'} do %>
-                        <i class="far fa-trash-alt"></i>
-                      <% end %>
-                    </span>
-                  <% end %>
-                </div><!--コメント一覧-->
-              <% end %><!--ｺﾒﾝﾄしたﾕｰｻﾞｰが退会済じゃなければ-->
-            <% end %><!--comments.each-->
+            <div id="comments_area_<%= @note.id %>">
+              <%= render '/public/note_comments/index', {note: @note, note_comment: @note_comment} %> 
+            </div>
           </div><!--コメント欄と一覧-->
       <% end %><!--ﾕｰｻﾞｰ退会済じゃなければ-->
 

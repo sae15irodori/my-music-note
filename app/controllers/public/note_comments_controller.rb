@@ -8,7 +8,7 @@ class Public::NoteCommentsController < ApplicationController
     comment.note_id = @note.id
     if comment.save
       flash[:notice] = "コメントを投稿しました✍"
-      redirect_to request.referer
+      #redirect_to request.referer
     else
       @note_comment = NoteComment.new
       @user = @note.user
@@ -19,7 +19,7 @@ class Public::NoteCommentsController < ApplicationController
   def destroy
     if NoteComment.find(params[:id]).destroy!
       flash[:notice] = "コメントを削除しました"
-      redirect_to request.referer
+      #redirect_to request.referer
     end
   end
 
