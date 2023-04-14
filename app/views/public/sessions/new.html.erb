@@ -1,4 +1,4 @@
-<%= link_to "My Music Note🖌", root_path, class: "ml-5 log-logo" %>
+<%= link_to "My Music Note🖌TOP", root_path, class: "ml-5 log-logo" %>
 <div class="container mt-5">
   <div class="row">
     <div class="col-8 log-in">
@@ -10,19 +10,19 @@
               <i class="fas fa-envelope mr-2"></i><%= f.label :email %><br />
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
             </div>
-          
+
             <div class="log-in-field">
               <i class="fas fa-key mr-2"></i><%= f.label :password %><br />
               <%= f.password_field :password, autocomplete: "current-password",class: 'form-control' %>
             </div>
-          
+
             <% if devise_mapping.rememberable? %>
               <div class="log-in-field">
                 <%= f.check_box :remember_me %>
                 <%= f.label :remember_me %>
               </div>
             <% end %>
-          
+
             <div class="log-in-actions w-50">
               <%= f.submit "Log in",class: 'form-control btn btn-danger'%>
             </div>

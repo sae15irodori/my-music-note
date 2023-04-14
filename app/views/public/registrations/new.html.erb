@@ -1,4 +1,4 @@
-<%= link_to "My Music Note🖌", root_path, class: "ml-5 log-logo" %>
+<%= link_to "My Music Note🖌TOP", root_path, class: "ml-5 log-logo" %>
 <div class="container mt-5">
   <div class="row">
     <div class="col-8 log-in registrations-log-in">
@@ -10,12 +10,12 @@
                   <i class="fas fa-envelope mr-2"></i><%= f.label :email %><br />
                   <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
                 </div>
-  
+
                 <div class="log-in-field registrations">
                   <i class="fas fa-signature"></i><%= f.label :name %>ニックネーム<br>
                   <%= f.text_field :name, class: 'form-control' %>
                 </div>
-  
+
                 <div class="log-in-field">
                   <i class="fas fa-key mr-2"></i><%= f.label :password %>
                   <% if @minimum_password_length %>
@@ -23,12 +23,12 @@
                   <% end %><br />
                   <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
                 </div>
-  
+
                 <div class="log-in-field">
                   <i class="fas fa-key mr-2"></i><%= f.label :password_confirmation %><br />
                   <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
                 </div>
-  
+
                 <div class="log-in-actions w-50">
                   <%= f.submit "Sign up", class: 'form-control btn btn btn-warning' %>
                 </div>
