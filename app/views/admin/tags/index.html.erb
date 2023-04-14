@@ -30,8 +30,8 @@
         <% @tags.each do |tag| %>
           <%= render '/admin/shared/tags', tag: tag %>
         <% end %>
-        <%= paginate @tags, theme: 'twitter-bootstrap-4' %>
       </div>
+      <%= paginate @tags, theme: 'twitter-bootstrap-4' %>
     </div>
   </div>
 </div>
