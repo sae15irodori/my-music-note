@@ -1,15 +1,28 @@
 <div class="container">
   <div class="row">
     <div class="col-12 main">
-      <span class="notice"><%= flash[:notice] %></span>
-        <h1>Notes<span class="ml-1" style="font-size: 1.5rem">みんなのノート</span></h1>
-         <!--検索フォーム-->
+      <div class="index-headbox">
+        <div>
+          <span class="notice"><%= flash[:notice] %></span>
+          <h1>Notes<span class="ml-1" style="font-size: 1.5rem">みんなのノート</span></h1>
+          <!--検索フォーム-->
           <%= search_form_for @q, url: search_notes_path, class: "form-inline" do |f| %>
             <%= f.search_field :title_or_body_cont, placeholder: "ノート検索",class: "form-control rounded-pill" %>
             <%= button_tag type: "submit", class: "btn btn-default　rounded-pill" do %>
               <i class="fas fa-search"></i>
             <% end %>
           <% end %>
+        </div>
+        <!--タグ一覧-->
+        <div class="note-index-tags">
+          <% @tags.each do |tag| %>
+            <div class="note-index-tag">
+              <i class="fas fa-tag"></i><%= link_to tag_path(tag.id) do %><%= tag.name %>　(<%= Note.active_user_notes(tag).count %>)<% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
 
         <!--投稿一覧-->
         <div id="main-note">

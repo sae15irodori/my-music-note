@@ -8,6 +8,44 @@
   box-sizing: border-box;
 }
 
+/***一覧画面***/
+.index-headbox {
+  display: flex;
+}
+
+/**タグ**/
+.note-index-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 61%;
+}
+
+.note-index-tag {
+  width: 19%;
+  position: relative;
+  margin: 0.4em 0.7em;
+  padding: 0 1em;
+  line-height: 3em;
+  background-color: #bbe3dd;
+  font-size: 0.88rem;
+}
+
+.note-index-tag::before {
+  position: absolute;
+  bottom: -1px;
+  right: 5px;
+  z-index: -1;
+  transform: rotate(5deg);
+  width: 70%;
+  height: 50%;
+  background: #ada8a8b3;
+  content: "";
+  filter: blur(4px);
+}
+
+
+
 /**ノート一覧**/
 /*ノートの配置設定*/
 #main-note {
