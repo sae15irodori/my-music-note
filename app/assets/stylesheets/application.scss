@@ -101,12 +101,18 @@ a {
 
 /***アバウトページ***/
 /**ページ全体**/
-.about-content {
+.about-wrap {
   width: 80%;
   margin: 5em auto;
 }
 
+.cando-border {
+  padding: 1em;
+  border-top: 1px double #73d3abe8;
+}
+
 .about-title {
+  margin: 0.5em 0;
   text-align: center;
 }
 
@@ -121,7 +127,7 @@ a {
 .about-title3 {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 1em;
+  margin: 1em;
 }
 
 .cando {
