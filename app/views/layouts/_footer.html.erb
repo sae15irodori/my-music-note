@@ -4,4 +4,9 @@
       <%= link_to "利用規約", tos_notes_path, class:"ml-3" %>
   <!--プライバシーポリシーへのﾘﾝｸ-->
     <%= link_to "プライバシーポリシー", privacy_policy_notes_path, class:"ml-2" %>
+<% else %>
+  <!--利用規約へのﾘﾝｸ-->
+      <%= link_to "利用規約", tos_notes_path, class:"ml-3" %>
+  <!--プライバシーポリシーへのﾘﾝｸ-->
+    <%= link_to "プライバシーポリシー", privacy_policy_notes_path, class:"ml-2" %>
 <% end %>

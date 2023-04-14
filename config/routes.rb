@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   #ユーザー側
   scope module: :public do
     root to: "homes#top"
+    get "/about"=>"homes#about"
 
     resources :notes do
       resources :note_comments, only: [:create, :destroy]

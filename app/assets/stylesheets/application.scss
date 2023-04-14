@@ -58,15 +58,15 @@ a {
     color: #f5f5f5 !important;
 }
 
-/*トップ画面*/
+/***トップ画面***/
 .top-notice {
   margin-bottom: 1.5em;
   font-size: 1.5em;
   color: #823014;
 }
 
-
-.top-contents {   /*トップ画面全体*/
+/**トップ画面全体**/
+.top-contents {
   width: 80vw;
   margin: 7em auto;
   background: #FFF;
@@ -79,11 +79,15 @@ a {
   overflow: hidden;
 }
 
-.top-heading1 {
+.top-title {
   line-height: 0.6;
   font-size: 6em;
+  margin-bottom: 2.5rem;
 }
 
+.about-link{
+  font-size: 1.5rem;
+}
 
 .top-link {
   margin: 0 0 0.5em;
@@ -95,23 +99,51 @@ a {
 
 
 
-.top-content {
-  width: 60%;
-  margin: 0 auto;
-  padding: 3em 0;
+/***アバウトページ***/
+/**ページ全体**/
+.about-content {
+  width: 80%;
+  margin: 5em auto;
 }
 
-.top-heading2 {
-  font-size: 3rem;
+.about-title {
+  text-align: center;
 }
 
-.top-sentences {
+.about-title2 {
+  width: 40%;
+  margin: 0.8em auto 4em;
   font-size: 1.3rem;
-  color: #823014;
-  line-height: 2;
+  text-align: center;
+  line-height: 1.8;
 }
 
-/*ログイン・新規登録画面*/
+.about-title3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+
+.cando {
+  display: flex;
+  justify-content: center;
+}
+
+.cando-content {
+  line-height: 2;
+  margin: 0 2em;
+  text-align: center;
+}
+
+
+.cando-sentence {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 1em;
+}
+
+
+/***ログイン・新規登録画面***/
 .log-in {
   margin: 0 auto;
   background: #fff;
@@ -143,6 +175,7 @@ a {
 .log-logo {
   display: block;
   margin-top: 1em;
+  font-size: 1.2rem
 }
 
 
@@ -247,4 +280,5 @@ footer {
   width: 100%;
   text-align: center;
   padding: 1em;
+  margin-bottom: 4em;
 }

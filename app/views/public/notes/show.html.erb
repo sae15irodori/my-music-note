@@ -28,12 +28,12 @@
                 <% end %>
                 </p>
 
-                <p id="note_<%= @note.id %>">
+                <span id="note_<%= @note.id %>">
                   <p class="favorites-btn">
                     <span class="favoritebtn"><%= render '/public/favorites/favorites_btn', note: @note %> <!--いいねボタン--></span>
                     <span class="ml-5" style="font-size: 1.2rem;"><i class="far fa-comment"></i><%= @note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
                   </p>
-                </p>
+                </span>
               </div>
           </div>
 
@@ -47,7 +47,7 @@
             </div>
             <!--コメント一覧-->
             <div id="comments_area_<%= @note.id %>">
-              <%= render '/public/note_comments/index', {note: @note, note_comment: @note_comment} %> 
+              <%= render '/public/note_comments/index', {note: @note, note_comment: @note_comment} %>
             </div>
           </div><!--コメント欄と一覧-->
       <% end %><!--ﾕｰｻﾞｰ退会済じゃなければ-->
