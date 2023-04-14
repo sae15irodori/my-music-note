@@ -4,7 +4,7 @@ class Admin::NotesController < ApplicationController
 
   def index
     @notes = Note.all.order(created_at: :desc).page(params[:page]).per(30)
-    @tags = Tag.all.page(params[:page]).per(16).first(8)
+    @tags = Tag.all.first(8)
   end
 
   def show

@@ -17,7 +17,7 @@
         <div class="note-index-tags">
           <% @tags.each do |tag| %>
             <div class="note-index-tag">
-              <i class="fas fa-tag"></i><%= link_to tag_path(tag.id) do %><%= tag.name %>　(<%= Note.active_user_notes(tag).count %>)<% end %>
+              <i class="fas fa-tag"></i><%= link_to admin_tag_path(tag.id) do %><%= tag.name %>　(<%= Note.active_user_notes(tag).count %>)<% end %>
             </div>
           <% end %>
         </div>
