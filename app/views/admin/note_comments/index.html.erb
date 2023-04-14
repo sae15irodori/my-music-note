@@ -4,7 +4,7 @@
       <span class="notice"><%= flash[:notice] %></span>
       <h1>コメント一覧</h1>
       <!--検索フォーム-->
-      <div class="row">
+      <div class="row mb-3">
           <div class="col-3">
             <%= search_form_for @q, url: search_admin_note_note_comments_path do |f| %>
               <%= f.search_field :comment_cont, placeholder: "コメント検索",class: "form-control rounded-pill" %>
