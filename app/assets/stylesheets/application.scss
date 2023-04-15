@@ -106,11 +106,6 @@ a {
   margin: 5em auto;
 }
 
-.cando-border {
-  padding: 1em;
-  border-top: 1px double #73d3abe8;
-}
-
 .about-title {
   margin: 0.5em 0;
   text-align: center;
@@ -133,6 +128,11 @@ a {
 .cando {
   display: flex;
   justify-content: center;
+}
+
+.cando-border {
+  padding: 1em;
+  border-top: 1px double #46230552;
 }
 
 .cando-content {
