@@ -20,7 +20,20 @@
   align-items: center;
   width: 61%;
   margin: 0 auto;
+  height: 107px;
+  overflow: auto;
 }
+
+.note-index-tags::-webkit-scrollbar{
+   width: 5px;
+}
+.note-index-tags::-webkit-scrollbar-track{
+   background-color: #91b1b785;
+}
+.note-index-tags::-webkit-scrollbar-thumb{
+   background-color: #6ea19e;
+}
+
 
 .note-index-tag {
   width: 20%;
