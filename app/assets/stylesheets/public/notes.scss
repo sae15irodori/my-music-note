@@ -91,6 +91,10 @@
   font-size: 1rem;
   margin: 0 !important;
   background: #feffc0e0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 /*ノート本文*/
@@ -108,7 +112,7 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 7;
-  margin-bottom: 2em !important;
+  margin-bottom: 1em !important;
 }
 
 
