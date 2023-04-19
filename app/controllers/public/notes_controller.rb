@@ -56,7 +56,7 @@ class Public::NotesController < ApplicationController
   end
 
   def search
-    @results = @q.result.joins(:user).merge(User.where(is_deleted: false)).page(params[:page]).per(18)
+    @results = @q.result.order(created_at: :desc).joins(:user).merge(User.where(is_deleted: false)).page(params[:page]).per(18)
   end
 
 

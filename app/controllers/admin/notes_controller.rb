@@ -22,7 +22,7 @@ class Admin::NotesController < ApplicationController
   end
 
   def search
-    @results = @q.result.page(params[:page]).per(18)#set_qメソッドで取得した結果をオブジェクトに変換
+    @results = @q.result.order(created_at: :desc).page(params[:page]).per(18)#set_qメソッドで取得した結果をオブジェクトに変換
   end
 
   private
