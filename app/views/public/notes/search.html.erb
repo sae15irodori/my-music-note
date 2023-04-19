@@ -11,7 +11,7 @@
       <% end %>
 
       <% if @results.present? %>
-        <div id="main-note">
+        <div class="main-note">
           <% @results.each do |note| %>
               <%= render '/public/shared/notes_index', note: note %>
           <% end %>

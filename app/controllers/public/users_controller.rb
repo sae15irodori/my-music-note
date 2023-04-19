@@ -30,7 +30,7 @@ class Public::UsersController < ApplicationController
       @user = User.find(params[:id])
       favorites = Favorite.where(user_id: @user.id).pluck(:note_id)#ﾕｰｻﾞｰがいいねした投稿のidをfavoritesへ格納
       @favorite_notes = Note.where(id: favorites).order(created_at: :desc).joins(:user).merge(User.where(is_deleted: false))
-      @favorite_notes = Kaminari.paginate_array(@favorite_notes).page(params[:page]).per(10)
+      @favorite_notes = Kaminari.paginate_array(@favorite_notes).page(params[:page]).per(24)
     end
 
     def search
