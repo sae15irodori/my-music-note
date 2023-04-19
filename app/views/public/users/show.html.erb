@@ -21,7 +21,7 @@
                       <!--ﾛｸﾞｲﾝ中ならﾕｰｻﾞｰのいいねした投稿一覧へのﾘﾝｸ-->
                       <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
                         <%= link_to favorites_user_path(@user.id) do %>
-                          <span class="user-favorites ml-2">♥</span>一覧☜
+                          <span class="user-favorites ml-2">♥</span>一覧
                         <% end %>
                       <% end %>
                     <!--自己紹介-->
