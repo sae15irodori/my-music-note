@@ -1,5 +1,5 @@
 class Public::UsersController < ApplicationController
-  before_action :is_matching_login_user, only: %i[edit update　withdrawal]
+  before_action :is_matching_login_user, only: %i[edit update withdrawal]
   before_action :guest_check, except: %i[show index search]
   before_action :set_q, only: %i[search index]
 
