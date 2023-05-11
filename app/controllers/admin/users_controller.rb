@@ -28,7 +28,7 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(is_deleted: true)
     flash[:notice] = "#{@user.name}さんの退会処理が完了しました"
-    redirect_to admin_users_path
+    redirect_to deleted_admin_users_path
   end
 
   def unsubscribe
