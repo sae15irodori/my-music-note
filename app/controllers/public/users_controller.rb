@@ -1,6 +1,6 @@
 class Public::UsersController < ApplicationController
   before_action :is_matching_login_user, only: %i[edit update withdrawal]
-  before_action :guest_check, except: %i[show index search]
+  before_action :guest_check, except: %i[show index search withdrawal]
   before_action :set_q, only: %i[search index]
 
   def index
@@ -59,7 +59,7 @@ class Public::UsersController < ApplicationController
   def is_matching_login_user
     user = User.find(params[:id])
     unless user.id == current_user.id
-      redirect_to notes_path
+      redirect_to notes_path,notice: "※この操作はできません"
     end
   end
 
