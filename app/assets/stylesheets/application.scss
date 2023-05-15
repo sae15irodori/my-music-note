@@ -226,8 +226,10 @@ a {
 }
 
 /**画像**/
-.note-img {
-  margin: 0em auto;
+.show-img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
 }
 
 /**動画の表示設定**/

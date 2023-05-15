@@ -16,7 +16,7 @@
         <h2 class="index-note-title"><%= note.title %></h2><!--タイトル--><br>
         <p class="index-note-body"><%= note.body %></p>
         <p><!--画像-->
-          <%= image_tag note.image,:size => '250x200' %>
+          <%= image_tag note.image, class: 'index-img' %>
         </p>
         <!--タグ-->
         <% if note.tag.present? %>

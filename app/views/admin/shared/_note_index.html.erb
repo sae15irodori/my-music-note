@@ -2,9 +2,9 @@
 <%= link_to (admin_note_path(note.id)) do %>
   <!--投稿内容-->
   <h2 class="note-title"><%= note.title %></h2>
-   <p class="note-img">
+   <p><!--画像-->
     <% if note.image.present? %>
-      <%= image_tag note.image,:size => '400x300' %>
+      <%= image_tag note.image, class: 'show-img' %>
     <% end %>
   </p>
   <p class="video">

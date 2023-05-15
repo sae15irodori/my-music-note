@@ -1,9 +1,9 @@
 <%= note.created_at.strftime('%Y/%m/%d') %>
 <h2 class="note-title"><%= note.title %></h2>
 
-   <p class="note-img">
+   <p><!--画像-->
     <% if note.image.present? %>
-      <%= image_tag note.image,:size => '400x300' %>
+      <%= image_tag note.image, class: 'show-img' %>
     <% end %>
   </p>
   <p class="video">

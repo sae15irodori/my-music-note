@@ -115,6 +115,12 @@
   margin-bottom: 1em !important;
 }
 
+/**画像の表示設定**/
+.index-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
 
 /**動画の表示設定**/
 .notes-video{
