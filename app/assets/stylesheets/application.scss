@@ -85,20 +85,25 @@ a {
 }
 
 .top-title h2 {
-  padding: 0.7em 0 1.5em 8%;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0.7% 0 1.5em;
   font-size: clamp(18px, 2vw, 33px);
+  line-height: 1.5;
 }
 
 .top-title a {
-  font-size: clamp(18px, 2vw, 33px);
-  padding: 0 0 2em 7em;
   display: block;
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 2em;
+  font-size: clamp(18px, 2vw, 33px);
+  
 }
 
 .top-link {
   text-align: center;
   font-size: 4vw;
-  color: #823014;
   font-family: 'Times New Roman', serif;
 }
 
@@ -107,17 +112,9 @@ a {
 }
 
 @media screen and (max-width:546px) {
-  .top-title h1 {
-    font-size: 6.5vw;
-  }
+  
 }
 
-@media screen and (max-width:768px) {
-}
-
-@media screen and (max-width:425px) {
-
-}
 
 
 /***アバウトページ***/
