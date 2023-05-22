@@ -88,7 +88,7 @@ a {
   width: 90%;
   margin: 0 auto;
   padding: 0.7% 0 1.5em;
-  font-size: clamp(18px, 2vw, 33px);
+  font-size: clamp(0.95rem, 2vw, 2rem);
   line-height: 1.5;
 }
 
@@ -97,23 +97,21 @@ a {
   width: 80%;
   margin: 0 auto;
   padding-bottom: 2em;
-  font-size: clamp(18px, 2vw, 33px);
+  font-size: clamp(0.95rem, 2vw, 2rem);
   
 }
 
-.top-link {
+.top-link a {
   text-align: center;
   font-size: 4vw;
   font-family: 'Times New Roman', serif;
 }
 
-.top-link:nth-child(2) {
+.top-link a:nth-child(2) {
   padding: 0 5%;
 }
 
-@media screen and (max-width:546px) {
-  
-}
+
 
 
 
