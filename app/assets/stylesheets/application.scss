@@ -70,7 +70,7 @@ a {
   width: 80vw;
   margin: 7em auto;
   background: #FFF;
-  padding: 3.5% 3.5%;
+  padding: 5% 3.5%;
   background: linear-gradient(#ccc 0.05em, transparent 0.05em) #FFF;
   background-size: auto 2.9em;
   line-height: 0em;
@@ -85,26 +85,25 @@ a {
 }
 
 .top-title h2 {
-  margin: 0.7em 0 1.5em 8%;
-  font-size: 2vw;
+  padding: 0.7em 0 1.5em 8%;
+  font-size: clamp(18px, 2vw, 33px);
 }
 
 .top-title a {
-  font-size: 2vw;
-  margin: 0 0 2em 7em;
+  font-size: clamp(18px, 2vw, 33px);
+  padding: 0 0 2em 7em;
   display: block;
 }
 
 .top-link {
-  margin: 0 0 0.5em;
   text-align: center;
-  font-size: 3vw;
+  font-size: 4vw;
   color: #823014;
   font-family: 'Times New Roman', serif;
 }
 
 .top-link:nth-child(2) {
-  margin: 0 1.3em;
+  padding: 0 5%;
 }
 
 @media screen and (max-width:546px) {
@@ -114,7 +113,6 @@ a {
 }
 
 @media screen and (max-width:768px) {
-
 }
 
 @media screen and (max-width:425px) {
