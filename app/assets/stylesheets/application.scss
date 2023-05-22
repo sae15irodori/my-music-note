@@ -61,7 +61,7 @@ a {
 /***トップ画面***/
 .top-notice {
   margin-bottom: 1.5em;
-  font-size: 1.5em;
+  font-size: 1.7vw;
   color: #823014;
 }
 
@@ -70,7 +70,7 @@ a {
   width: 80vw;
   margin: 7em auto;
   background: #FFF;
-  padding: 3em 3em;
+  padding: 3.5% 3.5%;
   background: linear-gradient(#ccc 0.05em, transparent 0.05em) #FFF;
   background-size: auto 2.9em;
   line-height: 0em;
@@ -81,16 +81,16 @@ a {
 
 .top-title h1 {
   line-height: 0.45;
-  font-size: 6em;
+  font-size: 7vw;
 }
 
 .top-title h2 {
   margin: 0.7em 0 1.5em 8%;
-  font-size: 1.5rem;
+  font-size: 2vw;
 }
 
 .top-title a {
-  font-size: 1.5rem;
+  font-size: 2vw;
   margin: 0 0 2em 7em;
   display: block;
 }
@@ -98,11 +98,28 @@ a {
 .top-link {
   margin: 0 0 0.5em;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3vw;
   color: #823014;
   font-family: 'Times New Roman', serif;
 }
 
+.top-link:nth-child(2) {
+  margin: 0 1.3em;
+}
+
+@media screen and (max-width:546px) {
+  .top-title h1 {
+    font-size: 6.5vw;
+  }
+}
+
+@media screen and (max-width:768px) {
+
+}
+
+@media screen and (max-width:425px) {
+
+}
 
 
 /***アバウトページ***/
