@@ -114,7 +114,6 @@ a {
 
 
 
-
 /***アバウトページ***/
 /**ページ全体**/
 .about-wrap {
@@ -167,19 +166,19 @@ a {
 
 /***ログイン・新規登録画面***/
 .log-in {
-  margin: 0 auto;
+  margin: 0 auto 2em;
   background: #fff;
-  padding: 3em;
+  padding: 2.5em;
   background: linear-gradient(#ccc 0.05em, transparent 0.05em) #fff;
   background-size: auto 2.9em;
   line-height: 2em;
   border: 10px solid #EF866B;
   border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
   overflow: hidden;
+  width: 60%;
 }
 
 .registrations-log-in {
-  padding: 1em;
   background-size: auto 2.9em;
   line-height: 1.2em;
   border: 10px solid #e78b03db;
@@ -189,8 +188,8 @@ a {
   border: 10px solid #37AB9D;
 }
 
-.log-in-field, .log-in-actions, .user-edit-field {
-  width: 50%;
+.log-in-field, .log-in-actions {
+  width: 80%;
   margin: 1em auto;
 }
 
@@ -198,6 +197,18 @@ a {
   display: block;
   margin-top: 1em;
   font-size: 1.2rem
+}
+
+@media screen and (max-width:991px) {
+  .log-in {
+    width: 90vw;
+  }
+  .log-in-field, .log-in-actions {
+    width: 95%;
+  }
+  .registrations {
+    margin: none;
+  }
 }
 
 
