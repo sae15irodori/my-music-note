@@ -60,13 +60,14 @@ li {
 
 .navbar-nav a, .header-wrapper a {
   color: #f5f5f5 !important;
+  font-size: clamp(1rem, 1.72vw, 1.2rem);;
 }
 
 .header-wrapper{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 1.1vh 2.5vw;
+  padding: 0.5% 2.5%;
 }
 
 .header-logo {
@@ -81,7 +82,7 @@ li {
 
 /*ﾊﾝﾊﾞｰｶﾞｰﾒﾆｭｰのﾘｽﾄ通常は非表示*/
 .header-nav-sm {
-    display: none;
+  display: none;
 }
 
 /*ﾊﾝﾊﾞｰｶﾞｰﾒﾆｭｰの設定*/
@@ -89,7 +90,11 @@ li {
   .header-nav {
     display: none;/*ｸﾞﾛｰﾊﾞﾙﾒﾆｭｰを非表示*/
   }
-    #hamburger {
+  .header-wrapper {
+    padding: 13px 2.5%;
+  }
+  
+  #hamburger {
     background-color: transparent;
     position: relative;
     cursor: pointer;
@@ -97,7 +102,8 @@ li {
     height: 60px;
     width: 60px;
   }
-    .icon span {
+  
+  .icon span {
     position: absolute;
     right: 12%;
     width: 25px;
@@ -107,28 +113,58 @@ li {
     transition: ease 0.75s;
   }
   .icon span:nth-of-type(1) {
-    top: 11px;
+    top: 27%;
   }
   .icon span:nth-of-type(2) {
-    top: 21px;
+    top: 48%;
   }
   .icon span:nth-of-type(3) {
-    bottom: 10px;
+    bottom: 26%;
+  }
+  
+  .close span:nth-of-type(1) {
+    transform: rotate(45deg); /*反時計回りに45度回転*/
+    top: 28px;
+  }
+  .close span:nth-of-type(2) {
+    opacity: 0;
+  }
+  .close span:nth-of-type(3) {
+    transform: rotate(-45deg); /*時計回りに45度回転*/
+    top: 28px;
+  }
+  
+  .header-nav-sm {
+    top: 99%;
+    left: 0px;  /*headerの余白分　ヘッダーには左右に15px余白があるので、headerの子要素となる.smは15px分内側に設置されます。その余白を埋めるために左に寄せる。*/
+    position: absolute; /*絶対配置　top　leftからの位置を絶対配置する*/
+    z-index: 10;
+    width: 100%;
+    background-color: #73d0c2eb;
+    padding-left: 10%;
+  }
+  ul {
+    flex-direction: column;	/*ulのflexboxを縦並びにする*/  
   }
 }
+
+
 
 @media screen and (max-width:670px) {
   .header-logo {
     display: block;
   }
   .icon span:nth-of-type(1) {
-    top: 25px;
+    top: 30%;
   }
   .icon span:nth-of-type(2) {
-    top: 35px;
+    top: 44%;
   }
   .icon span:nth-of-type(3) {
-    bottom: 21px;
+    bottom: 36%;
+  }
+  .header-nav-sm {
+    top: 99%;
   }
 }
 

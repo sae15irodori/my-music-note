@@ -2,10 +2,8 @@
 <% if user_signed_in? %>
   <div class="header-wrapper">
     <div class="header-logo">
-      <div class="mb-0" style="font-size: 1.3rem">
-        <%= link_to "My Music Note🖌" , notes_path%>
-      </div>
-      <div style="font-size: 1.1rem;"><%= link_to "応援し合い助け合う演奏コミュニティ♪" , notes_path, class: "ml-2" %></div>
+      <div class="mb-0"><%= link_to "My Music Note🖌" , notes_path%></div>
+      <div><%= link_to "応援し合い助け合う演奏コミュニティ♪" , notes_path, class: "ml-2" %></div>
     </div>
     
     <div id="humburger">
@@ -71,14 +69,14 @@
     </div>
     
     <div id="humburger">
-      <div class="icon">
+      <a class="icon" href="#">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </a>
     </div>
     
-    <nav class="sm">
+    <nav>
       <ul class="header-nav mb-0">
         <li><!--投稿一覧へのﾘﾝｸ-->
           <%= link_to "Notes", admin_notes_path, class:"mr-3" %>
