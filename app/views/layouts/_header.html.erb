@@ -17,19 +17,22 @@
     <nav>
       <ul class="header-nav-sm mb-0">
         <li><!--投稿一覧へのﾘﾝｸ-->
-          <%= link_to "Notes", admin_notes_path, class:"mr-3" %>
-        </li>
-        <li><!--ｺﾒﾝﾄｰ一覧へのﾘﾝｸ-->
-          <%= link_to "Comments", admin_note_note_comments_path(:note_id), class:"mr-3" %>
-        </li>
-        <li><!--ﾕｰｻﾞｰ一覧へのﾘﾝｸ-->
-          <%= link_to "Users", admin_users_path, class:"mr-3" %>
+          <%= link_to "Notes", notes_path, class:"mx-3" %>
         </li>
         <li><!--タグ一覧へのﾘﾝｸ-->
-          <%= link_to "Tags", admin_tags_path, class:"mr-3" %>
+          <%= link_to "Tags", tags_path, class:"mx-3" %>
+        </li>
+        <li><!--新規投稿画面へのﾘﾝｸ-->
+          <%= link_to "New Page", new_note_path, class:"mx-3" %>
+        </li>
+        <li><!--マイページへのﾘﾝｸ-->
+          <%= link_to "My Note", user_path(current_user.id), class:"mx-3" %>
+        </li>
+        <li><!--ﾕｰｻﾞｰ一覧へのﾘﾝｸ-->
+          <%= link_to "Users", users_path, class:"mx-3" %>
         </li>
         <li><!--ﾛｸﾞｱｳﾄのﾘﾝｸ-->
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"mr-3" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"mx-3" %>
         </li>
       </ul>
     </nav>
