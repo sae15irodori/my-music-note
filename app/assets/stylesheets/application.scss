@@ -93,7 +93,7 @@ li {
   .header-wrapper {
     padding: 13px 2.5%;
   }
-  
+
   #hamburger {
     background-color: transparent;
     position: relative;
@@ -102,7 +102,7 @@ li {
     height: 60px;
     width: 60px;
   }
-  
+
   .icon span {
     position: absolute;
     right: 18%;
@@ -121,30 +121,32 @@ li {
   .icon span:nth-of-type(3) {
     bottom: 26%;
   }
-  
-  .close span:nth-of-type(1) {
-    transform: rotate(45deg); /*反時計回りに45度回転*/
-    top: 28px;
+
+  .icon.active span:nth-child(1) {
+    -webkit-transform: translateY(20px) rotate(-45deg);
+    transform: translateY(15px) rotate(-45deg);
+    background-color: #fff;
   }
-  .close span:nth-of-type(2) {
+  .icon.active span:nth-child(2) {
     opacity: 0;
   }
-  .close span:nth-of-type(3) {
-    transform: rotate(-45deg); /*時計回りに45度回転*/
-    top: 28px;
+  .icon.active span:nth-child(3) {
+    -webkit-transform: translateY(-20px) rotate(45deg);
+    transform: translateY(-5px) rotate(45deg);
+    background-color: #fff;
   }
-  
+
   .header-nav-sm {
     top: 99%;
     left: 0px;  /*headerの余白分　ヘッダーには左右に15px余白があるので、headerの子要素となる.smは15px分内側に設置されます。その余白を埋めるために左に寄せる。*/
     position: absolute; /*絶対配置　top　leftからの位置を絶対配置する*/
     z-index: 10;
     width: 100%;
-    background-color: #73d0c2eb;
+    background-color: #63b7aaeb;
     padding-left: 10%;
   }
   ul {
-    flex-direction: column;	/*ulのflexboxを縦並びにする*/  
+    flex-direction: column;	/*ulのflexboxを縦並びにする*/
   }
 }
 
@@ -165,6 +167,11 @@ li {
   }
   .icon span:nth-of-type(3) {
     bottom: 36%;
+  }
+  .icon.active span:nth-child(3) {
+    -webkit-transform: translateY(-20px) rotate(45deg);
+    transform: translateY(-7px) rotate(45deg);
+    background-color: #fff;
   }
   .header-nav-sm {
     top: 99%;
