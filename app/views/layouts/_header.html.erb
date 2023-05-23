@@ -1,54 +1,123 @@
-<nav class="navbar navbar-expand-lg">
-  <div class="container header">
-    <!--ログイン済ならば-->
-    <% if user_signed_in? %>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <span style="font-size: 1.3rem"><%= link_to "My Music Note🖌" , notes_path,class:"header-nav" %></span>
-        <span style="font-size: 1.1rem;"><%= link_to "応援し合い助け合う演奏コミュニティ♪" , notes_path,class:"header-nav ml-3" %></span></span>
-        <ul class="navbar-nav ml-auto">
-          <li><!--投稿一覧へのﾘﾝｸ-->
-            <%= link_to "Notes", notes_path, class:"mx-3 header-nav" %>
-          </li>
-          <li><!--タグ一覧へのﾘﾝｸ-->
-            <%= link_to "Tags", tags_path, class:"mx-3 header-nav" %>
-          </li>
-          <li><!--新規投稿画面へのﾘﾝｸ-->
-            <%= link_to "New Page", new_note_path, class:"mx-3 header-nav" %>
-          </li>
-          <li><!--マイページへのﾘﾝｸ-->
-            <%= link_to "My Note", user_path(current_user.id), class:"mx-3 header-nav" %>
-          </li>
-          <li><!--ﾕｰｻﾞｰ一覧へのﾘﾝｸ-->
-            <%= link_to "Users", users_path, class:"mx-3 header-nav" %>
-          </li>
-          <li><!--ﾛｸﾞｱｳﾄのﾘﾝｸ-->
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"mx-3 header-nav" %>
-          </li>
-          </ul>
-        </div>
-    <% elsif admin_signed_in? %>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <span style="font-size: 1.2rem"><%= link_to "My Music Note🖌" , admin_notes_path,class:"header-nav" %></span>
-        <span class="header-nav ml-3">管理者ログイン中</span>
-        <ul class="navbar-nav ml-auto">
-          <li><!--投稿一覧へのﾘﾝｸ-->
-            <%= link_to "Notes", admin_notes_path, class:"mr-3 header-nav" %>
-          </li>
-          <li><!--ｺﾒﾝﾄｰ一覧へのﾘﾝｸ-->
-            <%= link_to "Comments", admin_note_note_comments_path(:note_id), class:"mr-3 header-nav" %>
-          </li>
-          <li><!--ﾕｰｻﾞｰ一覧へのﾘﾝｸ-->
-            <%= link_to "Users", admin_users_path, class:"mr-3 header-nav" %>
-          </li>
-          <li><!--タグ一覧へのﾘﾝｸ-->
-            <%= link_to "Tags", admin_tags_path, class:"mr-3 header-nav" %>
-          </li>
-          <li><!--ﾛｸﾞｱｳﾄのﾘﾝｸ-->
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"header-nav" %>
-          </li>
-        </ul>
+<!--ログイン済ならば-->
+<% if user_signed_in? %>
+  <div class="header-wrapper">
+    <div class="header-logo">
+      <div class="mb-0" style="font-size: 1.3rem">
+        <%= link_to "My Music Note🖌" , notes_path%>
       </div>
-    <% end %>
-    </ul>
+      <div style="font-size: 1.1rem;"><%= link_to "応援し合い助け合う演奏コミュニティ♪" , notes_path, class: "ml-2" %></div>
+    </div>
+    
+    <div id="humburger">
+      <div class="icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    
+    <nav>
+      <ul class="header-nav-sm mb-0">
+        <li><!--投稿一覧へのﾘﾝｸ-->
+          <%= link_to "Notes", admin_notes_path, class:"mr-3" %>
+        </li>
+        <li><!--ｺﾒﾝﾄｰ一覧へのﾘﾝｸ-->
+          <%= link_to "Comments", admin_note_note_comments_path(:note_id), class:"mr-3" %>
+        </li>
+        <li><!--ﾕｰｻﾞｰ一覧へのﾘﾝｸ-->
+          <%= link_to "Users", admin_users_path, class:"mr-3" %>
+        </li>
+        <li><!--タグ一覧へのﾘﾝｸ-->
+          <%= link_to "Tags", admin_tags_path, class:"mr-3" %>
+        </li>
+        <li><!--ﾛｸﾞｱｳﾄのﾘﾝｸ-->
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"mr-3" %>
+        </li>
+      </ul>
+    </nav>
+    
+    <nav>
+      <ul class="header-nav mb-0">
+        <li><!--投稿一覧へのﾘﾝｸ-->
+          <%= link_to "Notes", notes_path, class:"mx-3" %>
+        </li>
+        <li><!--タグ一覧へのﾘﾝｸ-->
+          <%= link_to "Tags", tags_path, class:"mx-3" %>
+        </li>
+        <li><!--新規投稿画面へのﾘﾝｸ-->
+          <%= link_to "New Page", new_note_path, class:"mx-3" %>
+        </li>
+        <li><!--マイページへのﾘﾝｸ-->
+          <%= link_to "My Note", user_path(current_user.id), class:"mx-3" %>
+        </li>
+        <li><!--ﾕｰｻﾞｰ一覧へのﾘﾝｸ-->
+          <%= link_to "Users", users_path, class:"mx-3" %>
+        </li>
+        <li><!--ﾛｸﾞｱｳﾄのﾘﾝｸ-->
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"mx-3" %>
+        </li>
+      </ul>
+    </nav>
   </div>
-</nav>
+    
+<!--管理者ログインした場合-->  
+<% elsif admin_signed_in? %>
+  <div class="header-wrapper">
+    <div class="header-logo">
+      <p class="mb-0" style="font-size: 1.2rem">
+        <%= link_to "My Music Note🖌" , admin_notes_path %>
+        <span style="font-size: 1.1rem;"><%= link_to "管理者ログイン中" , admin_notes_path,class:"ml-2" %></span>
+      </p>
+    </div>
+    
+    <div id="humburger">
+      <div class="icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    
+    <nav class="sm">
+      <ul class="header-nav mb-0">
+        <li><!--投稿一覧へのﾘﾝｸ-->
+          <%= link_to "Notes", admin_notes_path, class:"mr-3" %>
+        </li>
+        <li><!--ｺﾒﾝﾄｰ一覧へのﾘﾝｸ-->
+          <%= link_to "Comments", admin_note_note_comments_path(:note_id), class:"mr-3" %>
+        </li>
+        <li><!--ﾕｰｻﾞｰ一覧へのﾘﾝｸ-->
+          <%= link_to "Users", admin_users_path, class:"mr-3" %>
+        </li>
+        <li><!--タグ一覧へのﾘﾝｸ-->
+          <%= link_to "Tags", admin_tags_path, class:"mr-3" %>
+        </li>
+        <li><!--ﾛｸﾞｱｳﾄのﾘﾝｸ-->
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"mx-3" %>
+        </li>
+      </ul>
+    </nav>
+    
+    <nav class="lg">
+      <ul class="header-nav mb-0">
+        <li><!--投稿一覧へのﾘﾝｸ-->
+          <%= link_to "Notes", admin_notes_path, class:"mr-3" %>
+        </li>
+        <li><!--ｺﾒﾝﾄｰ一覧へのﾘﾝｸ-->
+          <%= link_to "Comments", admin_note_note_comments_path(:note_id), class:"mr-3" %>
+        </li>
+        <li><!--ﾕｰｻﾞｰ一覧へのﾘﾝｸ-->
+          <%= link_to "Users", admin_users_path, class:"mr-3" %>
+        </li>
+        <li><!--タグ一覧へのﾘﾝｸ-->
+          <%= link_to "Tags", admin_tags_path, class:"mr-3" %>
+        </li>
+        <li><!--ﾛｸﾞｱｳﾄのﾘﾝｸ-->
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"mx-3" %>
+        </li>
+      </ul>
+    </nav>
+  </div>
+<% end %>
+
+

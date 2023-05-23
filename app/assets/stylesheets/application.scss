@@ -31,6 +31,10 @@ a {
   color: #441f05 !important;
 }
 
+li {
+  list-style: none;
+}
+
 
 .notice {
   margin-top: 3em;
@@ -54,9 +58,65 @@ a {
   background: #73d0c2eb;
 }
 
-.header-nav {
-    color: #f5f5f5 !important;
+.navbar-nav a, .header-wrapper a {
+  color: #f5f5f5 !important;
 }
+
+.header-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.1vh 2.5vw;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+/*ﾊﾝﾊﾞｰｶﾞｰﾒﾆｭｰのﾘｽﾄ通常は非表示*/
+.header-nav-sm {
+    display: none;
+}
+
+/*ﾊﾝﾊﾞｰｶﾞｰﾒﾆｭｰの設定*/
+@media screen and (max-width:1024px) {
+  .header-nav {
+    display: none;/*ｸﾞﾛｰﾊﾞﾙﾒﾆｭｰを非表示*/
+  }
+    #hamburger {
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    margin: 0 0 0 auto;
+    height: 60px;
+    width: 60px;
+  }
+    .icon span {
+    position: absolute;
+    right: 12%;
+    width: 25px;
+    height: 3.3px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    transition: ease 0.75s;
+  }
+    .icon span:nth-of-type(1) {
+    top: 11px;
+  }
+  .icon span:nth-of-type(2) {
+    top: 21px;
+  }
+  .icon span:nth-of-type(3) {
+    bottom: 10px;
+  }
+}
+
 
 /***トップ画面***/
 .top-notice {
@@ -98,7 +158,7 @@ a {
   margin: 0 auto;
   padding-bottom: 2em;
   font-size: clamp(0.95rem, 2vw, 2rem);
-  
+
 }
 
 .top-link a {
