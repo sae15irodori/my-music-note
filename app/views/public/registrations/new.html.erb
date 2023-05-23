@@ -19,14 +19,14 @@
                 <div class="log-in-field">
                   <i class="fas fa-key mr-2"></i><%= f.label :password %>
                   <% if @minimum_password_length %>
-                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <em>(<%= @minimum_password_length %> 文字以上)</em>
                   <% end %><br />
                   <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
                 </div>
 
                 <div class="log-in-field">
-                  <i class="fas fa-key mr-2"></i><%= f.label :password_confirmation %><br />
-                  <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
+                  <i class="fas fa-key mr-2"></i><%= f.label :password %>（確認用）<br />
+                  <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
                 </div>
 
                 <div class="log-in-actions w-50">
