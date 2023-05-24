@@ -172,7 +172,7 @@
 /*動画の表示設定*/
 .notes-video {
   position: relative;
-  padding-bottom: 70.25%; 
+  padding-bottom: 12.5em; 
   height: 0;
   overflow: hidden;
 }
@@ -195,29 +195,32 @@
   font-size: 1.2rem;
 }
 
+/**投稿一覧レスポンシブ*/
 @media screen and (max-width:1250px) {
   .index-note-contets1 {
     width: 40%;
     height: 31em;
   }
-  .notes-video {
-    padding-bottom: 56.25%; 
-  }
 }
 
-@media screen and (max-width:899px) {
+@media screen and (max-width:1024px) {
   .index-note-contets1 {
-    width: 41%;
+    width: 45%;
   }
 }
 
-@media screen and (max-width:899px) {
+@media screen and (max-width:790px) {
+  .index-note-contets1 {
+    width: 95%;
+  }
+  .notes-video {
+    padding-bottom: 13em; 
+  }
+}
+
+@media screen and (max-width:425px) {
   .index-note-contets1 {
     width: 100%;
-    height: 30em;
-  }
-  .notes-video {
-    padding-bottom: 78.25%; 
   }
 }
 
