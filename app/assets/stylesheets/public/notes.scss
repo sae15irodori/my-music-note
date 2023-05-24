@@ -13,8 +13,14 @@
   display: flex;
 }
 
-.index-headbox div {
+.index-head {
   margin-left: 3%;
+}
+
+@media screen and (max-width:1019px) {
+  .index-head {
+    margin-left: 0%;
+  }
 }
 
 @media screen and (max-width:575px) {
@@ -70,20 +76,17 @@
 
 @media screen and (max-width:1225px) {
   .note-index-tag {
-    width: 28%;
+    width: 29%;
   }
 }
 
-@media screen and (max-width:923px) {
+@media screen and (max-width:790px) {
   .index-headbox {
     display: block;
   }
-  .index-headbox div {
-    margin-left: 0%;
-  }
   .note-index-tags {
-    width: 100%;
-    height: 56px;
+    width: 95vw;
+    height: 52px;
     margin: 2% 0 0;
   }
 }
