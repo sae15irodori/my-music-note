@@ -77,6 +77,13 @@
 }
 
 @media screen and (max-width:400px) {
+  .note-index-tags {
+    height: 50px;
+  }
+  .note-index-tag {
+    width: 43%;
+    
+  }
 }
 
 /**ノート一覧**/
