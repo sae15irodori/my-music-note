@@ -85,19 +85,18 @@
     display: block;
   }
   .note-index-tags {
-    width: 95vw;
+    width: 84vw;
     height: 52px;
     margin: 2% 0 0;
   }
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:435px) {
   .note-index-tags {
     height: 50px;
   }
   .note-index-tag {
     width: 43%;
-
   }
 }
 
