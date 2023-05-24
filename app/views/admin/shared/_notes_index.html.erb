@@ -1,56 +1,64 @@
 <!--管理者側一覧画面にて使用-->
-<div class="index-note-contents index-note-contets1"><!--ルーズリーフの設定-->
-  <div class="index-note-content">
+<div class="index-note-contents index-note-contets1"><!--大枠-->
+  <div class="index-note-content"><!--ﾕｰｻﾞｰ+投稿-->
     <!--投稿ﾕｰｻﾞｰ情報-->
     <% if note.user.is_deleted == true %><!--ﾕｰｻﾞｰが退会済ならば-->
       この投稿のユーザーは退会済です
-    <% end %><!--ﾕｰｻﾞｰが退会済ならば-->
-
+    <% end %>
+    
+    <!--ﾕｰｻﾞｰ詳細へのﾘﾝｸ-->
     <%= link_to admin_user_path(note.user.id) do %>
       <%= render '/layouts/user_info', user: note.user %>
     <% end %>
+      <!--投稿時間-->
     　<%= time_ago_in_words(note.created_at) %>前
+    　
     <!--投稿内容-->
-    <%= link_to (admin_note_path(note.id)) do %>
+    <%= link_to (admin_note_path(note.id)) do %><!--詳細ページへのﾘﾝｸ-->
+    
       <% if note.image.present? %><!--画像がある場合-->
-        <h2 class="index-note-title"><%= note.title %></h2><!--タイトル--><br>
-        <p class="index-note-body"><%= note.body %></p>
-        <p><!--画像-->
-          <%= image_tag note.image, class: 'index-img' %>
-        </p>
+        <!--タイトル・本文-->
+          <h2 class="index-note-title"><%= note.title %></h2><br>
+          <p class="index-note-body"><%= note.body %></p>
+        <!--画像-->
+          <p>
+            <%= image_tag note.image, class: 'index-img' %>
+          </p>
         <!--タグ-->
-        <% if note.tag.present? %>
-          <i class="fas fa-tag"></i><%= link_to note.tag.name, admin_tag_path(note.tag.id) %>
-        <% end %>
-      <% elsif note.url.present? %>
-        <h2 class="index-note-title"><%= note.title %></h2><!--タイトル--><br>
-        <p class="index-note-body"><%= note.body %></p>
+          <% if note.tag.present? %>
+            <i class="fas fa-tag"></i><%= link_to note.tag.name, admin_tag_path(note.tag.id) %>
+          <% end %>
+          
+      <% elsif note.url.present? %><!--動画がある場合-->
+        <!--タイトル・本文-->
+          <h2 class="index-note-title"><%= note.title %></h2><br>
+          <p class="index-note-body"><%= note.body %></p>
         <!--動画-->
-        <p class="notes-video">
-          <iframe width="250" height="200" src="<%= note.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </p>
+          <p class="notes-video">
+            <iframe width="250" height="200" src="<%= note.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </p>
         <!--タグ-->
-        <% if note.tag.present? %>
-          <i class="fas fa-tag"></i><%= link_to note.tag.name, admin_tag_path(note.tag.id) %>
-        <% end %>
+          <% if note.tag.present? %>
+            <i class="fas fa-tag"></i><%= link_to note.tag.name, admin_tag_path(note.tag.id) %>
+          <% end %>
+          
       <% else %><!--画像も動画もない場合-->
-        <h2 class="index-note-title"><%= note.title %></h2><br><!--タイトル-->
-        <p class="index-notes-body"><%= note.body %></p><br><!--本文-->
+        <!--タイトル・本文-->
+          <h2 class="index-note-title"><%= note.title %></h2><br>
+          <p class="index-notes-body"><%= note.body %></p><br>
         <!--タグ-->
-        <% if note.tag.present? %>
-          <i class="fas fa-tag"></i><%= link_to note.tag.name, admin_tag_path(note.tag.id) %>
-        <% end %>
-      <% end %><!--画像か動画があるときの処理-->
-
-
-
+          <% if note.tag.present? %>
+            <i class="fas fa-tag"></i><%= link_to note.tag.name, admin_tag_path(note.tag.id) %>
+          <% end %>
+      <% end %><!--画像・動画の有無-->
   </div>
+  
   <!--いいねボタン＆コメント件数-->
   <%= link_to (admin_note_path(note.id)) do %>
-    <p class="index-favorites-btn">
+    <div class="index-favorites-btn">
       ♥<%= note.favorites.count %><!--いいねボタン-->
       <i class="far fa-comment ml-5 mr-1"></i><%= note.note_comments.count %><!--ｺﾒﾝﾄ件数-->
-    </p>
+    </div>
   <% end %>
-</div><!--ルーズリーフ-->
 <% end %><!--投稿詳細へのﾘﾝｸ-->
+</div><!--大枠終了-->
