@@ -80,6 +80,11 @@ li {
   align-items: center;
 }
 
+.header-nav a, .header-nav-sm a {
+  margin: 0 1rem;
+}
+
+
 /*ﾊﾝﾊﾞｰｶﾞｰﾒﾆｭｰのﾘｽﾄ通常は非表示*/
 .header-nav-sm {
   display: none;
