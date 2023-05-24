@@ -13,6 +13,9 @@
   display: flex;
 }
 
+.index-headbox div {
+  margin-left: 3%;
+}
 
 @media screen and (max-width:575px) {
   .index-headbox input {
@@ -65,15 +68,18 @@
 }
 
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1225px) {
   .note-index-tag {
-    width: 29%;
+    width: 28%;
   }
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:923px) {
   .index-headbox {
     display: block;
+  }
+  .index-headbox div {
+    margin-left: 0%;
   }
   .note-index-tags {
     width: 100%;
@@ -98,6 +104,7 @@
 .main-note {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   align-self: flex-start;
 }
 
@@ -110,6 +117,7 @@
   border-radius: 7px;
   position: relative;
   box-shadow: 0 4px 13px rgba(0,0,0,0.2), 0 -4px 5px -1.7px #708aaf inset;
+  font-size: clamp(0.95rem, 1.1vw, 1rem);
   }
 
 
@@ -166,7 +174,9 @@
   background: #f5eeafbf;
 }
 
+@media screen and (max-width:1012px) {
 
+}
 
 /***コメントの設定***/
 /**コメント欄全体**/
