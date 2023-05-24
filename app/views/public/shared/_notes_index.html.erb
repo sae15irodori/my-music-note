@@ -41,14 +41,13 @@
     </div>
 
     <!--いいねボタン＆コメント件数-->
-    <span id="note_<%= note.id %>">
-      <p class="index-favorites-btn">
-        <span class="favoritebtn"><%= render '/public/favorites/favorites_btn', note: note %><!--いいねボタン--></span>
-        <%= link_to (note_path(note.id)) do %>
-          <i class="far fa-comment ml-4 mr-1"></i><%= note.note_comments.count %><!--ｺﾒﾝﾄ件数-->
-        <% end %>
-      </p>
-    </span>
+    <div class="index-favorites-btn">
+      <span class="favoritebtn"><%= render '/public/favorites/favorites_btn', note: note %><!--いいねボタン--></span>
+      <%= link_to (note_path(note.id)) do %>
+        <i class="far fa-comment ml-4 mr-1"></i><%= note.note_comments.count %><!--ｺﾒﾝﾄ件数-->
+      <% end %>
+    </div>
+    
   </div><!--ルーズリーフ-->
   <!--投稿内容終了-->
 
