@@ -125,7 +125,7 @@
 
 .index-note-contets1 {
     width: 30%;
-    height: 29em;
+    height: 30em;
   }
 
 
@@ -149,6 +149,7 @@
   text-overflow: ellipsis;
 }
 
+
 /*動画・画像ない場合*/
 .index-notes-body {
   overflow: hidden;
@@ -160,25 +161,65 @@
 
 /**画像の表示設定**/
 .index-img {
-  width: 200px;
-  height: 200px;
+  width: 190px;
+  height: 190px;
   object-fit: cover;
+  display: block;
+  margin: 0 auto;
 }
 
-/**動画の表示設定**/
-.notes-video{
-  display: block;
-  text-align: center;
+
+/*動画の表示設定*/
+.notes-video {
+  position: relative;
+  padding-bottom: 70.25%; 
+  height: 0;
+  overflow: hidden;
 }
+ 
+.notes-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/*いいねボタン*/
 .index-favorites-btn {
   width: 90%;
   padding: 0 2em;
   background: #f5eeafbf;
 }
 
-@media screen and (max-width:1012px) {
-  
+@media screen and (max-width:1250px) {
+  .index-note-contets1 {
+    width: 40%;
+    height: 31em;
+  }
+  .notes-video {
+    padding-bottom: 56.25%; 
+  }
 }
+
+@media screen and (max-width:899px) {
+  .index-note-contets1 {
+    width: 41%;
+  }
+}
+
+@media screen and (max-width:899px) {
+  .index-note-contets1 {
+    width: 100%;
+    height: 30em;
+  }
+  .notes-video {
+    padding-bottom: 78.25%; 
+  }
+}
+
+
 
 /***コメントの設定***/
 /**コメント欄全体**/
