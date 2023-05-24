@@ -13,7 +13,14 @@
   display: flex;
 }
 
-/**タグ**/
+
+@media screen and (max-width:575px) {
+  .index-headbox input {
+    width: 53vw;
+  }
+}
+
+/**投稿一覧のタグ一覧**/
 .note-index-tags {
   display: flex;
   flex-wrap: wrap;
@@ -33,7 +40,6 @@
 .note-index-tags::-webkit-scrollbar-thumb{
    background-color: #a8cfcd;
 }
-
 
 .note-index-tag {
   width: 20%;
@@ -82,9 +88,10 @@
   }
   .note-index-tag {
     width: 43%;
-    
+
   }
 }
+
 
 /**ノート一覧**/
 /*ノートの配置設定*/
