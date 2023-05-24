@@ -65,22 +65,20 @@
 <% elsif admin_signed_in? %>
   <div class="header-wrapper">
     <div class="header-logo">
-      <p class="mb-0" style="font-size: 1.2rem">
-        <%= link_to "My Music Note🖌" , admin_notes_path %>
-        <span><%= link_to "管理者ログイン中" , admin_notes_path,class:"ml-2" %></span>
-      </p>
+      <div class="mb-0"><%= link_to "My Music Note🖌" , admin_notes_path %></div>
+      <div><%= link_to "管理者ログイン中" , admin_notes_path,class:"ml-2" %></div>
     </div>
     
     <div id="humburger">
-      <a class="icon" href="#">
+      <div class="icon">
         <span></span>
         <span></span>
         <span></span>
-      </a>
+      </div>
     </div>
-    
+    <!--ﾊﾝﾊﾞｰｶﾞｰﾒﾆｭｰのnav-->
     <nav>
-      <ul class="header-nav mb-0">
+      <ul class="header-nav-sm mb-0">
         <li><!--投稿一覧へのﾘﾝｸ-->
           <%= link_to "Notes", admin_notes_path, class:"mr-3" %>
         </li>
@@ -99,7 +97,7 @@
       </ul>
     </nav>
     
-    <nav class="lg">
+    <nav><!--ｸﾞﾛｰﾊﾞﾙﾒﾆｭｰのnav-->
       <ul class="header-nav mb-0">
         <li><!--投稿一覧へのﾘﾝｸ-->
           <%= link_to "Notes", admin_notes_path, class:"mr-3" %>
