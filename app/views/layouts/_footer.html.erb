@@ -1,12 +1,10 @@
 <% if user_signed_in? or admin_signed_in? %>
-  <span style="font-size:2rem;"><%= link_to "My Music Note🖌" , notes_path %></span>
-  <!--利用規約へのﾘﾝｸ-->
-      <%= link_to "利用規約", tos_notes_path, class:"ml-3" %>
-  <!--プライバシーポリシーへのﾘﾝｸ-->
-    <%= link_to "プライバシーポリシー", privacy_policy_notes_path, class:"ml-2" %>
-<% else %>
-  <!--利用規約へのﾘﾝｸ-->
-      <%= link_to "利用規約", tos_notes_path, class:"ml-3" %>
-  <!--プライバシーポリシーへのﾘﾝｸ-->
-    <%= link_to "プライバシーポリシー", privacy_policy_notes_path, class:"ml-2" %>
+  <div class="footer-contents">
+    <%= link_to "My Music Note🖌" , notes_path, class:"footer-logo mr-2" %>
+    <%= link_to "利用規約", tos_notes_path, class:"mx-2" %>
+    <%= link_to "プライバシーポリシー", privacy_policy_notes_path %>
+  </div>
+<% else %><!--ﾛｸﾞｲﾝ前-->
+  <%= link_to "利用規約", tos_notes_path %>
+  <%= link_to "プライバシーポリシー", privacy_policy_notes_path, class:"ml-2" %>
 <% end %>

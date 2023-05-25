@@ -436,7 +436,35 @@ li {
 
 footer {
   width: 100%;
-  text-align: center;
   padding: 1em;
   margin-bottom: 4em;
+}
+
+.footer-contents {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.footer-contents a {
+  display: block;
+}
+
+.footer-logo {
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width:499px) {
+  .footer-contents {
+    display: block;
+    text-align: center;
+  }
+  .footer-contents a:not(:first-child) {
+    display: inline-block;
+    font-size: 0.9rem;
+  }
+  .footer-logo {
+    margin-bottom: 0.7rem;
+    font-size: 1.25rem;
+  }
 }
