@@ -340,6 +340,33 @@ li {
   display: flex;
 }
 
+.heading_and_search h1 {
+  font-size: clamp(1.8rem, 2.9vw, 2.5rem);
+}
+
+
+
+@media screen and (max-width:1024px) {
+  .heading_and_search {
+    justify-content: space-between;
+  }
+  .heading_and_search input {
+    width: 30vw !important;
+  }
+}
+
+@media screen and (max-width:670px) {
+  .heading_and_search {
+    display: block;
+  }
+  .heading_and_search input {
+    width: 73vw !important;
+  }
+  .heading_and_search .form-inline {
+    margin-top: 0.8rem;
+  }
+}
+
 
 
 /***詳細ﾍﾟｰｼﾞ***/
