@@ -1,30 +1,22 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 main">
-      <span class="notice"><%= flash[:notice] %></span>
-      <h1>コメント検索結果<span class="ml-3" style="font-size: 1.5rem">(全<%= @results.total_count %>件)</span></h1>
-      <!--検索フォーム-->
-      <%= search_form_for @q, url: search_admin_note_note_comments_path do |f| %>
-        <div class="row mb-3">
-          <div class="col-3">
-            <%= f.search_field :comment_cont, placeholder: "コメント検索",class: "form-control rounded-pill" %>
-          </div>
-          <div class="9">
-              <%= button_tag type: "submit", class: "btn btn-default　rounded-pill" do %>
-                <i class="fas fa-search"></i>
-              <% end %>
-          </div>
-        </div>
+<div class="main">
+  <span class="notice"><%= flash[:notice] %></span>
+  <div class="heading_and_search">
+    <h1>コメント検索結果<span class="ml-3" style="font-size: 1.5rem">(全<%= @results.total_count %>件)</span></h1>
+    <!--検索フォーム-->
+    <%= search_form_for @q, url: search_admin_note_note_comments_path, class: "form-inline" do |f| %>
+      <%= f.search_field :comment_cont, placeholder: "コメント検索",class: "form-control rounded-pill" %>
+      <%= button_tag type: "submit", class: "btn btn-default　rounded-pill" do %>
+        <i class="fas fa-search"></i>
       <% end %>
-
-      <% if @results.present? %>
-        <% @results.each do |comment| %>
-          <%= render '/admin/shared/comments', comment: comment %>
-        <% end %>
-        <%= paginate @results, theme: 'twitter-bootstrap-4' %>
-      <% else %>
-        一致する結果はありませんでした。o○
-      <% end %>
-    </div>
+    <% end %>
   </div>
+
+  <% if @results.present? %>
+    <% @results.each do |comment| %>
+      <%= render '/admin/shared/comments', comment: comment %>
+    <% end %>
+    <%= paginate @results, theme: 'twitter-bootstrap-4' %>
+  <% else %>
+    一致する結果はありませんでした。o○
+  <% end %>
 </div>

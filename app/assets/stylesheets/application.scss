@@ -336,26 +336,25 @@ li {
 
 
 /***見出しと検索フォーム***/
-.heading_and_search {
-  display: flex;
-}
-
 .heading_and_search h1 {
   font-size: clamp(1.8rem, 2.9vw, 2.5rem);
 }
 
-
-
-@media screen and (max-width:1024px) {
-  .heading_and_search {
-    justify-content: space-between;
-  }
-  .heading_and_search input {
-    width: 30vw !important;
-  }
+.heading_and_search {
+  display: flex;
+  justify-content: space-between;
 }
 
-@media screen and (max-width:670px) {
+.heading_and_search .form-inline {
+  margin: 0 auto;
+}
+
+.heading_and_search input {
+  width: 32.5vw !important;
+}
+
+
+@media screen and (max-width:790px) {
   .heading_and_search {
     display: block;
   }
@@ -366,6 +365,7 @@ li {
     margin-top: 0.8rem;
   }
 }
+
 
 
 

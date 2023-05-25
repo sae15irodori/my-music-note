@@ -1,30 +1,28 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 main">
-      <h1>ユーザー検索結果(全<%= @results.total_count %>件)</h1>
-      <!--検索フォーム-->
-      <%= search_form_for @q, url: search_users_path, class: "form-inline" do |f| %>
-        <%= f.search_field :name_cont, placeholder: "ノート検索",class: "form-control rounded-pill" %>
-        <%= button_tag type: "submit", class: "btn btn-default　rounded-pill" do %>
-          <i class="fas fa-search"></i>
-        <% end %>
+<div class="main">
+  <div class="heading_and_search">
+    <h1>ユーザー検索結果<span class="ml-3" style="font-size: 1.5rem">(全<%= @results.total_count %>件)</span></h1>
+    <!--検索フォーム-->
+    <%= search_form_for @q, url: search_users_path, class: "form-inline" do |f| %>
+      <%= f.search_field :name_cont, placeholder: "ノート検索",class: "form-control rounded-pill" %>
+      <%= button_tag type: "submit", class: "btn btn-default　rounded-pill" do %>
+        <i class="fas fa-search"></i>
       <% end %>
-
-      <% if @results.present? %>
-        <% @results.each do |user| %>
-          <% if user.is_deleted == false && user.email != 'guest@gesuto.com' %><!--有効ﾕｰｻﾞｰか確認-->
-            <%= link_to (user_path(user.id)) do %>
-              <div class="users-box">
-                <%= render '/layouts/user_info', user: user %><br>
-                <%= user.introduction %>
-              </div>
-            <% end %>
-          <% end %><!--ﾕｰｻﾞｰ確認-->
-        <% end %><!--each-->
-        <%= paginate @results, theme: 'twitter-bootstrap-4' %>
-      <% else %>
-        一致する結果はありませんでした。o○
-      <% end %>
-    </div>
+    <% end %>
   </div>
+
+  <% if @results.present? %>
+    <% @results.each do |user| %>
+      <% if user.is_deleted == false && user.email != 'guest@gesuto.com' %><!--有効ﾕｰｻﾞｰか確認-->
+        <%= link_to (user_path(user.id)) do %>
+          <div class="users-box">
+            <%= render '/layouts/user_info', user: user %><br>
+            <%= user.introduction %>
+          </div>
+        <% end %>
+      <% end %><!--ﾕｰｻﾞｰ確認-->
+    <% end %><!--each-->
+    <%= paginate @results, theme: 'twitter-bootstrap-4' %>
+  <% else %>
+    一致する結果はありませんでした。o○
+  <% end %>
 </div>
