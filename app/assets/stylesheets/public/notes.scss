@@ -17,18 +17,6 @@
   margin-left: 3%;
 }
 
-@media screen and (max-width:1019px) {
-  .index-head {
-    margin-left: 0%;
-  }
-}
-
-@media screen and (max-width:575px) {
-  .index-headbox input {
-    width: 53vw;
-  }
-}
-
 /**投稿一覧のタグ一覧**/
 .note-index-tags {
   display: flex;
@@ -74,9 +62,16 @@
 }
 
 
+
 @media screen and (max-width:1225px) {
   .note-index-tag {
     width: 29%;
+  }
+}
+
+@media screen and (max-width:1019px) {
+  .index-head {
+    margin-left: 0%;
   }
 }
 
@@ -84,12 +79,16 @@
   .index-headbox {
     display: block;
   }
+  .index-headbox input {
+    width: 70vw !important;
+  }
   .note-index-tags {
     width: 100%;
     height: 86px;
     margin: 2% 0 0;
   }
 }
+
 
 @media screen and (max-width:435px) {
   .note-index-tags {

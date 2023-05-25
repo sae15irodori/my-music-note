@@ -38,7 +38,7 @@ li {
 
 .notice {
   margin-top: 3em;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 1.7vw, 1.5rem);
 }
 
 .comment_notice {
