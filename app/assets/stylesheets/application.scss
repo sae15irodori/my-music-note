@@ -335,6 +335,13 @@ li {
 }
 
 
+/***見出しと検索フォーム***/
+.heading_and_search {
+  display: flex;
+}
+
+
+
 /***詳細ﾍﾟｰｼﾞ***/
 /**ページ全体**/
 .main{
@@ -434,6 +441,8 @@ li {
 }
 
 
+
+/***フッター***/
 footer {
   width: 100%;
   padding: 1em;
