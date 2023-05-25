@@ -186,8 +186,8 @@ li {
 
 /***トップ画面***/
 .top-notice {
-  margin-bottom: 1.5em;
-  font-size: 1.7vw;
+  margin-bottom: 1.8em;
+  font-size: clamp(0.8rem, 1.7vw, 1.8rem);
   color: #823014;
 }
 
