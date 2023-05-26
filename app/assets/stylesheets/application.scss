@@ -27,6 +27,12 @@ body {
   background: #eef7e4 !important;
 }
 
+/*ページ全体*/
+.main{
+  margin: 6em auto;
+  width: 87%;
+}
+
 a {
   color: #441f05 !important;
 }
@@ -368,104 +374,6 @@ li {
 
 
 
-
-/***詳細ﾍﾟｰｼﾞ***/
-/**ページ全体**/
-.main{
-  margin: 6em auto;
-  width: 87%;
-}
-
-/**ノートのﾙｰｽﾞﾘｰﾌ風設定**/
-/*外枠*/
-.note-contents {
-  margin: 2em 1em 3em 2em;
-  padding: 2em 5em; /*内側の余白*/
-  background: linear-gradient(#f1eaead6 0.05em, transparent 0.05em) #fff;
-  background-size: auto 2em;
-  line-height: 1em;
-  border: 0.5px solid #d1cdcd;
-  border-radius: 7px;
-  position: relative;
-  overflow: hidden;
-  }
-
-.note-contents2 {
-  width: 80%;
-}
-
-/*ドット*/
-.note-contents::before {
-  content: "";
-  position: absolute;
-  border-right: dotted 15px #b1a8a8; /*ドットの大きさ、高さ*/
-  height: 93%;
-  top: 1.5em; /*位置*/
-  left: 0.5em; /*位置*/
-}
-
-/**画像**/
-.show-img {
-  width: 400px;
-  height: 400px;
-  object-fit: cover;
-}
-
-/**動画の表示設定**/
-.video{
-  margin: 1.5em 0;
-  text-align: left;
-  line-height: 0;
-}
-
-
-/**ノートタイトル**/
-.note-title {
-  margin: 0.5em 0;
-  font-size: 1.8rem;
-}
-/**ノート本文**/
-.index-note-sentence {
-  margin-right: 1em;
-}
-
-.note-btn {
-  display: flex;
-}
-
-.favorites-btn {
-  width: 11em;
-  padding: 0 2em;
-  background: #f9f0a2bf;
-  display: flex;
-}
-
-.edit-destory-btn {
-  font-size: 1.2rem;
-}
-
-.edit-btn {
-  padding: 0.5em 1em;
-  background: #f9f0a2bf;
-}
-
-.destroy-btn {
-  margin: 0 0.3em;
-  padding: 0.5em 1em;
-  background: #f9f0a2bf;
-  height: 2em;
-}
-
-
-.pagination {
-  margin-top: 3em;
-  justify-content: center;
-}
-
-.page-item.active .page-link {
-  background: #93dae1 !important;
-  border: none !important;
-}
 
 
 

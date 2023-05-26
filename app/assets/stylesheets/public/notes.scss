@@ -225,11 +225,112 @@
 
 
 
+/***詳細ﾍﾟｰｼﾞ***/
+/**ノートのﾙｰｽﾞﾘｰﾌ風設定**/
+/*外枠*/
+.note-contents {
+  width: 73%;
+  margin: 3em auto;
+  padding: 2.7% 6.6%; /*内側の余白*/
+  background: linear-gradient(#f1eaead6 0.05em, transparent 0.05em) #fff;
+  background-size: auto 2em;
+  line-height: 1em;
+  border: 0.5px solid #d1cdcd;
+  border-radius: 7px;
+  position: relative;
+  overflow: hidden;
+  }
+
+/*ドット*/
+.note-contents::before {
+  content: "";
+  position: absolute;
+  border-right: dotted 1.5vw #b1a8a8; /*ドットの大きさ、高さ*/
+  height: 95%;
+  top: 1.5em; /*位置*/
+  left: 0.5em; /*位置*/
+}
+
+/**画像の表示設定**/
+.show-img {
+  width: 90%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+/**動画の表示設定**/
+.video{
+  position: relative;
+  padding-bottom: 54.5%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/**ノートタイトル**/
+.note-title {
+  margin: 0.5em 0;
+  font-size: 1.8rem;
+}
+
+/**ノート本文**/
+.index-note-sentence {
+  margin-right: 1em;
+}
+
+.note-btn {
+  display: flex;
+}
+
+.favorites-btn {
+  width: 100%;
+  padding: 0 2em;
+  background: #f9f0a2bf;
+  display: flex;
+}
+
+.edit-destory-btn {
+  font-size: 1.2rem;
+}
+
+.edit-btn {
+  padding: 0.5em 1em;
+  background: #f9f0a2bf;
+}
+
+.destroy-btn {
+  margin: 0 0.3em;
+  padding: 0.5em 1em;
+  background: #f9f0a2bf;
+  height: 2em;
+}
+
+
+.pagination {
+  margin-top: 3em;
+  justify-content: center;
+}
+
+.page-item.active .page-link {
+  background: #93dae1 !important;
+  border: none !important;
+}
+
+
+
 /***コメントの設定***/
 /**コメント欄全体**/
 .comment-box {
-  width: 100%;
-  margin-left: 5%;
+  margin-left: 10%;
 }
 
 /**コメント一覧**/
@@ -253,12 +354,14 @@
 
 /**コメント入力フォーム**/
 .comment-form {/*単数形*/
-  width: 70% !important;
+  width: 61vw !important;
   border: 1px solid #7fa59838 !important;
   border-radius: 10px !important;
 }
 
-
+.comments-form .form-inline {
+  justify-content: center;
+}
 .comment-form-btn {
   margin: 0 0.5em !important;
   color: #76441f !important;
@@ -266,6 +369,24 @@
   border: 1px solid #7fa59838 !important;
   background: #fff !important;
 }
+
+
+
+/*投稿詳細レスポンシブ*/
+@media screen and (max-width:768px) {
+  .note-contents {
+    width: 92%;
+    padding: 2.7% 8%;
+  }
+  .note-contents::before {
+    border-right: dotted 2.5vw #b1a8a8;
+  }
+  .comment-box {
+    margin-left: 4%;
+  }
+}
+
+
 
 
 /**投稿フォーム**/
@@ -281,7 +402,7 @@
   line-height: 1em;
 }
 
-.note-contents {
+.new-note-contents {
   width: 80%;
 }
 
