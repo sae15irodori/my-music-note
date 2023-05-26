@@ -240,7 +240,7 @@
   border-radius: 7px;
   position: relative;
   overflow: hidden;
-  font-size: clamp(0.95rem, 1.1vw, 1rem);
+  font-size: clamp(0.7rem, 1.1vw, 1rem);
   }
 
 /*ドット*/
@@ -281,9 +281,9 @@
 /**ノートタイトル**/
 .note-title {
   margin: 0.5em 0;
-  font-size: clamp(0.95rem, 1.1vw, 1rem);
+  font-size: clamp(0.8rem, 2.5vw, 1.8rem);
+  font-weight: bold;
 }
-
 
 .note-btn {
   display: flex;
