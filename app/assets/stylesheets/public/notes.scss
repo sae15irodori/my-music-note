@@ -281,6 +281,7 @@
 /**ノートタイトル**/
 .note-title {
   margin: 0.5em 0;
+  font-size: clamp(0.95rem, 1.1vw, 1rem);
 }
 
 
@@ -328,6 +329,7 @@
 /**コメント欄全体**/
 .comment-box {
   margin-left: 13%;
+  font-size: clamp(0.95rem, 1.1vw, 1rem);
 }
 
 /**コメント一覧**/
