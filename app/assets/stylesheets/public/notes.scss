@@ -139,7 +139,8 @@
   -webkit-line-clamp: 2;
 }
 
-/*ノート本文*/
+
+
 /*動画・画像がある場合*/
 .index-note-body {
   width: 100%;
@@ -279,13 +280,9 @@
 /**ノートタイトル**/
 .note-title {
   margin: 0.5em 0;
-  font-size: 1.8rem;
+  font-size: clamp(1.3rem, 2.1vw, 1.8rem);
 }
 
-/**ノート本文**/
-.index-note-sentence {
-  margin-right: 1em;
-}
 
 .note-btn {
   display: flex;
