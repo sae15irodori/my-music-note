@@ -240,13 +240,13 @@
   border-radius: 7px;
   position: relative;
   overflow: hidden;
-  font-size: clamp(0.7rem, 1.4vw, 1.8rem);
   }
   
-.note-body, .comment-contents {
+
+.note-contents, .note-body,  .comment-box {
+  font-size: clamp(0.715rem, 1.4vw, 1.8rem);
   line-height: 1.5;
 }
-  
 
 /*ドット*/
 .note-contents::before {
@@ -334,7 +334,6 @@
 /**コメント欄全体**/
 .comment-box {
   margin-left: 13%;
-  font-size: clamp(0.7rem, 1.4vw, 1.8rem);
 }
 
 /**コメント一覧**/
