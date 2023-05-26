@@ -240,10 +240,10 @@
   border-radius: 7px;
   position: relative;
   overflow: hidden;
-  font-size: clamp(0.72rem, 1.4vw, 1.8rem);
+  font-size: clamp(0.7rem, 1.4vw, 1.8rem);
   }
   
-.note-body, .comment{
+.note-body, .comment-contents {
   line-height: 1.5;
 }
   
@@ -286,7 +286,7 @@
 /**ノートタイトル**/
 .note-title {
   margin: 0.5em 0;
-  font-size: clamp(0.9rem, 2.5vw, 1.8rem);
+  font-size: clamp(0.8rem, 1.7vw, 1.5rem);
   font-weight: bold;
 }
 
@@ -334,7 +334,6 @@
 /**コメント欄全体**/
 .comment-box {
   margin-left: 13%;
-  font-size: clamp(0.95rem, 1.1vw, 1rem);
 }
 
 /**コメント一覧**/
@@ -346,6 +345,7 @@
   border: 1px solid #7fa59838 !important;
   border-radius: 20px;
   box-shadow: 0 11px 15px 0 #87858533;
+  font-size: clamp(0.7rem, 1.4vw, 1.8rem);
 }
 
 
