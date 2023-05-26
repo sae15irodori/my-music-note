@@ -1,19 +1,15 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 main">
-      
-      <h1 style="font-size: 2.2rem;"><%= @tag.name %> <i class="fas fa-tag"></i><span style="font-size:1.8rem"> のノート</span><span class="ml-3" style="font-size: 1.5rem">(全 <%= @tag_counts.count %>件)</span></h1>
-      <% @tag_notes.each do |tag_note| %>
-        <% if tag_note.user.is_deleted == false %>
-          <div class="note-contents note-contents2">
-            <%= link_to user_path(tag_note.user.id) do %>
-              <%= render '/layouts/user_info', user: tag_note.user %><!--投稿ﾕｰｻﾞｰ情報-->
-            <% end %>
-            <%= render '/public/shared/note_index', note: tag_note %>
-          </div>
+<div class="main">
+  
+  <h1 style="font-size: 2.2rem;"><%= @tag.name %> <i class="fas fa-tag"></i><span style="font-size:1.8rem"> のノート</span><span class="ml-3" style="font-size: 1.5rem">(全 <%= @tag_counts.count %>件)</span></h1>
+  <% @tag_notes.each do |tag_note| %>
+    <% if tag_note.user.is_deleted == false %>
+      <div class="note-contents note-contents2">
+        <%= link_to user_path(tag_note.user.id) do %>
+          <%= render '/layouts/user_info', user: tag_note.user %><!--投稿ﾕｰｻﾞｰ情報-->
         <% end %>
-      <% end %>
-      <%= paginate @tag_notes, theme: 'twitter-bootstrap-4' %>
-    </div>
-  </div>
+        <%= render '/public/shared/note_index', note: tag_note %>
+      </div>
+    <% end %>
+  <% end %>
+  <%= paginate @tag_notes, theme: 'twitter-bootstrap-4' %>
 </div>

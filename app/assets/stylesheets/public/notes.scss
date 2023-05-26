@@ -230,7 +230,7 @@
 /**ノートのﾙｰｽﾞﾘｰﾌ風設定**/
 /*外枠*/
 .note-contents {
-  width: 73%;
+  width: 75%;
   margin: 6% auto 4%;
   padding: 5% 6.6% 2.7%;
   background: linear-gradient(#f1eaead6 0.05em, transparent 0.05em) #fff;
@@ -241,7 +241,7 @@
   position: relative;
   overflow: hidden;
   }
-  
+
 
 .note-contents, .note-body,  .comment-box {
   font-size: clamp(0.715rem, 1.4vw, 1.8rem);
@@ -295,11 +295,12 @@
 }
 
 .favorites-btn {
-  width: 100%;
   padding: 0 2em;
   background: #f9f0a2bf;
   display: flex;
 }
+
+
 
 .edit-destory-btn {
   font-size: 1.2rem;
@@ -399,7 +400,7 @@
     width: 95%;
   }
   .favorites-btn {
-  padding: 0 4.5vw;
+    padding: 0 4.5vw;
   }
 }
 
