@@ -42,7 +42,7 @@
 }
 
 .edit-destory-btn, .favorite-comment-btn {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 
@@ -224,7 +224,6 @@
 }
 
 
-
 /**投稿一覧レスポンシブ*/
 @media screen and (max-width:1250px) {
   .index-note-contets1 {
@@ -401,9 +400,6 @@
   }
   .comment-contents {
     width: 95%;
-  }
-  .favorites-btn {
-    padding: 0 4.5vw;
   }
 }
 
