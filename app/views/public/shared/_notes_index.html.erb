@@ -46,11 +46,11 @@
     </div>
 
     <!--いいねボタン＆コメント件数-->
-    <div id="note_<%= note.id %>" class="note-btn">
+    <div id="note_<%= note.id %>" class="favorite-comment-btn mt-3">
       <div class="favoritebtn"><%= render '/public/favorites/favorites_btn', note: note %></div><!--いいねボタン-->
-        <%= link_to (note_path(note.id)) do %><!--ｺﾒﾝﾄ件数-->
-          <i class="far fa-comment"></i> <%= note.note_comments.count %>
-        <% end %>
+      <%= link_to (note_path(note.id)) do %><!--ｺﾒﾝﾄ件数-->
+        <i class="far fa-comment"></i> <%= note.note_comments.count %>
+      <% end %>
     </div>
   </div><!--大枠終了-->
 <% end %><!--ﾕｰｻﾞｰ退会済じゃなければ-->

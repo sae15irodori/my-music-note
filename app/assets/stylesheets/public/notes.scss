@@ -8,20 +8,41 @@
   box-sizing: border-box;
 }
 
+.note-btn-box {
+  display: flex;
+}
+
+/***編集と削除ボタン**/
+.edit-destory-btn {
+  display: flex;
+}
+
+.edit-btn {
+  padding: 0.5em 1em;
+  background: #f9f0a2bf;
+}
+
+.destroy-btn {
+  margin: 0 0.3em;
+  padding: 0.5em 1em;
+  background: #f9f0a2bf;
+}
+
 /***いいねボタン***/
-.note-btn {
+.favorite-comment-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90%;
   padding: 0 2em;
-  margin-top: 0.7em;
-  background: #f5eeafbf;
-  font-size: 1.2rem;
+  background: #f9f0a2bf;
 }
 
 .favoritebtn {
   padding-right: 1.8rem;
+}
+
+.edit-destory-btn, .favorite-comment-btn {
+  font-size: 1.3rem;
 }
 
 
@@ -299,33 +320,6 @@
   font-weight: bold;
 }
 
-.note-show-btn {/*もとはnote-btn*/
-  display: flex;
-}
-
-.favorites-btn {
-  padding: 0 2em;
-  background: #f9f0a2bf;
-  display: flex;
-}
-
-
-
-.edit-destory-btn {
-  font-size: 1.2rem;
-}
-
-.edit-btn {
-  padding: 0.5em 1em;
-  background: #f9f0a2bf;
-}
-
-.destroy-btn {
-  margin: 0 0.3em;
-  padding: 0.5em 1em;
-  background: #f9f0a2bf;
-  height: 2em;
-}
 
 
 .pagination {
@@ -418,12 +412,7 @@
     width: 100%;
     padding: 2.7% 10%;
   }
-  .note-show-btn {/*もとはnote-btn*/
-    display: block;
-  }
-  .favorites-btn {
-    justify-content: center;
-  }
+  
   .comment-contents {
     width: 100%;
   }

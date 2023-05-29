@@ -55,7 +55,7 @@
   
   <!--いいねボタン＆コメント件数-->
   <%= link_to (admin_note_path(note.id)) do %>
-    <div class="note-btn">
+    <div class="favorite-comment-btn mt-3">
       <div class="favoritebtn">♥<%= note.favorites.count %></div><!--いいねボタン-->
       <i class="far fa-comment"></i> <%= note.note_comments.count %><!--ｺﾒﾝﾄ件数-->
     </div>

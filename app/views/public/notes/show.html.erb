@@ -11,30 +11,30 @@
 
         <!--投稿内容-->
         <%= render '/public/shared/note_contents', note: @note %>
-          <div class="note-btn">
-            <p class="edit-destory-btn">
-            <% if @note.user.id == current_user.id %><!--ログイン中ユーザーならeditとdestroyﾘﾝｸ-->
-              <span class="edit-btn">
-                <%= link_to edit_note_path(@note.id) do %>
-                  <i class="far fa-edit"></i>
-                <% end %>
-              </span>
-              <span class="destroy-btn">
-                <%= link_to note_path(@note.id), method: :delete, data: {confirm: 'このノートを消しますか？'} do %>
-                  <i class="far fa-trash-alt"></i>
-                <% end %>
-              </span>
-            <% end %>
-            </p>
 
-            <span id="note_<%= @note.id %>">
-              <p class="favorites-btn">
-                <span class="favoritebtn"><%= render '/public/favorites/favorites_btn', note: @note %> <!--いいねボタン--></span>
-                <span class="ml-5" style="font-size: 1.2rem;"><i class="far fa-comment"></i><%= @note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
-              </p>
-            </span>
+        <!--ボタン-->
+        <div class="note-btn-box"><!--全てのボタン-->
+          <div class="edit-destory-btn">
+          <% if @note.user.id == current_user.id %><!--ログイン中ユーザーならeditとdestroyﾘﾝｸ-->
+            <div class="edit-btn">
+              <%= link_to edit_note_path(@note.id) do %>
+                <i class="far fa-edit"></i>
+              <% end %>
+            </div>
+            <div class="destroy-btn">
+              <%= link_to note_path(@note.id), method: :delete, data: {confirm: 'このノートを消しますか？'} do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </div>
+          <% end %>
           </div>
-      </div>
+
+          <div id="note_<%= @note.id %>" class="favorite-comment-btn">
+            <div class="favoritebtn"><%= render '/public/favorites/favorites_btn', note: @note %></div><!--いいねボタン-->
+            <i class="far fa-comment"></i><%= @note.note_comments.count %><!--ｺﾒﾝﾄ件数-->
+          </div>
+        </div>
+      </div><!--ルーズリーフ-->
 
 
       <!--コメント欄-->
@@ -50,8 +50,5 @@
         </div>
       </div><!--コメント欄と一覧-->
   <% end %><!--ﾕｰｻﾞｰ退会済じゃなければ-->
-
-
-  </div>
 </div>
 
