@@ -53,10 +53,13 @@
   width: 70%;
   margin: 0 auto;
   padding: 1em 1em;
-  font-size: clamp(0.715rem, 1.4vw, 1.8rem);
   border-left: 2em solid #42b5a5;
   background: #ffffff;
 }
+.user-info a, .user-info p {
+  font-size: clamp(0.715rem, 1.4vw, 1.8rem);
+}
+
 
 #user-info::before {
   position: absolute;
@@ -70,12 +73,6 @@
   content: "";
   filter: blur(4px);
 }
-
-
-.user-favorites {
-  font-size: 1.5rem;
-}
-
 
 
 
@@ -135,5 +132,7 @@
 }
 
 @media screen and (max-width:425px) {
-  
+  .user-info {
+    width: 100%;
+  }
 }
