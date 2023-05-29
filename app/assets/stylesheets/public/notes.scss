@@ -8,6 +8,23 @@
   box-sizing: border-box;
 }
 
+/***いいねボタン***/
+.note-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  padding: 0 2em;
+  margin-top: 0.7em;
+  background: #f5eeafbf;
+  font-size: 1.2rem;
+}
+
+.favoritebtn {
+  padding-right: 1.8rem;
+}
+
+
 /***一覧画面***/
 .index-headbox {
   display: flex;
@@ -186,14 +203,6 @@
 }
 
 
-/*いいねボタン*/
-.index-favorites-btn {
-  width: 90%;
-  padding: 0 2em;
-  margin-top: 0.7em;
-  background: #f5eeafbf;
-  font-size: 1.2rem;
-}
 
 /**投稿一覧レスポンシブ*/
 @media screen and (max-width:1250px) {
@@ -290,7 +299,7 @@
   font-weight: bold;
 }
 
-.note-btn {
+.note-show-btn {/*もとはnote-btn*/
   display: flex;
 }
 
@@ -409,7 +418,7 @@
     width: 100%;
     padding: 2.7% 10%;
   }
-  .note-btn {
+  .note-show-btn {/*もとはnote-btn*/
     display: block;
   }
   .favorites-btn {
