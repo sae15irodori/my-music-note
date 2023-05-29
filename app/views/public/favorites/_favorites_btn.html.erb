@@ -4,6 +4,6 @@
   <% end %>
 <% else %>
   <%= link_to note_favorites_path(note.id), method: :post, remote: true, data: {"turbolinks" => false} do %>
-    ♡<%= note.favorites.count %> 
+    <i class="far fa-heart"></i><%= note.favorites.count %> 
   <% end %>
 <% end %>
