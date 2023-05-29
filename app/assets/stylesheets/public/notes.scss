@@ -150,9 +150,9 @@
 /*外枠*/
 .index-note-contents {
   margin: 2em 1em;
-  padding: 1.5em 2em;/*文字周りの余白*/
-  background: #fffef7;/*背景色*/
-  border-left: solid 22px #fdee43b8;/*左線（実線 太さ 色) 20px #ffd026*/
+  padding: 1.5em 2em;
+  background: #fffef7;
+  border-left: solid 22px #fdee43b8;
   border-radius: 7px;
   position: relative;
   box-shadow: 0 4px 13px rgba(0,0,0,0.2), 0 -4px 5px -1.7px #708aaf inset;
@@ -260,7 +260,7 @@
 /*外枠*/
 .note-contents {
   width: 75%;
-  margin: 6% auto 4%;
+  margin: 4% auto;
   padding: 5% 6.6% 2.7%;
   background: linear-gradient(#f1eaead6 0.05em, transparent 0.05em) #fff;
   background-size: auto 2em;

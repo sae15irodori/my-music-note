@@ -1,55 +1,51 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 main">
-      <% if @user.id == current_user.id %>
-        <h1>My Note</h1>
-      <% end %>
+<div class="main">
+  <% if @user.id == current_user.id %>
+    <h1 align="center">My Note</h1>
+  <% end %>
 
-      <%= flash[:notice] %>
-          <% unless @user.is_deleted == true %><!--ﾕｰｻﾞｰが退会済じゃなければ-->
-            <h2 id="user-info"><!--ユーザー情報-->
-              <!--ﾛｸﾞｲﾝ中かつｹﾞｽﾄじゃなければuser/editへのﾘﾝｸ含める-->
-              <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
-                <%= link_to edit_user_path(@user.id) do %>
-                    <%= render '/layouts/user_info', user: @user %>
+  <%= flash[:notice] %>
+      <% unless @user.is_deleted == true %><!--ﾕｰｻﾞｰが退会済じゃなければ-->
+        <div class="user-info"><!--ユーザー情報-->
+          <!--ﾛｸﾞｲﾝ中かつｹﾞｽﾄじゃなければuser/editへのﾘﾝｸ含める-->
+          <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
+            <%= link_to edit_user_path(@user.id) do %>
+                <%= render '/layouts/user_info', user: @user %><!--ユーザー情報-->
 
-                      <!--編集ボタン-->
-                      <%= link_to edit_user_path(@user.id), class: "ml-5 mr-2" do %>
-                        <i class="far fa-edit"></i>編集
-                      <% end %>
+                  <!--編集ボタン-->
+                  <%= link_to edit_user_path(@user.id), class: "ml-5 mr-2" do %>
+                    <i class="far fa-edit"></i>編集
+                  <% end %>
 
-                      <!--ﾛｸﾞｲﾝ中ならﾕｰｻﾞｰのいいねした投稿一覧へのﾘﾝｸ-->
-                      <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
-                        <%= link_to favorites_user_path(@user.id) do %>
-                          <span class="user-favorites ml-2">♥</span>一覧
-                        <% end %>
-                      <% end %>
-                    <!--自己紹介-->
-                    <p class="ml-5"><%= @user.introduction %></p>
-                <% end %>
-              <% elsif  @user.email == 'guest@gesuto.com' %><!--ｹﾞｽﾄﾕｰｻﾞｰの場合-->
-                ゲストユーザーです<br>
-                ユーザー登録をしてあなたも自分のノートを作ってみましょう！
-                <br><br>
-                <%= image_tag 'guest-show.jpg' %>
-              <% else %><!--ｹﾞｽﾄでもﾛｸﾞｲﾝ中でもない場合-->
-                <%= render '/layouts/user_info', user: @user %>
-                <p><%= @user.introduction %></p>
-              <% end %>
-            </h2><!--ユーザー情報-->
-
-          <!--ユーザー投稿一覧-->
-          <% @notes.each do |note| %>
-            <% if note.present? %>
-              <div class="note-contents note-contents2">
-                  <%= render '/public/shared/note_index', note: note %>
-              </div>
-            <% else %>
-              まだノートがありません
+                  <!--ﾛｸﾞｲﾝ中ならﾕｰｻﾞｰのいいねした投稿一覧へのﾘﾝｸ-->
+                  <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
+                    <%= link_to favorites_user_path(@user.id) do %>
+                      <span class="user-favorites ml-2">♥</span>一覧
+                    <% end %>
+                  <% end %>
+                <!--自己紹介-->
+                <p class="ml-1"><%= @user.introduction %></p>
             <% end %>
+          <% elsif  @user.email == 'guest@gesuto.com' %><!--ｹﾞｽﾄﾕｰｻﾞｰの場合-->
+            ゲストユーザーです<br>
+            ユーザー登録をしてあなたも自分のノートを作ってみましょう！
+            <br><br>
+            <%= image_tag 'guest-show.jpg' %>
+          <% else %><!--ｹﾞｽﾄでもﾛｸﾞｲﾝ中でもない場合-->
+            <%= render '/layouts/user_info', user: @user %>
+            <p><%= @user.introduction %></p>
           <% end %>
-          <%= paginate @notes, theme: 'twitter-bootstrap-4' %>
+        </div><!--ユーザー情報-->
+
+      <!--ユーザー投稿一覧-->
+      <% @notes.each do |note| %>
+        <% if note.present? %>
+          <div class="note-contents note-contents2">
+            <%= render '/public/shared/note_index', note: note %>
+          </div>
+        <% else %>
+          まだノートがありません
+        <% end %>
       <% end %>
-    </div>
-  </div>
+      <%= paginate @notes, theme: 'twitter-bootstrap-4' %>
+  <% end %>
 </div>

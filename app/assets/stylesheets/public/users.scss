@@ -48,13 +48,12 @@
 
 
 /**ユーザー情報**/
-#user-info {
-  display: block;
+.user-info {
   position: relative;
-  width: 80%;
-  margin-bottom: 3em;
+  width: 70%;
+  margin: 0 auto;
   padding: 1em 1em;
-  font-size: 1rem;
+  font-size: clamp(0.715rem, 1.4vw, 1.8rem);
   border-left: 2em solid #42b5a5;
   background: #ffffff;
 }
@@ -125,4 +124,16 @@
 .unsubscribe {
  text-align: center;
  margin-top: 5em;
+}
+
+
+/*投稿詳細レスポンシブ*/
+@media screen and (max-width:768px) {
+  .user-info {
+    width: 92%;
+  }
+}
+
+@media screen and (max-width:425px) {
+  
 }
