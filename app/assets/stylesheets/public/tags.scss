@@ -33,6 +33,17 @@
   filter: blur(4px);
 }
 
+/***タグの詳細画面の見出し***/
+.tag-show-heading {
+  font-size: clamp(1.4rem, 2.3vw, 2rem);
+  min-width: 100vw;
+}
+
+.tag-show-heading span {
+  margin-left: 0.5rem;
+  font-size: clamp(1.13rem, 1.7vw, 1.5rem);
+}
+
 
 
 
