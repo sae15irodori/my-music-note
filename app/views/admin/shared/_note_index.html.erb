@@ -1,39 +1,21 @@
-<!--管理者側詳細画面にて使用-->
+<!--管理者側タグと検索結果画面にて使用-->
 <%= link_to (admin_note_path(note.id)) do %>
   <!--投稿内容-->
-  <h2 class="note-title"><%= note.title %></h2>
-   <p><!--画像-->
-    <% if note.image.present? %>
-      <%= image_tag note.image, class: 'show-img' %>
-    <% end %>
-  </p>
-  <p class="video">
-    <% if note.url.present? %>
-      <iframe width="560" height="315" src="<%= note.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    <% end %>
-  </p>
+  <%= render '/admin/shared/note_contents', note: note %><!--投稿内容-->
 
-  <p><%= safe_join(note.body.split("\n"),tag(:br)) %></p>
+  <!--ボタン-->
+  <div class="note-btn-box">
+    <div class="edit-destory-btn"> <!--削除ボタン-->
+      <div class="destroy-btn">
+        <%= link_to admin_note_path(note.id), method: :delete, data: {confirm: 'このノートを管理者として消しますか？'} do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
+      </div>
+    </div>
 
-  <p>
-  <% if note.tag.present? %>
-    <i class="fas fa-tag"></i><%= link_to note.tag.name, admin_tag_path(note.tag.id) %>
-  <% end %>
-  </p>
-
-  <div class="note-btn">
-    <!--いいねとコメント数-->
-    <p class="favorites-btn">
-      ♥<%= note.favorites.count %><!--いいね数-->
-      <span class="ml-5" style="font-size: 1.2rem;">
-        <i class="far fa-comment"></i><%= note.note_comments.count %>
-      </span><!--ｺﾒﾝﾄ件数-->
-    </p>
-    <!--削除ボタン-->
-    <div class="edit-destory-btn destroy-btn">
-      <%= link_to admin_note_path(note.id), method: :delete, data: {confirm: 'このノートを管理者として消しますか？'} do %>
-        <i class="far fa-trash-alt"></i>
-      <% end %>
+    <div class="favorite-comment-btn">
+      <div class="favoritebtn">♥<%= note.favorites.count %></div><!--いいね数-->
+      <i class="far fa-comment"></i><%= note.note_comments.count %><!--ｺﾒﾝﾄ件数-->
     </div>
   </div>
 <% end %>
