@@ -1,34 +1,28 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 main">
-        <h1>
-          <% if @user.is_deleted == true %>
-            (退会済ユーザー)
-          <% end %>
-        </h1>
-
-      <%= flash[:notice] %>
-      <div class="row">
-        <div class="col-8">
-          <h2 id="user-info"><!--ユーザー情報-->
-            <%= render '/layouts/user_info', user: @user %>
-            <p class="ml-5"><%= @user.introduction %></p><!--自己紹介-->
-          </h2>
-
-          <%= link_to "※利用停止", admin_user_unsubscribe_path(@user.id),class: 'btn withdrawal-btn to-withdrawal withdrawal-btn-color' %>
-        </div>
-      </div>
-
-
-      <!--ユーザー投稿一覧-->
-      <% @notes.each do |note| %>
-        <% if note.present? %>
-          <div class="note-contents note-contents2">
-            <%= render '/admin/shared/note_index', note: note %>
-          </div>
-        <% end %>
+<div class="main">
+    <h1 align="center">
+      <% if @user.is_deleted == true %>
+        (退会済ユーザー)
       <% end %>
-      <%= paginate @notes, theme: 'twitter-bootstrap-4' %>
+    </h1>
+
+  <%= flash[:notice] %>
+    <div class="user-info"><!--ユーザー情報-->
+      <%= render '/layouts/user_info', user: @user %>
+      <p class="ml-1"><%= @user.introduction %></p><!--自己紹介-->
+    </div>
+
+      <%= link_to "※利用停止", admin_user_unsubscribe_path(@user.id),class: 'btn withdrawal-btn to-withdrawal withdrawal-btn-color' %>
     </div>
   </div>
+
+
+  <!--ユーザー投稿一覧-->
+  <% @notes.each do |note| %>
+    <% if note.present? %>
+      <div class="note-contents note-contents2">
+        <%= render '/admin/shared/note_index', note: note %>
+      </div>
+    <% end %>
+  <% end %>
+  <%= paginate @notes, theme: 'twitter-bootstrap-4' %>
 </div>
