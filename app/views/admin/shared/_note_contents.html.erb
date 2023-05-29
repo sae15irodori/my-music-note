@@ -1,9 +1,8 @@
-<%= note.created_at.strftime('%Y/%m/%d') %>
+　<%= note.created_at.strftime('%Y/%m/%d') %>
 <h2 class="note-title"><%= note.title %></h2>
 
-  <!--画像-->
   <% if note.image.present? %>
-    <%= image_tag note.image, class: 'show-img' %>
+    <%= image_tag note.image, class: 'show-img' %><!--画像-->
   <% end %>
   
   <% if note.url.present? %>
@@ -12,10 +11,10 @@
     </div>
   <% end %>
 
-  <%= safe_join(note.body.split("\n"),tag(:br)) %>
+  <div class="note-body"><%= safe_join(note.body.split("\n"),tag(:br)) %></div>
 
   
   <% if note.tag.present? %>
-    <div><i class="fas fa-tag"></i><%= link_to note.tag.name, admin_tag_path(note.tag.id) %></div>
+    <div class="note-show-tag"><i class="fas fa-tag"></i><%= link_to note.tag.name, admin_tag_path(note.tag.id) %></div>
   <% end %>
   

@@ -13,7 +13,7 @@
         <%= render '/public/shared/note_contents', note: @note %>
 
         <!--ボタン-->
-        <div class="note-btn-box"><!--全てのボタン-->
+        <div class="note-btn-box">
           <div class="edit-destory-btn">
           <% if @note.user.id == current_user.id %><!--ログイン中ユーザーならeditとdestroyﾘﾝｸ-->
             <div class="edit-btn">

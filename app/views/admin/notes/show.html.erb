@@ -1,70 +1,65 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 main">
-      <h1>Note detail
-        <% if @user.is_deleted == true %><!--ﾕｰｻﾞｰが退会済ならば-->
-          この投稿のユーザーは退会済です
-        <% end %><!--ﾕｰｻﾞｰ退会済ならば-->
-      </h1>
-      <%= flash[:notice] %>
+<div class="main">
+  <h1 align="center">Note detail
+    <% if @user.is_deleted == true %><!--ﾕｰｻﾞｰが退会済ならば-->
+      この投稿のユーザーは退会済です
+    <% end %><!--ﾕｰｻﾞｰ退会済ならば-->
+  </h1>
+  <%= flash[:notice] %>
 
+    <div class="note-contents note-contents2"><!--ルーズリーフの設定-->
+      <!--ユーザー情報-->
+        <%= link_to admin_user_path(@user.id) do %>
+          <%= render '/layouts/user_info', user: @user %>
+        <% end %>
 
-        <div class="note-contents note-contents2"><!--ルーズリーフの設定-->
-          <!--ユーザー情報-->
-            <%= link_to admin_user_path(@user.id) do %>
-              <%= render '/layouts/user_info', user: @user %>
+       <!--投稿内容-->
+      <%= render '/admin/shared/note_contents', note: @note %>
+
+      <!--ボタン-->
+      <div class="note-btn-box">
+        <div class="edit-destory-btn"> <!--削除ボタン-->
+          <div class="destroy-btn">
+            <%= link_to admin_note_path(@note.id), method: :delete, data: {confirm: 'このノートを管理者として消しますか？'} do %>
+              <i class="far fa-trash-alt"></i>
             <% end %>
-
-           <!--投稿内容-->
-          <%= render '/admin/shared/note_contents', note: @note %>
-
-          <div class="note-btn">
-            <!--いいねとコメント数-->
-            <p class="favorites-btn">
-              ♥<%= @note.favorites.count %><!--いいね数-->
-              <span class="ml-5" style="font-size: 1.2rem;"><i class="far fa-comment"></i><%= @note.note_comments.count %></span><!--ｺﾒﾝﾄ件数-->
-            </p>
-            <!--削除ボタン-->
-            <p class="edit-destory-btn">
-              <span class="destroy-btn">
-                <%= link_to admin_note_path(@note.id), method: :delete, data: {confirm: 'このノートを管理者として消しますか？'} do %>
-                  <i class="far fa-trash-alt"></i>
-                <% end %>
-              </span>
-            </p>
           </div>
         </div>
-
-        <!--コメント欄-->
-        <div class="comment-box">
-          <p>コメント</p>
-          <% @note.note_comments.order(created_at: :desc).each do |note_comment| %>
-            <div class="comment-contents comment">
-              <!--ｺﾒﾝﾄﾕｰｻﾞｰ情報-->
-              <% if note_comment.user.is_deleted == true %>
-                <p>このユーザーは退会済です</p>
-                <%= link_to (admin_user_path(@user.id)) do %>
-                  <%= image_tag note_comment.user.get_image, class: "rounded-circle" %>
-                  <%= note_comment.user.name %>
-                <% end %>
-              <% else %>
-                <%= link_to (admin_user_path(@user.id)) do %>
-                  <%= image_tag note_comment.user.get_image, class: "rounded-circle" %>
-                  <%= note_comment.user.name %>
-                <% end %>
-              <% end %>
-              <!--ｺﾒﾝﾄ内容-->
-              <span><%= note_comment.created_at.strftime('%Y/%m/%d') %></span>
-              <p><%= safe_join(note_comment.comment.split("\n"),tag(:br)) %></p>
-              <span class="destroy-btn"><!--削除ボタン-->
-                <%= link_to admin_note_note_comment_path(note_comment.note, note_comment.id), method: :delete, data: {confirm: 'このコメントを管理者として消しますか？'} do %>
-                <i class="far fa-trash-alt"></i>
-                <% end %>
-              </span>
-            </div>
-            <% end %><!--comments.each-->
+        
+        <div class="favorite-comment-btn">
+          <div class="favoritebtn">♥<%= @note.favorites.count %></div><!--いいね数-->
+          <i class="far fa-comment"></i><%= @note.note_comments.count %><!--ｺﾒﾝﾄ件数-->
         </div>
+      </div>
+    </div><!--ルーズリーフ-->
 
+    <!--コメント欄-->
+    <div class="comment-box">
+      <p>コメント</p>
+      <% @note.note_comments.order(created_at: :desc).each do |note_comment| %>
+        <div class="comment-contents comment">
+          <!--ｺﾒﾝﾄﾕｰｻﾞｰ情報-->
+          <% if note_comment.user.is_deleted == true %>
+            <p>このユーザーは退会済です</p>
+            <%= link_to (admin_user_path(@user.id)) do %>
+              <%= image_tag note_comment.user.get_image, class: "rounded-circle" %>
+              <%= note_comment.user.name %>
+            <% end %>
+          <% else %>
+            <%= link_to (admin_user_path(@user.id)) do %>
+              <%= image_tag note_comment.user.get_image, class: "rounded-circle" %>
+              <%= note_comment.user.name %>
+            <% end %>
+          <% end %>
+          <!--ｺﾒﾝﾄ内容-->
+          <span><%= note_comment.created_at.strftime('%Y/%m/%d') %></span>
+          <p><%= safe_join(note_comment.comment.split("\n"),tag(:br)) %></p>
+          <span class="destroy-btn"><!--削除ボタン-->
+            <%= link_to admin_note_note_comment_path(note_comment.note, note_comment.id), method: :delete, data: {confirm: 'このコメントを管理者として消しますか？'} do %>
+            <i class="far fa-trash-alt"></i>
+            <% end %>
+          </span>
+        </div>
+        <% end %><!--comments.each-->
     </div>
-  </div>
+
 </div>
