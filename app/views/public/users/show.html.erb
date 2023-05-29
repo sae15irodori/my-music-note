@@ -9,10 +9,12 @@
           <!--ﾛｸﾞｲﾝ中かつｹﾞｽﾄじゃなければuser/editへのﾘﾝｸ含める-->
           <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
             <%= link_to edit_user_path(@user.id) do %>
+            
                 <%= render '/layouts/user_info', user: @user %><!--ユーザー情報-->
 
                   <!--編集ボタン-->
-                  <%= link_to edit_user_path(@user.id), class: "ml-5 mr-2" do %>
+                  <div>
+                  <%= link_to edit_user_path(@user.id), class: "mx-2" do %>
                     <i class="far fa-edit"></i>編集
                   <% end %>
 
@@ -22,6 +24,7 @@
                       <span class="ml-2">♥</span>一覧
                     <% end %>
                   <% end %>
+                  </div>
                 <!--自己紹介-->
                 <p class="ml-1"><%= @user.introduction %></p>
             <% end %>
