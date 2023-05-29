@@ -13,8 +13,8 @@
 
   <div class="note-body"><%= safe_join(note.body.split("\n"),tag(:br)) %></div>
 
-  
-  <% if note.tag.present? %>
-    <div class="note-show-tag"><i class="fas fa-tag"></i><%= link_to note.tag.name, admin_tag_path(note.tag.id) %></div>
-  <% end %>
-  
+  <div class="note-show-tag">
+    <% if note.tag.present? %>
+      <i class="fas fa-tag"></i><%= link_to note.tag.name, admin_tag_path(note.tag.id) %>
+    <% end %>
+  </div>
