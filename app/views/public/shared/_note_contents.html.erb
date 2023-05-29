@@ -2,22 +2,17 @@
 <h2 class="note-title"><%= note.title %></h2>
 
   <% if note.image.present? %>
-    <p><!--画像-->
-      <%= image_tag note.image, class: 'show-img' %>
-    </p>
+    <%= image_tag note.image, class: 'show-img' %><!--画像-->
   <% end %>
-  
   
   <% if note.url.present? %>
-    <p class="video">
+    <div class="video">
       <iframe width="560" height="315" src="<%= note.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </p>
+    </div>
   <% end %>
 
-  <p class="note-body"><%= safe_join(note.body.split("\n"),tag(:br)) %></p>
+  <div class="note-body"><%= safe_join(note.body.split("\n"),tag(:br)) %></div>
 
-  <p>
   <% if note.tag.present? %>
-    <i class="fas fa-tag"></i><%= link_to note.tag.name, tag_path(note.tag.id) %>
+    <div class="note-tag"><i class="fas fa-tag"></i><%= link_to note.tag.name, tag_path(note.tag.id) %></div>
   <% end %>
-  </p>

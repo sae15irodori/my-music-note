@@ -293,7 +293,7 @@
   height: auto;
   object-fit: cover;
   display: block;
-  margin: 0 auto;
+  margin: 1em auto;
 }
 
 /**動画の表示設定**/
@@ -302,6 +302,7 @@
   padding-bottom: 54.5%;
   height: 0;
   overflow: hidden;
+  margin: 1em auto;
 }
 
 .video iframe {
@@ -319,7 +320,9 @@
   font-weight: bold;
 }
 
-
+.note-tag {
+  margin: 0.5em 0;
+}
 
 .pagination {
   margin-top: 3em;

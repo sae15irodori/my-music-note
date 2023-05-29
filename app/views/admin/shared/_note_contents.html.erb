@@ -1,22 +1,21 @@
 <%= note.created_at.strftime('%Y/%m/%d') %>
 <h2 class="note-title"><%= note.title %></h2>
 
-   <p><!--画像-->
-    <% if note.image.present? %>
-      <%= image_tag note.image, class: 'show-img' %>
-    <% end %>
-  </p>
-  <p class="video">
-    <% if note.url.present? %>
-      <iframe width="560" height="315" src="<%= note.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    <% end %>
-  </p>
-
-
-  <p><%= safe_join(note.body.split("\n"),tag(:br)) %></p>
-
-  <p>
-  <% if note.tag.present? %>
-    <i class="fas fa-tag"></i><%= link_to note.tag.name, admin_tag_path(note.tag.id) %>
+  <!--画像-->
+  <% if note.image.present? %>
+    <%= image_tag note.image, class: 'show-img' %>
   <% end %>
-  </p>
+  
+  <% if note.url.present? %>
+    <div class="video">
+      <iframe width="560" height="315" src="<%= note.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  <% end %>
+
+  <%= safe_join(note.body.split("\n"),tag(:br)) %>
+
+  
+  <% if note.tag.present? %>
+    <div><i class="fas fa-tag"></i><%= link_to note.tag.name, admin_tag_path(note.tag.id) %></div>
+  <% end %>
+  
