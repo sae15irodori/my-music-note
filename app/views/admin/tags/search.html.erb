@@ -1,7 +1,7 @@
 <div class="main">
   <span class="notice"><%= flash[:notice] %></span>
   <div class="heading_and_search">
-    <h1>Tags<span class="ml-1" style="font-size: 1.5rem">タグ検索結果</span><span class="ml-3" style="font-size: 1.5rem">(全<%= @results.count %>件)</span></h1>
+    <h1><%= link_to "Tags", admin_tags_path %><span class="ml-1" style="font-size: 1.5rem">タグ検索結果</span><span class="ml-3" style="font-size: 1.5rem">(全<%= @results.count %>件)</span></h1>
     <!--検索フォーム-->
     <%= search_form_for @q, url: search_admin_tags_path, class: "form-inline" do |f| %>
       <%= f.search_field :name_cont, placeholder: "タグ検索",class: "form-control rounded-pill" %>
@@ -10,7 +10,7 @@
       <% end %>
     <% end %>
   </div>
-    
+
   <% if @results.present? %>
     <% @results.each do |tag| %>
       <%= render '/admin/shared/tags', tag: tag %>
