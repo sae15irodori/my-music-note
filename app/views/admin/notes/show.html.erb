@@ -1,9 +1,9 @@
 <div class="main">
-  <h1 align="center">Note detail
+  <h1 align="center">Note detail</h1>
     <% if @user.is_deleted == true %><!--ﾕｰｻﾞｰが退会済ならば-->
-      この投稿のユーザーは退会済です
+      <div align="center" style="font-size: 1.28rem">この投稿のユーザーは退会済です</div>
     <% end %><!--ﾕｰｻﾞｰ退会済ならば-->
-  </h1>
+  
   <%= flash[:notice] %>
 
     <div class="note-contents note-contents2"><!--ルーズリーフの設定-->

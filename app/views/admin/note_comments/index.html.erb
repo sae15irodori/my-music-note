@@ -1,6 +1,6 @@
 <div class="main">
   <span class="notice"><%= flash[:notice] %></span>
-  <div class="heading_and_search">
+  <div class="heading_and_search mb-4">
     <h1>コメント一覧</h1>
     <!--検索フォーム-->
       <%= search_form_for @q, url: search_admin_note_note_comments_path, class: "form-inline" do |f| %>

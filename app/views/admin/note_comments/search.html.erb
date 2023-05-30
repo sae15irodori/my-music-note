@@ -1,7 +1,7 @@
 <div class="main">
   <span class="notice"><%= flash[:notice] %></span>
-  <div class="heading_and_search">
-    <h1>コメント検索結果<span class="ml-3" style="font-size: 1.5rem">(全<%= @results.total_count %>件)</span></h1>
+  <div class="heading_and_search mb-4">
+    <h1><%= link_to "コメント", admin_note_note_comments_path(:note_id) %>検索結果<span class="ml-3" style="font-size: 1.5rem">(全<%= @results.total_count %>件)</span></h1>
     <!--検索フォーム-->
     <%= search_form_for @q, url: search_admin_note_note_comments_path, class: "form-inline" do |f| %>
       <%= f.search_field :comment_cont, placeholder: "コメント検索",class: "form-control rounded-pill" %>
