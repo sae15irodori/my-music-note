@@ -10,7 +10,7 @@
 
 /**一覧と詳細**/
 .users-box {
-  width: 50%;
+  width: 55%;
   position: relative;
   margin: 1.8em auto;
   padding: 1.2em 1.2em;
@@ -53,7 +53,7 @@
   width: 70%;
   margin: 0 auto;
   padding: 1em 1em;
-  border-left: 2em solid #42b5a5;
+  border-left: 35px solid #42b5a5;
   background: #ffffff;
 }
 
@@ -176,6 +176,9 @@
 @media screen and (max-width:425px) {
   .user-info, .user-edit-field, .user-edit-btn, .withdrawal-btn {
     width: 100%;
+  }
+  .users-box, .user-info  {
+    border-left: 24px solid #42b5a5;
   }
 }
 

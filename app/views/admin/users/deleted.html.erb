@@ -1,33 +1,24 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 main">
-      <%= flash[:notice] %>
-      <h1>Users
-        <span class="ml-1" style="font-size: 1.5rem">退会済ユーザー<%= @deleted_users.total_count %>名</span>
-  
-        <span class="users-num ml-4">
-          <%= link_to admin_users_path do %>
-            登録中<%= @users.total_count %>
-          <% end %>
-          </span>
-  
-        <span class="users-num">
-          <%= link_to deleted_admin_users_path do %>
-            退会済<%= @deleted_users.total_count %>
-          <% end %>
-        </span>
-  
-        <span class="users-num">
-          <%= link_to total_admin_users_path do %>
-            累計<%= @total_users.total_count %>
-          <% end %>
-        </span>
-      </h1>
+<div class="main">
+  <%= flash[:notice] %>
+  <h1>Users<span class="ml-1" style="font-size: 1.5rem">退会済ユーザー<%= @deleted_users.total_count %>名</span></h1>
 
-      <% @deleted_users.each do |user| %>
-          <%= render '/admin/shared/user_index', user: user %>
-      <% end %>
-      <%= paginate @deleted_users, theme: 'twitter-bootstrap-4' %>
-    </div>
+  <div class="users-num">
+    <%= link_to admin_users_path do %>
+      登録中<%= @users.total_count %>
+    <% end %>
+
+    <%= link_to deleted_admin_users_path do %>
+      退会済<%= @deleted_users.total_count %>
+    <% end %>
+
+    <%= link_to total_admin_users_path do %>
+      累計<%= @total_users.total_count %>
+    <% end %>
   </div>
+
+
+  <% @deleted_users.each do |user| %>
+      <%= render '/admin/shared/user_index', user: user %>
+  <% end %>
+  <%= paginate @deleted_users, theme: 'twitter-bootstrap-4' %>
 </div>
