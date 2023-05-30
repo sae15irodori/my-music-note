@@ -9,15 +9,23 @@
 }
 
 /**タグ**/
-.tag {
-  width: 21%;
-  position: relative;
-  display: inline-block;
+.tag-index-box {
+  display: flex;
+
   flex-wrap: wrap;
-  margin: 1em;
-  padding: 1em 1em;
+  align-items: center;
+  height: auto;
+  margin-top: 2em;
+}
+
+.tag {
+
+  position: relative;
+  margin: 1%;
+  padding: 1.1%;
   line-height: 3em;
   background-color: #a8ddd5;
+  font-size: clamp(1rem, 1.2vw, 1.3rem);
 }
 
 .tag::before {
@@ -68,4 +76,23 @@
   background-color: #ffffffcf !important;
   border: none !important;
   color: #6C4E37 !important;
+}
+
+
+@media screen and (max-width:790px) {
+  .tag {
+    width: 46%;
+    margin: 1.8%;
+    padding-left: 3%;
+  }
+}
+
+
+@media screen and (max-width:425px) {
+  .tag {
+    width: 100%;
+    margin: 3% 0;
+    padding-left: 4.5%;
+  }
+
 }
