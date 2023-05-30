@@ -57,16 +57,6 @@
   background: #ffffff;
 }
 
-.user-info a, .user-info span {
-  font-size: clamp(1rem, 1.7vw, 1.8rem);;
-}
-
-.user-info p {
-  margin-top: 1em;
-  font-size: clamp(0.715rem, 1.4vw, 1.8rem);
-  line-height: 1.5;
-}
-
 .user-info::before {
   position: absolute;
   bottom: 0px;
@@ -80,6 +70,20 @@
   filter: blur(4px);
 }
 
+.user-info a, .user-info span {
+  font-size: clamp(1rem, 1.7vw, 1.8rem);;
+}
+
+.user-info p {
+  margin-top: 1em;
+  font-size: clamp(0.715rem, 1.4vw, 1.8rem);
+  line-height: 1.5;
+}
+
+/**管理者側ﾕｰｻﾞｰ詳細画面利用停止ボタン**/
+.user-show-btn {
+  
+}
 
 
 
@@ -110,27 +114,49 @@
   border: 0.1px solid #40250a　!important;
 }
 
-.withdrawal-btn {
+
+/***退会画面***/
+/*管理者側ユーザー詳細画面のボタン*/
+.admin-withdrawal-btn {
+  display: block !important;
+  width: 55%;
+  margin: 2em auto 0;
   color: #fff !important;
-  width: 40%;
+  background: #db0627 !important;
+  font-size: clamp(1rem, 1.4vw, 1.2rem) !important;
 }
 
+/*管理者側利用停止画面*/
+.unsubscribe {
+ text-align: center;
+ margin-top: 13%;
+}
+
+.unsubscribe h1, h2 {
+  font-size: clamp(2rem, 2.9vw, 2.5rem);
+}
+/*ボタン*/
+.withdrawal-btn {
+  width: 40%;
+  color: #fff !important;
+}
+/*停止ボタンの色*/
+.withdrawal-btn-color {
+  background: #db0627 !important;
+}
+
+
+/*ユーザー側ユーザー編集画面で使用*/
 .to-withdrawal {
   margin-top: 0.2em;
   text-align: center;
 }
 
-.withdrawal-btn-color {
-  background: #db0627 !important;
-}
-
-.unsubscribe {
- text-align: center;
- margin-top: 5em;
-}
 
 
-/*投稿詳細レスポンシブ*/
+
+
+/*ﾕｰｻﾞｰ詳細画面レスポンシブ*/
 @media screen and (max-width:768px) {
   .user-info {
     width: 92%;
@@ -140,5 +166,15 @@
 @media screen and (max-width:425px) {
   .user-info {
     width: 100%;
+  }
+}
+
+/*利用停止画面レスポンシブ*/
+@media screen and (max-width:1024px) {
+  .unsubscribe {
+    text-align: left;
+  }
+  .withdrawal-btn {
+    width: 47%;
   }
 }

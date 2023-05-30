@@ -1,9 +1,9 @@
 <div class="main">
-    <h1 align="center">
-      <% if @user.is_deleted == true %>
-        (退会済ユーザー)
-      <% end %>
-    </h1>
+  <h1 align="center">
+    <% if @user.is_deleted == true %>
+      (退会済ユーザー)
+    <% end %>
+  </h1>
 
   <%= flash[:notice] %>
     <div class="user-info"><!--ユーザー情報-->
@@ -11,10 +11,8 @@
       <p class="ml-1"><%= @user.introduction %></p><!--自己紹介-->
     </div>
 
-      <%= link_to "※利用停止", admin_user_unsubscribe_path(@user.id),class: 'btn withdrawal-btn to-withdrawal withdrawal-btn-color' %>
-    </div>
-  </div>
-
+    <%= link_to "※利用停止", admin_user_unsubscribe_path(@user.id),class: 'btn admin-withdrawal-btn' %>
+    
 
   <!--ユーザー投稿一覧-->
   <% @notes.each do |note| %>
