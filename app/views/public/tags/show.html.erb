@@ -1,6 +1,12 @@
 <div class="main">
   <h1 class="tag-show-heading"><%= @tag.name %> <i class="fas fa-tag"></i> のノート<span>(全 <%= @tag_counts.count %>件)</span></h1>
   
+  <div style="font-size: 1.15rem;">
+    <%= link_to tags_path do %>
+      <i class="fas fa-tags"></i>一覧
+    <% end %>
+  </div>
+  
   <% @tag_notes.each do |tag_note| %>
     <% if tag_note.user.is_deleted == false %>
       <div class="note-contents note-contents2">
