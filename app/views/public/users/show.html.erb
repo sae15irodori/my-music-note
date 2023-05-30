@@ -32,7 +32,7 @@
             ゲストユーザーです<br>
             ユーザー登録をしてあなたも自分のノートを作ってみましょう！
             <br><br>
-            <%= image_tag 'guest-show.jpg' %>
+            <%= image_tag 'guest-show.jpg', class: 'show-img' %>
           <% else %><!--ｹﾞｽﾄでもﾛｸﾞｲﾝ中でもない場合-->
             <%= render '/layouts/user_info', user: @user %>
             <p><%= @user.introduction %></p>
