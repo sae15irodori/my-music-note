@@ -195,6 +195,7 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
   margin-bottom: 1em !important;
+  word-break: break-word;
 }
 
 /**画像の表示設定**/
@@ -318,6 +319,10 @@
   margin: 0.5em 0;
   font-size: clamp(0.8rem, 1.7vw, 1.5rem);
   font-weight: bold;
+}
+
+.note-body {
+  word-break: break-word;
 }
 
 .note-show-tag {
