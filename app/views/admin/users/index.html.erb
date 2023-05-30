@@ -2,7 +2,7 @@
   <%= flash[:notice] %>
   <div class="heading_and_search">
     <div>
-      <h1>Users<span class="ml-1" style="font-size: 1.5rem">登録中ユーザー<%= @users.total_count %>名</span></h1>
+      <h1><%= link_to "Users", admin_users_path %><span class="ml-1" style="font-size: 1.5rem">登録中ユーザー<%= @users.total_count %>名</span></h1>
       <div class="users-num">
         <%= link_to admin_users_path do %>
           登録中<%= @users.total_count %>
