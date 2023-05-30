@@ -80,21 +80,14 @@
   line-height: 1.5;
 }
 
-/**管理者側ﾕｰｻﾞｰ詳細画面利用停止ボタン**/
-.user-show-btn {
-  
-}
-
-
-
 /**ユーザー編集ページ**/
-.user-edit {
-  width: 80%;
-  margin: 0 auto;
+.user-edit-heading {
+  text-align: center;
+  font-size: clamp(1.99rem, 3vw, 2.5rem);
 }
 
 .user-edit-field {
-  width: 50%;
+  width: 50vw;
   margin: 1em auto;
   margin-bottom: 2em;
 }
@@ -110,7 +103,7 @@
 
 .user-edit-btn {
   background: #40250a !important;
-  width: 40%;
+  width: 30vw;
   border: 0.1px solid #40250a　!important;
 }
 
@@ -137,7 +130,7 @@
 }
 /*ボタン*/
 .withdrawal-btn {
-  width: 40%;
+  width: 30vw;
   color: #fff !important;
 }
 /*停止ボタンの色*/
@@ -153,28 +146,33 @@
 }
 
 
-
-
-
-/*ﾕｰｻﾞｰ詳細画面レスポンシブ*/
-@media screen and (max-width:768px) {
-  .user-info {
-    width: 92%;
-  }
-}
-
-@media screen and (max-width:425px) {
-  .user-info {
-    width: 100%;
-  }
-}
-
-/*利用停止画面レスポンシブ*/
+/*利用停止画面&ユーザー編集画面レスポンシブ*/
 @media screen and (max-width:1024px) {
   .unsubscribe {
     text-align: left;
   }
-  .withdrawal-btn {
-    width: 47%;
+  .user-edit-field{
+    width: 75vw;
   }
 }
+
+
+/*ﾕｰｻﾞｰ詳細画面&編集画面レスポンシブ*/
+@media screen and (max-width:768px) {
+  .user-info {
+    width: 92%;
+  }
+  .user-edit-btn, .withdrawal-btn {
+    width: 75vw;
+  }
+  .withdrawal-btn{
+    margin: 0.5em 0;
+  }
+}
+
+@media screen and (max-width:425px) {
+  .user-info, .user-edit-field, .user-edit-btn, .withdrawal-btn {
+    width: 100%;
+  }
+}
+
