@@ -7,7 +7,7 @@
   <div class="tag tag-edit-box">
   <%= form_with model: @tag, url: admin_tag_path(@tag.id) ,method: :patch, class: "form-inline" do |f| %>
     <%= f.text_field :name, placeholder: "タグ名を入力",class: 'form-control mt-3 mb-4 tag-edit-form' %>
-    <%= f.submit "✍",class: 'btn tag-form-btn' %>
+    <%= button_tag "✍", class:"tag-form-btn tag-edit-form-btn" %>
     <%= link_to admin_tag_path(@tag.id), method: :delete, data: {confirm: 'このタグを消しますか？'} do %>
       <i class="far fa-trash-alt" style="font-size: 1.5rem;"></i>
     <% end %>
