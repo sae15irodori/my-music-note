@@ -2,7 +2,7 @@ class Public::TagsController < ApplicationController
   before_action :set_q, only: [:search, :index]
 
   def index
-    @tags = Tag.all.page(params[:page]).per(20)
+    @tags = Tag.all.page(params[:page]).per(24)
   end
 
   def show
@@ -12,7 +12,7 @@ class Public::TagsController < ApplicationController
   end
 
   def search
-    @results = @q.result.page(params[:page]).per(16)#set_qメソッドで取得した結果をオブジェクトに変換
+    @results = @q.result.page(params[:page]).per(24)#set_qメソッドで取得した結果をオブジェクトに変換
   end
 
    private
