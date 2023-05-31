@@ -59,7 +59,7 @@ li {
 /*ヘッダー*/
 .fixed-top {
   position: sticky;
-  background: #73d0c2eb;
+  background: #39a594eb;/*#73d0c2eb*/
 }
 
 .navbar-nav a, .header-wrapper a {
@@ -154,7 +154,7 @@ li {
     background-color: #63b7aaeb;
     padding-left: 10%;
   }
-  ul {
+  .header-wrapper ul {
     flex-direction: column;	/*ulのflexboxを縦並びにする*/
   }
 }
@@ -410,4 +410,33 @@ footer {
     margin-bottom: 0.7rem;
     font-size: 1.25rem;
   }
+}
+
+/***ﾍﾟｰｼﾞﾈｰｼｮﾝ**/
+.pagination {
+  margin-top: 3em;
+  justify-content: center;
+}
+
+.page-item {
+  margin: 0.2em !important;
+}
+
+.page-link {
+  background: #ffffff !important;
+  border: 1.95px solid #2d8174eb !important;
+  color: #2b5d55eb !important;
+}
+
+
+.page-item.active .page-link {
+  background: #2d8174eb !important;
+  color: #ffffff !important;
+}
+
+
+.page-item .page-link {
+    margin-left: 0;
+    border-radius: 5px;
+    padding: 0.5rem 1rem !important;
 }
