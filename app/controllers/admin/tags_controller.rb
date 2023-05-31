@@ -43,7 +43,7 @@ class Admin::TagsController < ApplicationController
   end
 
   def search
-    @results = @q.result.page(params[:page]).per(16)#set_qメソッドで取得した結果をオブジェクトに変換
+    @results = @q.result.page(params[:page]).per(20)#set_qメソッドで取得した結果をオブジェクトに変換
   end
 
   private

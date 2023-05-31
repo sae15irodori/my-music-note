@@ -1,7 +1,7 @@
 <div class="main">
   <h1 class="tag-show-heading"><%= @tag.name %> <i class="fas fa-tag"></i> のノート<span>(全<%= @tag.notes.count %>件)</span></h1>
 
-  <%= link_to tags_path, class: "tags-link" do %>
+  <%= link_to admin_tags_path, class: "tags-link" do %>
     <i class="fas fa-tags"></i>一覧
   <% end %>
 

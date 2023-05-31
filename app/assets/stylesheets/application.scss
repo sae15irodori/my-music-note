@@ -414,7 +414,7 @@ footer {
 
 /***ﾍﾟｰｼﾞﾈｰｼｮﾝ**/
 .pagination {
-  margin-top: 3em;
+  margin-top: 2em;
   justify-content: center;
 }
 
@@ -424,13 +424,14 @@ footer {
 
 .page-link {
   background: #ffffff !important;
-  border: 1.95px solid #2d8174eb !important;
+  border: 1px solid #2d8174eb !important;
   color: #2b5d55eb !important;
 }
 
 
 .page-item.active .page-link {
   background: #2d8174eb !important;
+  border: none !important;
   color: #ffffff !important;
 }
 
