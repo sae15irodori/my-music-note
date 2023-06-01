@@ -420,7 +420,7 @@
 
 
 /**新規投稿＆投稿編集画面**/
-.new-heading {
+.new-heading, .manual h1 {
   font-size: clamp(1.99rem, 3vw, 2.5rem);
 }
 
@@ -516,12 +516,12 @@ select {
 
 
 /*マニュアル画面*/
-ol li {
-  list-style-type: disc;/* リストの左側に黒丸 */
+.manual ul li {
+  list-style-type: decimal;
 }
 
-.manual{
-  padding: 3%;
+.manual-text {
+  width: 80%;
 }
 
 .manual-contents{
