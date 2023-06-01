@@ -15,12 +15,13 @@
     <%= render '/layouts/validates', validates: @tag %>
 
     <!--タグ名入力フォーム-->
+   
     <%= form_with model: @tag, url: admin_tags_path ,method: :post , class: "form-inline" do |f| %>
       <%= f.text_field :name,  placeholder: "タグ名を入力して新規作成",class: 'form-control new-tag-form' %>
-      <%= button_tag class:"tag-form-btn" do %>
-        <i class="material-icons">add_task</i>
-      <% end %>
+       <div class="new-tag-box">
+      <%= button_tag "✓", class:"tag-form-btn" %>
     <% end %>
+    </div>
   </div>
 
   <div class="notice mt-3"><%= flash[:notice] %></div>
