@@ -1,4 +1,4 @@
-<div class="col-8">
+<div class="new-note-box">
   <%= form_with model:note do |f| %>
   <div class="new-form note-contents note-contents3">
     <div class="form-group">
@@ -14,9 +14,9 @@
     </div>
 
     <div class="form-group">
-      <label for="inputUrl" class="mb-2">動画🎬　動画の投稿はYoutubeよりお願いします</label><br>
+      <label for="inputUrl" class="mb-1">動画🎬　動画の投稿はYoutubeよりお願いします</label><br>
       → <%= link_to "https://www.youtube.com/","https://www.youtube.com/",target: "_blank", class: 'link' %>
-      <%= f.text_field :url, autofocus: true, id:"inputUrl", placeholder: "Youtubeの埋め込みURLを貼ってください　記号（” )不要",class: "form-control" %>
+      <%= f.text_field :url, autofocus: true, id:"inputUrl", placeholder: "Youtubeの埋め込みURLを貼ってください",class: "form-control mt-2" %>
     </div>
 
     <div class="form-group">
@@ -29,7 +29,7 @@
     <div class="form-group">
       <label for="inputTag">タグ</label>
       <%= f.select :tag_id, options_from_collection_for_select( Tag.all, :id, :name, selected: f.object.tag_id), include_blank: true %>
-    </div>
+    
 
     <div class="new-form-actions">
       <%= f.submit "作成する✓",class: 'btn new-form-btn' %>
@@ -39,23 +39,25 @@
 </div>
 
 <!--サイド-->
-<div class="col-4">
-  <p class="to-tos" style="font-size:1.2rem;">
-    ※投稿可能な画像及び動画について<br>
-    　<%= link_to "利用規約", tos_notes_path, class: 'link' %>にて必ずご確認下さい
-  </p>
+<div class="side-bar">
+  <div class="to-tos">
+    <div>※投稿可能な画像及び動画について</div>
+    <div><%= link_to "利用規約", tos_notes_path, class: 'link' %>にて必ずご確認下さい</div>
+  </div>
 
   <div class="to-manual">
-    <h2 style="font-size: 1.4rem;">動画投稿ガイド</h2>
-      <ol>
+    <h2>動画投稿ガイド</h2>
+      <ul>
         <li>Youtubeで動画を投稿する<br>
           （公開・限定公開の選択OK）
         </li>
 
         <li>投稿した動画の<u>｢埋め込みURL｣</u>をコピペして完了！<br>
-            <span style="font-size:1rem">(共有 > 埋め込む > src=""の中をコピー)</span>
+            <span>(共有 > 埋め込む > src=""の中をコピー)</span>
         </li>
-      </ol>
+      </ul>
       <p class="manual-tape"> ※ショート動画は「埋め込みURL」の取得が出来ない為投稿できません</p>
-      <p class="manual-tape" style="font-size:1.2rem">　<%= link_to "詳しい手順はこちら☜", manual_notes_path %></p>
+      <p class="manual-tape">　<%= link_to manual_notes_path do %>詳しい手順はこちら<i class="far fa-hand-point-left"></i><% end %></p>
     </div>
+  </div>
+</div>

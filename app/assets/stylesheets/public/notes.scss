@@ -419,26 +419,23 @@
 
 
 
-/**投稿フォーム**/
-.made-form {/*見出し含む全体の設定*/
-  margin-top: 5em;
+/**新規投稿＆投稿編集画面**/
+.new-heading {
+  font-size: clamp(1.99rem, 3vw, 2.5rem);
+}
+
+.new-note-box {
+  display: flex;
+  justify-content: space-around;
 }
 
 .new-form {
-  margin: 0.8em auto 3em auto !important;
+  width: 48vw;
   padding: 1em 0.5em !important; /*内側の余白*/
   background: linear-gradient(#f1eaead6 0.05em, transparent 0.05em) #fff;
   background-size: auto 2em;
+  font-size: clamp(0.754rem, 1.4vw, 1.8rem);
   line-height: 1em;
-}
-
-.new-note-contents {
-  width: 80%;
-}
-
-.new-heading {
-  width: 83%;
-  margin: 0 auto;
 }
 
 .form-group {
@@ -469,6 +466,46 @@ select {
   color: #007bff !important;
 }
 
+/**投稿フォーム内のﾘﾝｸ**/
+.side-bar {
+  width: 27vw;
+  margin-top: 3%;
+}
+
+.side-bar .to-tos, .side-bar li, .side-bar p {
+  font-size: clamp(0.85rem, 1.2vw, 1.5rem);
+}
+
+.side-bar h2 {
+  font-size: clamp(1rem, 1.6vw, 1.4rem);
+}
+
+.to-tos, .to-manual, .manual-tape {
+  padding: 0.5em;
+  background: #ffffff85;
+  border-left: 3px dotted rgba(0,0,0,.1);
+  border-right: 3px dotted rgba(0,0,0,.1);
+  box-shadow: 0 0 7px rgba(0,0,0,0.3);
+}
+
+.to-tos {
+  display: block;
+  text-align: center;
+}
+
+.to-manual {
+  margin-bottom: 3em;
+  padding: 1em;
+  margin-top: 1.5em;
+}
+
+.manual-tape {
+  background: #bfe6f51f;
+  box-shadow: 0 0 1px rgba(0,0,0,0.3);
+  margin-top: 0;
+}
+
+
 
 /*マニュアル画面*/
 
@@ -492,33 +529,6 @@ li{
   padding: 7px 0;
   font-size: 1.1em;
   line-height: 1.7;
-}
-
-
-
-
-
-/**投稿フォーム内のﾘﾝｸ**/
-.to-tos, .to-manual, .manual-tape {
-  width: 100%;
-  margin-top: 1em;
-  padding: 0.5em;
-  background: #ffffff85;
-  border-left: 3px dotted rgba(0,0,0,.1);
-  border-right: 3px dotted rgba(0,0,0,.1);
-  box-shadow: 0 0 7px rgba(0,0,0,0.3);
-}
-
-.to-manual {
-  margin-bottom: 3em;
-  padding: 1em;
-  margin-top: 1.5em;
-}
-
-.manual-tape {
-  background: #bfe6f51f;
-  box-shadow: 0 0 1px rgba(0,0,0,0.3);
-  margin-top: 0;
 }
 
 
@@ -563,4 +573,40 @@ li{
 .tos-sentence {
   width: 80%;
   margin: 0 auto;
+}
+
+/**投稿＆編集画面レスポンシブ**/
+@media screen and (max-width:1024px) {
+  .side-bar {
+    width: 32vw;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .new-form, .side-bar, .to-tos {
+    width: 80vw;
+  }
+  .new-note-box {
+    display: block;
+    position:relative;
+  }
+  .new-form {
+    margin-top: 4rem;
+  }
+  .side-bar {
+    margin: 5% auto 0;
+  }
+  .to-tos {
+    position:  absolute;
+    top: -2.8rem;
+    display: flex;
+    justify-content: center;
+    font-size: 2.45vw !important;
+  }
+}
+
+@media screen and (max-width:425px) {
+  .new-form, .side-bar, .to-tos {
+    width: 90vw;
+  }
 }

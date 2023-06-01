@@ -441,3 +441,8 @@ footer {
     border-radius: 5px;
     padding: 0.5rem 1rem !important;
 }
+
+
+.form-control {
+  font-size: clamp(0.8rem, 1.18vw, 1rem) !important;
+}
