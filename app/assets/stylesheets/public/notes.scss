@@ -434,7 +434,7 @@
   padding: 1em 0.5em !important; /*内側の余白*/
   background: linear-gradient(#f1eaead6 0.05em, transparent 0.05em) #fff;
   background-size: auto 2em;
-  font-size: clamp(0.754rem, 1.4vw, 1.8rem);
+  font-size: clamp(1rem, 1.4vw, 1.8rem);
   line-height: 1em;
 }
 
@@ -450,9 +450,16 @@ select {
   color: #68442b;
 }
 
+.new-form-body {
+  height: 250px !important;
+}
+
 .new-form-actions {
-  width: 90%;
   text-align: right;
+}
+
+.fa-image {
+  font-size: 3rem !important;
 }
 
 .new-form-btn {
@@ -460,6 +467,7 @@ select {
   padding: 0 !important;
   font-size: 1.3rem !important;
   color: #4a2204 !important;
+  border: 1px solid black;
 }
 
 .link {

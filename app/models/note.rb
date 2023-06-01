@@ -6,8 +6,7 @@ class Note < ApplicationRecord
 
   has_one_attached :image
 
-  validates :title, presence: { message: '何か書いてみましょう💭' }
-  validates :body, presence: { message: '' }
+  validates :body, presence: { message: '何か書いてみましょう💭' }
 
   def favorited_by?(user)#favoritesﾃｰﾌﾞﾙにuser.idが存在するか判定するﾒｿｯﾄﾞ
     favorites.exists?(user_id: user.id)
