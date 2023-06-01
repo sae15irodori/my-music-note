@@ -520,12 +520,13 @@ select {
   list-style-type: decimal;
 }
 
-.manual-text {
-  width: 80%;
+.manual {
+  width: 960px;
+  margin: 6em auto;
 }
 
 .manual-contents{
-  display: flex;
+  /*display: flex;*/
 }
 
 
