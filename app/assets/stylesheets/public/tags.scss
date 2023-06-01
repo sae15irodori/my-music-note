@@ -76,21 +76,23 @@
 
 /**タグ編集画面**/
 .tag-edit-box {
-  width: 35% !important;
+  width: 360px !important;
 }
 
 .tag-edit-form {
-  width: 55% !important;
-  align-items: center !important;
-  background-color: #ffffffcf !important;
+  width: 218px !important;
+  height: 55px !important;
+  background-color: #fff !important;
   border: none !important;
-  color: #6C4E37 !important;
+  font-size: 1.2rem !important;
+  color: #441f05 !important;
 }
 
 .tag-edit-form-btn {
   background: none !important;
   border: none !important;
   font-size: 3rem !important;
+  color: #441f05 !important;
 }
 
 
