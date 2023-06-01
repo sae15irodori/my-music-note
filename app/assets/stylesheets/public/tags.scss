@@ -56,19 +56,19 @@
 
 
 /***管理者側タグ新規作成**/
-.new-tag-box {
-  height: 59px;
-  background: #fff;
-  border: 1px solid #522506;
-  border-left: none;
-}
-
 .new-tag-form{
   height: 59px !important;
   width: 41% !important;
   border: 1px solid #522506 !important;
   border-right: none !important;
   border-radius: 0px !important;
+}
+
+.btn-background {
+  height: 59px;
+  background: #fff;
+  border: 1px solid #522506;
+  border-left: none;
 }
 
 .tag-form-btn {

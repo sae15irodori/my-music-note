@@ -18,10 +18,10 @@
    
     <%= form_with model: @tag, url: admin_tags_path ,method: :post , class: "form-inline" do |f| %>
       <%= f.text_field :name,  placeholder: "タグ名を入力して新規作成",class: 'form-control new-tag-form' %>
-       <div class="new-tag-box">
-      <%= button_tag "✓", class:"tag-form-btn" %>
+      <div class="btn-background">
+        <%= button_tag "✓", class:"tag-form-btn" %>
+      </div>
     <% end %>
-    </div>
   </div>
 
   <div class="notice mt-3"><%= flash[:notice] %></div>
