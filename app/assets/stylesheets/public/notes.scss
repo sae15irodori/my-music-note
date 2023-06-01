@@ -516,27 +516,16 @@ select {
 
 
 /*マニュアル画面*/
-
-#procedure{
-  width: 86%;
-  margin: 3em auto;
-  padding: 3% 0;
+ol li {
+  list-style-type: disc;/* リストの左側に黒丸 */
 }
 
-
-
-p {
-  line-height: 2;
+.manual{
+  padding: 3%;
 }
 
-ol{
-  padding: 0.1em 1em;
-}
-
-li{
-  padding: 7px 0;
-  font-size: 1.1em;
-  line-height: 1.7;
+.manual-contents{
+  display: flex;
 }
 
 
