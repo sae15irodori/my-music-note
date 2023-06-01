@@ -3,8 +3,8 @@
   <div class="index-note-content"><!--ﾕｰｻﾞｰ+投稿-->
     <!--投稿ﾕｰｻﾞｰ情報-->
     <% if note.user.is_deleted == true %><!--ﾕｰｻﾞｰが退会済ならば-->
-      この投稿のユーザーは退会済です
-    <% end %><br>
+      <div>この投稿のユーザーは退会済です</div>
+    <% end %>
     
     <!--ﾕｰｻﾞｰ詳細へのﾘﾝｸ-->
     <%= link_to admin_user_path(note.user.id) do %>
