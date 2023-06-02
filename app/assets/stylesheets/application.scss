@@ -276,7 +276,7 @@ li {
 .about-wrap h3 {
   text-align: center;
   font-size: clamp(1.1rem, 2.3vw, 2rem);
-  margin: 1em;
+  margin: 1em auto;
 }
 
 .cando {
@@ -462,7 +462,7 @@ footer {
     width: 92%;
   }
   .about-wrap h2 {
-    width: 80%;
+    width: 55%;
   }
   .cando {
     display: block;
