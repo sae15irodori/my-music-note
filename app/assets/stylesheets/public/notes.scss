@@ -254,11 +254,13 @@
   .index-note-body {
     white-space: normal;
   }
+  .index-img {
+    height: 250px;
+  }
   .notes-video {
     padding-bottom: 13em;
   }
 }
-
 @media screen and (max-width:425px) {
   .index-note-contets1 {
     width: 100%;
