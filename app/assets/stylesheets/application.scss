@@ -169,14 +169,12 @@ li {
   }
 }
 
-
-
 @media screen and (max-width:670px) {
   .header-logo {
     display: block;
   }
   .icon span {
-    right: 16.5%;
+    right: 6%;
   }
   .icon span:nth-of-type(1) {
     top: 30%;
