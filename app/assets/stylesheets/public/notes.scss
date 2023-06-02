@@ -185,7 +185,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-word;
-  margin-bottom: 0.5em !important;
 }
 
 
@@ -194,8 +193,9 @@
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 11;
+  -webkit-line-clamp: 10;
   word-break: break-word;
+  margin-bottom: 0.3em !important;
 }
 
 /**画像の表示設定**/
