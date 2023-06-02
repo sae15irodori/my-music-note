@@ -53,12 +53,10 @@
 
 
 
-
-
 /***管理者側タグ新規作成**/
 .new-tag-form{
   height: 59px !important;
-  width: 41% !important;
+  width: 25vw !important;
   border: 1px solid #522506 !important;
   border-right: none !important;
   border-radius: 0px !important;
@@ -73,12 +71,13 @@
 
 .tag-form-btn {
   height: 49px;
-  margin: 3px 8px;
-  padding: 0 10px;
-  background: #5a4532;
-  color: #fff;
+  margin: 3px 0;
+  padding-right: 10px;
+  background: #fff;
+  color: #5a4532;
   font-size: 1.5rem;
   line-height: 1;
+  border: none;
 }
 
 /**タグ編集画面**/
@@ -111,7 +110,7 @@
 
 @media screen and (max-width:790px) {
   .new-tag-form {
-    width: 76% !important;
+    width: 45vw !important;
   }
 }
 
@@ -130,5 +129,7 @@
     margin: 3% 0;
     padding-left: 4.5%;
   }
-
+  .new-tag-form {
+    width: 87% !important;
+  }
 }
