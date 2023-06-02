@@ -247,12 +247,14 @@
     width: 95%;
     height: auto;
   }
-  .index-notes-body {
-    overflow: hidden;
-    display: block;
-  }
   .index-note-body {
     white-space: normal;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    word-break: break-word;
+    margin-bottom: 0.3em !important;
   }
   .index-img {
     height: 260px;
