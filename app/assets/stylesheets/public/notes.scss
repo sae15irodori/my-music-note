@@ -418,7 +418,6 @@
 
 
 
-
 /**新規投稿＆投稿編集画面**/
 .new-heading, .manual h1 {
   font-size: clamp(1.99rem, 3vw, 2.5rem);
@@ -429,9 +428,13 @@
   justify-content: space-around;
 }
 
+.new-form a {
+  text-decoration: underline solid #007bff;
+}
+
 .new-form {
   width: 48vw;
-  padding: 1em 0.5em !important; /*内側の余白*/
+  padding: 1em 0.5em 1.5em !important; /*内側の余白*/
   background: linear-gradient(#f1eaead6 0.05em, transparent 0.05em) #fff;
   background-size: auto 2em;
   font-size: clamp(1rem, 1.4vw, 1.8rem);
@@ -443,27 +446,54 @@
   margin: 1.5em auto;
 }
 
-select {
-  padding: 0.27rem;
-  border: 1px solid #ced4da;
-  border-radius: 1rem;
-  color: #68442b;
-}
-
 .new-form-body {
   height: 200px !important;
+}
+
+/*動画、画像、タグ*/
+.new-note-icon {
+  display: flex;
+  text-align: right;
+  align-items: center;
+  width: 73%;
+  margin: 2.3rem auto 0;
+}
+
+.new-note-icon .form-group {
+  margin: 0;
+}
+
+.new-note-icon .form-group:nth-child(1) {
+  width: 10%;
+}
+
+.new-note-icon .form-group:nth-child(2) {
+  width: 22%;
+}
+
+.new-note-icon .form-group:nth-child(3) {
+  width: 70%;
+  padding-left: 4%;
+}
+
+.fa-image, .fa-video {
+  font-size: clamp(1.65rem, 2.65vw, 2.35rem) !important;
+}
+
+select {
+  width: 62%;
+  padding: 0.27rem;
+  border: 1.5px solid #ced4da;
+  border-radius: 1rem;
+  color: #68442b;
 }
 
 .new-form-actions {
   text-align: right;
 }
 
-.fa-image {
-  font-size: 3rem !important;
-}
-
 .new-form-btn {
-  margin: 0 !important;
+  margin-right: 10% !important;
   padding: 0 !important;
   font-size: 1.3rem !important;
   color: #4a2204 !important;
@@ -604,7 +634,7 @@ select {
     top: -2.8rem;
     display: flex;
     justify-content: center;
-    font-size: 2.8vw !important;
+    font-size: 2.5vw !important;
   }
   .tos-box {
     width: 95%;

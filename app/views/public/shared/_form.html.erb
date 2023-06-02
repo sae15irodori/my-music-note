@@ -7,7 +7,7 @@
           <%= render '/layouts/validates', validates: @note %>
       <%= f.text_field :title, autofocus: true, id:"inputTitle",  placeholder: "このページにタイトルを付けましょう",class: "form-control" %>
     </div>
-    
+
     <div class="form-group">
       <label for="inputNote">ノート✍ </label>
           <!--バリデーションエラー-->
@@ -15,31 +15,34 @@
       <%= f.text_area :body, autofocus: true, id:"inputNote", placeholder: "ノート本文",class: "form-control new-form-body" %>
     </div>
 
-    <div class="form-group"><!--画像-->
-      <label for="inputImage" class="new-note-img">
-      <%= f.file_field :image, style:"display:none;", accept: "image/*",autofocus: true, id:"inputImage", class: "hidden" %>
-      <i class="far fa-image"></i>
-      </label>
-     
+    <div class="new-note-icon">
+      <div class="form-group"><!--動画ラベル-->
+        <label for="inputUrl"><i class="fas fa-video"></i></label>
+       </div>
+
+      <div class="form-group"><!--画像-->
+        <label for="inputImage">
+        <%= f.file_field :image, style:"display:none;", accept: "image/*",autofocus: true, id:"inputImage", class: "hidden" %>
+        <i class="far fa-image"></i>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="inputTag"><i class="fas fa-tag"></i>タグ</label>
+        <%= f.select :tag_id, options_from_collection_for_select( Tag.all, :id, :name, selected: f.object.tag_id), include_blank: true %>
+      </div>
     </div>
 
-    <div class="form-group"><!--動画-->
-      <label for="inputUrl"><i class="fas fa-video"></i></label>
-      動画の投稿はYoutubeよりお願いします<br>
-      → <%= link_to "https://www.youtube.com/","https://www.youtube.com/",target: "_blank", class: 'link' %>
+    <div class="form-group mt-3"><!--動画-->
+      動画投稿は <%= link_to 'Youtube', 'https://www.youtube.com/","https://www.youtube.com/', target: "_blank", class: 'link' %> よりお願いします
       <%= f.text_field :url, autofocus: true, id:"inputUrl", placeholder: "Youtubeの埋め込みURL",class: "form-control mt-2" %>
     </div>
-
-    <div class="form-group">
-      <label for="inputTag">タグ</label>
-      <%= f.select :tag_id, options_from_collection_for_select( Tag.all, :id, :name, selected: f.object.tag_id), include_blank: true %>
-    
 
     <div class="new-form-actions">
       <%= f.submit "作成する✓",class: 'btn new-form-btn' %>
     </div>
   <% end %>
-  </div>
+
 </div>
 
 <!--サイド-->
