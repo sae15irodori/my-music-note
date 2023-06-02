@@ -516,8 +516,9 @@ select {
 
 
 /*マニュアル画面*/
-.manual ul li {
+.manual ul li, .tos-box ul li {
   list-style-type: decimal;
+  list-style-position: inside;
 }
 
 .manual {
@@ -536,7 +537,7 @@ select {
   width: 75%;
   position: relative;
   margin: 2em auto;
-  padding: 3.5em 5em;
+  padding: 3.5em 6%;
   border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
   background-color: #fdf2a5f2;
 }
@@ -564,9 +565,12 @@ select {
   content: '';
 }
 
-.tos-box p {
-  color: #333;
-  line-height: 1.2;
+.tos-box h2, .tos-sentence h2 {
+  font-size: clamp(1.35rem, 2.8vw, 2rem);
+}
+
+.tos-box h3 {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
 }
 
 .tos-sentence {
@@ -601,6 +605,9 @@ select {
     display: flex;
     justify-content: center;
     font-size: 2.8vw !important;
+  }
+  .tos-box {
+    width: 95%;
   }
 }
 
