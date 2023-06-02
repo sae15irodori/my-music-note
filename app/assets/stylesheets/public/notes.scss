@@ -244,6 +244,13 @@
     width: 95%;
     height: auto;
   }
+  .index-notes-body {
+    overflow: hidden;
+    display: block;
+  }
+  .index-note-body {
+    white-space: normal;
+  }
   .notes-video {
     padding-bottom: 13em;
   }

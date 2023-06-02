@@ -17,26 +17,28 @@
     <%= link_to (admin_note_path(note.id)) do %><!--詳細ページへのﾘﾝｸ-->
     
       <% if note.image.present? %><!--画像がある場合-->
-        <!--タイトル・本文-->
+        <!--タイトル-->
           <h2 class="index-note-title"><%= note.title %></h2><br>
-          <p class="index-note-body"><%= note.body %></p>
         <!--画像-->
           <p>
             <%= image_tag note.image, class: 'index-img' %>
           </p>
+        <!--本文-->
+          <p class="index-note-body"><%= note.body %></p>
         <!--タグ-->
           <% if note.tag.present? %>
             <i class="fas fa-tag"></i><%= link_to note.tag.name, admin_tag_path(note.tag.id) %>
           <% end %>
           
       <% elsif note.url.present? %><!--動画がある場合-->
-        <!--タイトル・本文-->
+        <!--タイトル文-->
           <h2 class="index-note-title"><%= note.title %></h2><br>
-          <p class="index-note-body"><%= note.body %></p>
         <!--動画-->
           <p class="notes-video">
             <iframe width="250" height="200" src="<%= note.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </p>
+        <!--本文-->
+        <p class="index-note-body"><%= note.body %></p>
         <!--タグ-->
           <% if note.tag.present? %>
             <i class="fas fa-tag"></i><%= link_to note.tag.name, admin_tag_path(note.tag.id) %>
