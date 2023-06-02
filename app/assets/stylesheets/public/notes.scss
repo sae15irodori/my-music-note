@@ -301,7 +301,7 @@
 
 /**画像の表示設定**/
 .show-img {
-  width: 88%;
+  width: 77%;
   height: auto;
   object-fit: cover;
   display: block;
@@ -418,7 +418,9 @@
     width: 100%;
     padding: 4% 10%;
   }
-
+  .show-img {
+    width: 100%;
+  }
   .comment-contents {
     width: 100%;
   }
