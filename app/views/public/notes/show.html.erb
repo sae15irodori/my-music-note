@@ -1,6 +1,6 @@
 <div class="main">
   <h1 align="center">Note detail</h1>
-  <%= flash[:notice] %>
+  <div align="center"><%= flash[:notice] %></div>
 
   <% unless @user.is_deleted == true %><!--ﾕｰｻﾞｰが退会済じゃなければ-->
     <div class="note-contents note-contents2"><!--ルーズリーフの設定-->
