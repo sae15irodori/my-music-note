@@ -256,25 +256,26 @@ li {
 /**ページ全体**/
 .about-wrap {
   width: 80%;
-  margin: 5em auto;
+  margin: 50px auto;
 }
 
-.about-title {
+.about-wrap h1 {
   margin: 0.5em 0;
   text-align: center;
+  font-size: clamp(1.5rem, 2.9vw, 2.5rem);
 }
 
-.about-title2 {
+.about-wrap h2 {
   width: 40%;
-  margin: 0.8em auto 4em;
-  font-size: 1.3rem;
+  margin: 0.8em auto 5%;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
   text-align: center;
   line-height: 1.8;
 }
 
-.about-title3 {
+.about-wrap h3 {
   text-align: center;
-  font-size: 2rem;
+  font-size: clamp(1.1rem, 2.3vw, 2rem);
   margin: 1em;
 }
 
@@ -290,7 +291,8 @@ li {
 
 .cando-content {
   line-height: 2;
-  margin: 0 2em;
+  margin: 0 auto;
+  padding: 2.3vw;
   text-align: center;
 }
 
@@ -453,4 +455,24 @@ footer {
 
 .form-control {
   font-size: clamp(0.8rem, 1.18vw, 1rem) !important;
+}
+
+@media screen and (max-width:768px) {
+  .about-wrap {
+    width: 92%;
+  }
+  .about-wrap h2 {
+    width: 80%;
+  }
+  .cando {
+    display: block;
+  }
+  .cando-content {
+    padding: 1em 2.3vw;
+  }
+}
+@media screen and (max-width:425px) {
+  .about-wrap {
+    width: 95%;
+  }
 }
