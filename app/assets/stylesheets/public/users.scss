@@ -48,22 +48,24 @@
 /**ユーザー情報**/
 .user-info {
   position: relative;
-  width: 65vw;
+  width: 68vw;
   margin: 0 auto;
-  padding: 1em 1em;
+  padding: 1em 1.5em;
   background: #ffffff;
+  border-left: 3vw solid #ebebeb5e;
 }
 
 .user-info::before {
   position: absolute;
-  bottom: -5px;
-  right: 0px;
+  bottom: -6px;
+  right: 18px;
   z-index: -1;
-  width: 100%;
+  width: 80%;
   height: 50%;
   background-color: #d0d0d0;
   content: "";
-  filter: blur(4px);
+  filter: blur(6px);
+  transform: rotate(1.3deg);
 }
 
 .user-info a, .user-info span {
@@ -148,6 +150,9 @@
 
 /*利用停止画面&ユーザー編集画面レスポンシブ*/
 @media screen and (max-width:1024px) {
+  .user-info {
+    width: 100%
+  };
   .unsubscribe {
     text-align: left;
   }
@@ -159,9 +164,6 @@
 
 /*ﾕｰｻﾞｰ詳細画面&編集画面レスポンシブ*/
 @media screen and (max-width:790px) {
-  .user-info {
-    width: 92%;
-  }
   .users-box {
     width: 100%;
   }
@@ -174,7 +176,7 @@
 }
 
 @media screen and (max-width:425px) {
-  .user-info, .user-edit-field, .user-edit-btn, .withdrawal-btn {
+  .user-edit-field, .user-edit-btn, .withdrawal-btn {
     width: 100%;
   }
 }

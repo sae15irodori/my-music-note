@@ -3,7 +3,7 @@
     <h1 align="center">My Note</h1>
   <% end %>
 
-  <%= flash[:notice] %>
+  <div align="center"><%= flash[:notice] %></div>
       <% unless @user.is_deleted == true %><!--ﾕｰｻﾞｰが退会済じゃなければ-->
         <div class="user-info"><!--ユーザー情報-->
           <!--ﾛｸﾞｲﾝ中かつｹﾞｽﾄじゃなければuser/editへのﾘﾝｸ含める-->

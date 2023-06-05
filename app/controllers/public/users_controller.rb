@@ -19,7 +19,7 @@ class Public::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:notice] = "プロフィールを編集しました✍"
+      flash[:notice] = "プロフィールを編集しました"
       redirect_to user_path(@user.id)
     else
       render :edit
@@ -65,7 +65,7 @@ class Public::UsersController < ApplicationController
 
   def guest_check
     if current_user.email == 'guest@gesuto.com'
-    redirect_to notes_path,notice: "この操作をするには...会員登録をしてみましょう♪"
+    redirect_to notes_path,notice: "この操作をするには...会員登録をしてみましょう"
     end
   end
 end

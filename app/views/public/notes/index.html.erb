@@ -2,7 +2,7 @@
   <div class="index-headbox">
     <div class="index-head">
       <span class="notice"><%= flash[:notice] %></span>
-      <h1>Notes<span class="ml-1" style="font-size: 1.5rem">みんなのノート</span></h1>
+      <h1>Notes<span class="ml-1" style="font-size: 1.4rem">みんなのノート</span></h1>
       <!--検索フォーム-->
       <%= search_form_for @q, url: search_notes_path, class: "form-inline" do |f| %>
         <%= f.search_field :title_or_body_cont, placeholder: "ノート検索",class: "form-control rounded-pill" %>

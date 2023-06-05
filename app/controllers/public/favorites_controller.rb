@@ -16,7 +16,7 @@ class Public::FavoritesController < ApplicationController
 
   def guest_check
     if current_user.email == 'guest@gesuto.com'
-    redirect_to request.referer,notice: "※♡いいねをするには...会員登録をしてみましょう♪"
+    redirect_to request.referer,notice: "※♡いいねをするには...会員登録をしてみましょう"
     end
   end
 end

@@ -11,7 +11,7 @@ class Public::NotesController < ApplicationController
     @note = Note.new(note_params)
     @note.user_id = current_user.id
     if @note.save
-      flash[:notice] = "新しいページを作りました✍"
+      flash[:notice] = "新しいページを作りました"
       redirect_to notes_path
     else
       render :new
@@ -79,7 +79,7 @@ class Public::NotesController < ApplicationController
 
   def guest_check
     if current_user.email == 'guest@gesuto.com'
-    redirect_to notes_path,notice: "※この操作をするには✍...会員登録をしてみましょう♪"
+    redirect_to notes_path,notice: "※この操作をするには...会員登録をしてみましょう"
     end
   end
 end
