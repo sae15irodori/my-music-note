@@ -17,24 +17,26 @@
   display: flex;
 }
 
+.edit-btn, .destroy-btn, .favorite-comment-btn {
+  background: #45a79e05;
+  border: 1px solid #5225063d;
+}
+
 .edit-btn {
   padding: 0.5em 1em;
-  background: #f9f0a2bf;
 }
 
 .destroy-btn {
   margin: 0 0.3em;
   padding: 0.5em 1em;
-  background: #f9f0a2bf;
 }
 
-/***いいねボタン***/
+/***いいねとコメントボタン***/
 .favorite-comment-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 2em;
-  background: #f9f0a2bf;
 }
 
 .favoritebtn {
@@ -155,7 +157,7 @@
   margin: 2em 1em;
   padding: 1.5em 2em;
   background: #fffef7;
-  border-left: solid 22px #fdee43b8;
+  border-left: solid 22px #45a79e6b;
   border-radius: 7px;
   position: relative;
   box-shadow: 0 4px 13px rgba(0,0,0,0.2), 0 -4px 5px -1.7px #708aaf inset;
@@ -171,16 +173,14 @@
 
 /*ノートタイトル*/
 .index-note-title {
-  font-size: 1rem;
   margin: 0 !important;
-  background: #feffc0e0;
+  font-size: 1.1rem;
+  font-weight: bold;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
-
-
 
 /*動画・画像がある場合*/
 .index-note-body {
