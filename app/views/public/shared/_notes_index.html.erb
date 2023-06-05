@@ -10,7 +10,7 @@
       <!--投稿内容-->
       <%= link_to (note_path(note.id)) do %><!--詳細ページへのﾘﾝｸ-->
       
-        <% if note.image.present? %><!--画像がある場合-->
+        <% if note.image.present? %><!--画像のみの場合-->
           <!--タイトル-->
             <h2 class="index-note-title"><%= note.title %></h2><br>
           <!--画像-->
@@ -22,7 +22,7 @@
               <i class="fas fa-tag"></i><%= link_to note.tag.name, tag_path(note.tag.id) %>
             <% end %>
             
-        <% elsif note.url.present? %><!--画像がない場合-->
+        <% elsif note.url.present? %><!--動画のみの場合-->
           <!--タイトル-->
             <h2 class="index-note-title"><%= note.title %></h2><br>
           <!--動画-->
@@ -30,16 +30,16 @@
               <iframe width="250" height="200" src="<%= note.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </p>
           <!--本文-->
-            <p class="index-note-body"><%= note.body %></p>
+            <p class="index-note-body"><%=safe_join(note.body.split("\n"),tag(:br))%></p>
           <!--タグ-->
             <% if note.tag.present? %>
               <i class="fas fa-tag"></i><%= link_to note.tag.name, tag_path(note.tag.id) %>
             <% end %>
           
-        <% else %><!--画像も動画もない場合-->
+        <% else %><!--画像と動画ない場合-->
           <!--タイトル・本文-->
             <h2 class="index-note-title"><%= note.title %></h2><br>
-            <div class="index-notes-body"><%= note.body %></div>
+            <div class="index-notes-body"><%=safe_join(note.body.split("\n"),tag(:br))%></div>
           <!--タグ-->
             <% if note.tag.present? %>
               <i class="fas fa-tag"></i><%= link_to note.tag.name, tag_path(note.tag.id) %>
