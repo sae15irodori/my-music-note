@@ -124,7 +124,7 @@ li {
 
   .icon span {
     position: absolute;
-    right: 18%;
+    right: 6%;
     width: 25px;
     height: 3.3px;
     background-color: #f5f5f5;
@@ -172,9 +172,6 @@ li {
 @media screen and (max-width:670px) {
   .header-logo {
     display: block;
-  }
-  .icon span {
-    right: 6%;
   }
   .icon span:nth-of-type(1) {
     top: 30%;
