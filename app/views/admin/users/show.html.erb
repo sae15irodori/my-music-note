@@ -6,13 +6,12 @@
   </h1>
 
   <%= flash[:notice] %>
-    <div class="user-info"><!--ユーザー情報-->
-      <%= render '/layouts/user_info', user: @user %>
-      <p class="ml-1"><%= @user.introduction %></p><!--自己紹介-->
-    </div>
-
+  
+  <div class="user-info"><!--ユーザー情報-->
+    <%= render '/layouts/user_info', user: @user %>
+    <p><%=safe_join(@user.introduction.split("\n"),tag(:br))%></p><!--自己紹介-->
     <%= link_to "※利用停止", admin_user_unsubscribe_path(@user.id),class: 'btn admin-withdrawal-btn' %>
-    
+  </div>
 
   <!--ユーザー投稿一覧-->
   <% @notes.each do |note| %>

@@ -10,21 +10,19 @@
 
 /**一覧と詳細**/
 .users-box {
-  width: 55%;
+  width: 75vw;
   position: relative;
-  margin: 1.8em auto;
+  margin: 20px auto;
   padding: 1.2em 1.2em;
-  border-left: 35px solid #42b5a5;
   background-color: #fff;
   color: #333333;
 }
 
 .users-box::before {
   position: absolute;
-  bottom: 2px;
-  right: 10px;
+  bottom: -5px;
+  right: 0px;
   z-index: -1;
-  transform: rotate(5deg);
   width: 100%;
   height: 50%;
   background-color: #d0d0d0;
@@ -50,21 +48,19 @@
 /**ユーザー情報**/
 .user-info {
   position: relative;
-  width: 70%;
+  width: 65vw;
   margin: 0 auto;
   padding: 1em 1em;
-  border-left: 35px solid #42b5a5;
   background: #ffffff;
 }
 
 .user-info::before {
   position: absolute;
-  bottom: 0px;
-  right: 10px;
+  bottom: -5px;
+  right: 0px;
   z-index: -1;
-  transform: rotate(2.5deg);
   width: 100%;
-  height: 45%;
+  height: 50%;
   background-color: #d0d0d0;
   content: "";
   filter: blur(4px);
@@ -75,8 +71,8 @@
 }
 
 .user-info p {
-  margin-top: 1em;
-  font-size: clamp(0.715rem, 1.4vw, 1.8rem);
+  margin: 5px;
+  font-size: clamp(0.715rem, 1.2vw, 1.5rem);
   line-height: 1.5;
 }
 
@@ -112,11 +108,15 @@
 /*管理者側ユーザー詳細画面のボタン*/
 .admin-withdrawal-btn {
   display: block !important;
-  width: 55%;
-  margin: 2em auto 0;
+  width: 140px;
+  margin-top: 10px;
   color: #fff !important;
   background: #db0627 !important;
-  font-size: clamp(1rem, 1.4vw, 1.2rem) !important;
+  font-size: clamp(0.9rem, 1vw, 1.2rem) !important;
+}
+
+.user-info a {
+  margin-left: auto;
 }
 
 /*管理者側利用停止画面*/
@@ -176,9 +176,6 @@
 @media screen and (max-width:425px) {
   .user-info, .user-edit-field, .user-edit-btn, .withdrawal-btn {
     width: 100%;
-  }
-  .users-box, .user-info  {
-    border-left: 24px solid #42b5a5;
   }
 }
 

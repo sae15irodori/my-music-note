@@ -275,7 +275,7 @@
 /**ノートのﾙｰｽﾞﾘｰﾌ風設定**/
 /*外枠*/
 .note-contents {
-  width: 75%;
+  width: 68vw;
   margin: 2% auto 4%;
   padding: 5% 6.6% 2.7%;
   background: linear-gradient(#f1eaead6 0.05em, transparent 0.05em) #fff;
@@ -289,7 +289,7 @@
 
 
 .note-contents, .note-body,  .comment-box {
-  font-size: clamp(0.715rem, 1.4vw, 1.8rem);
+  font-size: clamp(0.715rem, 1.2vw, 1.3rem);
   line-height: 1.5;
 }
 
@@ -350,7 +350,7 @@
 /***コメントの設定***/
 /**コメント欄全体**/
 .comment-box {
-  margin-left: 13%;
+  margin-left: 11%;
 }
 
 /**コメント一覧**/
@@ -373,15 +373,14 @@
 
 /**コメント入力フォーム**/
 .comment-form {/*単数形*/
-  width: 82.5% !important;
+  width: 63vw !important;
+  margin-right: 10px;
   border: 1px solid #7fa59838 !important;
   border-radius: 10px !important;
   position: relative;
 }
 
-
 .comment-form-btn {
-  margin-right: 2.5% !important;
   padding: 0.85em 1% !important;
   color: #76441f !important;
   font-size: clamp(1.3rem, 2vw, 1.6rem) !important;
@@ -389,19 +388,18 @@
   border-radius: 10px !important;
   background: #fff !important;
   position: absolute;
-  right: 15%;
+  right: 15.5%;
 }
 
 
 
 /*投稿詳細レスポンシブ*/
-@media screen and (max-width:768px) {
+@media screen and (max-width:1024px) {
   .note-contents {
-    width: 92%;
-    padding: 2.7% 8%;
+    width: 100%;
   }
-  .note-contents::before {
-    border-right: dotted 2.5vw #b1a8a8;
+  .note-contents {
+    padding: 2.7% 8%;
   }
   .comment-box {
     margin-left: 0%;
@@ -410,16 +408,23 @@
     width: 99% !important;
   }
   .comment-form-btn {
-    right: 1.5%;
+    right: 6.2%;
   }
   .comment-contents {
     width: 95%;
   }
 }
+@media screen and (max-width:768px) {
+  .note-contents::before {
+    border-right: dotted 2.5vw #b1a8a8;
+  }
+  .comment-form-btn {
+    right: 1.5%;
+  }
+}
 
 @media screen and (max-width:425px) {
   .note-contents {
-    width: 100%;
     padding: 4% 10%;
   }
   .show-img {
@@ -427,9 +432,6 @@
   }
   .comment-contents {
     width: 100%;
-  }
-  .comment-form-btn {
-    right: 0%;
   }
 }
 
