@@ -289,7 +289,7 @@
 
 
 .note-contents, .note-body,  .comment-box {
-  font-size: clamp(0.715rem, 1.2vw, 1.3rem);
+  font-size: clamp(0.75rem, 1.3vw, 1.3rem);
   line-height: 1.5;
 }
 
@@ -636,7 +636,7 @@ select {
 
 @media screen and (max-width:768px) {
   .new-form, .side-bar, .to-tos {
-    width: 80vw;
+    width: 90vw;
   }
   .new-note-box {
     display: block;
@@ -669,8 +669,3 @@ select {
   }
 }
 
-@media screen and (max-width:425px) {
-  .new-form, .side-bar, .to-tos {
-    width: 90vw;
-  }
-}
