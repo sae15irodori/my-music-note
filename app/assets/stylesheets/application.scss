@@ -202,43 +202,24 @@ li {
 
 /**トップ画面全体**/
 .top-contents {
-  width: 85%;
-  margin: 50px auto 30px;
-  background: #ffffff;
-  padding: 5% 3.5%;
-  background: linear-gradient(#ccc 0.05em, transparent 0.05em) #FFF;
-  background-size: auto 2.9em;
-  line-height: 0em;
-  border: 10px solid #39a594eb;
-  border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
-  overflow: hidden;
+  display: flex;
+  margin: 10% auto;
 }
 
-.top-title h1 {
-  line-height: 0.45;
-  font-size: 7vw;
-}
-
-.top-title h2 {
-  width: 100%;
-  margin: 0 auto;
-  padding: 1% 0 1.5em;
-  font-size: clamp(1.3rem, 2.3vw, 2.3rem);
-  line-height: 1.5;
-}
-
-.top-title a {
-  display: block;
-  width: 90%;
-  margin: 0 auto;
-  padding-bottom: 2em;
-  font-size: clamp(1.3rem, 2.3vw, 2.3rem);
-
+.top-note {
+  margin: 2em 1em;
+  padding: 1.5em 2em;
+  background: #fdfeff;
+  border-left: solid 22px #45a79e6b;
+  border-radius: 7px;
+  box-shadow: 0 4px 13px rgba(0,0,0,0.2), 0 -4px 5px -1.7px #708aaf inset;
+  font-size: clamp(0.95rem, 1.1vw, 1rem);
 }
 
 .top-link a {
+  display: block;
   text-align: center;
-  font-size: 4vw;
+  font-size: 3vw;
   font-family: 'Times New Roman', serif;
 }
 
