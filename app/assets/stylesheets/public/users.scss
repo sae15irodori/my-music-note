@@ -9,21 +9,31 @@
 }
 
 /**一覧と詳細**/
+.users-box, .user-info {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #3a210d17;
+}
+
 .users-box {
   width: 75vw;
-  position: relative;
   margin: 20px auto;
   padding: 1.2em 1.2em;
-  background-color: #fff;
   color: #333333;
 }
 
-.users-box::before {
+.user-info {
+  width: 68vw;
+  margin: 0 auto;
+  padding: 1em 1.5em;
+}
+
+.users-box::before, .user-info::before {
   position: absolute;
   bottom: -5px;
-  right: 0px;
+  right: 1px;
   z-index: -1;
-  width: 100%;
+  width: 99%;
   height: 50%;
   background-color: #d0d0d0;
   content: "";
@@ -36,6 +46,16 @@
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-word;
+}
+
+.user-info a, .user-info span {
+  font-size: clamp(1rem, 1.7vw, 1.8rem);;
+}
+
+.user-info p {
+  margin: 5px;
+  font-size: clamp(0.715rem, 1.2vw, 1.5rem);
+  line-height: 1.5;
 }
 
 
@@ -52,37 +72,6 @@
   padding: 0 0.25em;
 }
 
-
-/**ユーザー情報**/
-.user-info {
-  position: relative;
-  width: 68vw;
-  margin: 0 auto;
-  padding: 1em 1.5em;
-  background: #ffffff;
-}
-
-.user-info::before {
-  position: absolute;
-  bottom: -5px;
-  right: 0px;
-  z-index: -1;
-  width: 100%;
-  height: 50%;
-  background-color: #d0d0d0;
-  content: "";
-  filter: blur(4px);
-}
-
-.user-info a, .user-info span {
-  font-size: clamp(1rem, 1.7vw, 1.8rem);;
-}
-
-.user-info p {
-  margin: 5px;
-  font-size: clamp(0.715rem, 1.2vw, 1.5rem);
-  line-height: 1.5;
-}
 
 /**ユーザー編集ページ**/
 .user-edit-heading {

@@ -12,14 +12,19 @@
   display: flex;
 }
 
+/**投稿編集と削除、いいねとコメントボタン**/
+.edit-btn, .destroy-btn, .favorite-comment-btn {
+  background: #ffffff94;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+}
+
+.edit-destory-btn, .favorite-comment-btn {
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+}
+
 /**編集と削除ボタン**/
 .edit-destory-btn {
   display: flex;
-}
-
-.edit-btn, .destroy-btn, .favorite-comment-btn {
-  background: #45a79e05;
-  border: 1px solid #5225063d;
 }
 
 .edit-btn {
@@ -43,9 +48,7 @@
   padding-right: 1.8rem;
 }
 
-.edit-destory-btn, .favorite-comment-btn {
-  font-size: clamp(1rem, 1.4vw, 1.2rem);
-}
+
 
 
 /***一覧画面***/
