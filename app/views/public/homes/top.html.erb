@@ -1,7 +1,7 @@
 <div class="top-contents">
   <div class="top-notice"><%= flash[:notice] %></div>
   <div class="top-title">
-    <h1>My Music Note<br>
+    <h1>My Music Note <i class="fab fa-itunes-note"></i><br>
   　 <h2>みんなで応援する 助け合う楽器演奏者の為のコミュニティサイト</h2>
   　　<%= link_to "－このサイトについて―", about_path,class: "about-link" %>
   　</h1>
@@ -16,3 +16,37 @@
   </div>
 </div>
 
+<div class="about-wrap">
+  <h1><%= link_to "My Music Note", root_path %>へようこそ！</h1>
+
+  <h2>My Music Noteは、楽器演奏上達の為に利用者同士で応援し合い、助け合うサイトです。</h2>
+
+  <div class="cando-border">
+    <h3>―My Music Noteでできること―</h3>
+      <div class="cando">
+        <div class="cando-content">
+          <%= image_tag 'about-question.jpg' %>
+          <p class="cando-sentence">
+            この曲はどう弾けばいいかな？このコードのコツは？
+            演奏中に困った事や素朴な疑問、色々な質問をしてみてください
+          </p>
+        </div>
+
+        <div class="cando-content">
+          <%= image_tag 'about-practice.jpg' %>
+          <p class="cando-sentence">
+            練習の過程や成果を投稿してみましょう♪
+            応援のコメントをもらうことでモチベーションもあがります！
+          </p>
+        </div>
+
+        <div class="cando-content">
+          <%= image_tag 'about-comment.jpg' %>
+          <p class="cando-sentence">
+            質問に対するコメントや、素敵な演奏へ温かいコメントを送ってみましょう。
+            その温かさはきっとあなたに返ってきますよ♪
+          </p>
+        </div>
+      </div>
+    </div>
+　</div>

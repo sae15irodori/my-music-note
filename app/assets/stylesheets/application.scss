@@ -69,7 +69,7 @@ li {
 /*ヘッダー*/
 .fixed-top {
   position: sticky;
-  background: #39a594eb;/*#73d0c2eb*/
+  background: #39a594eb;
 }
 
 .navbar-nav a, .header-wrapper a {
@@ -202,38 +202,16 @@ li {
 
 /**トップ画面全体**/
 .top-contents {
-  position: relative;
-  width: 80vw;
-  margin: 3em auto;
-  padding: 1.5em 2em;
-  border-left: solid 22px #45a79e6b;
-  border-radius: 7px;
-  box-shadow: 0 4px 13px rgba(0,0,0,0.2), 0 -4px 5px -1.7px #708aaf inset;
-}
-
-.top-contents::before, .top-contents::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-}
-
-.top-contents::before {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #fffef7;
-  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
-}
-
-.top-contents::after {
-  top: -0.9%;
-  right: -0.9%;
-  height: 94px;
-  width: 121px;
-  background: #f3f3f3;
-  clip-path: polygon(0 0, 0% 100%, 100% 100%);
-  border-radius: 7px;
+  width: 85%;
+  margin: 50px auto 30px;
+  background: #ffffff;
+  padding: 5% 3.5%;
+  background: linear-gradient(#ccc 0.05em, transparent 0.05em) #FFF;
+  background-size: auto 2.9em;
+  line-height: 0em;
+  border: 10px solid #39a594eb;
+  border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
+  overflow: hidden;
 }
 
 .top-title h1 {
@@ -242,19 +220,19 @@ li {
 }
 
 .top-title h2 {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  padding: 0.7% 0 1.5em;
-  font-size: clamp(0.95rem, 2vw, 2rem);
+  padding: 1% 0 1.5em;
+  font-size: clamp(1.3rem, 2.3vw, 2.3rem);
   line-height: 1.5;
 }
 
 .top-title a {
   display: block;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   padding-bottom: 2em;
-  font-size: clamp(0.95rem, 2vw, 2rem);
+  font-size: clamp(1.3rem, 2.3vw, 2.3rem);
 
 }
 
