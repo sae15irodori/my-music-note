@@ -147,6 +147,43 @@
 }
 
 
+
+
+.index-note-contents{
+  position: relative;
+  font-size: 22px;
+  font-weight: 700;
+  padding: 10px 14px;
+  display: inline-block;
+  color: #fff;
+  box-shadow: 0 8px 16px -6px rgba(#000,0.26);
+}
+
+.index-note-contents::before, .index-note-contents::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+}
+ 
+/* ラベルの背景 */
+.index-note-contents::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0685c7;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+}
+ 
+/* 右上角のめくれ */
+.index-note-contents::after {
+  top: 0%;
+  right: 0%;
+  height: 14px;
+  width: 14px;
+  background-color: rgba(0, 0, 0, 0.52);
+  clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
 /**ノート一覧**/
 /*ノートの配置設定*/
 .main-note {
@@ -155,17 +192,20 @@
   justify-content: center;
 }
 
+
 /*外枠*/
 .index-note-contents {
+  position: relative;
   margin: 2em 1em;
   padding: 1.5em 2em;
-  background: #fffef7;
   border-left: solid 22px #45a79e6b;
   border-radius: 7px;
-  position: relative;
   box-shadow: 0 4px 13px rgba(0,0,0,0.2), 0 -4px 5px -1.7px #708aaf inset;
   font-size: clamp(0.95rem, 1.1vw, 1rem);
-  }
+}
+
+
+
 
 
 .index-note-contets1 {
