@@ -124,6 +124,7 @@
     position: static;
   }
   .top-title {
+    width: 100%;
     height: 130px;
     padding: 38px 0 0 5%;
     text-align: center;
@@ -148,7 +149,7 @@
 }
 @media screen and (max-width:450px) {
   .top-note, .top-text {
-    width: 125%;
+    width: 120%;
     margin-left: -37%;
   }
 }
