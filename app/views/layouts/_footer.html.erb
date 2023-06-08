@@ -1,6 +1,6 @@
 <% if user_signed_in? or admin_signed_in? %>
   <div class="footer-contents">
-    <%= link_to "My Music Note🖌" , notes_path, class:"footer-logo mr-2" %>
+    <%= link_to notes_path, class:"footer-logo mr-2" do %>My Music Note <i class="fas fa-pen-nib"></i><% end %>
     <%= link_to "利用規約", tos_notes_path, class:"mx-2" %>
     <%= link_to "プライバシーポリシー", privacy_policy_notes_path %>
   </div>

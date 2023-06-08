@@ -2,7 +2,7 @@
 <% if user_signed_in? %>
   <div class="header-wrapper">
     <div class="header-logo">
-      <div class="mb-0"><%= link_to "My Music Note🖌" , notes_path%></div>
+      <div class="mb-0"><%= link_to notes_path do %>My Music Note <i class="fas fa-pen-nib"></i><% end %></div>
       <div><%= link_to "応援し合い助け合う演奏コミュニティ♪" , notes_path, class: "ml-2" %></div>
     </div>
 
@@ -65,7 +65,7 @@
 <% elsif admin_signed_in? %>
   <div class="header-wrapper">
     <div class="header-logo">
-      <div class="mb-0"><%= link_to "My Music Note🖌" , admin_notes_path %></div>
+      <div class="mb-0"><%= link_to admin_notes_path do %>My Music Note <i class="fas fa-pen-nib"></i><% end %></div>
       <div><%= link_to "管理者ログイン中" , admin_notes_path,class:"ml-2" %></div>
     </div>
 
