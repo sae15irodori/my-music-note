@@ -102,16 +102,19 @@
 
 
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width:1050px) {
   .top-contents {
     top: 24vh;
   }
   .top-note {
     width: 350px;
   }
+  .top-text {
+    padding: 40px 10px
+  }
 }
 
-@media screen and (max-width:864px) {
+@media screen and (max-width:890px) {
   .top-title,  .top-contents {
     position: static;
   }
@@ -143,8 +146,9 @@
     width: 93%;
   }
 }
-@media screen and (max-width:540px) {
+@media screen and (max-width:425px) {
   .top-note, .top-text {
     margin-left: -17%;
   }
+  
 }
