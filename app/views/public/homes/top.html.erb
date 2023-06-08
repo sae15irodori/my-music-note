@@ -1,21 +1,23 @@
+<div>
+<h1 class="top-title">My Music Note <i class="fab fa-itunes-note"></i></h1>
 <div class="top-contents">
-  <div class="top-notice"><%= flash[:notice] %></div>
-  <div class="top-text">
-  　 <h2>みんなで応援する 助け合う<br>楽器演奏者の為のコミュニティサイト</h2>
-  　　<%= link_to "－このサイトについて―", about_path,class: "about-link" %>
-  　
-　</div>
-
-  <div class="top-note">
-    <h1>My Music Note <i class="fab fa-itunes-note"></i></h1>
-    <div class="top-link">
+   <div class="top-note">
+    <h2>~ Open my note ~</h2>
+    
       <%= link_to "Log in", new_user_session_path %>
-  
+
       <%= link_to "Sign up", new_user_registration_path %>
-  
+
       <%= link_to users_guest_sign_in_path, method: :post do %>
-        Guest (試し読み)
+        Guest <span style="font-size: 1.5rem">(試し読み)</span>
       <% end %>
-    </div>
+    
   </div>
+
+  <div class="top-text">
+    <div><%= flash[:notice] %></div>
+  　 <p>みんなで応援する 助け合う<br>楽器演奏者の為のコミュニティサイト</p>
+  　　<%= link_to "－このサイトについて―", about_path,class: "about-link" %>
+　</div>
+</div>
 </div>

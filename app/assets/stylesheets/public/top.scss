@@ -1,0 +1,150 @@
+/***トップ画面***/
+.top-title {
+  width: 100vw;
+  height: 35%;
+  padding: 38px 0 0 48%;
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  color: #ffffff;
+  background: #5da18e;
+  border-bottom-left-radius: 130%;
+  border-bottom-right-radius: 3%;
+  position: absolute;
+  animation: TitleSlideIn 1.8s both;
+}
+
+/*アニメーション*/
+@keyframes TitleSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(64px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*タイトル以下*/
+.top-contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40vh;
+  position: relative;
+  top: 22vh;
+  width: 95%;
+  animation: SlideIn 1.8s both;
+}
+
+/*アニメーション*/
+@keyframes SlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(64px);
+  }
+}
+
+/*ノート部分*/
+.top-note {
+  width: 420px;
+  height: 465x;
+  padding: 40px 30px;
+  background: #fdfeff;
+  border-left: 30px solid #45a79ed6;
+  border-radius: 7px;
+  box-shadow: 10px 14px 13px rgba(0,0,0,0.2), 0 -4px 5px -1.7px #708aaf inset;
+  text-align: center;
+  line-height: 2.8;
+  animation: yurayura 2.5s linear infinite;
+}
+
+/*アニメーション*/
+@keyframes yurayura {
+  0% , 100%{
+      transform: rotate(0deg);
+  }
+  50%{
+      transform: rotate(-2.5deg);
+  }
+}
+
+.top-note:hover {
+  animation-play-state: paused;
+}
+
+.top-note h2 {
+  font-size: clamp(1.9rem, 2vw, 2.5rem);
+}
+
+.top-note a {
+  display: block;
+  text-align: center;
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-family: 'Times New Roman', serif;
+}
+
+
+/*文章*/
+.top-text {
+  margin-left: 12%;
+  padding: 40px;
+  line-height: 1.5;
+  
+}
+
+.top-text div, .top-text p, .top-text a {
+  font-size: clamp(1.3rem, 1.8vw, 1.8rem);
+}
+
+
+
+@media screen and (max-width:1024px) {
+  .top-contents {
+    top: 24vh;
+  }
+  .top-note {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width:864px) {
+  .top-title,  .top-contents {
+    position: static;
+  }
+  .top-title {
+    height: 130px;
+    padding: 38px 0 0 5%;
+    text-align: center;
+  }
+  .top-contents {
+    display: block;
+    margin: 0 auto 50px;
+  }
+  .top-note {
+    width: 64%;
+    margin: 0 0 0 8%;
+    animation: none;
+  }
+  .top-text {
+    width: 99%;
+    margin: 0 auto;
+    padding: 25px 0 0px 10%;
+  }
+}
+@media screen and (max-width:540px) {
+  .top-note, .top-text {
+    margin-left: -10%;
+  }
+  .top-note {
+    width: 93%;
+  }
+}
+@media screen and (max-width:540px) {
+  .top-note, .top-text {
+    margin-left: -17%;
+  }
+}

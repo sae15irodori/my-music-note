@@ -70,10 +70,12 @@ li {
 .fixed-top {
   position: sticky;
   background: #39a594eb;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 .navbar-nav a, .header-wrapper a {
-  color: #f5f5f5 !important;
+  color: #ffffff !important;
   font-size: clamp(1rem, 1.72vw, 1.2rem);;
 }
 
@@ -191,44 +193,6 @@ li {
     top: 99%;
   }
 }
-
-
-/***トップ画面***/
-.top-notice {
-  margin-bottom: 1.8em;
-  font-size: clamp(0.8rem, 1.7vw, 1.8rem);
-  color: #823014;
-}
-
-/**トップ画面全体**/
-.top-contents {
-  display: flex;
-  margin: 10% auto;
-}
-
-.top-note {
-  margin: 2em 1em;
-  padding: 1.5em 2em;
-  background: #fdfeff;
-  border-left: solid 22px #45a79e6b;
-  border-radius: 7px;
-  box-shadow: 0 4px 13px rgba(0,0,0,0.2), 0 -4px 5px -1.7px #708aaf inset;
-  font-size: clamp(0.95rem, 1.1vw, 1rem);
-}
-
-.top-link a {
-  display: block;
-  text-align: center;
-  font-size: 3vw;
-  font-family: 'Times New Roman', serif;
-}
-
-.top-link a:nth-child(2) {
-  padding: 0 5%;
-}
-
-
-
 
 /***アバウトページ***/
 /**ページ全体**/
