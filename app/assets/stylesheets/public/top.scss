@@ -90,9 +90,14 @@
 
 /*文章*/
 .top-text {
-  margin-left: 12%;
-  padding: 40px;
+  margin: 0 4% 0 8%;
+  padding: 28px 40px;
   line-height: 1.5;
+  text-align: center;
+  background: #ffffff61;
+  border-left: 3px dotted rgba(0,0,0,.1);
+  border-right: 3px dotted rgba(0,0,0,.1);
+  box-shadow: 0 0 7px rgba(0,0,0,0.3);
   
 }
 
@@ -110,7 +115,7 @@
     width: 350px;
   }
   .top-text {
-    padding: 40px 10px
+    padding: 28px 10px
   }
 }
 
@@ -126,27 +131,22 @@
   .top-contents {
     display: block;
     margin: 0 auto 50px;
+    width: 73%;
   }
   .top-note {
-    width: 64%;
-    margin: 0 0 0 8%;
     animation: none;
   }
-  .top-text {
-    width: 99%;
-    margin: 0 auto;
-    padding: 25px 0 0px 10%;
+  .top-note,.top-text {
+    margin: 0 0 50px -7%;
+    width: 100%;
   }
 }
 @media screen and (max-width:540px) {
   .top-note, .top-text {
     margin-left: -10%;
   }
-  .top-note {
-    width: 93%;
-  }
 }
-@media screen and (max-width:425px) {
+@media screen and (max-width:560px) {
   .top-note, .top-text {
     margin-left: -17%;
   }
