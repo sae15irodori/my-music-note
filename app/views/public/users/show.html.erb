@@ -9,7 +9,7 @@
           <!--ﾛｸﾞｲﾝ中かつｹﾞｽﾄじゃなければuser/editへのﾘﾝｸ含める-->
           <% if @user.id == current_user.id && @user.email != 'guest@gesuto.com' %>
             <%= link_to edit_user_path(@user.id) do %>
-            
+
                 <%= render '/layouts/user_info', user: @user %><!--ユーザー情報-->
 
                   <!--編集ボタン-->
@@ -26,7 +26,9 @@
                   <% end %>
                   </div>
                 <!--自己紹介-->
-                <p><%=safe_join(@user.introduction.split("\n"),tag(:br))%></p>
+                <% if @user.introduction.present? %>
+                  <p><%= safe_join(@user.introduction.split("\n"),tag(:br)) %></p>
+                <% end %>
             <% end %>
           <% elsif  @user.email == 'guest@gesuto.com' %><!--ｹﾞｽﾄﾕｰｻﾞｰの場合-->
             ゲストユーザーです<br>
